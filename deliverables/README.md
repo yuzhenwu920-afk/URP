@@ -15,3 +15,10 @@
 
 先阅读压缩包内的 `README_交付说明.md` 和 `artifacts/URP_合理性审查报告.pdf`。
 文件SHA-256见 `SHA256SUMS.txt`。
+
+## 本次实际跑出的完整结果（新增）
+
+- [URP_run_results.zip](URP_run_results.zip)：完整运行产物，包含全部结果表、日志、后验保留样本、4096样本条件产量、Sobol多次试验、NSGA-III全部前沿和HV轨迹、图表及报告。此前未打包的17.7MB真实分阶段样本已补入。
+- [URP_figures.zip](URP_figures.zip)：单独图件包，14张高清PNG及对应矢量PDF。
+
+运行结果包内的 README_RESULTS.md、RUN_RESULTS_MANIFEST.json 与 NPZ_ARRAY_SHAPES.json 提供内容与校验清单。保留样本为从已有真实检查点重建，没有重跑MCMC；新增优化仍是代理探索。
