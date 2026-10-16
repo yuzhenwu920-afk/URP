@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": {
+    "29_verified_3_report_only": true,
+    "integer_truncation": true,
+    "7_verified_groups_1_pending": true,
+    "8_CC_source_records": true,
+    "7_PNG_7_PDF": true,
+    "PDF_7_images": true,
+    "Word_7_images": true,
+    "no_fabricated_formal_runs": true
+  },
+  "paper_pages": 7
+}

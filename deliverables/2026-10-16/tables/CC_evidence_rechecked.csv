@@ -1,0 +1,9 @@
+﻿Year,Dataset,Rows,Submitted_rows,Rows_match,Hash_match,LAI_CC_max_error,Role
+2019,Field LAI-derived CC,12,12,True,True,1.1102230246251565e-16,calibration
+2019,RS CC auxiliary file,23,23,True,True,,"auxiliary, not DI external validation"
+2020,Field LAI-derived CC,13,13,True,True,1.1102230246251565e-16,calibration
+2020,RS CC auxiliary file,23,23,True,True,,"auxiliary, not DI external validation"
+2021,Field LAI-derived CC,11,11,True,True,1.1102230246251565e-16,calibration
+2021,RS CC auxiliary file,22,22,True,True,,"auxiliary, not DI external validation"
+2022,Field LAI-derived CC,12,12,True,True,1.1102230246251565e-16,calibration
+2022,RS CC auxiliary file,17,17,True,True,,"auxiliary, not DI external validation"

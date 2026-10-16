@@ -1,0 +1,11 @@
+﻿File,Present,Hash_match
+figures/F03_reference_protocol_sampling_adequacy.pdf,True,True
+figures/F03_reference_protocol_sampling_adequacy.png,True,True
+figures/SF03_strict_rhat_disclosure.pdf,True,True
+figures/SF03_strict_rhat_disclosure.png,True,True
+tables/CC_evidence_scope.csv,True,True
+tables/combined_central_parameter_vectors.csv,True,True
+tables/paper_aligned_sampling_adequacy.csv,True,True
+tables/screenshot_issue_closure.csv,True,True
+论文口径与问题解决说明.md,True,True
+reference PDF: Windows path only,False,

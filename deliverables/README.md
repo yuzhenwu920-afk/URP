@@ -22,3 +22,7 @@
 - [URP_figures.zip](URP_figures.zip)：单独图件包，14张高清PNG及对应矢量PDF。
 
 运行结果包内的 README_RESULTS.md、RUN_RESULTS_MANIFEST.json 与 NPZ_ARRAY_SHAPES.json 提供内容与校验清单。保留样本为从已有真实检查点重建，没有重跑MCMC；新增优化仍是代理探索。
+
+## 2026-10-16 新版更新
+
+[打开最新版交付目录](2026-10-16/)：新增材料复核、确定性主线论文Word/PDF、7张图与表格、9.5MB更新包。正式真实模型运行仍待原始源码与2022原链。

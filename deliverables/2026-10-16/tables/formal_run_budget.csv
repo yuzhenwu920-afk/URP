@@ -1,0 +1,4 @@
+﻿Task,Years,Seeds,Calls_per_run,Total_calls
+Sobol N128,4,3,1280,15360
+Sobol N512 alternative,4,3,5120,61440
+NSGAIII 100x100,4,5,10000,200000
