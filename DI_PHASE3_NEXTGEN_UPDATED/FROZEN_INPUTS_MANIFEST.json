@@ -1,0 +1,97 @@
+{
+  "frozen_samples_unchanged": true,
+  "original_and_current_samples_sha256": "82db2e1f5c363c6ef02a3ae99208d22d2e135ec949bae0a5160c44e21be9c8a5",
+  "arrays": {
+    "p1_2019": [
+      205440,
+      5
+    ],
+    "p1_2020": [
+      208768,
+      5
+    ],
+    "p1_2021": [
+      211584,
+      5
+    ],
+    "p1_2022": [
+      215424,
+      5
+    ],
+    "p2_2019": [
+      58464,
+      3
+    ],
+    "p2_2020": [
+      55616,
+      3
+    ],
+    "p2_2021": [
+      56352,
+      3
+    ]
+  },
+  "files": [
+    {
+      "file": "frozen_inputs/combined_central_parameter_vectors.csv",
+      "bytes": 1260,
+      "sha256": "1646a87f2b399275ec78f28903b34b9c057455d10082b0b71187b81f0291dd86"
+    },
+    {
+      "file": "frozen_inputs/inputs/DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv",
+      "bytes": 10526,
+      "sha256": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d"
+    },
+    {
+      "file": "frozen_inputs/inputs/DI_2019_2022_FIELD_LAI_CC_LOCKED.csv",
+      "bytes": 8413,
+      "sha256": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6"
+    },
+    {
+      "file": "frozen_inputs/inputs/DI_Climate_2019_FINAL.csv",
+      "bytes": 30893,
+      "sha256": "73d4d81a592435171f2c9873cd4c3189bd22e5853fbab3a405f4f68c5deb71ea"
+    },
+    {
+      "file": "frozen_inputs/inputs/DI_Climate_2020_FINAL.csv",
+      "bytes": 30969,
+      "sha256": "de1d2d83a3d18691c762706b9bfc97640ca286e5837e469df6bdc76821dd3187"
+    },
+    {
+      "file": "frozen_inputs/inputs/DI_Climate_2021_FINAL.csv",
+      "bytes": 30755,
+      "sha256": "7abee14835afc632b56bfb60d448dda8d4fc14974c3bdfad84cd19031ef88acc"
+    },
+    {
+      "file": "frozen_inputs/inputs/DI_Climate_2022_FINAL.csv",
+      "bytes": 31162,
+      "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+    },
+    {
+      "file": "frozen_inputs/inputs/Maize-2019-RS_NDVI.csv",
+      "bytes": 1272,
+      "sha256": "9dc7adc3fb502ee826172346a95f41a06c708c03f2316ffb115814f4b4cdbb01"
+    },
+    {
+      "file": "frozen_inputs/inputs/Maize-2020-RS_NDVI.csv",
+      "bytes": 1267,
+      "sha256": "4956e016fdc1ec0e2c964aabb0b30079492f0047585cdeb7ef9c2c65cd807cde"
+    },
+    {
+      "file": "frozen_inputs/inputs/Maize-2021-RS_NDVI.csv",
+      "bytes": 1230,
+      "sha256": "bc0b59c9ad847fdf8dd52fa933095b59dc986eb478a782509fcb420de3406c6f"
+    },
+    {
+      "file": "frozen_inputs/inputs/Maize-2022-RS_NDVI.csv",
+      "bytes": 783,
+      "sha256": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc"
+    },
+    {
+      "file": "frozen_inputs/verified_phase_specific_draws.npz",
+      "bytes": 17702727,
+      "sha256": "82db2e1f5c363c6ef02a3ae99208d22d2e135ec949bae0a5160c44e21be9c8a5"
+    }
+  ],
+  "2022_phase2_not_synthesized": true
+}

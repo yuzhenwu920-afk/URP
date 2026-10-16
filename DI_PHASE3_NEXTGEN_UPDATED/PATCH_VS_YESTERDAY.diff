@@ -1,0 +1,1141 @@
+--- yesterday/DI_PHASE3_ONE_CLICK.py
++++ updated/DI_PHASE3_ONE_CLICK.py
+@@ -1,170 +1,77 @@
+-# -*- coding: utf-8 -*-
+-"""DI 玉米 MCMC 后续工作 —— 一键运行脚本 (PyCharm: 直接 Run).
+-
+-依次执行:
+-    阶段 A  整合 2019-2022 四年 MCMC 后验
+-    阶段 B  Sobol 全局敏感性分析 (后验轨 + 先验轨 + 校准吸收率 CAI)
+-    阶段 C  NSGA-III 稳健多目标灌溉制度优化
+-    阶段 D  四年时序分析 + 跨年迁移矩阵
+-
+-用法
+-----
+-1) 直接把本文件所在文件夹拷进 PyCharm 项目, 直接 Run 本文件.
+-2) 若要用真实 AquaCropOSPy 复算(推荐定稿前做一次), 见下方 USE_REAL_AQUACROP.
+-
+-依赖:  numpy pandas matplotlib scipy "SALib>=1.5" "pymoo>=0.6"
+-"""
++"""昨天工程的修订入口：冻结MCMC，只执行Sobol、确定性优化与候选核验。"""
+ from __future__ import annotations
+-
+-import sys
+-import time
++import argparse
++from datetime import datetime,timezone
+ from pathlib import Path
+ 
+-# ============================================================================
+-# >>>>>>>>>>>>>>>>>>>>>>  用户配置区 (按需修改)  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-# ============================================================================
+-# 四个 MCMC 结果 zip 所在目录
+-DATA_DIR = Path(r"C:/Users/WWYYZZ/Desktop/urp")
+-
+-# 四个 zip 的文件名 (注意: 交付的 zip 文件名与内容年份是交叉的, 脚本会自动识别)
+-ZIP_FILES = {
+-    2019: DATA_DIR / "2019phase2_and_review_results.zip",
+-    2020: DATA_DIR / "phase2_and_review_results2020.zip",
+-    2021: DATA_DIR / "DI_2021_COMPLETE_2000_CHAIN_REVIEW_PACKAGE.zip",
+-    2022: DATA_DIR / "MCMC_Article_Results_2022.zip",
+-}
+-
+-# 结果输出目录
+-OUT_DIR = Path(__file__).resolve().parent / "output"
+-
+-# ---------------------------------------------------------------------------
+-# 真实 AquaCropOSPy 接入开关
+-# ---------------------------------------------------------------------------
+-# False (默认): 用内置的 AquaCrop 简化代理模型. 任何机器都能跑, 约 5-6 分钟.
+-# True        : 用项目里真实的 AquaCropOSPy 模型复算. 需要填 REAL_PROJECT_DIR.
+-#
+-# 真实模型的调用方式(来自你原有的 DI_2019_PHASE2_AND_REVIEW_ONE_CLICK.py):
+-#     m, data, start, folder = runner.load('2019', out)
+-#     s, g, cc, bio = m.simulate(data, params_dict, 'DI')
+-#     y13 = s['Y_13pct'];  tr = s['Tr_mm'];  es = s['Es_mm']; ...
+-#
+-# 接入方法: 把 REAL_PROJECT_DIR 指到含 DI_2019_MCMC_ONE_CLICK.py + data/ 的目录,
+-#          然后实现下面的 real_simulate() 骨架(约 20 行).
+-USE_REAL_AQUACROP = False
+-REAL_PROJECT_DIR = Path(r"C:/Users/Lenovo/PycharmProjects/PythonProject/DI_2019_OneClick")
+-
+-# Sobol 采样点数. 代理模型可用 512; 真实模型建议降到 128 (真实模型慢 ~1000 倍)
+-SOBOL_N = 512
+-
+-# ============================================================================
+-# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-# ============================================================================
+-
+-HERE = Path(__file__).resolve().parent
+-sys.path.insert(0, str(HERE))
++from model_adapter import HERE,RealModel,load_study,read,write,versions
+ 
+ 
+-def real_simulate(params: dict, year: int, irrigation=None) -> dict:
+-    """真实 AquaCropOSPy 适配器骨架.
+-
+-    需要你按项目实际情况补全. 思路:
+-      1) 首次调用时加载该年模型 (m, data, start, folder), 缓存起来;
+-      2) 把 params 转成模型需要的字典 (键名与 PHASE1_NAMES + PHASE2_NAMES 一致);
+-      3) 若给了 irrigation, 需要改写模型内 CFG['irrigation'] 后再模拟;
+-      4) 从返回的 s 里取出 Y_13pct / Tr_mm / Es_mm / ET_mm / Irr_mm 等, 组装成
+-         与本文件下方 aquacrop_surrogate.simulate 相同的返回字典.
+-
+-    参考实现(需按你的 model.py 接口微调):
+-
+-        import importlib.util
+-        if state.get('m') is None:
+-            src = REAL_PROJECT_DIR / f'DI_{year}_MCMC_ONE_CLICK.py'
+-            spec = importlib.util.spec_from_file_location(f'di{year}', src)
+-            mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+-            runner = mod._embedded_module('runner')
+-            m, data, start, folder = runner.load(str(year), OUT_DIR)
+-            state.update(m=m, data=data, start=start, folder=folder)
+-        m, data = state['m'], state['data']
+-        full = dict(state['start'], **params)
+-        s, g, cc, bio = m.simulate(data, full, 'DI')
+-        return dict(Y_13pct=s['Y_13pct'], Tr_mm=s['Tr_mm'], Es_mm=s['Es_mm'],
+-                    ET_mm=s['ET_mm'], Irr_mm=s.get('Irrigation_mm', 0.0),
+-                    B_t_ha=s['B_last'], Y_dry=s['Y_dry'],
+-                    WP_Irr=s['Y_13pct'] / (s.get('Irrigation_mm', 1) / 1000.0),
+-                    MaxCC=s.get('MaxCC', 0.0))
+-
+-    注意: BOX 里的灌溉时间表改写需要你确认 model.py 暴露的入口.
+-    """
+-    raise NotImplementedError(
+-        "USE_REAL_AQUACROP=True 时请在 real_simulate() 中补全真实模型调用, "
+-        "或先保持 USE_REAL_AQUACROP=False 使用内置代理模型."
+-    )
++def main(argv=None):
++    parser=argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--config',type=Path,default=HERE/'project_config.json')
++    parser.add_argument('--adapter',type=Path)
++    parser.add_argument('--phase',choices=['all','sobol','optimization','validate'],default='all')
++    parser.add_argument('--out',type=Path)
++    parser.add_argument('--years',nargs='+',type=int)
++    parser.add_argument('--n',type=int,choices=[128,512])
++    parser.add_argument('--track',choices=['global','local95'],default='global')
++    parser.add_argument('--auto-expand',action='store_true',help='If N128 is unstable, run N512 before optimization')
++    args=parser.parse_args(argv)
++    study=load_study(args.config)
++    years=args.years or study['years']
++    if not set(years).issubset(study['years']):parser.error('Year not present in frozen inputs')
++    if args.phase=='all' and args.track!='global':parser.error('Main all-phase workflow must use global physical ranges')
++    run_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
++    out=args.out or HERE/'output_revised'/run_id
++    out.mkdir(parents=True,exist_ok=True)
++    write(out/'execution_contract.json',{'scope':'Sobol and optimization; MCMC frozen and never rerun',
++          'config_sha256':study['_config_sha256'],'frozen_input_hashes':study['_frozen_hashes'],
++          'versions':versions(),'requested_phase':args.phase,'years':years,
++          'global_bounds':study['global_physical_bounds'],'primary_track':'global',
++          'optimization':'fixed central parameters, two objectives, hard observed-yield and irrigation gates'})
++    try:
++        model=RealModel(study,args.adapter)
++        write(out/'real_model_provenance.json',dict(model.provenance,identity=model.identity))
++        if args.phase in ['all','sobol']:
++            import phaseB_sobol as B
++            result=B.main(study,model,out,args.n,years,args.track)
++            summary=read(result/'sobol_summary.json')
++            if args.auto_expand and summary['status']!='SCREENING_STABLE' and summary['N']==128:
++                result=B.main(study,model,out,512,years,args.track)
++                summary=read(result/'sobol_summary.json')
++            if args.phase=='all' and summary['status']!='SCREENING_STABLE':
++                write(out/'EXECUTION_STATUS.json',{'status':'SOBOL_REVIEW_OR_N512_REQUIRED',
++                      'real_Sobol_executed':True,'optimization_executed':False,'sobol_directory':str(result)})
++                return 3
++        if args.phase in ['all','optimization']:
++            import phaseC_nsga3 as C
++            C.main(study,model,out,years)
++        if args.phase=='validate':
++            import pandas as pd
++            from validate_candidates import validate_year
++            for year in years:
++                folder=out/'optimization'/str(year)
++                if read(folder/'optimization_summary.json')['engine']!=model.identity:
++                    raise ValueError('Candidates belong to a different frozen model/configuration')
++                validate_year(model,study,year,read(folder/'decision_space.json'),pd.read_csv(folder/'epsilon_candidates.csv'),folder)
++        status='REQUESTED_PHASE_COMPLETED';details={}
++        if args.phase in ['all','optimization','validate']:
++            for year in years:
++                folder=out/'optimization'/str(year)
++                opt=read(folder/'optimization_summary.json')
++                conditional=read(folder/'conditional_validation_status.json') if (folder/'conditional_validation_status.json').exists() else None
++                details[str(year)]={'optimization':opt['status'],'conditional':conditional['status'] if conditional else 'NOT_RUN'}
++            if any(v['optimization']=='NO_FEASIBLE_SOLUTION' for v in details.values()):status='NO_FEASIBLE_SOLUTION_IN_SOME_YEARS'
++            elif any(v['conditional']!='COMPLETE' for v in details.values()):status='CANDIDATES_DONE_CONDITIONAL_CHECKS_PARTIAL'
++        write(out/'EXECUTION_STATUS.json',{'status':status,'phase':args.phase,'engine':model.identity,'annual_status':details})
++        print(f'输出目录: {out}')
++        return 0 if status=='REQUESTED_PHASE_COMPLETED' else 4
++    except Exception as error:
++        write(out/'EXECUTION_STATUS.json',{'status':'BLOCKED_OR_FAILED','phase':args.phase,
++              'error_type':type(error).__name__,'error':str(error),'no_proxy_fallback':True})
++        print(f'未完成真实模型运行：{error}\n已记录状态：{out / "EXECUTION_STATUS.json"}')
++        return 2
+ 
+ 
+-def patch_model_if_needed():
+-    """若开启真实模型, 把代理的 simulate 替换为真实适配器."""
+-    import aquacrop_surrogate
+-    if USE_REAL_AQUACROP:
+-        if not REAL_PROJECT_DIR.exists():
+-            raise FileNotFoundError(f"REAL_PROJECT_DIR 不存在: {REAL_PROJECT_DIR}")
+-        aquacrop_surrogate.simulate = real_simulate
+-        print("[配置] 使用真实 AquaCropOSPy 模型")
+-    else:
+-        print("[配置] 使用内置 AquaCrop 代理模型 (物理一致, 已用四年实测标定)")
+-
+-
+-def run_phase(name: str, fn, t0: float) -> None:
+-    print("\n" + "#" * 74)
+-    print(f"#  {name}")
+-    print("#" * 74)
+-    fn()
+-    print(f"\n[{name}] 用时 {time.time() - t0:.1f}s")
+-
+-
+-def main():
+-    t_all = time.time()
+-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+-    print("=" * 74)
+-    print("DI 玉米 MCMC 后续工作: Sobol + NSGA-III + 四年时序分析")
+-    print("=" * 74)
+-
+-    patch_model_if_needed()
+-
+-    # ---------- 阶段 A ----------
+-    t0 = time.time()
+-    import phaseA_merge_posterior as A
+-    missing = [y for y, p in ZIP_FILES.items() if not p.exists()]
+-    if missing:
+-        print(f"[阶段 A] 以下 zip 不存在, 将跳过: {missing}")
+-    A.ZIP_FILES = ZIP_FILES
+-    A.OUT_DIR = OUT_DIR
+-    A.OUT_DIR.mkdir(parents=True, exist_ok=True)
+-    run_phase("阶段 A  整合四年 MCMC 后验", A.main, t0)
+-
+-    # ---------- 阶段 B ----------
+-    t0 = time.time()
+-    import phaseB_sobol as B
+-    B.OUT = OUT_DIR
+-    B.N_SAMPLE = SOBOL_N
+-    run_phase("阶段 B  Sobol 全局敏感性分析", B.main, t0)
+-
+-    # ---------- 阶段 C ----------
+-    t0 = time.time()
+-    import phaseC_nsga3 as C
+-    C.OUT = OUT_DIR
+-    run_phase("阶段 C  NSGA-III 稳健多目标优化", C.main, t0)
+-
+-    # ---------- 阶段 D ----------
+-    t0 = time.time()
+-    import phaseD_timeseries as D
+-    D.OUT = OUT_DIR
+-    run_phase("阶段 D  四年时序分析", D.main, t0)
+-
+-    print("\n" + "=" * 74)
+-    print(f"全部完成 ✅  总用时 {time.time() - t_all:.1f}s")
+-    print(f"结果目录: {OUT_DIR}")
+-    print("=" * 74)
+-
+-
+-if __name__ == "__main__":
+-    main()
++if __name__=='__main__':raise SystemExit(main())
+--- yesterday/phaseB_sobol.py
++++ updated/phaseB_sobol.py
+@@ -1,251 +1,158 @@
+-# -*- coding: utf-8 -*-
+-"""阶段 B: Sobol 全局敏感性分析 (双轨).
++"""Revised phase B: independent global physical ranges; real Modified DI only.
+ 
+-轨道 B1 (Bayesian Sobol, 创新点):
+-    输入分布 = MCMC 校准后的后验边际区间 (按年).
+-    回答: "在已被数据约束的参数空间里, 哪些参数仍主导产量/水分的不确定性?"
+-轨道 B2 (Prior Sobol, 对照):
+-    输入分布 = 原始均匀先验边界.
+-    回答: "在无信息先验下, 模型对哪些参数最敏感?" (与传统文献可比)
+-
+-关键导出指标 -- 校准吸收率 CAI (Calibration Absorption Index):
+-    CAI_i = (ST_prior_i - ST_bayes_i) / ST_prior_i
+-    CAI > 0 : 校准把该参数的不确定性"吸收"了 (数据约束强, 已充分识别)
+-    CAI < 0 : 校准后反而更敏感 (后验区间内变化仍强烈影响输出, 需重点报告)
+-    CAI 是本项目相对传统 Sobol 的方法学增量.
+-
+-输出: sobol_indices.csv, sobol_CAI.csv, 3 张图 + JSON.
++Optional local95 is a marginal-neighborhood response experiment, not posterior
++Sobol. MCMC is frozen input. No CAI, forced ranking or proxy result is imported.
+ """
+ from __future__ import annotations
+-
+ import json
+-import sys
+ import time
+ from pathlib import Path
+ 
+ import numpy as np
+ import pandas as pd
+-import matplotlib
+-matplotlib.use("Agg")
+-import matplotlib.pyplot as plt
++from SALib.sample import sobol as sample_sobol
++from SALib.analyze import sobol as analyze_sobol
+ 
+-from SALib.sample import sobol as sobol_sample
+-from SALib.analyze import sobol as sobol_analyze_module
+-
+-sys.path.insert(0, str(Path(__file__).resolve().parent))
+-import aquacrop_surrogate as A
+-
+-# ---- 中文字体 ----
+-plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "DengXian", "DejaVu Sans"]
+-plt.rcParams["axes.unicode_minus"] = False
+-
+-OUT = Path(__file__).resolve().parent / "output"
+-OUT.mkdir(exist_ok=True)
+-
+-PARAM_NAMES = A.PARAM_NAMES
+-PRIOR_BOUNDS = A.PRIOR_BOUNDS
+-YEARS = [2019, 2020, 2021, 2022]
+-OUTPUTS = {
+-    "Y_13pct": "产量 (t/ha, 13%含水率)",
+-    "ET_mm": "季总耗水量 ET (mm)",
+-    "WP_Irr": "灌溉水生产率 (kg/m³)",
+-    "Tr_mm": "季总蒸腾 Tr (mm)",
+-}
+-N_SAMPLE = 512          # Sobol 基样本数 -> N*(2D+2) 次模拟
++from model_adapter import NAMES,OUTPUTS,HERE,RealModel,load_study,baseline,read,write,sha,csv
+ 
+ 
+-def posterior_bounds(year: int) -> dict[str, tuple[float, float]]:
+-    """从阶段 A 的输出读该年的后验边际区间 (0.5%~99.5% 分位)."""
+-    f = OUT / "posterior_input_distributions.csv"
+-    if not f.exists():
+-        raise FileNotFoundError("请先运行 phaseA_merge_posterior.py")
+-    df = pd.read_csv(f)
+-    d = df[df.Year == year].set_index("Parameter")
+-    return {k: (float(d.loc[k, "Lo"]), float(d.loc[k, "Hi"])) for k in PARAM_NAMES if k in d.index}
++def make_problem(study,year,track='global'):
++    if track=='global':bounds=study['global_physical_bounds']
++    elif track=='local95':
++        with np.load(Path(study['_root'])/study['phase_samples'],allow_pickle=False) as z:
++            if f'p2_{year}' not in z:raise ValueError(f'{year}: real phase-2 samples unavailable for local95')
++            a,b=z[f'p1_{year}'],z[f'p2_{year}']
++            bounds={k:np.quantile(a[:,j],[.025,.975]).tolist() for j,k in enumerate(NAMES[:5])}
++            bounds.update({k:np.quantile(b[:,j],[.025,.975]).tolist() for j,k in enumerate(NAMES[5:])})
++    else:raise ValueError('Unknown input space')
++    bd=np.array([bounds[k] for k in NAMES],float)
++    if bd.shape!=(8,2) or not np.isfinite(bd).all() or np.any(bd[:,1]<=bd[:,0]):raise ValueError('Invalid Sobol space')
++    return {'num_vars':8,'names':NAMES,'bounds':bd.tolist()}
+ 
+ 
+-def make_problem(bounds: dict[str, tuple[float, float]], names=None) -> dict:
+-    names = names or PARAM_NAMES
+-    return dict(
+-        num_vars=len(names),
+-        names=list(names),
+-        bounds=[list(bounds[k]) for k in names],
+-    )
++def estimates(problem,y,seed,resamples=512):
++    y=np.asarray(y,float);stride=len(problem['names'])+2
++    if len(y)%stride or not np.isfinite(y).all():raise ValueError('Incomplete/nonfinite Sobol responses')
++    ab=np.r_[y[::stride],y[stride-1::stride]]
++    variance=float(np.var(ab,ddof=1));mean=float(np.mean(ab))
++    if variance<=1e-14*max(float(np.mean(ab**2)),np.finfo(float).tiny):
++        return [{'Parameter':k,'Status':'constant_output_indices_undefined','Mean':mean,'Variance':variance,
++                 'S1':None,'ST':None,'S1_conf':None,'ST_conf':None,'ST_minus_S1':None,'Variance_times_ST':None} for k in problem['names']]
++    si=analyze_sobol.analyze(problem,y,calc_second_order=False,num_resamples=resamples,
++                           conf_level=.95,seed=seed,print_to_console=False)
++    rows=[]
++    for j,k in enumerate(problem['names']):
++        d={q:float(si[q][j]) for q in ['S1','ST','S1_conf','ST_conf']}
++        if not all(np.isfinite(list(d.values()))):raise ValueError('Invalid sensitivity estimate')
++        rows.append(dict(Parameter=k,Status='estimated',Mean=mean,Variance=variance,
++                         ST_minus_S1=d['ST']-d['S1'],Variance_times_ST=variance*d['ST'],**d))
++    return rows
+ 
+ 
+-def evaluate(X: np.ndarray, year: int) -> dict[str, np.ndarray]:
+-    """批量运行模型, 返回 {输出名: 数组}."""
+-    res = {k: np.empty(len(X)) for k in OUTPUTS}
+-    for i, row in enumerate(X):
+-        p = dict(zip(PARAM_NAMES, row))
+-        r = A.simulate(p, year)
+-        for k in OUTPUTS:
+-            res[k][i] = r[k]
+-    return res
+-
+-
+-def run_track(year: int, bounds: dict, track: str) -> pd.DataFrame:
+-    """跑一条轨道 (4 个输出)."""
+-    problem = make_problem(bounds)
+-    X = sobol_sample.sample(problem, N_SAMPLE, calc_second_order=False)
+-    print(f"  采样 {X.shape[0]} 点, 开始模拟 ...", flush=True)
+-    t0 = time.time()
+-    Y = evaluate(X, year)
+-    print(f"  模拟完成 {time.time() - t0:.1f}s", flush=True)
+-
+-    rows = []
+-    for out_name in OUTPUTS:
+-        y = Y[out_name]
+-        if np.std(y) < 1e-12:
+-            print(f"    !! {out_name} 输出无变异, 跳过")
+-            continue
+-        Si = sobol_analyze_module.analyze(problem, y, calc_second_order=False,
+-                                          print_to_console=False)
+-        for j, pname in enumerate(PARAM_NAMES):
+-            rows.append(dict(
+-                Year=year, Track=track, Output=out_name,
+-                Output_label=OUTPUTS[out_name],
+-                Parameter=pname,
+-                S1=float(Si["S1"][j]),
+-                S1_conf=float(Si["S1_conf"][j]),
+-                ST=float(Si["ST"][j]),
+-                ST_conf=float(Si["ST_conf"][j]),
+-            ))
++def run_track(model,study,year,n,seed,track,out):
++    if n<2 or n&(n-1):raise ValueError('Use a power-of-two Sobol base sample count')
++    out=Path(out);out.mkdir(parents=True,exist_ok=True);problem=make_problem(study,year,track)
++    x=sample_sobol.sample(problem,n,calc_second_order=False,scramble=True,seed=seed)
++    design=out/'design.npy';journal=out/'responses.jsonl'
++    identity={'model':model.identity,'space':problem,'track':track,'N':n,'seed':seed,
++              'calc_second_order':False,'expected_calls':10*n}
++    if (out/'run.json').exists():
++        previous=read(out/'run.json')
++        if previous['identity']!=identity:raise ValueError('Cannot reuse another model/space run directory')
++        if not design.exists() or not np.array_equal(np.load(design,allow_pickle=False),x):raise ValueError('Design changed')
++        if previous['status']=='COMPLETE' and (not journal.exists() or sha(journal)!=previous['responses_sha256']):
++            raise ValueError('Completed response checksum changed')
++    else:
++        if journal.exists():raise ValueError('Response journal has no provenance')
++        np.save(design,x,allow_pickle=False)
++        csv(out/'design.csv',pd.DataFrame(x,columns=NAMES).rename_axis('row_id').reset_index())
++        write(out/'space.json',dict(problem,Distribution='independent_uniform',Meaning='physical_global' if track=='global' else 'local_marginal_95_neighborhood_not_posterior'))
++    values={}
++    if journal.exists():
++        with journal.open(encoding='utf-8') as f:
++            for line in f:
++                r=json.loads(line);i=r['row_id']
++                if type(i) is not int or not 0<=i<len(x) or i in values:raise ValueError('Duplicate or invalid response row')
++                if not np.array_equal(r['params'],x[i]):raise ValueError('Response does not match the original design')
++                from model_adapter import validate_output
++                values[i]=validate_output(r['output'],study['water_balance_atol_mm'])
++    write(out/'run.json',{'status':'RUNNING','identity':identity,'completed':len(values),'design_sha256':sha(design)})
++    with journal.open('a',encoding='utf-8') as f:
++        for i,row in enumerate(x):
++            if i in values:continue
++            t=time.perf_counter()
++            try:r=model.simulate(dict(zip(NAMES,row)),year)
++            except Exception as error:
++                write(out/'failure.json',{'row_id':i,'params':row.tolist(),'error':str(error),'identity':identity})
++                write(out/'run.json',{'status':'FAILED','identity':identity,'completed':len(values),'failed_row':i})
++                raise
++            f.write(json.dumps({'row_id':i,'params':row.tolist(),'output':r,'seconds':time.perf_counter()-t},allow_nan=False)+'\n');f.flush()
++            values[i]=r
++            if (i+1)%100==0:print(f'Sobol {year} {track} N={n} seed={seed}: {i+1}/{len(x)}',flush=True)
++    if len(values)!=10*n:raise ValueError('Do not drop failed Saltelli rows')
++    y=np.array([[values[i][name] for name in OUTPUTS] for i in range(len(x))])
++    np.save(out/'response_matrix.npy',y,allow_pickle=False)
++    csv(out/'response_matrix.csv',pd.DataFrame(y,columns=OUTPUTS).rename_axis('row_id').reset_index())
++    rows=[]
++    for j,name in enumerate(OUTPUTS):
++        for r in estimates(problem,y[:,j],seed+8000,study['sobol']['bootstrap_resamples']):
++            rows.append(dict(Year=year,Track=track,N=n,Seed=seed,Output=name,
++                             Units='t/ha' if name in ['Y_13pct','B_t_ha'] else ('fraction' if name=='MaxCC' else 'mm'),**r))
++    csv(out/'indices.csv',rows)
++    write(out/'run.json',{'status':'COMPLETE','identity':identity,'completed':len(values),'failure_rate':0,
++          'design_sha256':sha(design),'responses_sha256':sha(journal),'indices_sha256':sha(out/'indices.csv')})
+     return pd.DataFrame(rows)
+ 
+ 
+-def main():
+-    print("=" * 66)
+-    print("阶段 B: Sobol 全局敏感性分析 (双轨: 后验 vs 先验)")
+-    print("=" * 66)
+-
+-    all_rows = []
+-    for year in YEARS:
+-        print(f"\n--- {year} ---")
+-        pb = posterior_bounds(year)
+-        print(f"  后验区间 CCx={pb['CCx']}  HI0={pb['HI0']}")
+-
+-        df_b = run_track(year, pb, "Bayes_posterior")
+-        df_p = run_track(year, PRIOR_BOUNDS, "Prior_uniform")
+-        all_rows += [df_b, df_p]
+-
+-    df = pd.concat(all_rows, ignore_index=True)
+-    df.to_csv(OUT / "sobol_indices.csv", index=False, encoding="utf-8-sig")
+-    print(f"\n✓ sobol_indices.csv ({len(df)} rows)")
+-
+-    # ---------- 校准吸收率 CAI ----------
+-    cai_rows = []
+-    for (year, out_name), g in df.groupby(["Year", "Output"]):
+-        b = g[g.Track == "Bayes_posterior"].set_index("Parameter")
+-        p = g[g.Track == "Prior_uniform"].set_index("Parameter")
+-        for pname in PARAM_NAMES:
+-            st_p = float(p.loc[pname, "ST"])
+-            st_b = float(b.loc[pname, "ST"])
+-            if abs(st_p) > 1e-9:
+-                cai = (st_p - st_b) / st_p
+-            else:
+-                cai = np.nan
+-            cai_rows.append(dict(
+-                Year=year, Output=out_name, Parameter=pname,
+-                ST_prior=st_p, ST_bayes=st_b, CAI=cai,
+-                Absorbed=bool(cai > 0) if np.isfinite(cai) else None,
+-            ))
+-    cai = pd.DataFrame(cai_rows)
+-    cai.to_csv(OUT / "sobol_CAI.csv", index=False, encoding="utf-8-sig")
+-    print(f"✓ sobol_CAI.csv")
+-
+-    # ---------- 图 1: 四年 Y13 的 S1/ST 堆叠 (Bayes 轨) ----------
+-    fig, axes = plt.subplots(1, 2, figsize=(15, 5.5))
+-    for ax, out_name, title in [
+-        (axes[0], "Y_13pct", "产量 Y13"),
+-        (axes[1], "ET_mm", "季总耗水 ET"),
+-    ]:
+-        sub = df[(df.Track == "Bayes_posterior") & (df.Output == out_name)]
+-        piv_s1 = sub.pivot(index="Parameter", columns="Year", values="S1")
+-        piv_st = sub.pivot(index="Parameter", columns="Year", values="ST")
+-        piv_s1 = piv_s1.loc[PARAM_NAMES]
+-        piv_st = piv_st.loc[PARAM_NAMES]
+-        x = np.arange(len(PARAM_NAMES))
+-        w = 0.17
+-        cmap = plt.get_cmap("tab10")
+-        for i, year in enumerate(YEARS):
+-            ax.bar(x + i * w - 1.5 * w, piv_s1[year], w,
+-                   label=f"{year} 一阶", color=cmap(i), alpha=0.95)
+-            ax.bar(x + i * w - 1.5 * w, piv_st[year] - piv_s1[year], w,
+-                   bottom=piv_s1[year], color=cmap(i), alpha=0.35, hatch="//")
+-        ax.set_xticks(x)
+-        ax.set_xticklabels(PARAM_NAMES, rotation=30, ha="right")
+-        ax.set_ylabel("Sobol 指数")
+-        ax.set_title(f"{title} – 后验轨道 (实心=一阶 S1, 斜纹=交互 ST−S1)")
+-        ax.grid(axis="y", alpha=0.3)
+-    axes[0].legend(fontsize=8, ncol=2)
+-    fig.suptitle("四年 Sobol 敏感性指数（输入分布 = MCMC 校准后验）", fontsize=13)
+-    fig.tight_layout()
+-    fig.savefig(OUT / "fig_sobol_S1_ST.png", dpi=150)
+-    plt.close(fig)
+-    print("✓ fig_sobol_S1_ST.png")
+-
+-    # ---------- 图 2: Bayes vs Prior (ST 对比, 四年平均) ----------
+-    st = df[df.Output == "Y_13pct"].groupby(["Track", "Parameter"])["ST"].mean()
+-    pb = st.loc["Bayes_posterior"].reindex(PARAM_NAMES)
+-    pp = st.loc["Prior_uniform"].reindex(PARAM_NAMES)
+-    fig, ax = plt.subplots(figsize=(10, 5))
+-    x = np.arange(len(PARAM_NAMES))
+-    ax.bar(x - 0.2, pp, 0.4, label="先验轨道 ST (无信息)", color="#8FAADC", edgecolor="k", lw=0.5)
+-    ax.bar(x + 0.2, pb, 0.4, label="后验轨道 ST (已校准)", color="#C00000", edgecolor="k", lw=0.5)
+-    for i in range(len(PARAM_NAMES)):
+-        ax.plot([i - 0.2, i + 0.2], [pp.iloc[i], pb.iloc[i]], "k--", lw=0.8, alpha=0.6)
+-    ax.set_xticks(x)
+-    ax.set_xticklabels(PARAM_NAMES, rotation=30, ha="right")
+-    ax.set_ylabel("总效应指数 ST")
+-    ax.set_title("产量 Y13：校准如何改变参数重要性\n（虚线下降 = 校准吸收了不确定性；上升 = 校准后更敏感）")
+-    ax.legend()
+-    ax.grid(axis="y", alpha=0.3)
+-    fig.tight_layout()
+-    fig.savefig(OUT / "fig_sobol_bayes_vs_prior.png", dpi=150)
+-    plt.close(fig)
+-    print("✓ fig_sobol_bayes_vs_prior.png")
+-
+-    # ---------- 图 3: ST 热图 (参数 × 年份, Bayes 轨, Y13) ----------
+-    sub = df[(df.Track == "Bayes_posterior") & (df.Output == "Y_13pct")]
+-    piv = sub.pivot(index="Parameter", columns="Year", values="ST").reindex(PARAM_NAMES)
+-    fig, ax = plt.subplots(figsize=(8, 5))
+-    im = ax.imshow(piv.values, cmap="YlOrRd", aspect="auto", vmin=0)
+-    ax.set_xticks(range(len(YEARS)))
+-    ax.set_xticklabels(YEARS)
+-    ax.set_yticks(range(len(PARAM_NAMES)))
+-    ax.set_yticklabels(PARAM_NAMES)
+-    for i in range(piv.shape[0]):
+-        for j in range(piv.shape[1]):
+-            v = piv.values[i, j]
+-            ax.text(j, i, f"{v:.2f}", ha="center", va="center",
+-                    color="white" if v > 0.5 else "black", fontsize=9)
+-    ax.set_title("产量 Y13 总效应指数 ST 的年际变化（后验轨道）")
+-    fig.colorbar(im, ax=ax, label="ST")
+-    fig.tight_layout()
+-    fig.savefig(OUT / "fig_sobol_heatmap.png", dpi=150)
+-    plt.close(fig)
+-    print("✓ fig_sobol_heatmap.png")
+-
+-    # ---------- 摘要 ----------
+-    top = (df[(df.Track == "Bayes_posterior") & (df.Output == "Y_13pct")]
+-           .groupby("Parameter")["ST"].mean().sort_values(ascending=False))
+-    cai_y = cai[cai.Output == "Y_13pct"].groupby("Parameter")["CAI"].mean()
+-    summary = {
+-        "Note": "Bayes 轨输入分布 = MCMC 校准后验; Prior 轨 = 均匀先验. CAI>0 表示校准吸收了不确定性.",
+-        "Top_ST_bayes_Y13": {k: float(v) for k, v in top.items()},
+-        "CAI_mean_Y13": {k: float(v) for k, v in cai_y.items()},
+-        "Y13_variance_explained_bayes": float(top.sum()),
+-    }
+-    (OUT / "sobol_summary.json").write_text(
+-        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+-    print("✓ sobol_summary.json")
+-
+-    print("\n=== 产量 Y13 平均 ST 排序 (后验轨道) ===")
+-    for k, v in top.items():
+-        print(f"  {k:<14} ST={v:.4f}   CAI={cai_y.get(k, float('nan')):+.3f}")
+-    print("\n阶段 B 完成 ✅")
++def rank_checks(df,study):
++    rows=[];cfg=study['sobol']
++    for (year,output),g in df.groupby(['Year','Output']):
++        valid=g[g.Status=='estimated'].copy();sets=[]
++        for _,s in valid.groupby('Seed'):sets.append(tuple(sorted(s.nlargest(cfg['key_parameter_count'],'ST').Parameter)))
++        all_estimated=len(valid)==len(g)
++        same_top=bool(sets and len(set(sets))==1 and set(g.Seed)==set(cfg['seeds']))
++        narrow=bool(all_estimated and valid.ST_conf.max()<=cfg['ci_halfwidth_max'])
++        rows.append(dict(Year=int(year),Output=output,Same_top_set_across_scrambles=same_top,
++                         Max_ST_95ci_halfwidth=float(valid.ST_conf.max()) if len(valid) else None,
++                         CI_halfwidth_limit=cfg['ci_halfwidth_max'],Stable_for_screening=all_estimated and same_top and narrow,
++                         Next_action='retain screening' if all_estimated and same_top and narrow else ('constant output: no normalized ranking' if not len(valid) else 'increase N to 512 and compare')))
++    return pd.DataFrame(rows)
+ 
+ 
+-if __name__ == "__main__":
+-    main()
++def cross_year_key_flags(df,study):
++    rows=[];years=set(study['years']);k=study['sobol']['key_parameter_count']
++    for output,g in df.groupby('Output'):
++        top={};valid=g[g.Status=='estimated']
++        for (year,seed),s in valid.groupby(['Year','Seed']):top[year,seed]=set(s.nlargest(k,'ST').Parameter)
++        for name in NAMES:
++            sub=valid[valid.Parameter==name]
++            full=set(sub.Year)==years and len(top)==len(years)*len(study['sobol']['seeds'])
++            all_top=bool(full and all(name in names for names in top.values()))
++            narrow=bool(len(sub) and sub.ST_conf.max()<=study['sobol']['ci_halfwidth_max'])
++            rows.append(dict(Output=output,Parameter=name,Four_year_all_scrambles_top_k=all_top,
++                             All_CI_halfwidths_small=narrow,Robust_key_under_declared_space=all_top and narrow,
++                             Rule=f'top {k} in all annual scrambles, ST halfwidth <= {study["sobol"]["ci_halfwidth_max"]}'))
++    return pd.DataFrame(rows)
++
++
++def main(study=None,model=None,out=None,n=None,years=None,track='global'):
++    study=study or load_study();model=model or RealModel(study);n=n or study['sobol']['N']
++    years=years or study['years'];out=Path(out or HERE/'output_revised')/f'sobol_{track}_N{n}'
++    out.mkdir(parents=True,exist_ok=True);frames=[]
++    for year in years:
++        baseline(model,study,year,out)
++        for seed in study['sobol']['seeds']:
++            frames.append(run_track(model,study,year,n,seed,track,out/f'{year}_seed{seed}'))
++    df=pd.concat(frames,ignore_index=True);csv(out/'sobol_indices.csv',df)
++    checks=rank_checks(df,study);csv(out/'scramble_checks.csv',checks)
++    csv(out/'cross_year_key_flags.csv',cross_year_key_flags(df,study))
++    write(out/'sobol_summary.json',{'status':'SCREENING_STABLE' if checks.Stable_for_screening.all() else 'REVIEW_OR_EXPAND_N',
++          'engine':model.identity,'N':n,'second_order':False,'calls_per_year_per_seed':10*n,
++          'years':years,'seeds':study['sobol']['seeds'],'track':track,'ranking':'ST primary; S1 and CI reported',
++          'not_joint_posterior':True,'no_CAI_information_claim':True})
++    from plot_results import plot_sobol
++    plot_sobol(df,out)
++    return out
++
++
++if __name__=='__main__':main()
+--- yesterday/phaseC_nsga3.py
++++ updated/phaseC_nsga3.py
+@@ -1,348 +1,182 @@
+-# -*- coding: utf-8 -*-
+-"""阶段 C: NSGA-III "三代" 多目标遗传优化 -- 稳健灌溉制度优化.
++"""Revised phase C: fixed central parameters, two objectives and hard gates.
+ 
+-设计要点 (相对传统灌溉优化的三点推进)
+--------------------------------------
+-1) 决策变量 = 灌水安排, 不是作物参数.
+-   作物参数已由 MCMC 校准锁定(阶段 A), 再当决策变量等于"用优化掩盖参数不确定性".
+-   因此: 变量 = 8 次灌水的灌水量 x_i ∈ [0, 120] mm, 灌水日期沿用各年实际日期.
+-
+-2) 参数不确定性显式进入目标函数 -- 稳健多目标优化.
+-   每个候选解用 K 个 MCMC 后验样本评估:
+-       f1 = -mean(Y13)     最大化期望产量
+-       f2 =  mean(Irr)     最小化期望灌溉量
+-       f3 =  std(Y13)      最小化参数不确定性导致的产量波动 (稳健性)
+-   传统优化只报一个确定解; 这里第三目标直接把"参数没标定准"的风险量化进 Pareto 前沿.
+-
+-3) NSGA-III (第三代非支配排序遗传算法) + Das-Dennis 参考点.
+-   三目标已属 many-objective, NSGA-II 的非支配排序会退化, NSGA-III 用参考点维持前沿分布.
+-
+-产出: pareto_front.csv, pareto_solutions.csv, 最优灌溉时间表, 节水率, 3 张图.
+-在 PyCharm 中把 aquacrop_surrogate.simulate 换成真实 model.simulate 即为真值.
++NSGA-III: 100 directions/population, 100 generations, five seeds. NSGA-II is
++the default matched comparator. Conditional perturbations follow optimization.
+ """
+ from __future__ import annotations
+-
+-import json
+-import sys
+-import time
++import math
+ from pathlib import Path
+ 
+ import numpy as np
+ import pandas as pd
+-import matplotlib
+-matplotlib.use("Agg")
+-import matplotlib.pyplot as plt
+-from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
+-
+ from pymoo.core.problem import Problem
+ from pymoo.algorithms.moo.nsga3 import NSGA3
++from pymoo.algorithms.moo.nsga2 import NSGA2
+ from pymoo.optimize import minimize
+-from pymoo.termination import get_termination
++from pymoo.util.ref_dirs import get_reference_directions
++from pymoo.util.nds.non_dominated_sorting import NonDominatedSorting
++from pymoo.indicators.hv import HV
+ 
+-try:
+-    from pymoo.util.ref_dirs import get_reference_directions
+-except ImportError:                       # pymoo < 0.6
+-    from pymoo.factory import get_reference_directions
+-
+-sys.path.insert(0, str(Path(__file__).resolve().parent))
+-import aquacrop_surrogate as A
+-
+-plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "DengXian", "DejaVu Sans"]
+-plt.rcParams["axes.unicode_minus"] = False
+-
+-OUT = Path(__file__).resolve().parent / "output"
+-CACHE = OUT / "raw_npz_cache"
+-YEARS = [2019, 2020, 2021, 2022]
+-PARAM_NAMES = A.PARAM_NAMES
+-
+-N_IRR = 8                     # 灌水次数
+-X_MAX = 120.0                 # 单次灌水上限 mm
+-K_SAMPLES = 8                 # 每个解的稳健性评估样本数
+-N_PARTITIONS = 8              # Das-Dennis 参考点划分
+-N_GEN = 40
++from model_adapter import (HERE,RealModel,load_study,baseline,write,csv,
++                           management,check_management_response,validate_space)
+ 
+ 
+-# ============================================================
+-# 后验参数样本 (用于稳健性评估)
+-# ============================================================
+-def load_posterior_samples(year: int, k: int = K_SAMPLES, seed: int = 7) -> list[dict]:
+-    """从该年 MCMC 后验抽 k 组 8 参数样本.
++class DeterministicIrrigationProblem(Problem):
++    def __init__(self,model,study,year,spec):
++        self.model,self.study,self.year,self.spec=model,study,year,validate_space(spec)
++        super().__init__(n_var=len(spec['names']),n_obj=2,n_ieq_constr=2,
++                         xl=np.asarray(spec['lower'],float),xu=np.asarray(spec['upper'],float))
++        self.params=study['_centers'][year]
++        self.observed=float(study['observed_Y13'][str(year)])
++        self.base_i=float(study['baseline_irrigation_mm'][str(year)])
++        self.gate=study['yield_fraction']*self.observed
+ 
+-    phase1 与 phase2 为条件推断(phase2 条件于 phase1 保留均值), 这里按边际独立组合,
+-    属于"独立后验边际"近似, 用于不确定性传播的稳健性评估(不用于后验推断).
+-    """
+-    f = CACHE / f"DI_{year}.npz"
+-    rng = np.random.default_rng(seed + year)
+-    if f.exists():
+-        d = np.load(f, allow_pickle=False)
+-        p1, p2 = d["phase1"], d["phase2"]
+-        i1 = rng.integers(0, len(p1), k)
+-        i2 = rng.integers(0, len(p2), k)
+-        out = []
+-        for a, b in zip(i1, i2):
+-            v = dict(zip(A.PARAM_NAMES[:5], p1[a]))
+-            v.update(dict(zip(A.PARAM_NAMES[5:], p2[b])))
+-            out.append(v)
+-        return out
+-    return [dict(A.REFERENCE_MEAN[year]) for _ in range(k)]
++    def response(self,x):
++        request=management(self.spec,x)
++        r=self.model.simulate(self.params,self.year,request)
++        return check_management_response(r,self.spec,x)
++
++    def _evaluate(self,X,out,*args,**kwargs):
++        f=[];g=[]
++        for x in X:
++            r=self.response(x);y,i=r['Y_13pct'],r['Irrigation_mm']
++            f.append([-y,i])
++            # Scale for the optimizer; the hard physical gates remain exact.
++            g.append([(i-self.base_i)/self.base_i,(self.gate-y)/self.observed])
++        out['F']=np.asarray(f);out['G']=np.asarray(g)
+ 
+ 
+-def irr_dates(year: int) -> list[str]:
+-    return [d for d, _ in A.YEAR_DATA[year]["irrigation"]]
++def nondominated(df):
++    if df.empty:return df.copy()
++    d=df.copy();objectives=np.column_stack([-d.Y13,d.Irrigation_mm])
++    keep=NonDominatedSorting().do(objectives,only_non_dominated_front=True)
++    return d.iloc[keep].drop_duplicates(subset=['Y13','Irrigation_mm']).sort_values(['Irrigation_mm','Y13'],ascending=[True,False]).reset_index(drop=True)
+ 
+ 
+-# ============================================================
+-# NSGA-III 问题定义
+-# ============================================================
+-class RobustIrrigationProblem(Problem):
+-    """决策变量 = 8 次灌水量; 目标 = (期望产量, 期望灌水量, 产量波动)."""
+-
+-    def __init__(self, year: int, samples: list[dict], dates: list[str]):
+-        super().__init__(
+-            n_var=len(dates), n_obj=3, n_constr=0,
+-            xl=np.zeros(len(dates)), xu=np.full(len(dates), X_MAX),
+-        )
+-        self.year, self.samples, self.dates = year, samples, dates
+-        self.n_eval = 0
+-
+-    def _evaluate(self, X, out, *args, **kwargs):
+-        F = np.zeros((len(X), 3))
+-        for i, x in enumerate(X):
+-            sched = [(self.dates[j], float(x[j])) for j in range(len(x))]
+-            ys = []
+-            for p in self.samples:
+-                r = A.simulate(p, self.year, irrigation=sched)
+-                ys.append(r["Y_13pct"])
+-            ys = np.asarray(ys, float)
+-            F[i, 0] = -float(np.mean(ys))       # 最大化产量 -> 最小化负产量
+-            F[i, 1] = float(np.sum(x))          # 最小化灌溉量
+-            F[i, 2] = float(np.std(ys))         # 最小化产量波动 (稳健性)
+-        self.n_eval += len(X)
+-        out["F"] = F
++def epsilon_choices(df,observed,base_i,fraction=.95):
++    if df.empty:return df.copy()
++    feasible=df[(df.Y13>=fraction*observed)&(df.Irrigation_mm<=base_i)].copy()
++    front=nondominated(feasible)
++    if front.empty:return front
++    selected=front.head(3).copy()
++    selected['Selection']=['epsilon_min_irrigation','adjacent_alternative_1','adjacent_alternative_2'][:len(selected)]
++    return selected
+ 
+ 
+-# ============================================================
+-# 主流程
+-# ============================================================
+-def run_year(year: int, verbose: bool = True) -> dict:
+-    samples = load_posterior_samples(year)
+-    dates = irr_dates(year)
+-    problem = RobustIrrigationProblem(year, samples, dates)
+-
+-    ref_dirs = get_reference_directions("das-dennis", 3, n_partitions=N_PARTITIONS)
+-    pop = ref_dirs.shape[0]
+-    # NSGA-III 要求 pop_size 与参考点数匹配; 微调到最近的合法值
+-    algo = NSGA3(pop_size=pop, ref_dirs=ref_dirs, eliminate_duplicates=True)
+-    term = get_termination("n_gen", N_GEN)
+-
+-    t0 = time.time()
+-    res = minimize(problem, algo, term, seed=2024 + year, save_history=False,
+-                   verbose=False)
+-    dt = time.time() - t0
+-    if verbose:
+-        print(f"  NSGA-III 完成: pop={pop} gen={N_GEN} "
+-              f"评估={problem.n_eval}次 用时={dt:.1f}s", flush=True)
+-
+-    F = res.F.copy()
+-    X = res.X.copy()
+-    # 还原: 目标是最小化, 这里转回物理意义
+-    df = pd.DataFrame(X, columns=[f"Irr{j+1}_mm" for j in range(X.shape[1])])
+-    df["Y13_mean"] = -F[:, 0]
+-    df["Irr_total_mm"] = F[:, 1]
+-    df["Y13_std"] = F[:, 2]
+-    df["Y13_cv_pct"] = 100 * df.Y13_std / df.Y13_mean.replace(0, np.nan)
+-    df["WP_Irr"] = df.Y13_mean / (df.Irr_total_mm / 1000.0).replace(0, np.nan)
+-    df["Year"] = year
+-    return dict(df=df, F=F, X=X, samples=samples, dates=dates,
+-                n_eval=problem.n_eval, seconds=dt)
++def run_seed(problem,algorithm,seed,generations,population,folder):
++    folder=Path(folder);folder.mkdir(parents=True,exist_ok=True)
++    if (folder/'run.json').exists():
++        raise FileExistsError('Use a new optimization run directory; do not overwrite a seeded search')
++    if algorithm=='NSGA3':
++        refs=get_reference_directions('das-dennis',2,n_partitions=population-1)
++        algo=NSGA3(pop_size=population,ref_dirs=refs,eliminate_duplicates=True)
++    elif algorithm=='NSGA2':algo=NSGA2(pop_size=population,eliminate_duplicates=True)
++    else:raise ValueError('Unknown comparator')
++    identity={'engine':problem.model.identity,'year':problem.year,'algorithm':algorithm,
++              'seed':seed,'population':population,'generations':generations,'objectives':['-Y13','Irrigation_mm'],
++              'constraints':['I<=annual_DI_baseline','Y13>=0.95*published_observed'],
++              'yield_gate_t_ha':problem.gate,'space':problem.spec,
++              'fixed_params':problem.params,'HV_normalization':['Y13/observed','I/baseline_I'],'HV_reference':[0,1.01]}
++    write(folder/'run.json',{'status':'RUNNING','identity':identity})
++    history=[];indicator=HV(ref_point=np.array([0.,1.01]))
++    def callback(a):
++        x,f,g=a.pop.get('X'),a.pop.get('F'),a.pop.get('G')
++        cv=a.pop.get('CV').ravel();feasible=f[cv<=0]
++        nf=feasible/np.array([problem.observed,problem.base_i])
++        hv=float(indicator(nf)) if len(nf) else 0.
++        np.savez_compressed(folder/f'generation_{a.n_gen:04d}.npz',X=x,F=f,G=g,CV=cv)
++        history.append(dict(Year=problem.year,Algorithm=algorithm,Seed=seed,Generation=a.n_gen,
++                            Evaluations=a.evaluator.n_eval,Feasible=len(feasible),Hypervolume=hv))
++        csv(folder/'history.csv',history)
++    try:
++        result=minimize(problem,algo,('n_gen',generations),seed=seed,callback=callback,verbose=False)
++    except Exception as error:
++        write(folder/'run.json',{'status':'FAILED','identity':identity,'error':str(error)})
++        raise
++    if result.F is None:
++        write(folder/'run.json',{'status':'NO_FEASIBLE_SOLUTION','identity':identity,'evaluations':result.algorithm.evaluator.n_eval})
++        return pd.DataFrame(),history
++    rows=[]
++    for x,f in zip(np.atleast_2d(result.X),np.atleast_2d(result.F)):
++        y,i=-float(f[0]),float(f[1])
++        if y<problem.gate or i>problem.base_i:continue
++        rows.append(dict(Year=problem.year,Algorithm=algorithm,Seed=seed,Y13=y,Irrigation_mm=i,
++                         **dict(zip(problem.spec['names'],map(float,x)))))
++    df=nondominated(pd.DataFrame(rows));csv(folder/'pareto_front.csv',df)
++    write(folder/'run.json',{'status':'COMPLETE' if len(df) else 'NO_FEASIBLE_SOLUTION',
++          'identity':identity,'evaluations':result.algorithm.evaluator.n_eval,'feasible_front_size':len(df)})
++    return df,history
+ 
+ 
+-def pick_knee(df: pd.DataFrame, year: int) -> pd.Series:
+-    """从 Pareto 前沿选"膝点": 在产量不低于基准 95% 的约束下, 灌溉量最小的解.
+-
+-    若无解满足 95%, 退而求其次取产量最高解.
+-    """
+-    base = A.YEAR_DATA[year]["y13_obs"]
+-    feas = df[df.Y13_mean >= 0.95 * base]
+-    if len(feas):
+-        return feas.loc[feas.Irr_total_mm.idxmin()]
+-    return df.loc[df.Y13_mean.idxmax()]
++def run_year(model,study,year,out,generations=None,population=None,seeds=None,compare=None):
++    out=Path(out);out.mkdir(parents=True,exist_ok=True)
++    base=baseline(model,study,year,out);spec=model.management_space(year)
++    write(out/'decision_space.json',spec)
++    cfg=study['optimization'];generations=generations or cfg['generations'];population=population or cfg['population']
++    seeds=seeds or cfg['seeds'];compare=cfg['compare_nsga2'] if compare is None else compare
++    problem=DeterministicIrrigationProblem(model,study,year,spec)
++    fronts=[];histories=[]
++    algorithms=['NSGA3','NSGA2'] if compare else ['NSGA3']
++    for algorithm in algorithms:
++        for seed in seeds:
++            f,h=run_seed(problem,algorithm,seed,generations,population,out/f'{algorithm}_seed{seed}')
++            if not f.empty:fronts.append(f)
++            histories+=h
++            print(f'Optimization {year} {algorithm} seed={seed}: {len(f)} feasible front points',flush=True)
++    all_fronts=pd.concat(fronts,ignore_index=True) if fronts else pd.DataFrame()
++    csv(out/'all_seed_fronts.csv',all_fronts);csv(out/'convergence_history.csv',histories)
++    observed=problem.observed
++    if all_fronts.empty:
++        write(out/'optimization_summary.json',{'status':'NO_FEASIBLE_SOLUTION','year':year,'engine':model.identity,
++              'recommendation':None,'no_high_yield_fallback':True});return pd.DataFrame()
++    # Recommend from the NSGA-III union; report NSGA-II separately for comparison.
++    main_front=nondominated(all_fronts[all_fronts.Algorithm=='NSGA3'])
++    csv(out/'pareto_front.csv',main_front)
++    comparison=[]
++    for algorithm,g in all_fronts.groupby('Algorithm'):
++        union=nondominated(g);norm=np.column_stack([-union.Y13/observed,union.Irrigation_mm/problem.base_i])
++        comparison.append(dict(Algorithm=algorithm,Union_front_size=len(union),
++                               Normalized_union_HV=float(HV(ref_point=np.array([0.,1.01]))(norm))))
++    csv(out/'algorithm_comparison.csv',comparison)
++    choices=epsilon_choices(main_front,observed,problem.base_i,study['yield_fraction'])
++    replays=[]
++    for n,row in choices.iterrows():
++        x=np.array([row[k] for k in spec['names']]);r=problem.response(x)
++        if not math.isclose(r['Y_13pct'],row.Y13,rel_tol=1e-8,abs_tol=1e-8) or not math.isclose(r['Irrigation_mm'],row.Irrigation_mm,abs_tol=1e-6):
++            raise ValueError('Candidate replay changed; reset simulator state')
++        if r['Y_13pct']<problem.gate or r['Irrigation_mm']>problem.base_i:
++            raise ValueError('Replayed candidate violates the absolute production/irrigation gate')
++        candidate_id=f'{year}_C{n+1}'
++        replays.append(dict(Candidate_ID=candidate_id,Selection=row.Selection,Y13=r['Y_13pct'],
++                     Irrigation_mm=r['Irrigation_mm'],Observed_Y13=observed,Model_baseline_Y13=base['Y_13pct'],
++                     Yield_change_vs_observed_pct=100*(r['Y_13pct']/observed-1),
++                     Yield_change_vs_model_pct=100*(r['Y_13pct']/base['Y_13pct']-1),
++                     Water_saving_pct=100*(1-r['Irrigation_mm']/problem.base_i),
++                     IWP_kg_m3=r['IWP_kg_m3'],ET_mm=r['ET_mm'],Tr_mm=r['Tr_mm'],Es_mm=r['Es_mm'],
++                     Water_balance_residual_mm=r['Water_balance_residual_mm'],
++                     **{k:float(row[k]) for k in spec['names']}))
++        write(out/f'{candidate_id}_real_replay.json',{'params':problem.params,'management':management(spec,x),'output':r,'engine':model.identity})
++    selected=csv(out/'epsilon_candidates.csv',replays)
++    write(out/'optimization_summary.json',{'status':'CANDIDATES_REPLAYED' if len(selected) else 'NO_FEASIBLE_SOLUTION',
++          'year':year,'engine':model.identity,'objectives':2,'fixed_central_params':True,'algorithms':algorithms,
++          'generations':generations,'population':population,'seeds':seeds,'candidate_count':len(selected),
++          'requested_alternatives':2,'available_alternatives':max(0,len(selected)-1),
++          'selection':'epsilon minimum irrigation, not geometric knee','conditional_validation':'separate next step'})
++    from plot_results import plot_optimization
++    plot_optimization(all_fronts,pd.DataFrame(histories),selected,base,observed,out)
++    return selected
+ 
+ 
+-def main():
+-    print("=" * 68)
+-    print("阶段 C: NSGA-III 稳健多目标灌溉制度优化")
+-    print("=" * 68)
+-
+-    all_pareto, knee_rows, sched_rows = [], [], []
+-
+-    for year in YEARS:
+-        print(f"\n--- {year} ---", flush=True)
+-        r = run_year(year)
+-        df = r["df"]
+-        all_pareto.append(df)
+-
+-        base_y = A.YEAR_DATA[year]["y13_obs"]
+-        base_i = A.YEAR_DATA[year]["irr_obs"]
+-
+-        knee = pick_knee(df, year)
+-        knee_rows.append(dict(
+-            Year=year,
+-            Y13_base=base_y,
+-            Y13_opt=knee.Y13_mean,
+-            Yield_change_pct=100 * (knee.Y13_mean / base_y - 1),
+-            Irr_base_mm=base_i,
+-            Irr_opt_mm=knee.Irr_total_mm,
+-            Water_saving_pct=100 * (1 - knee.Irr_total_mm / base_i),
+-            WP_Irr_base=base_y / (base_i / 1000.0),
+-            WP_Irr_opt=knee.WP_Irr,
+-            WP_gain_pct=100 * (knee.WP_Irr / (base_y / (base_i / 1000.0)) - 1),
+-            Y13_std=knee.Y13_std,
+-            n_pareto=len(df),
+-        ))
+-        # 灌溉时间表
+-        for j, d in enumerate(r["dates"]):
+-            sched_rows.append(dict(Year=year, Event=j + 1, Date=d,
+-                                   Base_mm=dict(A.YEAR_DATA[year]["irrigation"])[d],
+-                                   Optimal_mm=float(knee[f"Irr{j+1}_mm"])))
+-        print(f"  膝点: 产量 {knee.Y13_mean:.3f} (基准 {base_y:.3f}, "
+-              f"{100*(knee.Y13_mean/base_y-1):+.2f}%) | "
+-              f"灌溉 {knee.Irr_total_mm:.1f} (基准 {base_i:.1f}, "
+-              f"节水 {100*(1-knee.Irr_total_mm/base_i):+.1f}%)", flush=True)
+-
+-    pareto = pd.concat(all_pareto, ignore_index=True)
+-    pareto.to_csv(OUT / "pareto_front.csv", index=False, encoding="utf-8-sig")
+-    print(f"\n✓ pareto_front.csv ({len(pareto)} 个 Pareto 解)")
+-
+-    knee_df = pd.DataFrame(knee_rows)
+-    knee_df.to_csv(OUT / "pareto_knee_solutions.csv", index=False, encoding="utf-8-sig")
+-    print("✓ pareto_knee_solutions.csv")
+-
+-    sched = pd.DataFrame(sched_rows)
+-    sched.to_csv(OUT / "optimal_irrigation_schedule.csv", index=False, encoding="utf-8-sig")
+-    print("✓ optimal_irrigation_schedule.csv")
+-
+-    # ---------- 图 1: 3D Pareto 前沿 (四年) ----------
+-    fig = plt.figure(figsize=(14, 10))
+-    cmap = plt.get_cmap("tab10")
+-    for idx, year in enumerate(YEARS):
+-        ax = fig.add_subplot(2, 2, idx + 1, projection="3d")
+-        d = pareto[pareto.Year == year]
+-        sc = ax.scatter(d.Irr_total_mm, d.Y13_mean, d.Y13_std,
+-                        c=d.Y13_mean, cmap="viridis", s=22, alpha=0.85)
+-        base_y = A.YEAR_DATA[year]["y13_obs"]
+-        base_i = A.YEAR_DATA[year]["irr_obs"]
+-        ax.scatter([base_i], [base_y], [0], c="red", marker="*", s=200,
+-                   edgecolor="k", label="实际灌溉方案")
+-        ax.set_xlabel("灌溉量 (mm)")
+-        ax.set_ylabel("产量 Y13 (t/ha)")
+-        ax.set_zlabel("产量波动 std (t/ha)")
+-        ax.set_title(f"{year}  Pareto 前沿 (n={len(d)})")
+-        ax.legend(fontsize=8)
+-    fig.suptitle("NSGA-III 稳健灌溉制度优化：三目标 Pareto 前沿\n"
+-                 "（目标：最大化产量 / 最小化灌溉量 / 最小化参数不确定性导致的产量波动）",
+-                 fontsize=13)
+-    fig.tight_layout()
+-    fig.savefig(OUT / "fig_pareto_3d.png", dpi=150)
+-    plt.close(fig)
+-    print("✓ fig_pareto_3d.png")
+-
+-    # ---------- 图 2: 产量-灌溉量权衡曲线 (核心成果图, 对应申报书) ----------
+-    fig, axes = plt.subplots(1, 2, figsize=(15, 5.8))
+-    ax = axes[0]
+-    for i, year in enumerate(YEARS):
+-        d = pareto[pareto.Year == year].sort_values("Irr_total_mm")
+-        # Pareto 包络: 按灌溉量分桶取最大产量, 得到单调上升的权衡前沿(去掉散点锯齿)
+-        nb = 24
+-        bins = np.linspace(d.Irr_total_mm.min(), d.Irr_total_mm.max() + 1e-9, nb + 1)
+-        idx = np.clip(np.digitize(d.Irr_total_mm.values, bins) - 1, 0, nb - 1)
+-        xs, ys = [], []
+-        for b in range(nb):
+-            sub = d[idx == b]
+-            if len(sub):
+-                xs.append(float(sub.Irr_total_mm.mean()))
+-                ys.append(float(sub.Y13_mean.max()))
+-        # 保证单调
+-        ys = np.maximum.accumulate(np.asarray(ys))
+-        ax.plot(xs, ys, "-o", ms=3.5, lw=2.1, color=cmap(i), label=f"{year} 优化前沿")
+-        ax.plot(A.YEAR_DATA[year]["irr_obs"], A.YEAR_DATA[year]["y13_obs"], "*",
+-                ms=18, color=cmap(i), markeredgecolor="k", markeredgewidth=0.8, zorder=5)
+-    ax.set_xlabel("灌溉量 (mm)", fontsize=11)
+-    ax.set_ylabel("产量 $Y_{13}$ (t/ha)", fontsize=11)
+-    ax.set_title("产量–灌溉量权衡曲线\n（★ = 各年实际灌溉方案；粗线 = NSGA-III Pareto 最优前沿）",
+-                 fontsize=11)
+-    ax.legend(ncol=2, fontsize=9)
+-    ax.grid(alpha=0.35)
+-
+-    ax = axes[1]
+-    w = 0.36
+-    x = np.arange(len(YEARS))
+-    ax.bar(x - w / 2, knee_df.Irr_base_mm, w, label="实际灌溉量",
+-           color="#8FAADC", edgecolor="k", lw=0.6)
+-    ax.bar(x + w / 2, knee_df.Irr_opt_mm, w, label="优化灌溉量（膝点）",
+-           color="#C00000", edgecolor="k", lw=0.6)
+-    ymax = float(knee_df.Irr_base_mm.max())
+-    ax.set_ylim(0, ymax * 1.30)
+-    for i, row in knee_df.iterrows():
+-        ax.text(i, row.Irr_base_mm + ymax * 0.035,
+-                f"节水 {row.Water_saving_pct:.1f}%\n产量 {row.Yield_change_pct:+.1f}%",
+-                ha="center", fontsize=8.5, linespacing=1.45)
+-    ax.set_xticks(x)
+-    ax.set_xticklabels(YEARS)
+-    ax.set_ylabel("灌溉量 (mm)", fontsize=11)
+-    ax.set_title("膝点方案 vs 实际方案\n（膝点 = 产量 ≥ 基准 95% 前提下灌溉量最小）", fontsize=11)
+-    ax.legend(fontsize=9)
+-    ax.grid(axis="y", alpha=0.35)
+-    fig.tight_layout()
+-    fig.savefig(OUT / "fig_yield_irrigation_tradeoff.png", dpi=150)
+-    plt.close(fig)
+-    print("✓ fig_yield_irrigation_tradeoff.png")
+-
+-    # ---------- 图 3: 最优灌溉时间表 ----------
+-    fig, axes = plt.subplots(2, 2, figsize=(14, 8))
+-    for idx, year in enumerate(YEARS):
+-        ax = axes[idx // 2, idx % 2]
+-        s = sched[sched.Year == year]
+-        x = np.arange(len(s))
+-        ax.bar(x - 0.2, s.Base_mm, 0.4, label="实际", color="#8FAADC", edgecolor="k", lw=0.5)
+-        ax.bar(x + 0.2, s.Optimal_mm, 0.4, label="NSGA-III 优化", color="#C00000", edgecolor="k", lw=0.5)
+-        ax.set_xticks(x)
+-        ax.set_xticklabels([d[5:] for d in s.Date], rotation=45, ha="right", fontsize=8)
+-        ax.set_ylabel("灌水量 (mm)")
+-        ax.set_title(f"{year} 灌溉时间安排")
+-        ax.legend(fontsize=8)
+-        ax.grid(axis="y", alpha=0.3)
+-    fig.suptitle("NSGA-III 优化的逐年灌溉时间安排表（8 次灌水）", fontsize=13)
+-    fig.tight_layout()
+-    fig.savefig(OUT / "fig_irrigation_schedule.png", dpi=150)
+-    plt.close(fig)
+-    print("✓ fig_irrigation_schedule.png")
+-
+-    # ---------- 摘要 ----------
+-    summary = dict(
+-        Method="NSGA-III (Das-Dennis 参考点) + 后验样本稳健性评估",
+-        Decision_variable=f"{N_IRR} 次灌水量, 单次上限 {X_MAX} mm",
+-        Objectives=["最大化期望产量", "最小化灌溉量", "最小化参数不确定性导致的产量波动"],
+-        Robustness_samples=K_SAMPLES,
+-        Generations=N_GEN,
+-        Knee_solutions=knee_df.to_dict("records"),
+-        Mean_water_saving_pct=float(knee_df.Water_saving_pct.mean()),
+-        Mean_yield_change_pct=float(knee_df.Yield_change_pct.mean()),
+-        Mean_WP_gain_pct=float(knee_df.WP_gain_pct.mean()),
+-    )
+-    (OUT / "nsga3_summary.json").write_text(
+-        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+-    print("✓ nsga3_summary.json")
+-
+-    print("\n=== 膝点方案汇总 ===")
+-    print(knee_df[["Year", "Y13_base", "Y13_opt", "Yield_change_pct",
+-                   "Irr_base_mm", "Irr_opt_mm", "Water_saving_pct",
+-                   "WP_gain_pct"]].round(3).to_string(index=False))
+-    print(f"\n平均节水 {knee_df.Water_saving_pct.mean():.1f}% , "
+-          f"平均产量变化 {knee_df.Yield_change_pct.mean():+.2f}% , "
+-          f"平均灌溉水生产率提升 {knee_df.WP_gain_pct.mean():+.1f}%")
+-    print("\n阶段 C 完成 ✅")
++def main(study=None,model=None,out=None,years=None,generations=None,population=None,seeds=None,compare=None):
++    study=study or load_study();model=model or RealModel(study)
++    out=Path(out or HERE/'output_revised')/'optimization';out.mkdir(parents=True,exist_ok=True)
++    for year in years or study['years']:
++        target=out/str(year)
++        selected=run_year(model,study,year,target,generations,population,seeds,compare)
++        if not selected.empty:
++            from validate_candidates import validate_year
++            validate_year(model,study,year,model.management_space(year),selected,target)
++    return out
+ 
+ 
+-if __name__ == "__main__":
+-    main()
++if __name__=='__main__':main()

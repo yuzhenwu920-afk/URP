@@ -2,6 +2,12 @@
 
 此独立分支用于交付文件，主分支未修改。
 
+## 当前版本：按三份文件修改昨天的Sobol与优化
+
+[完整修订工程ZIP](2026-10-16-sobol-optimization/URP_Sobol_Optimization_Updated.zip)；[直接查看工程代码](../DI_PHASE3_NEXTGEN_UPDATED/)；[逐项改动说明](../DI_PHASE3_NEXTGEN_UPDATED/按三份文件的改动说明.md)。
+
+本版直接修订昨天的phaseB_sobol.py、phaseC_nsga3.py和总入口，MCMC保持冻结。Sobol采用公共全局独立均匀物理范围；优化固定年度中心点、双目标、绝对保产/灌水约束、100代×5种子及NSGA-II对照；候选再回代并做分组条件扰动。15项软件检查通过，未将测试夹具结果作为作物结果。实际Modified DI源码仍未随附件交付，正式模型新数值尚未执行。
+
 ## 下载
 
 打开 `URP_full_package.zip`，点击 GitHub 的 Download raw file（下载原始文件）按钮或 View raw。
@@ -23,7 +29,7 @@
 
 运行结果包内的 README_RESULTS.md、RUN_RESULTS_MANIFEST.json 与 NPZ_ARRAY_SHAPES.json 提供内容与校验清单。保留样本为从已有真实检查点重建，没有重跑MCMC；新增优化仍是代理探索。
 
-## 2026-10-16 正式计算准备与论文增补（最新）
+## 2026-10-16 正式计算准备与论文增补（历史准备包）
 
 [打开最新交付目录](2026-10-16-execution-ready/)；[下载完整准备包](2026-10-16-execution-ready/URP_execution_ready_20261016.zip)；[论文Word](2026-10-16-execution-ready/paper_framework_execution_ready.docx)；[论文PDF](2026-10-16-execution-ready/paper_framework_execution_ready.pdf)。
 

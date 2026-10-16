@@ -1,0 +1,7 @@
+# Analysis runner tested on Python 3.12; restore original crop-engine dependencies separately.
+numpy==2.5.4
+pandas==3.0.6
+scipy==1.18.1
+SALib==1.5.2
+pymoo==0.6.2
+matplotlib==3.11.2

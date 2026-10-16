@@ -1,0 +1,152 @@
+[
+  {
+    "file": ".gitignore",
+    "bytes": 54,
+    "sha256": "5d8200adef240285bf326bc7b5c467c408f21a764c5d049338c0cc3296287cf2"
+  },
+  {
+    "file": "DI_PHASE3_ONE_CLICK.py",
+    "bytes": 4854,
+    "sha256": "1395f0b244572de691583170f5b9ff17e5079e3fdca27d6c572ec1dd80f3bb67"
+  },
+  {
+    "file": "FROZEN_INPUTS_MANIFEST.json",
+    "bytes": 2752,
+    "sha256": "3be5702f33f575ca898e84b2ba1aff3b26341a0a0e9ab3b22fee48a57b55023d"
+  },
+  {
+    "file": "GUIDANCE_SOURCES.json",
+    "bytes": 447,
+    "sha256": "4ea70391de4e8d68b31a749869ab45d066621ca94d1acba445cea2022f31e976"
+  },
+  {
+    "file": "ORIGINAL_CODE_SHA256.json",
+    "bytes": 669,
+    "sha256": "901ea8c142d17aa8233babd24f56494bece9e4b35d45baaedd659c527f86ec49"
+  },
+  {
+    "file": "PATCH_VS_YESTERDAY.diff",
+    "bytes": 58375,
+    "sha256": "545b598fa91da3be7596f33ea374df890f708365052839cce77ea5287574fc8f"
+  },
+  {
+    "file": "README.md",
+    "bytes": 6822,
+    "sha256": "d36b17f0a42840557f39324f4c7bc217e79808ea761d946c209e603f0b39cce5"
+  },
+  {
+    "file": "SOFTWARE_VALIDATION.json",
+    "bytes": 3065,
+    "sha256": "e78f91ad2f6f48547147272b9fcf6afb54a0d38ec2587f3d7d308fbedfe38b14"
+  },
+  {
+    "file": "frozen_inputs/combined_central_parameter_vectors.csv",
+    "bytes": 1260,
+    "sha256": "1646a87f2b399275ec78f28903b34b9c057455d10082b0b71187b81f0291dd86"
+  },
+  {
+    "file": "frozen_inputs/inputs/DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv",
+    "bytes": 10526,
+    "sha256": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d"
+  },
+  {
+    "file": "frozen_inputs/inputs/DI_2019_2022_FIELD_LAI_CC_LOCKED.csv",
+    "bytes": 8413,
+    "sha256": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6"
+  },
+  {
+    "file": "frozen_inputs/inputs/DI_Climate_2019_FINAL.csv",
+    "bytes": 30893,
+    "sha256": "73d4d81a592435171f2c9873cd4c3189bd22e5853fbab3a405f4f68c5deb71ea"
+  },
+  {
+    "file": "frozen_inputs/inputs/DI_Climate_2020_FINAL.csv",
+    "bytes": 30969,
+    "sha256": "de1d2d83a3d18691c762706b9bfc97640ca286e5837e469df6bdc76821dd3187"
+  },
+  {
+    "file": "frozen_inputs/inputs/DI_Climate_2021_FINAL.csv",
+    "bytes": 30755,
+    "sha256": "7abee14835afc632b56bfb60d448dda8d4fc14974c3bdfad84cd19031ef88acc"
+  },
+  {
+    "file": "frozen_inputs/inputs/DI_Climate_2022_FINAL.csv",
+    "bytes": 31162,
+    "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+  },
+  {
+    "file": "frozen_inputs/inputs/Maize-2019-RS_NDVI.csv",
+    "bytes": 1272,
+    "sha256": "9dc7adc3fb502ee826172346a95f41a06c708c03f2316ffb115814f4b4cdbb01"
+  },
+  {
+    "file": "frozen_inputs/inputs/Maize-2020-RS_NDVI.csv",
+    "bytes": 1267,
+    "sha256": "4956e016fdc1ec0e2c964aabb0b30079492f0047585cdeb7ef9c2c65cd807cde"
+  },
+  {
+    "file": "frozen_inputs/inputs/Maize-2021-RS_NDVI.csv",
+    "bytes": 1230,
+    "sha256": "bc0b59c9ad847fdf8dd52fa933095b59dc986eb478a782509fcb420de3406c6f"
+  },
+  {
+    "file": "frozen_inputs/inputs/Maize-2022-RS_NDVI.csv",
+    "bytes": 783,
+    "sha256": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc"
+  },
+  {
+    "file": "frozen_inputs/verified_phase_specific_draws.npz",
+    "bytes": 17702727,
+    "sha256": "82db2e1f5c363c6ef02a3ae99208d22d2e135ec949bae0a5160c44e21be9c8a5"
+  },
+  {
+    "file": "model_adapter.py",
+    "bytes": 9955,
+    "sha256": "516081f3253cdba9b5c5f57aa283b4aa78bc9a04a115258fd4210977280ab774"
+  },
+  {
+    "file": "phaseB_sobol.py",
+    "bytes": 9795,
+    "sha256": "de0f9c5a24de457a54c39cafae442e3038a44937a7274bbdf2e4f3685439b8e0"
+  },
+  {
+    "file": "phaseC_nsga3.py",
+    "bytes": 10537,
+    "sha256": "6d8ec51daa98e198c99deb5cf478a61bc77b6ddf297a10ff71359a0ebd824d80"
+  },
+  {
+    "file": "plot_results.py",
+    "bytes": 5082,
+    "sha256": "aad78b15979e44ca145853f6dbc0ce7501731756b9e19cbd58a3c4759b4c7698"
+  },
+  {
+    "file": "project_config.json",
+    "bytes": 2488,
+    "sha256": "48e97a130451ba864a06269eabea1abafa36204d78fe33c6efe7149854c9d12d"
+  },
+  {
+    "file": "real_model/adapter.py",
+    "bytes": 1592,
+    "sha256": "d14b5c4b67598edf6ce4d0cb20ff4d5cf435e5dd15725f49e6dcbe107d34aab3"
+  },
+  {
+    "file": "requirements.txt",
+    "bytes": 181,
+    "sha256": "7b59a08c64ffbb61dd1a4b0fcfd63e34ee050ea2d4ce9abcbad2591a0c6e79bb"
+  },
+  {
+    "file": "tests/test_revised_workflow.py",
+    "bytes": 11979,
+    "sha256": "15ada55f7bfa7c75fe77e95ef80037a7b013b09a18efc4d49f235f1410edceb5"
+  },
+  {
+    "file": "validate_candidates.py",
+    "bytes": 4983,
+    "sha256": "fd54719bbac5c25b53525506bd24151414eaaa33cb2754de96b894dc72025c7d"
+  },
+  {
+    "file": "按三份文件的改动说明.md",
+    "bytes": 3241,
+    "sha256": "07029852607248f3ffd7122a8849ea15efa15e708f7904f697c28e86578320ce"
+  }
+]
