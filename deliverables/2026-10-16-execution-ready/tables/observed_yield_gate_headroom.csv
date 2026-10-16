@@ -1,0 +1,4 @@
+﻿Year,Observed_Y13_t_ha,Original_model_baseline_Y13_t_ha,Absolute_95pct_gate_t_ha,Remaining_loss_allowed_t_ha,Remaining_loss_allowed_pct_of_model_baseline,Baseline_bias_pct_vs_observed,Baseline_Irrigation_mm,Role
+2019,16.55,16.701690981890927,15.7225,0.9791909818909268,5.862825404640947,0.9165618241143481,445.27,Existing original model output; no new crop simulation
+2020,17.29,16.804038510033287,16.4255,0.3785385100332874,2.25266390461597,-2.810650607094922,559.76,Existing original model output; no new crop simulation
+2021,15.86,15.19713325177589,15.066999999999998,0.13013325177589152,0.8563013143329856,-4.17948769372074,633.47,Existing original model output; no new crop simulation

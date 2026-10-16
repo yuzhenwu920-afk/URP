@@ -1,0 +1,289 @@
+[
+  {
+    "year": 2019,
+    "checkpoint": "②原始资料包_2019/01_MCMC结果包/extracted/phase2_and_review_results/phase1_archive/MCMC_Article_Results_2019/DI_2019/sampling/checkpoints/canopy_transpiration/ensemble_1.npz",
+    "sha256": "91ac8e8c5ed6ab580cb63d78d18957220a320a54339213fc21876a2c512eb10e",
+    "contract_model_hashes": {
+      "DI_2019_MCMC_ONE_CLICK.py": "d1e24a3eab3cca3bb1739f3578330c750ed03d1a7e95d5c292653a4bde924e35"
+    },
+    "original_normal_prior_names": [
+      "CDC_CD",
+      "SenescenceCD"
+    ],
+    "original_prior_centers": {
+      "CCx": 0.9,
+      "CDC_CD": 0.07,
+      "CGC_CD": 0.12,
+      "HI0": 0.45,
+      "Kcb": 1.05,
+      "SenescenceCD": 132.0,
+      "WP": 33.7,
+      "WP_early": 25.0,
+      "WP_late": 25.0
+    },
+    "original_prior_sd": {
+      "CCx": 0.05,
+      "CDC_CD": 0.025,
+      "CGC_CD": 0.015,
+      "HI0": 0.03,
+      "Kcb": 0.1,
+      "SenescenceCD": 10.0,
+      "WP": 4.0,
+      "WP_early": 3.0,
+      "WP_late": 4.0
+    },
+    "support_bounds": {
+      "CCx": [
+        0.6,
+        0.99
+      ],
+      "CGC_CD": [
+        0.08,
+        0.16
+      ],
+      "CDC_CD": [
+        0.03,
+        0.12
+      ],
+      "SenescenceCD": [
+        115.0,
+        145.0
+      ],
+      "Kcb": [
+        1.05,
+        1.6
+      ],
+      "WP_early": [
+        10.0,
+        40.0
+      ],
+      "WP_late": [
+        10.0,
+        40.0
+      ],
+      "HI0": [
+        0.35,
+        0.6
+      ]
+    },
+    "source_code_present_in_readable_materials": false,
+    "matched_summary": "②原始资料包_2019/01_MCMC结果包/extracted/phase2_and_review_results/summary.json",
+    "matched_summary_sha256": "10f3baf9ae5fedaf35e2c8014b4ecdd2e4002732bfcc6b85166f8753862aa9e2"
+  },
+  {
+    "year": 2020,
+    "checkpoint": "②原始资料包_2020/01_MCMC结果包/extracted/phase2_and_review_results/phase1_archive/MCMC_Article_Results_2020/DI_2020/sampling/checkpoints/canopy_transpiration/ensemble_1.npz",
+    "sha256": "1902155da332952c91c39b783f2c812fa0cb57328fd43b65d588e25b1c0e6e3a",
+    "contract_model_hashes": {
+      "DI_2020_MCMC_ONE_CLICK.py": "89a2808618dcf240d3521f59ba76473400f08797aa449ebd1cc58a3023485297"
+    },
+    "original_normal_prior_names": [
+      "CDC_CD",
+      "SenescenceCD"
+    ],
+    "original_prior_centers": {
+      "CCx": 0.9,
+      "CDC_CD": 0.07,
+      "CGC_CD": 0.12,
+      "HI0": 0.45,
+      "Kcb": 1.05,
+      "SenescenceCD": 132.0,
+      "WP": 33.7,
+      "WP_early": 25.0,
+      "WP_late": 25.0
+    },
+    "original_prior_sd": {
+      "CCx": 0.05,
+      "CDC_CD": 0.025,
+      "CGC_CD": 0.015,
+      "HI0": 0.03,
+      "Kcb": 0.1,
+      "SenescenceCD": 10.0,
+      "WP": 4.0,
+      "WP_early": 3.0,
+      "WP_late": 4.0
+    },
+    "support_bounds": {
+      "CCx": [
+        0.6,
+        0.99
+      ],
+      "CGC_CD": [
+        0.08,
+        0.16
+      ],
+      "CDC_CD": [
+        0.03,
+        0.12
+      ],
+      "SenescenceCD": [
+        115.0,
+        145.0
+      ],
+      "Kcb": [
+        1.05,
+        1.6
+      ],
+      "WP_early": [
+        10.0,
+        40.0
+      ],
+      "WP_late": [
+        10.0,
+        40.0
+      ],
+      "HI0": [
+        0.35,
+        0.6
+      ]
+    },
+    "source_code_present_in_readable_materials": false,
+    "matched_summary": "②原始资料包_2020/01_MCMC结果包/extracted/phase2_and_review_results/summary.json",
+    "matched_summary_sha256": "99687b6df10954838ef769024bb3a319b40489977ed06f1c95b8edab1774e6f2"
+  },
+  {
+    "year": 2021,
+    "checkpoint": "②原始资料包_2021/01_MCMC结果包/extracted/DI_2021_COMPLETE_2000_CHAIN_REVIEW_PACKAGE/MCMC_Article_Results_2021/MCMC_Article_Results_2021/DI_2021/sampling/checkpoints/canopy_transpiration/ensemble_1.npz",
+    "sha256": "36de9762aa5f5d1d8a2348a4424dc0c6f45f2545e1441b8869ad5515423a5939",
+    "contract_model_hashes": {
+      "DI_2021_MCMC_ONE_CLICK.py": "6fbf649d91f1c01b106f4cd35d1c14246d613d596325dfc81149585a3ea00042"
+    },
+    "original_normal_prior_names": [
+      "CDC_CD",
+      "SenescenceCD"
+    ],
+    "original_prior_centers": {
+      "CCx": 0.9,
+      "CDC_CD": 0.07,
+      "CGC_CD": 0.12,
+      "HI0": 0.45,
+      "Kcb": 1.05,
+      "SenescenceCD": 132.0,
+      "WP": 33.7,
+      "WP_early": 25.0,
+      "WP_late": 25.0
+    },
+    "original_prior_sd": {
+      "CCx": 0.05,
+      "CDC_CD": 0.025,
+      "CGC_CD": 0.015,
+      "HI0": 0.03,
+      "Kcb": 0.1,
+      "SenescenceCD": 10.0,
+      "WP": 4.0,
+      "WP_early": 3.0,
+      "WP_late": 4.0
+    },
+    "support_bounds": {
+      "CCx": [
+        0.6,
+        0.99
+      ],
+      "CGC_CD": [
+        0.08,
+        0.16
+      ],
+      "CDC_CD": [
+        0.03,
+        0.12
+      ],
+      "SenescenceCD": [
+        115.0,
+        145.0
+      ],
+      "Kcb": [
+        1.05,
+        1.6
+      ],
+      "WP_early": [
+        10.0,
+        40.0
+      ],
+      "WP_late": [
+        10.0,
+        40.0
+      ],
+      "HI0": [
+        0.35,
+        0.6
+      ]
+    },
+    "source_code_present_in_readable_materials": false,
+    "matched_summary": "②原始资料包_2021/01_MCMC结果包/extracted/DI_2021_COMPLETE_2000_CHAIN_REVIEW_PACKAGE/phase2_and_review_results/summary.json",
+    "matched_summary_sha256": "4828832a97c23314d6cebbe66946704bc776b1098a25571096b45f70e83f7142"
+  },
+  {
+    "year": 2022,
+    "checkpoint": "②原始资料包_2022/01_MCMC结果包/extracted/MCMC_Article_Results_2022/DI_2022/sampling/checkpoints/canopy_transpiration/ensemble_1.npz",
+    "sha256": "3f9e31914ac2827efd00dac648189b96712b19f4663af2ea240deb1d3aca706a",
+    "contract_model_hashes": {
+      "DI_2022_MCMC_ONE_CLICK.py": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+    },
+    "original_normal_prior_names": [
+      "CCx",
+      "CDC_CD",
+      "CGC_CD",
+      "HI0",
+      "Kcb",
+      "SenescenceCD",
+      "WP_early",
+      "WP_late"
+    ],
+    "original_prior_centers": {
+      "CCx": 0.9888689507828456,
+      "CDC_CD": 0.0688531948376533,
+      "CGC_CD": 0.1042721204050489,
+      "HI0": 0.4,
+      "Kcb": 1.4215883424119928,
+      "SenescenceCD": 133.0,
+      "WP_early": 16.001450940746924,
+      "WP_late": 29.552129166184766
+    },
+    "original_prior_sd": {
+      "CCx": 0.05,
+      "CDC_CD": 0.025,
+      "CGC_CD": 0.015,
+      "HI0": 0.03,
+      "Kcb": 0.1,
+      "SenescenceCD": 10.0,
+      "WP": 4.0,
+      "WP_early": 3.0,
+      "WP_late": 4.0
+    },
+    "support_bounds": {
+      "CCx": [
+        0.6,
+        0.99
+      ],
+      "CGC_CD": [
+        0.08,
+        0.16
+      ],
+      "CDC_CD": [
+        0.03,
+        0.12
+      ],
+      "SenescenceCD": [
+        115.0,
+        145.0
+      ],
+      "Kcb": [
+        1.05,
+        1.6
+      ],
+      "WP_early": [
+        10.0,
+        22.0
+      ],
+      "WP_late": [
+        20.0,
+        38.0
+      ],
+      "HI0": [
+        0.35,
+        0.5
+      ]
+    },
+    "source_code_present_in_readable_materials": false
+  }
+]

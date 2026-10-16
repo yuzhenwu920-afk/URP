@@ -1,0 +1,300 @@
+{
+  "status": "PREPARED_NOT_REAL_MODEL_EXECUTED",
+  "cases": {
+    "2019": {
+      "support_bounds": {
+        "CCx": [
+          0.6,
+          0.99
+        ],
+        "CGC_CD": [
+          0.08,
+          0.16
+        ],
+        "CDC_CD": [
+          0.03,
+          0.12
+        ],
+        "SenescenceCD": [
+          115.0,
+          145.0
+        ],
+        "Kcb": [
+          1.05,
+          1.6
+        ],
+        "WP_early": [
+          10.0,
+          40.0
+        ],
+        "WP_late": [
+          10.0,
+          40.0
+        ],
+        "HI0": [
+          0.35,
+          0.6
+        ]
+      },
+      "central_params": {
+        "CCx": 0.977074146152396,
+        "CGC_CD": 0.0987906492341301,
+        "CDC_CD": 0.0603085189612872,
+        "SenescenceCD": 137.380416405229,
+        "Kcb": 1.4866117077987293,
+        "WP_early": 18.204170900731963,
+        "WP_late": 30.584844653063563,
+        "HI0": 0.4123782972116429
+      },
+      "center_evidence": "both phases checkpoint verified",
+      "central_params_are_not_joint_posterior_draws": true,
+      "WP_switch_date": "2019-07-10",
+      "published_Y13_t_ha": 16.55,
+      "absolute_95pct_yield_gate_t_ha": 15.7225,
+      "baseline_irrigation_mm": 445.27,
+      "baseline_expected": {
+        "Y_13pct": 16.701690981890927,
+        "Tr_mm": 540.76445797587,
+        "Es_mm": 97.23374052255008,
+        "ET_mm": 637.99819849842,
+        "MaxCC": 0.9422131809034672,
+        "Y_dry": 14.530471154245106,
+        "Irrigation_mm": 445.27,
+        "Rain_mm": 177.86875512631184,
+        "CR_mm": 0.0,
+        "GwIn_mm": 0.0,
+        "Runoff_mm": 4.367727102497263,
+        "DeepPerc_mm": 0.0,
+        "TileDrain_mm": 0.0,
+        "Profile_initial_mm": 520.8906002504098,
+        "Profile_final_mm": 501.6634297758057,
+        "Surface_initial_mm": 0.0,
+        "Surface_final_mm": 0.0,
+        "Water_balance_residual_mm": -1.4325207686738395e-12,
+        "Max_daily_balance_residual_mm": 1.822986206434507e-13,
+        "B_t_ha": 35.18553199746357
+      },
+      "acceptance": {
+        "water_balance_atol_mm": 1e-05,
+        "baseline_atol": 1e-05,
+        "baseline_rtol": 1e-05
+      }
+    },
+    "2020": {
+      "support_bounds": {
+        "CCx": [
+          0.6,
+          0.99
+        ],
+        "CGC_CD": [
+          0.08,
+          0.16
+        ],
+        "CDC_CD": [
+          0.03,
+          0.12
+        ],
+        "SenescenceCD": [
+          115.0,
+          145.0
+        ],
+        "Kcb": [
+          1.05,
+          1.6
+        ],
+        "WP_early": [
+          10.0,
+          40.0
+        ],
+        "WP_late": [
+          10.0,
+          40.0
+        ],
+        "HI0": [
+          0.35,
+          0.6
+        ]
+      },
+      "central_params": {
+        "CCx": 0.9773285953122056,
+        "CGC_CD": 0.0955862319656919,
+        "CDC_CD": 0.0607072715689921,
+        "SenescenceCD": 137.8439680283595,
+        "Kcb": 1.4351603053697617,
+        "WP_early": 11.254970888620802,
+        "WP_late": 25.84929747660313,
+        "HI0": 0.5738095550809222
+      },
+      "center_evidence": "both phases checkpoint verified",
+      "central_params_are_not_joint_posterior_draws": true,
+      "WP_switch_date": "2020-07-14",
+      "published_Y13_t_ha": 17.29,
+      "absolute_95pct_yield_gate_t_ha": 16.4255,
+      "baseline_irrigation_mm": 559.76,
+      "baseline_expected": {
+        "Y_13pct": 16.804038510033287,
+        "Tr_mm": 526.7431096215566,
+        "Es_mm": 83.21881647708324,
+        "ET_mm": 609.9619260986399,
+        "MaxCC": 0.9248186979180432,
+        "Y_dry": 14.619513503728959,
+        "Irrigation_mm": 559.76,
+        "Rain_mm": 113.46477854038639,
+        "CR_mm": 0.0,
+        "GwIn_mm": 0.0,
+        "Runoff_mm": 1.3438515546219931,
+        "DeepPerc_mm": 0.0,
+        "TileDrain_mm": 0.0,
+        "Profile_initial_mm": 490.06271316229453,
+        "Profile_final_mm": 551.9817140494207,
+        "Surface_initial_mm": 0.0,
+        "Surface_final_mm": 0.0,
+        "Water_balance_residual_mm": -1.6223966614603569e-12,
+        "Max_daily_balance_residual_mm": 2.149391775674303e-13,
+        "B_t_ha": 25.44183411346791
+      },
+      "acceptance": {
+        "water_balance_atol_mm": 1e-05,
+        "baseline_atol": 1e-05,
+        "baseline_rtol": 1e-05
+      }
+    },
+    "2021": {
+      "support_bounds": {
+        "CCx": [
+          0.6,
+          0.99
+        ],
+        "CGC_CD": [
+          0.08,
+          0.16
+        ],
+        "CDC_CD": [
+          0.03,
+          0.12
+        ],
+        "SenescenceCD": [
+          115.0,
+          145.0
+        ],
+        "Kcb": [
+          1.05,
+          1.6
+        ],
+        "WP_early": [
+          10.0,
+          40.0
+        ],
+        "WP_late": [
+          10.0,
+          40.0
+        ],
+        "HI0": [
+          0.35,
+          0.6
+        ]
+      },
+      "central_params": {
+        "CCx": 0.959350117930432,
+        "CGC_CD": 0.1153714026263425,
+        "CDC_CD": 0.0663000488065798,
+        "SenescenceCD": 134.84557592404934,
+        "Kcb": 1.4161048227434494,
+        "WP_early": 10.87674533297289,
+        "WP_late": 21.937587650883643,
+        "HI0": 0.5800386198368013
+      },
+      "center_evidence": "both phases checkpoint verified",
+      "central_params_are_not_joint_posterior_draws": true,
+      "WP_switch_date": "2021-07-13",
+      "published_Y13_t_ha": 15.86,
+      "absolute_95pct_yield_gate_t_ha": 15.066999999999998,
+      "baseline_irrigation_mm": 633.47,
+      "baseline_expected": {
+        "Y_13pct": 15.19713325177589,
+        "Tr_mm": 533.237840354809,
+        "Es_mm": 71.90551830394273,
+        "ET_mm": 605.1433586587516,
+        "MaxCC": 0.953166334002469,
+        "Y_dry": 13.221505929045025,
+        "Irrigation_mm": 633.47,
+        "Rain_mm": 143.32284983325394,
+        "CR_mm": 0.0,
+        "GwIn_mm": 0.0,
+        "Runoff_mm": 1.6820425478087913,
+        "DeepPerc_mm": 0.0,
+        "TileDrain_mm": 0.0,
+        "Profile_initial_mm": 535.7048014144666,
+        "Profile_final_mm": 705.672250041162,
+        "Surface_initial_mm": 0.0,
+        "Surface_final_mm": 0.0,
+        "Water_balance_residual_mm": -1.8517409827722986e-12,
+        "Max_daily_balance_residual_mm": 2.3447910280083306e-13,
+        "B_t_ha": 22.778709371423297
+      },
+      "acceptance": {
+        "water_balance_atol_mm": 1e-05,
+        "baseline_atol": 1e-05,
+        "baseline_rtol": 1e-05
+      }
+    },
+    "2022": {
+      "support_bounds": {
+        "CCx": [
+          0.6,
+          0.99
+        ],
+        "CGC_CD": [
+          0.08,
+          0.16
+        ],
+        "CDC_CD": [
+          0.03,
+          0.12
+        ],
+        "SenescenceCD": [
+          115.0,
+          145.0
+        ],
+        "Kcb": [
+          1.05,
+          1.6
+        ],
+        "WP_early": [
+          10.0,
+          22.0
+        ],
+        "WP_late": [
+          20.0,
+          38.0
+        ],
+        "HI0": [
+          0.35,
+          0.5
+        ]
+      },
+      "central_params": {
+        "CCx": 0.9374032578353432,
+        "CGC_CD": 0.1317852891534627,
+        "CDC_CD": 0.0641940224837006,
+        "SenescenceCD": 134.95391002237233,
+        "Kcb": 1.3774871353352591,
+        "WP_early": 13.86006356977246,
+        "WP_late": 31.49771355326593,
+        "HI0": 0.4013188031858887
+      },
+      "center_evidence": "phase1 verified; phase2 report only",
+      "central_params_are_not_joint_posterior_draws": true,
+      "WP_switch_date": "2022-07-05",
+      "published_Y13_t_ha": 14.08,
+      "absolute_95pct_yield_gate_t_ha": 13.376,
+      "baseline_irrigation_mm": 404.84,
+      "baseline_expected": null,
+      "acceptance": {
+        "water_balance_atol_mm": 1e-05,
+        "baseline_atol": 1e-05,
+        "baseline_rtol": 1e-05
+      }
+    }
+  }
+}

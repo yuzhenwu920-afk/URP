@@ -1,0 +1,137 @@
+{
+  "status": "DESIGN_ONLY_NO_MODEL_RESPONSES",
+  "config_sha256": "86d5d841a858a46d446e41c7950f8a9b7c6da7c3b2807bc0124b96e94cfb27c6",
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "SALib": "1.5.2"
+  },
+  "N": 128,
+  "D": 8,
+  "calc_second_order": false,
+  "distribution": "independent_uniform_on_annual_checkpoint_supports",
+  "not_MCMC_prior_or_posterior": true,
+  "runs": [
+    {
+      "year": 2019,
+      "seed": 101,
+      "N": 128,
+      "file": "X_2019_N128_seed101.npy",
+      "sha256": "1c87370aa5fc544f64ded29c1a72d6bec96e74838ab28eea5bdd383749a85e54",
+      "csv": "X_2019_N128_seed101.csv",
+      "csv_sha256": "04e31b9065a2adb52aa7a443cb160ebdddf27b09d62d06b299cf6b9e939542e6",
+      "rows": 1280
+    },
+    {
+      "year": 2019,
+      "seed": 202,
+      "N": 128,
+      "file": "X_2019_N128_seed202.npy",
+      "sha256": "146244ab0e8f0981e8a230e8d1fa68442d2508a579ddca836efff290d74c8219",
+      "csv": "X_2019_N128_seed202.csv",
+      "csv_sha256": "2929b45f81d6fda8a7bea8f5e95572ce669e8bd821c785167486fe663aafc71c",
+      "rows": 1280
+    },
+    {
+      "year": 2019,
+      "seed": 303,
+      "N": 128,
+      "file": "X_2019_N128_seed303.npy",
+      "sha256": "e19b9b0a692ed1f73ee1d52ef77b6e170d34f0b5d1464af55742fc90b67b828e",
+      "csv": "X_2019_N128_seed303.csv",
+      "csv_sha256": "027df87851ded5cf0af4830080452392a8f22d3290fea167289497747a09101d",
+      "rows": 1280
+    },
+    {
+      "year": 2020,
+      "seed": 101,
+      "N": 128,
+      "file": "X_2020_N128_seed101.npy",
+      "sha256": "1c87370aa5fc544f64ded29c1a72d6bec96e74838ab28eea5bdd383749a85e54",
+      "csv": "X_2020_N128_seed101.csv",
+      "csv_sha256": "04e31b9065a2adb52aa7a443cb160ebdddf27b09d62d06b299cf6b9e939542e6",
+      "rows": 1280
+    },
+    {
+      "year": 2020,
+      "seed": 202,
+      "N": 128,
+      "file": "X_2020_N128_seed202.npy",
+      "sha256": "146244ab0e8f0981e8a230e8d1fa68442d2508a579ddca836efff290d74c8219",
+      "csv": "X_2020_N128_seed202.csv",
+      "csv_sha256": "2929b45f81d6fda8a7bea8f5e95572ce669e8bd821c785167486fe663aafc71c",
+      "rows": 1280
+    },
+    {
+      "year": 2020,
+      "seed": 303,
+      "N": 128,
+      "file": "X_2020_N128_seed303.npy",
+      "sha256": "e19b9b0a692ed1f73ee1d52ef77b6e170d34f0b5d1464af55742fc90b67b828e",
+      "csv": "X_2020_N128_seed303.csv",
+      "csv_sha256": "027df87851ded5cf0af4830080452392a8f22d3290fea167289497747a09101d",
+      "rows": 1280
+    },
+    {
+      "year": 2021,
+      "seed": 101,
+      "N": 128,
+      "file": "X_2021_N128_seed101.npy",
+      "sha256": "1c87370aa5fc544f64ded29c1a72d6bec96e74838ab28eea5bdd383749a85e54",
+      "csv": "X_2021_N128_seed101.csv",
+      "csv_sha256": "04e31b9065a2adb52aa7a443cb160ebdddf27b09d62d06b299cf6b9e939542e6",
+      "rows": 1280
+    },
+    {
+      "year": 2021,
+      "seed": 202,
+      "N": 128,
+      "file": "X_2021_N128_seed202.npy",
+      "sha256": "146244ab0e8f0981e8a230e8d1fa68442d2508a579ddca836efff290d74c8219",
+      "csv": "X_2021_N128_seed202.csv",
+      "csv_sha256": "2929b45f81d6fda8a7bea8f5e95572ce669e8bd821c785167486fe663aafc71c",
+      "rows": 1280
+    },
+    {
+      "year": 2021,
+      "seed": 303,
+      "N": 128,
+      "file": "X_2021_N128_seed303.npy",
+      "sha256": "e19b9b0a692ed1f73ee1d52ef77b6e170d34f0b5d1464af55742fc90b67b828e",
+      "csv": "X_2021_N128_seed303.csv",
+      "csv_sha256": "027df87851ded5cf0af4830080452392a8f22d3290fea167289497747a09101d",
+      "rows": 1280
+    },
+    {
+      "year": 2022,
+      "seed": 101,
+      "N": 128,
+      "file": "X_2022_N128_seed101.npy",
+      "sha256": "81987f5271e05508bdc460b114beb35c7c710200812b247ed06330a543fc8ddb",
+      "csv": "X_2022_N128_seed101.csv",
+      "csv_sha256": "c9f80ab6de7da4814108d2b41edeecf879e0b80949ead760e4a34dc0c678d72b",
+      "rows": 1280
+    },
+    {
+      "year": 2022,
+      "seed": 202,
+      "N": 128,
+      "file": "X_2022_N128_seed202.npy",
+      "sha256": "e28cd1654471c36e06c18c528093a2570440bf8ac806a2014a31b8ac9f2ce5b0",
+      "csv": "X_2022_N128_seed202.csv",
+      "csv_sha256": "7b582431863efbe0c64f0c3e0b049dcc7676b2fd6c9a45c227af693ae722fde3",
+      "rows": 1280
+    },
+    {
+      "year": 2022,
+      "seed": 303,
+      "N": 128,
+      "file": "X_2022_N128_seed303.npy",
+      "sha256": "9a710f93bbee22373042855ff329be8f31a5fd63e676b1c68bd7d09d162bb27e",
+      "csv": "X_2022_N128_seed303.csv",
+      "csv_sha256": "c75f45ef8f7674d37c503302f27a49cb300d3cd05a11ccaf3279b59c56b5d2f4",
+      "rows": 1280
+    }
+  ],
+  "total_model_calls_required": 15360
+}

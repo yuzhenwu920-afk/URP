@@ -23,6 +23,14 @@
 
 运行结果包内的 README_RESULTS.md、RUN_RESULTS_MANIFEST.json 与 NPZ_ARRAY_SHAPES.json 提供内容与校验清单。保留样本为从已有真实检查点重建，没有重跑MCMC；新增优化仍是代理探索。
 
-## 2026-10-16 新版更新
+## 2026-10-16 正式计算准备与论文增补（最新）
+
+[打开最新交付目录](2026-10-16-execution-ready/)；[下载完整准备包](2026-10-16-execution-ready/URP_execution_ready_20261016.zip)；[论文Word](2026-10-16-execution-ready/paper_framework_execution_ready.docx)；[论文PDF](2026-10-16-execution-ready/paper_framework_execution_ready.pdf)。
+
+新增2张证据图，完整论文现为9页、9张图。生成四年12组Sobol设计，共15360行输入，按各年原检查点支持范围采样；配套真实模型调用、断点续算与检查程序通过10项解析/软件测试。2021距95%观测产量门槛只剩约0.86%的模型基准减产余量。
+
+本包没有新的真实模型响应或NSGA-III前沿。尚缺原Modified DI源码、2022阶段二原链及配套输出；不能将设计行数或软件测试当作已完成真实模型计算。
+
+## 2026-10-16 新增材料复核版本
 
 [打开最新版交付目录](2026-10-16/)：新增材料复核、确定性主线论文Word/PDF、7张图与表格、9.5MB更新包。正式真实模型运行仍待原始源码与2022原链。
