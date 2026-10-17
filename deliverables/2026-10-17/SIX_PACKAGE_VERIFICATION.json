@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-17",
+  "all_six_archives_rebuilt": true,
+  "phase2_2022_retained_rows": 58784,
+  "existing_7_arrays_unchanged": true,
+  "checkpoint_records": 20,
+  "central_values_verified": 32,
+  "software_tests": 18,
+  "preparation_tests": 10,
+  "real_model_new_calls": 0,
+  "archives": [
+    {
+      "path": "deliverables/URP_full_package.zip",
+      "bytes": 81658086,
+      "sha256": "b51b8955a324e5409b64dc97994173b9b6b44cd159e04e0d0530303eace92030",
+      "files": 219,
+      "CRC": "PASS"
+    },
+    {
+      "path": "deliverables/URP_run_results.zip",
+      "bytes": 58644008,
+      "sha256": "06df1abab5168e82b5843000e480547d5c7ac488b5fed91d5d47d31e1dac8f60",
+      "files": 122,
+      "CRC": "PASS"
+    },
+    {
+      "path": "deliverables/URP_figures.zip",
+      "bytes": 11186668,
+      "sha256": "49c17c85bbf2c3d70de546e44faf5a33649336c35fe35850e2f47e16d711d52e",
+      "files": 54,
+      "CRC": "PASS"
+    },
+    {
+      "path": "deliverables/2026-10-16/URP_update_20261016.zip",
+      "bytes": 29311481,
+      "sha256": "91f7e9092d81ee919ff439584210cda41fcfe49a407b342c5cfabe664b0077ac",
+      "files": 80,
+      "CRC": "PASS"
+    },
+    {
+      "path": "deliverables/2026-10-16-execution-ready/URP_execution_ready_20261016.zip",
+      "bytes": 47044221,
+      "sha256": "9825ea04f23fb4fdc21d7032450f7c32eff003bb455f31f95d76dedac625abda",
+      "files": 108,
+      "CRC": "PASS"
+    },
+    {
+      "path": "deliverables/2026-10-16-sobol-optimization/URP_Sobol_Optimization_Updated.zip",
+      "bytes": 22775217,
+      "sha256": "dbd40de080bd0f793273f7708b5efede3ecbafc7806a10d921b8d7097f78a050",
+      "files": 45,
+      "CRC": "PASS"
+    }
+  ]
+}

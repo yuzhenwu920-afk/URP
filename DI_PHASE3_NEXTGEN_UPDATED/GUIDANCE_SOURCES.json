@@ -10,5 +10,10 @@
   {
     "file": "URP_Paper_Alignment_Resolution_2026-10-15.zip",
     "sha256": "b396ec30bf5ffd9fd68522c991ace97add3c1175cb835e8f2788414f19040ced"
+  },
+  {
+    "file": "DI_2022_Phase2.zip",
+    "sha256": "68185f0020cad22bfad46a55ea276d7205cea553907eaf68f53906144a6dd264",
+    "role": "2026-10-17 true phase2 supplement"
   }
 ]

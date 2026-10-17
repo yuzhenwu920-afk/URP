@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-17",
+  "central_values_verified": 32,
+  "central_values_report_only": 0,
+  "verified_phase1_ensembles": 16,
+  "verified_phase2_ensembles": 4,
+  "raw_2022_phase2_present": true,
+  "phase2_2022_retained_rows": 58784,
+  "modified_DI_wrapper_present": true,
+  "original_modified_DI_implementation_present": false,
+  "reference_PDF_present": false,
+  "new_real_Sobol_executed": false,
+  "new_real_NSGAIII_executed": false,
+  "study_design": "deterministic main; conditional perturbations separately"
+}

@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED_NOT_REAL_MODEL_EXECUTED",
+  "status": "TRUE_2022_PHASE2_INTEGRATED_REAL_MODEL_STILL_MISSING",
   "cases": {
     "2019": {
       "support_bounds": {
@@ -78,7 +78,8 @@
         "water_balance_atol_mm": 1e-05,
         "baseline_atol": 1e-05,
         "baseline_rtol": 1e-05
-      }
+      },
+      "space_note": "declared common global physical range; not the annual MCMC prior density"
     },
     "2020": {
       "support_bounds": {
@@ -157,7 +158,8 @@
         "water_balance_atol_mm": 1e-05,
         "baseline_atol": 1e-05,
         "baseline_rtol": 1e-05
-      }
+      },
+      "space_note": "declared common global physical range; not the annual MCMC prior density"
     },
     "2021": {
       "support_bounds": {
@@ -236,7 +238,8 @@
         "water_balance_atol_mm": 1e-05,
         "baseline_atol": 1e-05,
         "baseline_rtol": 1e-05
-      }
+      },
+      "space_note": "declared common global physical range; not the annual MCMC prior density"
     },
     "2022": {
       "support_bounds": {
@@ -262,15 +265,15 @@
         ],
         "WP_early": [
           10.0,
-          22.0
+          40.0
         ],
         "WP_late": [
-          20.0,
-          38.0
+          10.0,
+          40.0
         ],
         "HI0": [
           0.35,
-          0.5
+          0.6
         ]
       },
       "central_params": {
@@ -283,18 +286,42 @@
         "WP_late": 31.49771355326593,
         "HI0": 0.4013188031858887
       },
-      "center_evidence": "phase1 verified; phase2 report only",
+      "center_evidence": "both phases checkpoint verified",
       "central_params_are_not_joint_posterior_draws": true,
       "WP_switch_date": "2022-07-05",
       "published_Y13_t_ha": 14.08,
       "absolute_95pct_yield_gate_t_ha": 13.376,
       "baseline_irrigation_mm": 404.84,
-      "baseline_expected": null,
+      "baseline_expected": {
+        "Y_13pct": 14.07778281807083,
+        "Y_dry": 12.247671051721621,
+        "Tr_mm": 529.9393430560071,
+        "Es_mm": 66.84529300867197,
+        "ET_mm": 596.7846360646791,
+        "MaxCC": 0.9172119084353839,
+        "Irrigation_mm": 404.84000000000003,
+        "Rain_mm": 151.38380608461688,
+        "CR_mm": 0.0,
+        "GwIn_mm": 0.0,
+        "Runoff_mm": 0.021579290515043172,
+        "DeepPerc_mm": 0.0,
+        "TileDrain_mm": 0.0,
+        "Profile_initial_mm": 464.4928032935075,
+        "Profile_final_mm": 423.9103940229315,
+        "Surface_initial_mm": 0.0,
+        "Surface_final_mm": 0.0,
+        "Water_balance_residual_mm": -1.304512053934559e-12,
+        "Max_daily_balance_residual_mm": 1.687538997430238e-13,
+        "B_t_ha": 30.376018477861276
+      },
       "acceptance": {
         "water_balance_atol_mm": 1e-05,
         "baseline_atol": 1e-05,
         "baseline_rtol": 1e-05
-      }
+      },
+      "space_note": "declared common global physical range; not the annual MCMC prior density",
+      "baseline_source": "source_data/conditional_mean_model.json; supplied original-model aggregate, not rerun"
     }
-  }
+  },
+  "date_updated": "2026-10-17"
 }

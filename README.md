@@ -1,5 +1,7 @@
 # URP
 
-[按三份新增文件修订的 Sobol 与 NSGA-III 工程](DI_PHASE3_NEXTGEN_UPDATED/)：固定年度MCMC中心点、独立全局范围Sobol、确定性双目标优化与候选条件扰动核验。
+2026-10-17：2022真实第二阶段已补齐并核验。四年32个中心点可追溯，统一样本文件现含8个分年度/阶段数组；新p2_2022为58784×3。MCMC未重跑。
 
-[下载与版本说明](deliverables/)。
+[六个更新压缩包](deliverables/2026-10-17/) · [最新Sobol与NSGA-III工程](DI_PHASE3_NEXTGEN_UPDATED/)。
+
+正式真实模型Sobol/优化仍未执行，原Modified DI实现尚未随衔接脚本提供。主分支不受交付分支更新影响。

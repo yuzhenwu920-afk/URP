@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-17",
+  "archive_sha256": "68185f0020cad22bfad46a55ea276d7205cea553907eaf68f53906144a6dd264",
+  "checkpoint_sha256": "d5b7dc3eac255c0dc54b9dafbf6f6bc23e627b63d0b19e28e67ba8e089b0977f",
+  "formal_shape": [
+    2000,
+    32,
+    3
+  ],
+  "smoke_included_in_statistics": false,
+  "burn_in": 163,
+  "retained_steps_per_walker": 1837,
+  "retained_correlated_rows": 58784,
+  "tau": [
+    30.394338160803024,
+    31.461505741497625,
+    32.580007228311715
+  ],
+  "acceptance": 0.647625,
+  "endpoint_position_and_logp_match": true,
+  "existing_7_arrays_unchanged": true,
+  "existing_array_hashes": {
+    "p1_2019": "24fe8dd2067a44e591b6f1b0a8f020dec0ea0f81464454029526c5b3477c92d3",
+    "p1_2020": "7c3342863a8482cdeeb20d281da810f8856b2706fad2edc15917d0ec37a820c7",
+    "p1_2021": "2a1363000c672561a390b5554ad185efac22ba7e6bcb14794a1c08a7ba33d55f",
+    "p1_2022": "dc20832ec264fb5a1ca3a4ec4a2c33e738772b552cf9550e678c311f50e93335",
+    "p2_2019": "538b0323e0cec2375ce56548e484d2ebc58a34f20dc55e809f992297934668eb",
+    "p2_2020": "3158eb66c7c8f7f33c904ca3e1cf1b3b663248ec1005e59861c1099d6cf60eae",
+    "p2_2021": "851267f1aea4699b65240c1b9db8befc44166a83426878b355d929d191c78d30"
+  },
+  "source_phase1_checkpoint_hashes_matched": 4,
+  "source_wrapper_hash_match": true,
+  "central_values_verified": 32,
+  "raw_phase2_groups_available": 4,
+  "conditional_mean_model_checked": [
+    {
+      "Scenario": "DI",
+      "Balance_mm": -1.3145040611561853e-12,
+      "Y13": 14.07778281807083,
+      "IWP_kg_m3": 3.4773695331663936
+    },
+    {
+      "Scenario": "Zero",
+      "Balance_mm": -1.3073986337985843e-12,
+      "Y13": 5.849580096233228,
+      "IWP_kg_m3": null
+    }
+  ],
+  "phase2_WPlate_HI0_correlation": -0.6445745741359413,
+  "source_state": "SAMPLING_COMPLETE_REVIEW_REQUIRED",
+  "inference_validated": false,
+  "joint_posterior": false,
+  "original_model_implementation_in_new_upload": false,
+  "new_real_model_Sobol_executed": false,
+  "new_real_model_NSGAIII_executed": false,
+  "individual_2022_CC_biomass_pairs_present": false,
+  "note": "Checkpoint and supplied model aggregates checked; no original model rerun or independent validation"
+}

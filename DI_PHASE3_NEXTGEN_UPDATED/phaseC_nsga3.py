@@ -18,7 +18,11 @@ from pymoo.util.nds.non_dominated_sorting import NonDominatedSorting
 from pymoo.indicators.hv import HV
 
 from model_adapter import (HERE,RealModel,load_study,baseline,write,csv,
-                           management,check_management_response,validate_space)
+                           management,check_management_response,validate_space,roundoff_tolerance)
+
+
+def hard_feasible(y,i,gate,cap):
+    return (y>=gate-roundoff_tolerance(gate)) & (i<=cap+roundoff_tolerance(cap))
 
 
 class DeterministicIrrigationProblem(Problem):
@@ -42,7 +46,10 @@ class DeterministicIrrigationProblem(Problem):
             r=self.response(x);y,i=r['Y_13pct'],r['Irrigation_mm']
             f.append([-y,i])
             # Scale for the optimizer; the hard physical gates remain exact.
-            g.append([(i-self.base_i)/self.base_i,(self.gate-y)/self.observed])
+            gi=i-self.base_i;gy=self.gate-y
+            if abs(gi)<=roundoff_tolerance(self.base_i):gi=0.
+            if abs(gy)<=roundoff_tolerance(self.gate):gy=0.
+            g.append([gi/self.base_i,gy/self.observed])
         out['F']=np.asarray(f);out['G']=np.asarray(g)
 
 
@@ -55,7 +62,7 @@ def nondominated(df):
 
 def epsilon_choices(df,observed,base_i,fraction=.95):
     if df.empty:return df.copy()
-    feasible=df[(df.Y13>=fraction*observed)&(df.Irrigation_mm<=base_i)].copy()
+    feasible=df[hard_feasible(df.Y13,df.Irrigation_mm,fraction*observed,base_i)].copy()
     front=nondominated(feasible)
     if front.empty:return front
     selected=front.head(3).copy()
@@ -99,7 +106,7 @@ def run_seed(problem,algorithm,seed,generations,population,folder):
     rows=[]
     for x,f in zip(np.atleast_2d(result.X),np.atleast_2d(result.F)):
         y,i=-float(f[0]),float(f[1])
-        if y<problem.gate or i>problem.base_i:continue
+        if not hard_feasible(y,i,problem.gate,problem.base_i):continue
         rows.append(dict(Year=problem.year,Algorithm=algorithm,Seed=seed,Y13=y,Irrigation_mm=i,
                          **dict(zip(problem.spec['names'],map(float,x)))))
     df=nondominated(pd.DataFrame(rows));csv(folder/'pareto_front.csv',df)
@@ -144,7 +151,7 @@ def run_year(model,study,year,out,generations=None,population=None,seeds=None,co
         x=np.array([row[k] for k in spec['names']]);r=problem.response(x)
         if not math.isclose(r['Y_13pct'],row.Y13,rel_tol=1e-8,abs_tol=1e-8) or not math.isclose(r['Irrigation_mm'],row.Irrigation_mm,abs_tol=1e-6):
             raise ValueError('Candidate replay changed; reset simulator state')
-        if r['Y_13pct']<problem.gate or r['Irrigation_mm']>problem.base_i:
+        if not hard_feasible(r['Y_13pct'],r['Irrigation_mm'],problem.gate,problem.base_i):
             raise ValueError('Replayed candidate violates the absolute production/irrigation gate')
         candidate_id=f'{year}_C{n+1}'
         replays.append(dict(Candidate_ID=candidate_id,Selection=row.Selection,Y13=r['Y_13pct'],

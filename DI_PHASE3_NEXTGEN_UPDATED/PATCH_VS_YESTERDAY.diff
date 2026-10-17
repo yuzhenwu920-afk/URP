@@ -634,7 +634,7 @@
 +if __name__=='__main__':main()
 --- yesterday/phaseC_nsga3.py
 +++ updated/phaseC_nsga3.py
-@@ -1,348 +1,182 @@
+@@ -1,348 +1,189 @@
 -# -*- coding: utf-8 -*-
 -"""阶段 C: NSGA-III "三代" 多目标遗传优化 -- 稳健灌溉制度优化.
 +"""Revised phase C: fixed central parameters, two objectives and hard gates.
@@ -706,7 +706,7 @@
 -N_PARTITIONS = 8              # Das-Dennis 参考点划分
 -N_GEN = 40
 +from model_adapter import (HERE,RealModel,load_study,baseline,write,csv,
-+                           management,check_management_response,validate_space)
++                           management,check_management_response,validate_space,roundoff_tolerance)
  
  
 -# ============================================================
@@ -714,16 +714,7 @@
 -# ============================================================
 -def load_posterior_samples(year: int, k: int = K_SAMPLES, seed: int = 7) -> list[dict]:
 -    """从该年 MCMC 后验抽 k 组 8 参数样本.
-+class DeterministicIrrigationProblem(Problem):
-+    def __init__(self,model,study,year,spec):
-+        self.model,self.study,self.year,self.spec=model,study,year,validate_space(spec)
-+        super().__init__(n_var=len(spec['names']),n_obj=2,n_ieq_constr=2,
-+                         xl=np.asarray(spec['lower'],float),xu=np.asarray(spec['upper'],float))
-+        self.params=study['_centers'][year]
-+        self.observed=float(study['observed_Y13'][str(year)])
-+        self.base_i=float(study['baseline_irrigation_mm'][str(year)])
-+        self.gate=study['yield_fraction']*self.observed
- 
+-
 -    phase1 与 phase2 为条件推断(phase2 条件于 phase1 保留均值), 这里按边际独立组合,
 -    属于"独立后验边际"近似, 用于不确定性传播的稳健性评估(不用于后验推断).
 -    """
@@ -741,6 +732,22 @@
 -            out.append(v)
 -        return out
 -    return [dict(A.REFERENCE_MEAN[year]) for _ in range(k)]
++def hard_feasible(y,i,gate,cap):
++    return (y>=gate-roundoff_tolerance(gate)) & (i<=cap+roundoff_tolerance(cap))
+ 
+ 
+-def irr_dates(year: int) -> list[str]:
+-    return [d for d, _ in A.YEAR_DATA[year]["irrigation"]]
++class DeterministicIrrigationProblem(Problem):
++    def __init__(self,model,study,year,spec):
++        self.model,self.study,self.year,self.spec=model,study,year,validate_space(spec)
++        super().__init__(n_var=len(spec['names']),n_obj=2,n_ieq_constr=2,
++                         xl=np.asarray(spec['lower'],float),xu=np.asarray(spec['upper'],float))
++        self.params=study['_centers'][year]
++        self.observed=float(study['observed_Y13'][str(year)])
++        self.base_i=float(study['baseline_irrigation_mm'][str(year)])
++        self.gate=study['yield_fraction']*self.observed
++
 +    def response(self,x):
 +        request=management(self.spec,x)
 +        r=self.model.simulate(self.params,self.year,request)
@@ -752,17 +759,11 @@
 +            r=self.response(x);y,i=r['Y_13pct'],r['Irrigation_mm']
 +            f.append([-y,i])
 +            # Scale for the optimizer; the hard physical gates remain exact.
-+            g.append([(i-self.base_i)/self.base_i,(self.gate-y)/self.observed])
++            gi=i-self.base_i;gy=self.gate-y
++            if abs(gi)<=roundoff_tolerance(self.base_i):gi=0.
++            if abs(gy)<=roundoff_tolerance(self.gate):gy=0.
++            g.append([gi/self.base_i,gy/self.observed])
 +        out['F']=np.asarray(f);out['G']=np.asarray(g)
- 
- 
--def irr_dates(year: int) -> list[str]:
--    return [d for d, _ in A.YEAR_DATA[year]["irrigation"]]
-+def nondominated(df):
-+    if df.empty:return df.copy()
-+    d=df.copy();objectives=np.column_stack([-d.Y13,d.Irrigation_mm])
-+    keep=NonDominatedSorting().do(objectives,only_non_dominated_front=True)
-+    return d.iloc[keep].drop_duplicates(subset=['Y13','Irrigation_mm']).sort_values(['Irrigation_mm','Y13'],ascending=[True,False]).reset_index(drop=True)
  
  
 -# ============================================================
@@ -793,14 +794,11 @@
 -            F[i, 2] = float(np.std(ys))         # 最小化产量波动 (稳健性)
 -        self.n_eval += len(X)
 -        out["F"] = F
-+def epsilon_choices(df,observed,base_i,fraction=.95):
++def nondominated(df):
 +    if df.empty:return df.copy()
-+    feasible=df[(df.Y13>=fraction*observed)&(df.Irrigation_mm<=base_i)].copy()
-+    front=nondominated(feasible)
-+    if front.empty:return front
-+    selected=front.head(3).copy()
-+    selected['Selection']=['epsilon_min_irrigation','adjacent_alternative_1','adjacent_alternative_2'][:len(selected)]
-+    return selected
++    d=df.copy();objectives=np.column_stack([-d.Y13,d.Irrigation_mm])
++    keep=NonDominatedSorting().do(objectives,only_non_dominated_front=True)
++    return d.iloc[keep].drop_duplicates(subset=['Y13','Irrigation_mm']).sort_values(['Irrigation_mm','Y13'],ascending=[True,False]).reset_index(drop=True)
  
  
 -# ============================================================
@@ -837,6 +835,26 @@
 -    df["Year"] = year
 -    return dict(df=df, F=F, X=X, samples=samples, dates=dates,
 -                n_eval=problem.n_eval, seconds=dt)
++def epsilon_choices(df,observed,base_i,fraction=.95):
++    if df.empty:return df.copy()
++    feasible=df[hard_feasible(df.Y13,df.Irrigation_mm,fraction*observed,base_i)].copy()
++    front=nondominated(feasible)
++    if front.empty:return front
++    selected=front.head(3).copy()
++    selected['Selection']=['epsilon_min_irrigation','adjacent_alternative_1','adjacent_alternative_2'][:len(selected)]
++    return selected
+ 
+ 
+-def pick_knee(df: pd.DataFrame, year: int) -> pd.Series:
+-    """从 Pareto 前沿选"膝点": 在产量不低于基准 95% 的约束下, 灌溉量最小的解.
+-
+-    若无解满足 95%, 退而求其次取产量最高解.
+-    """
+-    base = A.YEAR_DATA[year]["y13_obs"]
+-    feas = df[df.Y13_mean >= 0.95 * base]
+-    if len(feas):
+-        return feas.loc[feas.Irr_total_mm.idxmin()]
+-    return df.loc[df.Y13_mean.idxmax()]
 +def run_seed(problem,algorithm,seed,generations,population,folder):
 +    folder=Path(folder);folder.mkdir(parents=True,exist_ok=True)
 +    if (folder/'run.json').exists():
@@ -873,82 +891,13 @@
 +    rows=[]
 +    for x,f in zip(np.atleast_2d(result.X),np.atleast_2d(result.F)):
 +        y,i=-float(f[0]),float(f[1])
-+        if y<problem.gate or i>problem.base_i:continue
++        if not hard_feasible(y,i,problem.gate,problem.base_i):continue
 +        rows.append(dict(Year=problem.year,Algorithm=algorithm,Seed=seed,Y13=y,Irrigation_mm=i,
 +                         **dict(zip(problem.spec['names'],map(float,x)))))
 +    df=nondominated(pd.DataFrame(rows));csv(folder/'pareto_front.csv',df)
 +    write(folder/'run.json',{'status':'COMPLETE' if len(df) else 'NO_FEASIBLE_SOLUTION',
 +          'identity':identity,'evaluations':result.algorithm.evaluator.n_eval,'feasible_front_size':len(df)})
 +    return df,history
- 
- 
--def pick_knee(df: pd.DataFrame, year: int) -> pd.Series:
--    """从 Pareto 前沿选"膝点": 在产量不低于基准 95% 的约束下, 灌溉量最小的解.
--
--    若无解满足 95%, 退而求其次取产量最高解.
--    """
--    base = A.YEAR_DATA[year]["y13_obs"]
--    feas = df[df.Y13_mean >= 0.95 * base]
--    if len(feas):
--        return feas.loc[feas.Irr_total_mm.idxmin()]
--    return df.loc[df.Y13_mean.idxmax()]
-+def run_year(model,study,year,out,generations=None,population=None,seeds=None,compare=None):
-+    out=Path(out);out.mkdir(parents=True,exist_ok=True)
-+    base=baseline(model,study,year,out);spec=model.management_space(year)
-+    write(out/'decision_space.json',spec)
-+    cfg=study['optimization'];generations=generations or cfg['generations'];population=population or cfg['population']
-+    seeds=seeds or cfg['seeds'];compare=cfg['compare_nsga2'] if compare is None else compare
-+    problem=DeterministicIrrigationProblem(model,study,year,spec)
-+    fronts=[];histories=[]
-+    algorithms=['NSGA3','NSGA2'] if compare else ['NSGA3']
-+    for algorithm in algorithms:
-+        for seed in seeds:
-+            f,h=run_seed(problem,algorithm,seed,generations,population,out/f'{algorithm}_seed{seed}')
-+            if not f.empty:fronts.append(f)
-+            histories+=h
-+            print(f'Optimization {year} {algorithm} seed={seed}: {len(f)} feasible front points',flush=True)
-+    all_fronts=pd.concat(fronts,ignore_index=True) if fronts else pd.DataFrame()
-+    csv(out/'all_seed_fronts.csv',all_fronts);csv(out/'convergence_history.csv',histories)
-+    observed=problem.observed
-+    if all_fronts.empty:
-+        write(out/'optimization_summary.json',{'status':'NO_FEASIBLE_SOLUTION','year':year,'engine':model.identity,
-+              'recommendation':None,'no_high_yield_fallback':True});return pd.DataFrame()
-+    # Recommend from the NSGA-III union; report NSGA-II separately for comparison.
-+    main_front=nondominated(all_fronts[all_fronts.Algorithm=='NSGA3'])
-+    csv(out/'pareto_front.csv',main_front)
-+    comparison=[]
-+    for algorithm,g in all_fronts.groupby('Algorithm'):
-+        union=nondominated(g);norm=np.column_stack([-union.Y13/observed,union.Irrigation_mm/problem.base_i])
-+        comparison.append(dict(Algorithm=algorithm,Union_front_size=len(union),
-+                               Normalized_union_HV=float(HV(ref_point=np.array([0.,1.01]))(norm))))
-+    csv(out/'algorithm_comparison.csv',comparison)
-+    choices=epsilon_choices(main_front,observed,problem.base_i,study['yield_fraction'])
-+    replays=[]
-+    for n,row in choices.iterrows():
-+        x=np.array([row[k] for k in spec['names']]);r=problem.response(x)
-+        if not math.isclose(r['Y_13pct'],row.Y13,rel_tol=1e-8,abs_tol=1e-8) or not math.isclose(r['Irrigation_mm'],row.Irrigation_mm,abs_tol=1e-6):
-+            raise ValueError('Candidate replay changed; reset simulator state')
-+        if r['Y_13pct']<problem.gate or r['Irrigation_mm']>problem.base_i:
-+            raise ValueError('Replayed candidate violates the absolute production/irrigation gate')
-+        candidate_id=f'{year}_C{n+1}'
-+        replays.append(dict(Candidate_ID=candidate_id,Selection=row.Selection,Y13=r['Y_13pct'],
-+                     Irrigation_mm=r['Irrigation_mm'],Observed_Y13=observed,Model_baseline_Y13=base['Y_13pct'],
-+                     Yield_change_vs_observed_pct=100*(r['Y_13pct']/observed-1),
-+                     Yield_change_vs_model_pct=100*(r['Y_13pct']/base['Y_13pct']-1),
-+                     Water_saving_pct=100*(1-r['Irrigation_mm']/problem.base_i),
-+                     IWP_kg_m3=r['IWP_kg_m3'],ET_mm=r['ET_mm'],Tr_mm=r['Tr_mm'],Es_mm=r['Es_mm'],
-+                     Water_balance_residual_mm=r['Water_balance_residual_mm'],
-+                     **{k:float(row[k]) for k in spec['names']}))
-+        write(out/f'{candidate_id}_real_replay.json',{'params':problem.params,'management':management(spec,x),'output':r,'engine':model.identity})
-+    selected=csv(out/'epsilon_candidates.csv',replays)
-+    write(out/'optimization_summary.json',{'status':'CANDIDATES_REPLAYED' if len(selected) else 'NO_FEASIBLE_SOLUTION',
-+          'year':year,'engine':model.identity,'objectives':2,'fixed_central_params':True,'algorithms':algorithms,
-+          'generations':generations,'population':population,'seeds':seeds,'candidate_count':len(selected),
-+          'requested_alternatives':2,'available_alternatives':max(0,len(selected)-1),
-+          'selection':'epsilon minimum irrigation, not geometric knee','conditional_validation':'separate next step'})
-+    from plot_results import plot_optimization
-+    plot_optimization(all_fronts,pd.DataFrame(histories),selected,base,observed,out)
-+    return selected
  
  
 -def main():
@@ -1124,6 +1073,67 @@
 -          f"平均产量变化 {knee_df.Yield_change_pct.mean():+.2f}% , "
 -          f"平均灌溉水生产率提升 {knee_df.WP_gain_pct.mean():+.1f}%")
 -    print("\n阶段 C 完成 ✅")
++def run_year(model,study,year,out,generations=None,population=None,seeds=None,compare=None):
++    out=Path(out);out.mkdir(parents=True,exist_ok=True)
++    base=baseline(model,study,year,out);spec=model.management_space(year)
++    write(out/'decision_space.json',spec)
++    cfg=study['optimization'];generations=generations or cfg['generations'];population=population or cfg['population']
++    seeds=seeds or cfg['seeds'];compare=cfg['compare_nsga2'] if compare is None else compare
++    problem=DeterministicIrrigationProblem(model,study,year,spec)
++    fronts=[];histories=[]
++    algorithms=['NSGA3','NSGA2'] if compare else ['NSGA3']
++    for algorithm in algorithms:
++        for seed in seeds:
++            f,h=run_seed(problem,algorithm,seed,generations,population,out/f'{algorithm}_seed{seed}')
++            if not f.empty:fronts.append(f)
++            histories+=h
++            print(f'Optimization {year} {algorithm} seed={seed}: {len(f)} feasible front points',flush=True)
++    all_fronts=pd.concat(fronts,ignore_index=True) if fronts else pd.DataFrame()
++    csv(out/'all_seed_fronts.csv',all_fronts);csv(out/'convergence_history.csv',histories)
++    observed=problem.observed
++    if all_fronts.empty:
++        write(out/'optimization_summary.json',{'status':'NO_FEASIBLE_SOLUTION','year':year,'engine':model.identity,
++              'recommendation':None,'no_high_yield_fallback':True});return pd.DataFrame()
++    # Recommend from the NSGA-III union; report NSGA-II separately for comparison.
++    main_front=nondominated(all_fronts[all_fronts.Algorithm=='NSGA3'])
++    csv(out/'pareto_front.csv',main_front)
++    comparison=[]
++    for algorithm,g in all_fronts.groupby('Algorithm'):
++        union=nondominated(g);norm=np.column_stack([-union.Y13/observed,union.Irrigation_mm/problem.base_i])
++        comparison.append(dict(Algorithm=algorithm,Union_front_size=len(union),
++                               Normalized_union_HV=float(HV(ref_point=np.array([0.,1.01]))(norm))))
++    csv(out/'algorithm_comparison.csv',comparison)
++    choices=epsilon_choices(main_front,observed,problem.base_i,study['yield_fraction'])
++    replays=[]
++    for n,row in choices.iterrows():
++        x=np.array([row[k] for k in spec['names']]);r=problem.response(x)
++        if not math.isclose(r['Y_13pct'],row.Y13,rel_tol=1e-8,abs_tol=1e-8) or not math.isclose(r['Irrigation_mm'],row.Irrigation_mm,abs_tol=1e-6):
++            raise ValueError('Candidate replay changed; reset simulator state')
++        if not hard_feasible(r['Y_13pct'],r['Irrigation_mm'],problem.gate,problem.base_i):
++            raise ValueError('Replayed candidate violates the absolute production/irrigation gate')
++        candidate_id=f'{year}_C{n+1}'
++        replays.append(dict(Candidate_ID=candidate_id,Selection=row.Selection,Y13=r['Y_13pct'],
++                     Irrigation_mm=r['Irrigation_mm'],Observed_Y13=observed,Model_baseline_Y13=base['Y_13pct'],
++                     Yield_change_vs_observed_pct=100*(r['Y_13pct']/observed-1),
++                     Yield_change_vs_model_pct=100*(r['Y_13pct']/base['Y_13pct']-1),
++                     Water_saving_pct=100*(1-r['Irrigation_mm']/problem.base_i),
++                     IWP_kg_m3=r['IWP_kg_m3'],ET_mm=r['ET_mm'],Tr_mm=r['Tr_mm'],Es_mm=r['Es_mm'],
++                     Water_balance_residual_mm=r['Water_balance_residual_mm'],
++                     **{k:float(row[k]) for k in spec['names']}))
++        write(out/f'{candidate_id}_real_replay.json',{'params':problem.params,'management':management(spec,x),'output':r,'engine':model.identity})
++    selected=csv(out/'epsilon_candidates.csv',replays)
++    write(out/'optimization_summary.json',{'status':'CANDIDATES_REPLAYED' if len(selected) else 'NO_FEASIBLE_SOLUTION',
++          'year':year,'engine':model.identity,'objectives':2,'fixed_central_params':True,'algorithms':algorithms,
++          'generations':generations,'population':population,'seeds':seeds,'candidate_count':len(selected),
++          'requested_alternatives':2,'available_alternatives':max(0,len(selected)-1),
++          'selection':'epsilon minimum irrigation, not geometric knee','conditional_validation':'separate next step'})
++    from plot_results import plot_optimization
++    plot_optimization(all_fronts,pd.DataFrame(histories),selected,base,observed,out)
++    return selected
+ 
+ 
+-if __name__ == "__main__":
+-    main()
 +def main(study=None,model=None,out=None,years=None,generations=None,population=None,seeds=None,compare=None):
 +    study=study or load_study();model=model or RealModel(study)
 +    out=Path(out or HERE/'output_revised')/'optimization';out.mkdir(parents=True,exist_ok=True)
@@ -1134,8 +1144,6 @@
 +            from validate_candidates import validate_year
 +            validate_year(model,study,year,model.management_space(year),selected,target)
 +    return out
- 
- 
--if __name__ == "__main__":
--    main()
++
++
 +if __name__=='__main__':main()

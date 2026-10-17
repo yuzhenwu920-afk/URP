@@ -155,6 +155,23 @@ class RevisedWorkflowTests(unittest.TestCase):
         self.assertTrue(d.empty)
         self.assertEqual(read(self.root/'infeasible/run.json')['status'],'NO_FEASIBLE_SOLUTION')
 
+    def test_2022_cap_roundoff_is_not_a_physical_constraint_violation(self):
+        cap=404.84;provided=404.84000000000003
+        d=pd.DataFrame({'Y13':[14.07778281807083,14.07778281807083],
+                        'Irrigation_mm':[provided,cap+.0001]})
+        selected=C.epsilon_choices(d,14.08,cap)
+        self.assertEqual(len(selected),1)
+        self.assertEqual(selected.Irrigation_mm.iloc[0],provided)
+        base_model=self.model
+        class RoundoffFixture:
+            identity='SYNTHETIC_ROUNDOFF_TEST_ONLY'
+            def simulate(self,*args,**kwargs):
+                r=base_model.simulate(*args,**kwargs)
+                r['Irrigation_mm']=float(np.nextafter(cap,np.inf));return r
+        problem=C.DeterministicIrrigationProblem(RoundoffFixture(),self.study,2022,self.model.management_space(2022))
+        out={};problem._evaluate(np.array([[cap/4]*4]),out)
+        self.assertEqual(out['G'][0,0],0.)
+
     def test_epsilon_selects_lowest_feasible_and_two_neighbors(self):
         d=pd.DataFrame({'Y13':[14.,16.,16.5,17.,16.1],'Irrigation_mm':[100.,250.,300.,350.,310.]})
         selected=C.epsilon_choices(d,16.55,445.27)
@@ -176,15 +193,34 @@ class RevisedWorkflowTests(unittest.TestCase):
         self.assertFalse(missing);self.assertEqual(set(summary.Group),{'phase1_conditional','phase2_conditional'})
         self.assertTrue((summary.N==128).all())
 
-    def test_groups_preserve_rows_and_do_not_invent_2022_phase2(self):
+    def test_2022_groups_and_local95_use_new_real_samples(self):
         groups,missing=conditional_groups(self.study,2022,128,901)
-        self.assertEqual(missing,['p2_2022']);self.assertEqual(list(groups),['phase1_conditional'])
-        with self.assertRaises(ValueError):B.make_problem(self.study,2022,'local95')
-        groups,_=conditional_groups(self.study,2019,128,901)
+        self.assertEqual(missing,[])
+        self.assertEqual(set(groups),{'phase1_conditional','phase2_conditional'})
+        problem=B.make_problem(self.study,2022,'local95')
         d=groups['phase2_conditional'];first=d['params'][0]
         with np.load(HERE/self.study['phase_samples'],allow_pickle=False) as z:
-            np.testing.assert_array_equal([first[k] for k in NAMES[5:]],z['p2_2019'][d['source_indices'][0]])
-        self.assertEqual({k:first[k] for k in NAMES[:5]},{k:self.study['_centers'][2019][k] for k in NAMES[:5]})
+            np.testing.assert_array_equal([first[k] for k in NAMES[5:]],z['p2_2022'][d['source_indices'][0]])
+            np.testing.assert_allclose(np.array(problem['bounds'])[5:],np.quantile(z['p2_2022'],[.025,.975],axis=0).T)
+        self.assertEqual({k:first[k] for k in NAMES[:5]},{k:self.study['_centers'][2022][k] for k in NAMES[:5]})
+
+    def test_missing_group_is_reported_without_synthetic_fallback(self):
+        with np.load(HERE/self.study['phase_samples'],allow_pickle=False) as z:
+            np.savez_compressed(self.root/'missing.npz',p1_2022=z['p1_2022'])
+        altered=copy.deepcopy(self.study);altered['_root']=str(self.root);altered['phase_samples']='missing.npz'
+        groups,missing=conditional_groups(altered,2022,128,901)
+        self.assertEqual(missing,['p2_2022']);self.assertEqual(list(groups),['phase1_conditional'])
+        with self.assertRaises(ValueError):B.make_problem(altered,2022,'local95')
+
+    def test_new_2022_frozen_rows_equal_formal_chain_after_burn(self):
+        source=HERE/self.study['phase2_2022_checkpoint']
+        with np.load(source,allow_pickle=False) as raw,np.load(HERE/self.study['phase_samples'],allow_pickle=False) as combined:
+            self.assertEqual(raw['history'].shape,(2000,32,3))
+            np.testing.assert_array_equal(combined['p2_2022'],raw['history'][163:].reshape(-1,3))
+            self.assertEqual(combined['p2_2022'].shape,(58784,3))
+        production=load_study()
+        self.assertEqual(production['baseline_reference']['2022']['atol'],1e-5)
+        self.assertAlmostEqual(production['baseline_reference']['2022']['Y_13pct'],14.07778281807083)
 
     def test_entrypoint_stops_without_real_model_and_never_runs_mcmc(self):
         out=self.root/'blocked'

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "archives": [
+    {
+      "archive": "URP_full_package.zip",
+      "sample_files": 2,
+      "papers": [
+        {
+          "file": "URP_review/artifacts/URP_论文框架_含数据与图.pdf",
+          "pages": 9
+        }
+      ]
+    },
+    {
+      "archive": "URP_run_results.zip",
+      "sample_files": 1,
+      "papers": [
+        {
+          "file": "URP_run_results/artifacts/URP_论文框架_含数据与图.pdf",
+          "pages": 9
+        }
+      ]
+    },
+    {
+      "archive": "URP_figures.zip",
+      "sample_files": 0,
+      "papers": []
+    },
+    {
+      "archive": "URP_update_20261016.zip",
+      "sample_files": 0,
+      "papers": [
+        {
+          "file": "URP_update_20261016/URP_20261016_论文框架_确定性主线.pdf",
+          "pages": 9
+        }
+      ]
+    },
+    {
+      "archive": "URP_execution_ready_20261016.zip",
+      "sample_files": 1,
+      "papers": [
+        {
+          "file": "URP_execution_ready_20261016/paper_framework_execution_ready.pdf",
+          "pages": 9
+        }
+      ]
+    },
+    {
+      "archive": "URP_Sobol_Optimization_Updated.zip",
+      "sample_files": 1,
+      "papers": []
+    }
+  ],
+  "2022_conditional_groups": 2,
+  "draws_per_group": 128,
+  "old_seven_array_digests": "unchanged",
+  "formal_checkpoint_and_retained_array": "exact match",
+  "source_bundle_matches_public_code": true
+}

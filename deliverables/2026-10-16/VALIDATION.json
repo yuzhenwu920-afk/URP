@@ -1,14 +1,53 @@
 {
-  "status": "PASS",
-  "checks": {
-    "29_verified_3_report_only": true,
-    "integer_truncation": true,
-    "7_verified_groups_1_pending": true,
-    "8_CC_source_records": true,
-    "7_PNG_7_PDF": true,
-    "PDF_7_images": true,
-    "Word_7_images": true,
-    "no_fabricated_formal_runs": true
+  "date": "2026-10-17",
+  "phase2_2022_present": true,
+  "phase2_2022_formal_shape": [
+    2000,
+    32,
+    3
+  ],
+  "phase2_2022_retained_rows": 58784,
+  "central_values_verified": 32,
+  "verified_checkpoint_records": 20,
+  "existing_7_arrays_unchanged": true,
+  "combined_arrays": {
+    "p1_2019": [
+      205440,
+      5
+    ],
+    "p1_2020": [
+      208768,
+      5
+    ],
+    "p1_2021": [
+      211584,
+      5
+    ],
+    "p1_2022": [
+      215424,
+      5
+    ],
+    "p2_2019": [
+      58464,
+      3
+    ],
+    "p2_2020": [
+      55616,
+      3
+    ],
+    "p2_2021": [
+      56352,
+      3
+    ],
+    "p2_2022": [
+      58784,
+      3
+    ]
   },
-  "paper_pages": 7
+  "new_model_runs": 0,
+  "new_real_Sobol_executed": false,
+  "new_real_NSGAIII_executed": false,
+  "modified_DI_source_present": false,
+  "new_wrapper_present": true,
+  "smoke_in_statistics": false
 }

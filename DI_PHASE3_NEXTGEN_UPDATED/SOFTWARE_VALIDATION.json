@@ -1,31 +1,24 @@
 {
-  "scope": "Sobol and optimization software checks; no crop model run",
-  "tests_run": 15,
+  "date": "2026-10-17",
+  "scope": "analytic/software regression; real crop model not run",
+  "tests_run": 18,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "passed": true,
-  "python": "3.12.14",
   "versions": {
-    "numpy": "2.5.4",
-    "pandas": "3.0.6",
-    "scipy": "1.18.1",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
     "SALib": "1.5.2",
     "pymoo": "0.6.2"
   },
-  "analytic_Sobol_benchmark": "Ishigami, N4096, known S1/ST",
-  "synthetic_optimization_check": {
-    "population": 20,
-    "generations": 10,
-    "seeds": 5,
-    "algorithms": [
-      "NSGA3",
-      "NSGA2"
-    ],
-    "not_a_crop_model_result": true
-  },
-  "MCMC_rerun": false,
-  "real_Sobol_executed": false,
-  "real_NSGAIII_executed": false,
-  "details": "test_actual_event_sum_and_dates_are_checked (test_revised_workflow.RevisedWorkflowTests.test_actual_event_sum_and_dates_are_checked) ... ok\ntest_constant_and_incomplete_sobol_responses (test_revised_workflow.RevisedWorkflowTests.test_constant_and_incomplete_sobol_responses) ... ok\ntest_design_response_resume_and_parameter_mismatch (test_revised_workflow.RevisedWorkflowTests.test_design_response_resume_and_parameter_mismatch) ... ok\ntest_entrypoint_stops_without_real_model_and_never_runs_mcmc (test_revised_workflow.RevisedWorkflowTests.test_entrypoint_stops_without_real_model_and_never_runs_mcmc) ... ok\ntest_epsilon_selects_lowest_feasible_and_two_neighbors (test_revised_workflow.RevisedWorkflowTests.test_epsilon_selects_lowest_feasible_and_two_neighbors) ... ok\ntest_failed_model_point_is_recorded_not_imputed (test_revised_workflow.RevisedWorkflowTests.test_failed_model_point_is_recorded_not_imputed) ... ok\ntest_formal_defaults_follow_guidance (test_revised_workflow.RevisedWorkflowTests.test_formal_defaults_follow_guidance) ... ok\ntest_groups_preserve_rows_and_do_not_invent_2022_phase2 (test_revised_workflow.RevisedWorkflowTests.test_groups_preserve_rows_and_do_not_invent_2022_phase2) ... ok\ntest_ishigami_known_sobol_indices (test_revised_workflow.RevisedWorkflowTests.test_ishigami_known_sobol_indices) ... ok\ntest_multiseed_optimization_replay_and_conditional_validation (test_revised_workflow.RevisedWorkflowTests.test_multiseed_optimization_replay_and_conditional_validation) ... ok\ntest_no_feasible_solution_has_no_high_yield_fallback (test_revised_workflow.RevisedWorkflowTests.test_no_feasible_solution_has_no_high_yield_fallback) ... ok\ntest_physical_and_unit_failures_are_not_ignored (test_revised_workflow.RevisedWorkflowTests.test_physical_and_unit_failures_are_not_ignored) ... ok\ntest_rank_gate_requires_all_scrambles_and_narrow_intervals (test_revised_workflow.RevisedWorkflowTests.test_rank_gate_requires_all_scrambles_and_narrow_intervals) ... ok\ntest_smt_definition_and_stage_dates_required (test_revised_workflow.RevisedWorkflowTests.test_smt_definition_and_stage_dates_required) ... ok\ntest_two_objectives_and_absolute_observed_gate (test_revised_workflow.RevisedWorkflowTests.test_two_objectives_and_absolute_observed_gate) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 4.580s\n\nOK\n"
+  "python": "3.12.14",
+  "real_2022_phase2_rows": 58784,
+  "phase2_2022_local95_and_conditional_groups_checked": true,
+  "hard_gate_float_roundoff_checked": true,
+  "existing_seven_arrays_unchanged": true,
+  "real_model_Sobol_executed": false,
+  "real_model_NSGAIII_executed": false,
+  "details": "test_2022_cap_roundoff_is_not_a_physical_constraint_violation (test_revised_workflow.RevisedWorkflowTests.test_2022_cap_roundoff_is_not_a_physical_constraint_violation) ... ok\ntest_2022_groups_and_local95_use_new_real_samples (test_revised_workflow.RevisedWorkflowTests.test_2022_groups_and_local95_use_new_real_samples) ... ok\ntest_actual_event_sum_and_dates_are_checked (test_revised_workflow.RevisedWorkflowTests.test_actual_event_sum_and_dates_are_checked) ... ok\ntest_constant_and_incomplete_sobol_responses (test_revised_workflow.RevisedWorkflowTests.test_constant_and_incomplete_sobol_responses) ... ok\ntest_design_response_resume_and_parameter_mismatch (test_revised_workflow.RevisedWorkflowTests.test_design_response_resume_and_parameter_mismatch) ... ok\ntest_entrypoint_stops_without_real_model_and_never_runs_mcmc (test_revised_workflow.RevisedWorkflowTests.test_entrypoint_stops_without_real_model_and_never_runs_mcmc) ... ok\ntest_epsilon_selects_lowest_feasible_and_two_neighbors (test_revised_workflow.RevisedWorkflowTests.test_epsilon_selects_lowest_feasible_and_two_neighbors) ... ok\ntest_failed_model_point_is_recorded_not_imputed (test_revised_workflow.RevisedWorkflowTests.test_failed_model_point_is_recorded_not_imputed) ... ok\ntest_formal_defaults_follow_guidance (test_revised_workflow.RevisedWorkflowTests.test_formal_defaults_follow_guidance) ... ok\ntest_ishigami_known_sobol_indices (test_revised_workflow.RevisedWorkflowTests.test_ishigami_known_sobol_indices) ... ok\ntest_missing_group_is_reported_without_synthetic_fallback (test_revised_workflow.RevisedWorkflowTests.test_missing_group_is_reported_without_synthetic_fallback) ... ok\ntest_multiseed_optimization_replay_and_conditional_validation (test_revised_workflow.RevisedWorkflowTests.test_multiseed_optimization_replay_and_conditional_validation) ... ok\ntest_new_2022_frozen_rows_equal_formal_chain_after_burn (test_revised_workflow.RevisedWorkflowTests.test_new_2022_frozen_rows_equal_formal_chain_after_burn) ... ok\ntest_no_feasible_solution_has_no_high_yield_fallback (test_revised_workflow.RevisedWorkflowTests.test_no_feasible_solution_has_no_high_yield_fallback) ... ok\ntest_physical_and_unit_failures_are_not_ignored (test_revised_workflow.RevisedWorkflowTests.test_physical_and_unit_failures_are_not_ignored) ... ok\ntest_rank_gate_requires_all_scrambles_and_narrow_intervals (test_revised_workflow.RevisedWorkflowTests.test_rank_gate_requires_all_scrambles_and_narrow_intervals) ... ok\ntest_smt_definition_and_stage_dates_required (test_revised_workflow.RevisedWorkflowTests.test_smt_definition_and_stage_dates_required) ... ok\ntest_two_objectives_and_absolute_observed_gate (test_revised_workflow.RevisedWorkflowTests.test_two_objectives_and_absolute_observed_gate) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 4.058s\n\nOK\n"
 }

@@ -109,12 +109,13 @@
       "evidence": "existing original model output"
     },
     "2022": {
-      "Y_13pct": 14.08,
-      "Tr_mm": 529.94,
-      "Es_mm": 66.85,
-      "ET_mm": 596.78,
-      "atol": 0.02,
-      "evidence": "rounded supplemental Word table; not independently replayed"
+      "Y_13pct": 14.07778281807083,
+      "Tr_mm": 529.9393430560071,
+      "Es_mm": 66.84529300867197,
+      "ET_mm": 596.7846360646791,
+      "atol": 1e-05,
+      "evidence": "2022 true phase2 conditional_mean_model.json; aggregate accounting checked; model not rerun"
     }
-  }
+  },
+  "phase2_2022_checkpoint": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/checkpoints/biomass_yield/ensemble_1.npz"
 }

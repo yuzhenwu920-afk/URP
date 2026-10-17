@@ -1,4 +1,4 @@
-# Runner tested with Python 3.12. Original crop model has separate dependencies.
-numpy==2.5.4
-scipy==1.18.1
+# Analysis-only versions verified 2026-10-17, original crop engine dependencies separate.
+numpy==2.3.5
+scipy==1.17.0
 SALib==1.5.2

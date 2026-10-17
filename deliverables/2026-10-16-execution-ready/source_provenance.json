@@ -68,7 +68,8 @@
     },
     "source_code_present_in_readable_materials": false,
     "matched_summary": "②原始资料包_2019/01_MCMC结果包/extracted/phase2_and_review_results/summary.json",
-    "matched_summary_sha256": "10f3baf9ae5fedaf35e2c8014b4ecdd2e4002732bfcc6b85166f8753862aa9e2"
+    "matched_summary_sha256": "10f3baf9ae5fedaf35e2c8014b4ecdd2e4002732bfcc6b85166f8753862aa9e2",
+    "formal_sampling_space": "common global physical ranges in study_config; annual supports are descriptive only"
   },
   {
     "year": 2020,
@@ -139,7 +140,8 @@
     },
     "source_code_present_in_readable_materials": false,
     "matched_summary": "②原始资料包_2020/01_MCMC结果包/extracted/phase2_and_review_results/summary.json",
-    "matched_summary_sha256": "99687b6df10954838ef769024bb3a319b40489977ed06f1c95b8edab1774e6f2"
+    "matched_summary_sha256": "99687b6df10954838ef769024bb3a319b40489977ed06f1c95b8edab1774e6f2",
+    "formal_sampling_space": "common global physical ranges in study_config; annual supports are descriptive only"
   },
   {
     "year": 2021,
@@ -210,7 +212,8 @@
     },
     "source_code_present_in_readable_materials": false,
     "matched_summary": "②原始资料包_2021/01_MCMC结果包/extracted/DI_2021_COMPLETE_2000_CHAIN_REVIEW_PACKAGE/phase2_and_review_results/summary.json",
-    "matched_summary_sha256": "4828832a97c23314d6cebbe66946704bc776b1098a25571096b45f70e83f7142"
+    "matched_summary_sha256": "4828832a97c23314d6cebbe66946704bc776b1098a25571096b45f70e83f7142",
+    "formal_sampling_space": "common global physical ranges in study_config; annual supports are descriptive only"
   },
   {
     "year": 2022,
@@ -284,6 +287,11 @@
         0.5
       ]
     },
-    "source_code_present_in_readable_materials": false
+    "source_code_present_in_readable_materials": false,
+    "formal_sampling_space": "common global physical ranges in study_config; annual supports are descriptive only",
+    "phase2_present": true,
+    "phase2_source": "source_data/phase2_2022_formal_checkpoint.npz",
+    "phase2_checkpoint_sha256": "d5b7dc3eac255c0dc54b9dafbf6f6bc23e627b63d0b19e28e67ba8e089b0977f",
+    "phase2_retained_rows": 58784
   }
 ]

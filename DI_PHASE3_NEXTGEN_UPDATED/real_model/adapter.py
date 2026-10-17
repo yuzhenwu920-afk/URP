@@ -8,7 +8,7 @@ def provenance():
                       path: 'relative/to/this/adapter', sha256: 'actual hash'}.
     Include all actual dependencies and model versions, not just one example.
     """
-    raise NotImplementedError('当前附件未包含原Modified DI源码；须接入冻结原模型，不能使用旧代理代替')
+    raise NotImplementedError('2022阶段二包装器和真链已接入；仍缺其导入的原DI_2022_MCMC_ONE_CLICK.py及data，真实模型未接入')
 
 
 def simulate(*,params,year,management=None):

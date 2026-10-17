@@ -46,6 +46,11 @@ def versions():
     return {p:importlib.metadata.version(p) for p in ['numpy','pandas','scipy','SALib','pymoo']}
 
 
+def roundoff_tolerance(bound):
+    """Machine-arithmetic allowance, not agronomic feasibility slack."""
+    return 64*np.finfo(float).eps*max(1.,abs(float(bound)))
+
+
 def load_study(path=HERE/'project_config.json'):
     path=Path(path).resolve();config=read(path)
     config['_root']=str(path.parent);config['_config_sha256']=sha(path)

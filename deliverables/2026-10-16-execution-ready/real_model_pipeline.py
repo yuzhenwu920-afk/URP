@@ -72,7 +72,7 @@ def prepare(config, target, n=128, seeds=(101, 202, 303)):
     settings = read(config)
     manifest = {"status": "DESIGN_ONLY_NO_MODEL_RESPONSES", "config_sha256": sha(config),
                 "versions": versions(), "N": n, "D": 8, "calc_second_order": False,
-                "distribution": "independent_uniform_on_annual_checkpoint_supports",
+                "distribution": "independent_uniform_on_declared_common_global_physical_ranges",
                 "not_MCMC_prior_or_posterior": True, "runs": []}
     for year, case in settings["cases"].items():
         p = problem(case)
@@ -305,7 +305,7 @@ def analyze(config, designs, year, seed, journal, output):
     p = problem(case)
     result = {"status": "SOBOL_ESTIMATED_NO_FORCED_RANKING", "year": year, "seed": seed,
               "N": design["N"], "response_sha256": sha(journal), "fingerprint": fingerprint,
-              "space": "independent_uniform_supports_not_MCMC_posterior",
+              "space": "common_global_independent_uniform_physical_ranges_not_MCMC_posterior",
               "confidence_interval_note": "bootstrap halfwidths conditional on one design; compare scrambles and N",
               "outputs": {name: sensitivity(p, [rows[i][name] for i in range(len(x))], seed + 8000)
                           for name in OUTPUTS}}

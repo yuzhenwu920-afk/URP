@@ -5,39 +5,104 @@
     "sha256": "5d8200adef240285bf326bc7b5c467c408f21a764c5d049338c0cc3296287cf2"
   },
   {
+    "file": "ANALYSIS_ENVIRONMENT.json",
+    "bytes": 242,
+    "sha256": "34720db8f603eb8983691f0a29328e86026c66c1df1525c5525353f62d5ca69d"
+  },
+  {
     "file": "DI_PHASE3_ONE_CLICK.py",
     "bytes": 4854,
     "sha256": "1395f0b244572de691583170f5b9ff17e5079e3fdca27d6c572ec1dd80f3bb67"
   },
   {
     "file": "FROZEN_INPUTS_MANIFEST.json",
-    "bytes": 2752,
-    "sha256": "3be5702f33f575ca898e84b2ba1aff3b26341a0a0e9ab3b22fee48a57b55023d"
+    "bytes": 5019,
+    "sha256": "c2cc415d4dd8e96f45a4aecd06f0dd5b0d6199886acb7390bf1c9ee23ae27799"
   },
   {
     "file": "GUIDANCE_SOURCES.json",
-    "bytes": 447,
-    "sha256": "4ea70391de4e8d68b31a749869ab45d066621ca94d1acba445cea2022f31e976"
+    "bytes": 620,
+    "sha256": "2b23997ce21428f39292535a9507414a1d83175d9eb1266a36bc97c7553575bf"
   },
   {
     "file": "ORIGINAL_CODE_SHA256.json",
     "bytes": 669,
-    "sha256": "901ea8c142d17aa8233babd24f56494bece9e4b35d45baaedd659c527f86ec49"
+    "sha256": "11f6cd211ae07c0682d6dd34105edd301d67d8b1884123957384c715b97a30ff"
   },
   {
     "file": "PATCH_VS_YESTERDAY.diff",
-    "bytes": 58375,
-    "sha256": "545b598fa91da3be7596f33ea374df890f708365052839cce77ea5287574fc8f"
+    "bytes": 58702,
+    "sha256": "3aab65684e8248fbed9b06ebeefd5a0c414a261d3c33bb5698f20dac59d456de"
   },
   {
     "file": "README.md",
-    "bytes": 6822,
-    "sha256": "d36b17f0a42840557f39324f4c7bc217e79808ea761d946c209e603f0b39cce5"
+    "bytes": 4020,
+    "sha256": "c6ceb952ba780596180f0659ca0cdab7c0f5dc85e3483f4392e9dedf82b542d2"
+  },
+  {
+    "file": "RUN_READINESS.json",
+    "bytes": 517,
+    "sha256": "ea6f81e625851587ed28009b60b3d00b76ae34d23a5440ebdf8446ad44bc41df"
   },
   {
     "file": "SOFTWARE_VALIDATION.json",
-    "bytes": 3065,
-    "sha256": "e78f91ad2f6f48547147272b9fcf6afb54a0d38ec2587f3d7d308fbedfe38b14"
+    "bytes": 3500,
+    "sha256": "de829ba5e1c74204137448ecc37d24accf7d38f37b0c18a34b8ff67529bf9d8f"
+  },
+  {
+    "file": "UPDATE_20261017.md",
+    "bytes": 181,
+    "sha256": "990362034daf71d13e26ba514bf94007b8a1978050e8642cefb7a1bd57acdf59"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/DI_2022_PHASE2_ONE_CLICK.py",
+    "bytes": 9006,
+    "sha256": "fb2dbd8190b9a081450a9ffdb7c59b039fded431267082b78ec87361269a0586"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/checkpoints/biomass_yield/ensemble_1.npz",
+    "bytes": 1311794,
+    "sha256": "d5b7dc3eac255c0dc54b9dafbf6f6bc23e627b63d0b19e28e67ba8e089b0977f"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/conditional_mean_model.json",
+    "bytes": 2198,
+    "sha256": "6d4239beb10fc1d5f52c3eacb5a7b37d17a2ca7f9f8f16b89d0282477488a86e"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/conditional_parameter_summary.json",
+    "bytes": 606,
+    "sha256": "91cf466b890aa193f21c42767957c740fb7076fcbef7fea55962e27a2a636c98"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/conditional_phase2_diagnostics.png",
+    "bytes": 711158,
+    "sha256": "9468e713ccce539329de82cddbb3747b10a5dddb99bd8c4a68b5bda5e1deb7e5"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/phase1_mean_handoff.json",
+    "bytes": 11092,
+    "sha256": "e8628f8c0b1fc7a1d0df0ebccef6f2e382c90c6511efd8ce9c4cbc28db761e76"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/run_status.json",
+    "bytes": 933,
+    "sha256": "ad5b0af2718617b0c50b73af5a69013baa039971c444f5942116e3e53c046346"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2/使用说明.md",
+    "bytes": 2677,
+    "sha256": "bfbeef73b2626c5cd1a65a0c723bbac5949d5dfbd55e71ce9fc4fd703aa92e97"
+  },
+  {
+    "file": "frozen_inputs/DI_2022_Phase2.zip",
+    "bytes": 2042193,
+    "sha256": "68185f0020cad22bfad46a55ea276d7205cea553907eaf68f53906144a6dd264"
+  },
+  {
+    "file": "frozen_inputs/PHASE2_2022_VALIDATION.json",
+    "bytes": 2164,
+    "sha256": "810691da7b8a902c438f85c7a4d0da303711556ede38b450f88bbeae33e008e3"
   },
   {
     "file": "frozen_inputs/combined_central_parameter_vectors.csv",
@@ -96,13 +161,13 @@
   },
   {
     "file": "frozen_inputs/verified_phase_specific_draws.npz",
-    "bytes": 17702727,
-    "sha256": "82db2e1f5c363c6ef02a3ae99208d22d2e135ec949bae0a5160c44e21be9c8a5"
+    "bytes": 18581933,
+    "sha256": "7688628c8936b88935665471306f456375ddee2d13d4b343c43f979e0f5334e2"
   },
   {
     "file": "model_adapter.py",
-    "bytes": 9955,
-    "sha256": "516081f3253cdba9b5c5f57aa283b4aa78bc9a04a115258fd4210977280ab774"
+    "bytes": 10121,
+    "sha256": "75b273d6f27fa97d1470ed47c809b112c2a1c03be1bbb5a2093350a6ee2e3b43"
   },
   {
     "file": "phaseB_sobol.py",
@@ -111,8 +176,8 @@
   },
   {
     "file": "phaseC_nsga3.py",
-    "bytes": 10537,
-    "sha256": "6d8ec51daa98e198c99deb5cf478a61bc77b6ddf297a10ff71359a0ebd824d80"
+    "bytes": 10855,
+    "sha256": "67b33085bca4cda46f776e923518fa047e003c61868d95484a1877bd661a0b6e"
   },
   {
     "file": "plot_results.py",
@@ -121,32 +186,32 @@
   },
   {
     "file": "project_config.json",
-    "bytes": 2488,
-    "sha256": "48e97a130451ba864a06269eabea1abafa36204d78fe33c6efe7149854c9d12d"
+    "bytes": 2695,
+    "sha256": "e5928e230a8305b8cbbf27c62d0446e14eea5d67ea54e9872e5ed02b9f64c39a"
   },
   {
     "file": "real_model/adapter.py",
-    "bytes": 1592,
-    "sha256": "d14b5c4b67598edf6ce4d0cb20ff4d5cf435e5dd15725f49e6dcbe107d34aab3"
+    "bytes": 1614,
+    "sha256": "30968112aa4b84b4f17fd41d564827cda72b0b691fe3f298e5d71c9b7fcd9839"
   },
   {
     "file": "requirements.txt",
-    "bytes": 181,
-    "sha256": "7b59a08c64ffbb61dd1a4b0fcfd63e34ee050ea2d4ce9abcbad2591a0c6e79bb"
+    "bytes": 180,
+    "sha256": "24fe4e558e8e7f778edf74e8c8c7e44f8aa7bed80ddbf621696072d53b87f4d5"
   },
   {
     "file": "tests/test_revised_workflow.py",
-    "bytes": 11979,
-    "sha256": "15ada55f7bfa7c75fe77e95ef80037a7b013b09a18efc4d49f235f1410edceb5"
+    "bytes": 14237,
+    "sha256": "3a93292b707315152aa64c7aff237fd596e2c7e0465fd5f8107db182f35480e0"
   },
   {
     "file": "validate_candidates.py",
-    "bytes": 4983,
-    "sha256": "fd54719bbac5c25b53525506bd24151414eaaa33cb2754de96b894dc72025c7d"
+    "bytes": 5065,
+    "sha256": "df551289f9ab6dda258357928bd4d39fcb0d9009815216e987620a67037f685f"
   },
   {
     "file": "按三份文件的改动说明.md",
-    "bytes": 3241,
-    "sha256": "07029852607248f3ffd7122a8849ea15efa15e708f7904f697c28e86578320ce"
+    "bytes": 3513,
+    "sha256": "32f21acdc80e586c76135a054579f724a0fa8039a93c803fa690280cadf35543"
   }
 ]

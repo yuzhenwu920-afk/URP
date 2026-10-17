@@ -1,6 +1,6 @@
 {
   "status": "PREPARATION_VERIFIED_REAL_MODEL_BLOCKED",
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "software_tests_passed": 10,
   "design_groups": 12,
   "design_rows": 15360,
@@ -10,12 +10,12 @@
   "N128_prefix_of_N512_checked": true,
   "paper_pages": 9,
   "paper_embedded_figures": 9,
-  "new_figure_pairs": 2,
-  "previous_figure_pairs_retained": 7,
+  "current_figure_pairs": 23,
   "real_model_new_calls": 0,
   "real_model_Sobol_executed": false,
   "real_model_NSGAIII_executed": false,
   "missing_model_source": true,
-  "missing_2022_phase2_checkpoint": true,
+  "missing_2022_phase2_checkpoint": false,
+  "phase2_2022_retained_rows": 58784,
   "reference_PDF_absent": true
 }

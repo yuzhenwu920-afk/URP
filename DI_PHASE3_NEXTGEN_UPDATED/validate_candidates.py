@@ -3,7 +3,7 @@ from pathlib import Path
 import math
 import numpy as np
 import pandas as pd
-from model_adapter import NAMES,OUTPUTS,management,check_management_response,csv,write
+from model_adapter import NAMES,OUTPUTS,management,check_management_response,csv,write,roundoff_tolerance
 
 
 def conditional_groups(study,year,k,seed):
@@ -57,7 +57,7 @@ def validate_year(model,study,year,spec,candidates,out):
                          Mean_Tr_mm=float(np.mean([r['Tr_mm'] for r in outputs])),
                          Mean_Es_mm=float(np.mean([r['Es_mm'] for r in outputs])),
                          Max_abs_water_residual_mm=float(np.max([abs(r['Water_balance_residual_mm']) for r in outputs])),
-                         Probability_Irrigation_within_cap=float(np.mean([r['Irrigation_mm']<=study['baseline_irrigation_mm'][str(year)] for r in outputs])),
+                         Probability_Irrigation_within_cap=float(np.mean([r['Irrigation_mm']<=study['baseline_irrigation_mm'][str(year)]+roundoff_tolerance(study['baseline_irrigation_mm'][str(year)]) for r in outputs])),
                          Interpretation='conditional group perturbation, not joint-posterior or field failure probability')
             summaries.append(summary)
             for j,(p,r,b) in enumerate(zip(params,outputs,base)):

@@ -1,0 +1,395 @@
+{
+  "contract": {
+    "case": "2022",
+    "phase": "biomass_yield",
+    "names": [
+      "WP_early",
+      "WP_late",
+      "HI0"
+    ],
+    "fixed": {
+      "CCx": 0.9374032578353431,
+      "CGC_CD": 0.1317852891534627,
+      "CDC_CD": 0.06419402248370067,
+      "SenescenceCD": 134.95391002237233,
+      "Kcb": 1.3774871353352593,
+      "WP_early": 16.001450940746924,
+      "WP_late": 29.552129166184766,
+      "HI0": 0.4
+    },
+    "priors": {
+      "CCx": [
+        0.6,
+        0.99
+      ],
+      "CGC_CD": [
+        0.08,
+        0.16
+      ],
+      "CDC_CD": [
+        0.03,
+        0.12
+      ],
+      "SenescenceCD": [
+        115.0,
+        145.0
+      ],
+      "Kcb": [
+        1.05,
+        1.6
+      ],
+      "WP": [
+        28.0,
+        40.0
+      ],
+      "WP_early": [
+        10.0,
+        22.0
+      ],
+      "WP_late": [
+        20.0,
+        38.0
+      ],
+      "HI0": [
+        0.35,
+        0.5
+      ]
+    },
+    "normal_priors": [
+      "CCx",
+      "CDC_CD",
+      "CGC_CD",
+      "HI0",
+      "Kcb",
+      "SenescenceCD",
+      "WP_early",
+      "WP_late"
+    ],
+    "prior_sd": {
+      "CCx": 0.05,
+      "CGC_CD": 0.015,
+      "CDC_CD": 0.025,
+      "SenescenceCD": 10.0,
+      "Kcb": 0.1,
+      "WP": 4.0,
+      "WP_early": 3.0,
+      "WP_late": 4.0,
+      "HI0": 0.03
+    },
+    "center": {
+      "CCx": 0.9888689507828456,
+      "CGC_CD": 0.1042721204050489,
+      "CDC_CD": 0.0688531948376533,
+      "SenescenceCD": 133.0,
+      "Kcb": 1.4215883424119928,
+      "WP_early": 16.001450940746924,
+      "WP_late": 29.552129166184766,
+      "HI0": 0.4
+    },
+    "sigmas": [
+      0.05,
+      50.300000000000004,
+      15.0,
+      0.5829000000000001
+    ],
+    "targets": [
+      503.0,
+      81.0,
+      12.25482
+    ],
+    "seed": 42,
+    "ensembles": 1,
+    "walkers": 32,
+    "mode": "sampling",
+    "switch": "2022-07-05 00:00:00",
+    "files": {
+      "data/expected_initial.json": "ad1b9d93667b85433618804a27b817689072b883dbb8188187c72180b07af095",
+      "data/origin.json": "378200da0c82c57075902ada30e1ec6b3f15081d4981507d204e781298e3f688",
+      "data/start.json": "84cf88b709e3de24b43ab237575b86a0d2294a0fefe0b7d11aa662704dd96af6",
+      "data/inputs/BIOMASS_FILE_biomass_observations.csv": "d1713ae639e255a062e13077d1686f9d04b6c20503821bbff080b5eae5287323",
+      "data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv": "b5d7fa4a74413c856953c489517130314df2d442f4dedaa77d6e4d7ff3b0b309",
+      "data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6",
+      "data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv": "5d5bc2ad790c1960fe8af1d96aa7c1d80fe5cb89323ae030f9d64cf301fdab0b",
+      "data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv": "c1a170756eaa3828b070f1e46ce0045bfcc87c33b6b372628f0f90b9b07fd7fd",
+      "data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d",
+      "data/inputs/READINESS_FILE_pre_mcmc_readiness.json": "0ef89dc40bfdf671ef94bac380c505b9eb5785330940dab38679d3249c28d822",
+      "data/inputs/RS_CC_FILE_Maize-2022-main.csv": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc",
+      "data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c",
+      "DI_2022_MCMC_ONE_CLICK.py": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+    },
+    "versions": {
+      "aquacrop": "3.1.0",
+      "numpy": "2.5.1",
+      "pandas": "3.0.5",
+      "scipy": "1.18.0",
+      "emcee": "3.1.6"
+    },
+    "phase1_checkpoint_sha256": {
+      "C:\\Users\\Lenovo\\PycharmProjects\\PythonProject\\DI_2022_OneClick\\MCMC_Article_Results_2022\\DI_2022\\sampling\\checkpoints\\canopy_transpiration\\ensemble_1.npz": "3f9e31914ac2827efd00dac648189b96712b19f4663af2ea240deb1d3aca706a",
+      "C:\\Users\\Lenovo\\PycharmProjects\\PythonProject\\DI_2022_OneClick\\MCMC_Article_Results_2022\\DI_2022\\sampling\\checkpoints\\canopy_transpiration\\ensemble_2.npz": "02bc5a863a2f0c27f9027e4fae3f8af955f4447cfe0e4920f3f9210d1c70a20b",
+      "C:\\Users\\Lenovo\\PycharmProjects\\PythonProject\\DI_2022_OneClick\\MCMC_Article_Results_2022\\DI_2022\\sampling\\checkpoints\\canopy_transpiration\\ensemble_3.npz": "ba0397a747a9f2a34663db9746f88920a01d14e0a9875b5b152ffe1a4ac50bce",
+      "C:\\Users\\Lenovo\\PycharmProjects\\PythonProject\\DI_2022_OneClick\\MCMC_Article_Results_2022\\DI_2022\\sampling\\checkpoints\\canopy_transpiration\\ensemble_4.npz": "36aefad2455f9de5dfef2840fb7baca3a4e1e2fa2ebe594ccce1b46f2161dc33"
+    },
+    "phase1_burn": 317,
+    "wrapper_sha256": "fb2dbd8190b9a081450a9ffdb7c59b039fded431267082b78ec87361269a0586",
+    "handoff": "retained phase-1 arithmetic mean"
+  },
+  "values": {
+    "CCx": 0.9374032578353431,
+    "CGC_CD": 0.1317852891534627,
+    "CDC_CD": 0.06419402248370067,
+    "SenescenceCD": 134.95391002237233,
+    "Kcb": 1.3774871353352593,
+    "WP_early": 16.001450940746924,
+    "WP_late": 29.552129166184766,
+    "HI0": 0.4
+  },
+  "initial_metrics": {
+    "Y_dry": 11.990606165514924,
+    "Y_13pct": 13.782305937373476,
+    "Irrigation_mm": 404.84000000000003,
+    "Rain_mm": 151.38380608461688,
+    "Tr_mm": 529.9393430560071,
+    "Es_mm": 66.84529300867197,
+    "ET_mm": 596.7846360646791,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 0.021579290515043172,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 464.4928032935075,
+    "Profile_final_mm": 423.9103940229315,
+    "Profile_depletion_mm": 40.58240927057602,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.304512053934559e-12,
+    "Max_daily_balance_residual_mm": 1.687538997430238e-13,
+    "MaxCC": 0.9172119084353839,
+    "HI_last": 0.4018769967990772,
+    "B_last": 29.8365078395113,
+    "CC_RMSE": 0.059574168179587085,
+    "B_RMSE": 0.640936746342227
+  },
+  "Phase1_converged": false,
+  "Original_phase1_diagnostics": {
+    "Converged": false,
+    "Smoke_test": false,
+    "Burn_in": 317,
+    "Rule": "ceil(5 * maximum tau across parameters and independent ensembles); NO fixed fallback",
+    "Tau_by_ensemble": [
+      [
+        50.66966970994868,
+        56.10940045876404,
+        53.951937312209225,
+        56.60082132428993,
+        50.98744321729578
+      ],
+      [
+        51.45286950870717,
+        53.293276199223804,
+        63.39994642986633,
+        53.394395077350396,
+        53.83270807932078
+      ],
+      [
+        55.151531094186645,
+        52.55437597299102,
+        49.17610641979884,
+        51.9036586479318,
+        50.570433306516705
+      ],
+      [
+        52.175412149895855,
+        52.79927844285757,
+        55.1050702376669,
+        50.86931495513054,
+        58.11810890584122
+      ]
+    ],
+    "Tau_estimate_trusted_50tau": false,
+    "Parameters": [
+      {
+        "Parameter": "CCx",
+        "Rhat_max_across_walker_groups": 1.1074102155675407,
+        "ESS_bulk_min": 37.312755686221514,
+        "ESS_tail_min": 179.7887015005417,
+        "Passed": false
+      },
+      {
+        "Parameter": "CGC_CD",
+        "Rhat_max_across_walker_groups": 1.0777689034112772,
+        "ESS_bulk_min": 42.650301876572456,
+        "ESS_tail_min": 189.32978350500676,
+        "Passed": false
+      },
+      {
+        "Parameter": "CDC_CD",
+        "Rhat_max_across_walker_groups": 1.1142037597693022,
+        "ESS_bulk_min": 26.978150301990414,
+        "ESS_tail_min": 114.94046863186598,
+        "Passed": false
+      },
+      {
+        "Parameter": "SenescenceCD",
+        "Rhat_max_across_walker_groups": 1.073193342693179,
+        "ESS_bulk_min": 52.224263107012455,
+        "ESS_tail_min": 139.76647738058924,
+        "Passed": false
+      },
+      {
+        "Parameter": "Kcb",
+        "Rhat_max_across_walker_groups": 1.122230671684182,
+        "ESS_bulk_min": 25.307230343057228,
+        "ESS_tail_min": 178.31555972469883,
+        "Passed": false
+      }
+    ],
+    "Acceptance_by_ensemble_walker": [
+      [
+        0.5065,
+        0.533,
+        0.4975,
+        0.503,
+        0.5065,
+        0.5255,
+        0.494,
+        0.4915,
+        0.499,
+        0.4745,
+        0.511,
+        0.517,
+        0.5115,
+        0.501,
+        0.476,
+        0.485,
+        0.5015,
+        0.5095,
+        0.5045,
+        0.519,
+        0.5115,
+        0.4865,
+        0.502,
+        0.4815,
+        0.518,
+        0.495,
+        0.491,
+        0.519,
+        0.5015,
+        0.5245,
+        0.5015,
+        0.536
+      ],
+      [
+        0.5025,
+        0.5215,
+        0.507,
+        0.4985,
+        0.506,
+        0.4895,
+        0.5185,
+        0.464,
+        0.5,
+        0.5075,
+        0.465,
+        0.5125,
+        0.518,
+        0.5115,
+        0.497,
+        0.514,
+        0.522,
+        0.51,
+        0.524,
+        0.5,
+        0.492,
+        0.5,
+        0.5075,
+        0.53,
+        0.4955,
+        0.503,
+        0.4995,
+        0.468,
+        0.5045,
+        0.507,
+        0.547,
+        0.5155
+      ],
+      [
+        0.495,
+        0.5185,
+        0.4925,
+        0.51,
+        0.4955,
+        0.497,
+        0.5295,
+        0.499,
+        0.4895,
+        0.483,
+        0.51,
+        0.517,
+        0.512,
+        0.502,
+        0.529,
+        0.5035,
+        0.4915,
+        0.498,
+        0.5135,
+        0.51,
+        0.5195,
+        0.519,
+        0.501,
+        0.499,
+        0.509,
+        0.507,
+        0.4925,
+        0.5055,
+        0.525,
+        0.498,
+        0.5205,
+        0.505
+      ],
+      [
+        0.513,
+        0.5005,
+        0.512,
+        0.533,
+        0.518,
+        0.4975,
+        0.4975,
+        0.4835,
+        0.529,
+        0.4935,
+        0.5155,
+        0.51,
+        0.529,
+        0.489,
+        0.5125,
+        0.5145,
+        0.521,
+        0.516,
+        0.5235,
+        0.5355,
+        0.5025,
+        0.521,
+        0.5135,
+        0.493,
+        0.527,
+        0.49,
+        0.5065,
+        0.514,
+        0.5065,
+        0.5075,
+        0.5165,
+        0.5275
+      ]
+    ],
+    "Status": "CHAIN_LENGTH_OR_CONVERGENCE_INSUFFICIENT",
+    "Rhat_scope": "Conservative maximum over matched-walker groups across 4 independent ensembles; not 128 independent chains",
+    "Criteria": ">=2000 total steps; Rhat<1.01, bulk/tail ESS>=400 in each group; >=100 retained steps; chain>=50*max(tau)",
+    "References": [
+      "https://emcee.readthedocs.io/en/stable/user/autocorr/",
+      "https://mc-stan.org/docs/reference-manual/analysis.html"
+    ]
+  },
+  "Joint_posterior": false,
+  "Scope": "Conditional on estimated phase-1 mean; phase-1 uncertainty not propagated; not independent validation"
+}
