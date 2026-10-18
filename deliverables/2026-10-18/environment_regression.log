@@ -1,0 +1,34 @@
+test_2022_cap_roundoff_is_not_a_physical_constraint_violation (test_revised_workflow.RevisedWorkflowTests.test_2022_cap_roundoff_is_not_a_physical_constraint_violation) ... ok
+test_2022_groups_and_local95_use_new_real_samples (test_revised_workflow.RevisedWorkflowTests.test_2022_groups_and_local95_use_new_real_samples) ... ok
+test_actual_event_sum_and_dates_are_checked (test_revised_workflow.RevisedWorkflowTests.test_actual_event_sum_and_dates_are_checked) ... ok
+test_constant_and_incomplete_sobol_responses (test_revised_workflow.RevisedWorkflowTests.test_constant_and_incomplete_sobol_responses) ... ok
+test_design_response_resume_and_parameter_mismatch (test_revised_workflow.RevisedWorkflowTests.test_design_response_resume_and_parameter_mismatch) ... Sobol 2019 global N=16 seed=101: 100/160
+ok
+test_entrypoint_stops_without_real_model_and_never_runs_mcmc (test_revised_workflow.RevisedWorkflowTests.test_entrypoint_stops_without_real_model_and_never_runs_mcmc) ... ok
+test_epsilon_selects_lowest_feasible_and_two_neighbors (test_revised_workflow.RevisedWorkflowTests.test_epsilon_selects_lowest_feasible_and_two_neighbors) ... ok
+test_failed_model_point_is_recorded_not_imputed (test_revised_workflow.RevisedWorkflowTests.test_failed_model_point_is_recorded_not_imputed) ... ok
+test_formal_defaults_follow_guidance (test_revised_workflow.RevisedWorkflowTests.test_formal_defaults_follow_guidance) ... ok
+test_ishigami_known_sobol_indices (test_revised_workflow.RevisedWorkflowTests.test_ishigami_known_sobol_indices) ... ok
+test_missing_group_is_reported_without_synthetic_fallback (test_revised_workflow.RevisedWorkflowTests.test_missing_group_is_reported_without_synthetic_fallback) ... ok
+test_multiseed_optimization_replay_and_conditional_validation (test_revised_workflow.RevisedWorkflowTests.test_multiseed_optimization_replay_and_conditional_validation) ... Optimization 2019 NSGA3 seed=31: 20 feasible front points
+Optimization 2019 NSGA3 seed=73: 20 feasible front points
+Optimization 2019 NSGA3 seed=109: 20 feasible front points
+Optimization 2019 NSGA3 seed=151: 20 feasible front points
+Optimization 2019 NSGA3 seed=199: 20 feasible front points
+Optimization 2019 NSGA2 seed=31: 20 feasible front points
+Optimization 2019 NSGA2 seed=73: 20 feasible front points
+Optimization 2019 NSGA2 seed=109: 20 feasible front points
+Optimization 2019 NSGA2 seed=151: 20 feasible front points
+Optimization 2019 NSGA2 seed=199: 20 feasible front points
+ok
+test_new_2022_frozen_rows_equal_formal_chain_after_burn (test_revised_workflow.RevisedWorkflowTests.test_new_2022_frozen_rows_equal_formal_chain_after_burn) ... ok
+test_no_feasible_solution_has_no_high_yield_fallback (test_revised_workflow.RevisedWorkflowTests.test_no_feasible_solution_has_no_high_yield_fallback) ... ok
+test_physical_and_unit_failures_are_not_ignored (test_revised_workflow.RevisedWorkflowTests.test_physical_and_unit_failures_are_not_ignored) ... ok
+test_rank_gate_requires_all_scrambles_and_narrow_intervals (test_revised_workflow.RevisedWorkflowTests.test_rank_gate_requires_all_scrambles_and_narrow_intervals) ... ok
+test_smt_definition_and_stage_dates_required (test_revised_workflow.RevisedWorkflowTests.test_smt_definition_and_stage_dates_required) ... ok
+test_two_objectives_and_absolute_observed_gate (test_revised_workflow.RevisedWorkflowTests.test_two_objectives_and_absolute_observed_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 4.159s
+
+OK

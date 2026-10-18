@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/urp_run_20261018/audit_ready_package.py", line 158, in main
+    model.load_inputs()
+  File "/workspace/urp_run_20261018/audit/restored_model_2022/data/model.py", line 131, in load_inputs
+    e=unique_dates(read_csv(ETO_FILE,['Date','ETo_B_mm']))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/urp_run_20261018/audit/restored_model_2022/data/model.py", line 96, in read_csv
+    require(path.is_file(), f'MISSING_INPUT: {path}')
+  File "/workspace/urp_run_20261018/audit/restored_model_2022/data/model.py", line 93, in require
+    raise AuditError(message)
+_di_2022_model.AuditError: MISSING_INPUT: /workspace/urp_run_20261018/audit/restored_model_2022/data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv

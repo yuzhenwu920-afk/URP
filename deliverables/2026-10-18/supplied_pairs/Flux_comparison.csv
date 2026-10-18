@@ -1,0 +1,4 @@
+﻿Variable,Observed_or_target,Simulated,Error_pct,Units,Role
+Tr_mm,503.0,529.9393430560071,5.355734205965645,mm,calibration target
+Es_mm,81.0,66.84529300867197,-17.474946902874112,mm,digitized approximate target
+ET_mm,584.11,596.7846360646791,2.169905679525974,mm,derived check; not separate likelihood term

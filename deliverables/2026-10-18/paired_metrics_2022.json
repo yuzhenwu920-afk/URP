@@ -1,0 +1,22 @@
+{
+  "CC": {
+    "N": 12,
+    "R2": 0.9306170451459794,
+    "Pearson_r2": 0.9592243579646047,
+    "RMSE": 0.059574168179587085,
+    "MAE": 0.045153927795182014,
+    "Bias": -0.01893659072365424
+  },
+  "Biomass": {
+    "N": 10,
+    "R2": 0.9966499365017144,
+    "Pearson_r2": 0.9972284213646855,
+    "RMSE": 0.5561588827143817,
+    "MAE": 0.44083206267568953,
+    "Bias": -0.16778558364298504
+  },
+  "Year": 2022,
+  "scope": "Recomputed from supplied paired outputs; no new crop simulation",
+  "annual_yield_pairs": 1,
+  "annual_yield_R2": null
+}

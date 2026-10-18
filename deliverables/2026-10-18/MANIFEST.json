@@ -1,0 +1,192 @@
+[
+  {
+    "file": "2022_audit_and_calibration.xlsx",
+    "bytes": 10885,
+    "sha256": "aea6928b2fdf1e912adf900ce2258d0ba493bf3d638f2fa02d93594992cb9162"
+  },
+  {
+    "file": "ANALYSIS_ENVIRONMENT.json",
+    "bytes": 173,
+    "sha256": "51b3176403275783b0f3a1bd235f79128e00f536d3f98d2d2d9253f977e3e611"
+  },
+  {
+    "file": "MODEL_EXECUTION_STATUS.json",
+    "bytes": 295,
+    "sha256": "bf449573f791216e41153e959eb8f96953a80890bc761bab8014f9c718c0dbf5"
+  },
+  {
+    "file": "README.md",
+    "bytes": 2867,
+    "sha256": "495cad38cb7006b7058a3f50855e2ecb842722bd92329239fc9652191ae3e3ac"
+  },
+  {
+    "file": "SOURCE_PACKAGE_AUDIT.json",
+    "bytes": 1293,
+    "sha256": "1a1954d31907f07c99c0f10196ffd29c4af6b5be3d26ab186813d5cd23019b80"
+  },
+  {
+    "file": "UPLOAD_PROVENANCE.json",
+    "bytes": 277,
+    "sha256": "264d8b70b5905ef22575438dd54757544f19d3c8fdc6eff9a1aa31b5060ce265"
+  },
+  {
+    "file": "audit_ready_package.py",
+    "bytes": 11154,
+    "sha256": "0fdb00fe00bead101238eb5137de72caf98cad3c9962c3da4928fb11994c522b"
+  },
+  {
+    "file": "document_renderer.py",
+    "bytes": 6297,
+    "sha256": "109f1625522fd5f60e71ef10fbbf14c94032dacae72bf055a15dcb2766d52d19"
+  },
+  {
+    "file": "environment_regression.log",
+    "bytes": 3492,
+    "sha256": "eab1deb38eeb8eafd8fabf4e22050265707e1f5a5950a2f54d8e6cdf11cb9617"
+  },
+  {
+    "file": "figures/F16_2022_paired_calibration.pdf",
+    "bytes": 35974,
+    "sha256": "ad0328fcd206f4116a45a042f0757f96fae61952ae6a008aa53cf14f3bad41a6"
+  },
+  {
+    "file": "figures/F16_2022_paired_calibration.png",
+    "bytes": 393357,
+    "sha256": "794bddc857f5d2700301f258f6311b01c2a3640a5bc7cca35d678f4e537211df"
+  },
+  {
+    "file": "figures/F17_four_year_calibration_updated.pdf",
+    "bytes": 25427,
+    "sha256": "a78cec84484024f5a4382e85efb69785f273e215c6e2e9dbc644fff3b964bf12"
+  },
+  {
+    "file": "figures/F17_four_year_calibration_updated.png",
+    "bytes": 264093,
+    "sha256": "e8d07be6c59ff47d2a3d55b40406336399dccf8aad566ff81a21814741009d78"
+  },
+  {
+    "file": "four_year_calibration_with_2022_pairs.csv",
+    "bytes": 780,
+    "sha256": "6b126be902d965e9df472fbfd6aca2b11df88fd9d75fd80e2721e7468da796b2"
+  },
+  {
+    "file": "model_input_inventory.csv",
+    "bytes": 2951,
+    "sha256": "c0cca9b2053cb61cd5a6a6882d626e5e65f080f9183317aa6481046b40417606"
+  },
+  {
+    "file": "model_input_loader.log",
+    "bytes": 787,
+    "sha256": "d34d9752c6f7e5506b21111e21d88617556fdfc82a3fb994d06b59d7d11c259c"
+  },
+  {
+    "file": "paired_metrics_2022.csv",
+    "bytes": 258,
+    "sha256": "1f27cfa3712a5371c22747076578a2574d064345ba157cfff117d51e9cbe120b"
+  },
+  {
+    "file": "paired_metrics_2022.json",
+    "bytes": 544,
+    "sha256": "bcbd100602d45ee84350a1e244d4f0d62a7ccabe908d9db7673323cb13784d13"
+  },
+  {
+    "file": "paper_addendum_20261018.docx",
+    "bytes": 562983,
+    "sha256": "63bca9ce31d7a58a0e90dfb54a966dd37f93b502d0bf0e94ace8c10c4235f609"
+  },
+  {
+    "file": "paper_addendum_20261018.md",
+    "bytes": 2565,
+    "sha256": "bc572d9ec5e1917174e770d8fda6e905503e9feb2aad99dfaf7c1c94c4d1228f"
+  },
+  {
+    "file": "paper_addendum_20261018.pdf",
+    "bytes": 722338,
+    "sha256": "454ff607b5087b9a049aa6fe5bab37cb7531066701ef2186d39774827e683f3e"
+  },
+  {
+    "file": "restored_model_2022/ACCOUNT_LEDGER.md",
+    "bytes": 6212,
+    "sha256": "e3327fc0d1f09dcc95577bb47a2fde38401773f8b82f756563e1a36db6dd584c"
+  },
+  {
+    "file": "restored_model_2022/DI_2022_MCMC_ONE_CLICK.py",
+    "bytes": 78333,
+    "sha256": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+  },
+  {
+    "file": "restored_model_2022/ONECLICK_VALIDATION.json",
+    "bytes": 401,
+    "sha256": "702c4bfc7a1a61c424b2e1d64c57da112caaa46293332ca1a71b3fde7951952f"
+  },
+  {
+    "file": "restored_model_2022/README_先看这里.txt",
+    "bytes": 1585,
+    "sha256": "a96f043e34578f1161eab42107370cf0799160d6467ecf28066387bd124e5cc6"
+  },
+  {
+    "file": "restored_model_2022/VALIDATION.md",
+    "bytes": 2644,
+    "sha256": "48ed4a16fd049b25334970b741ca078baa276978f0f008c0be0b1237bc613af3"
+  },
+  {
+    "file": "restored_model_2022/data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv",
+    "bytes": 8413,
+    "sha256": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6"
+  },
+  {
+    "file": "restored_model_2022/data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv",
+    "bytes": 10526,
+    "sha256": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d"
+  },
+  {
+    "file": "restored_model_2022/data/inputs/RS_CC_FILE_Maize-2022-main.csv",
+    "bytes": 783,
+    "sha256": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc"
+  },
+  {
+    "file": "restored_model_2022/data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv",
+    "bytes": 31162,
+    "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+  },
+  {
+    "file": "restored_model_2022/manifest.json",
+    "bytes": 2048,
+    "sha256": "3a636652228b97f3164e9ee4f23ea6df36eb71469be3423076ea0d2f25203bd7"
+  },
+  {
+    "file": "restored_model_2022/requirements.txt",
+    "bytes": 165,
+    "sha256": "07b66670a121fe95bfc2d34668171b930d6b99e754d03b497f9c39884b47fed0"
+  },
+  {
+    "file": "supplied_pairs/Biomass_pairs.csv",
+    "bytes": 1269,
+    "sha256": "43b262e241217e78a630a6181fcb352a559d323f09a6a9039624e68fb5b15111"
+  },
+  {
+    "file": "supplied_pairs/CC_pairs.csv",
+    "bytes": 1732,
+    "sha256": "f49dced64b380beacfa58e430ef82c072fe75a6b579414caec57baff8ca01fc7"
+  },
+  {
+    "file": "supplied_pairs/Daily_growth.csv",
+    "bytes": 33721,
+    "sha256": "388e0229cb8dad532cef067f3a84ffb0e7ea9d1bd1ffd9f2131c34742b1cf7cf"
+  },
+  {
+    "file": "supplied_pairs/Flux_comparison.csv",
+    "bytes": 313,
+    "sha256": "eb25aa51d8c9b37756b4448bfb25f5711438ab8276adb5f86975121c1f104514"
+  },
+  {
+    "file": "supplied_pairs/Yield_comparison.csv",
+    "bytes": 388,
+    "sha256": "17cfe073b456bc2a3981517218045157a0dc5912959e075b8deeb8ec484a1ab5"
+  },
+  {
+    "file": "supplied_pairs/summary.json",
+    "bytes": 6551,
+    "sha256": "5db79028ea3b317addef3c1e810e71409161dc8583d8132d8ab6c11a8074ac55"
+  }
+]

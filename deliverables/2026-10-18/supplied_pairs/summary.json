@@ -1,0 +1,208 @@
+{
+  "Year": 2022,
+  "CCR_Square": 0.9306170451459794,
+  "Pearson": 0.9793999989608968,
+  "Pearson_squared": 0.9592243579646047,
+  "CC": {
+    "N": 12,
+    "R_Square": 0.9306170451459794,
+    "Pearson": 0.9793999989608968,
+    "Pearson_squared": 0.9592243579646047,
+    "RMSE": 0.05957416817958709,
+    "MAE": 0.045153927795182014,
+    "Bias": -0.018936590723654233
+  },
+  "CC_weighted": {
+    "N": 12,
+    "R_Square": 0.928112212094946,
+    "Pearson": 0.97895084919523,
+    "Pearson_squared": 0.958344765140062,
+    "RMSE": 0.06449580755563553,
+    "MAE": 0.05001881547371699,
+    "Bias": -0.018558010987883674
+  },
+  "Biomass": {
+    "N": 10,
+    "R_Square": 0.9966499365017144,
+    "Pearson": 0.9986132491433733,
+    "Pearson_squared": 0.997228421364685,
+    "RMSE": 0.5561588827143817,
+    "MAE": 0.4408320626756896,
+    "Bias": -0.16778558364298501
+  },
+  "Yield": {
+    "Year": 2022,
+    "yield_observed": 14.08,
+    "yield_simulated": 14.07778281807083,
+    "yield_calibration_target": 14.086,
+    "Units": "t/ha at 13% moisture",
+    "Error_vs_published_pct": -0.01574703074694872,
+    "Error_vs_internal_target_pct": -0.05833580810145067,
+    "yield_dry_simulated": 12.247671051721621,
+    "yield_dry_calibration_target": 12.25482,
+    "Yield_R_Square": null,
+    "Yield_Pearson": null,
+    "Reason": "One annual yield pair; correlations undefined"
+  },
+  "Flux": [
+    {
+      "Variable": "Tr_mm",
+      "Observed_or_target": 503.0,
+      "Simulated": 529.9393430560071,
+      "Error_pct": 5.355734205965645,
+      "Units": "mm",
+      "Role": "calibration target"
+    },
+    {
+      "Variable": "Es_mm",
+      "Observed_or_target": 81.0,
+      "Simulated": 66.84529300867197,
+      "Error_pct": -17.474946902874112,
+      "Units": "mm",
+      "Role": "digitized approximate target"
+    },
+    {
+      "Variable": "ET_mm",
+      "Observed_or_target": 584.11,
+      "Simulated": 596.7846360646791,
+      "Error_pct": 2.169905679525974,
+      "Units": "mm",
+      "Role": "derived check; not separate likelihood term"
+    }
+  ],
+  "DI": {
+    "Y_dry": 12.247671051721621,
+    "Y_13pct": 14.07778281807083,
+    "Irrigation_mm": 404.84000000000003,
+    "Rain_mm": 151.38380608461688,
+    "Tr_mm": 529.9393430560071,
+    "Es_mm": 66.84529300867197,
+    "ET_mm": 596.7846360646791,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 0.021579290515043172,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 464.4928032935075,
+    "Profile_final_mm": 423.9103940229315,
+    "Profile_depletion_mm": 40.58240927057602,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.304512053934559e-12,
+    "Max_daily_balance_residual_mm": 1.687538997430238e-13,
+    "MaxCC": 0.9172119084353839,
+    "HI_last": 0.40320198845836225,
+    "B_last": 30.376018477861276,
+    "CC_RMSE": 0.059574168179587085,
+    "B_RMSE": 0.5561588827143817
+  },
+  "Zero": {
+    "Y_dry": 5.089134683722908,
+    "Y_13pct": 5.849580096233228,
+    "Irrigation_mm": 0.0,
+    "Rain_mm": 151.38380608461688,
+    "Tr_mm": 267.3587038404299,
+    "Es_mm": 81.4106514738555,
+    "ET_mm": 348.76935531428535,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 0.0,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 464.4928032935075,
+    "Profile_final_mm": 267.10725406384034,
+    "Profile_depletion_mm": 197.38554922966716,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.3153922395758855e-12,
+    "Max_daily_balance_residual_mm": 1.4710455076283324e-13,
+    "MaxCC": 0.7475814435745513,
+    "HI_last": 0.3920596900334738,
+    "B_last": 12.980509889421178,
+    "CC_RMSE": 0.2918154605100184,
+    "B_RMSE": 8.477335056863483
+  },
+  "Zero_loss_pct": 58.44814363292732,
+  "Sensitivity_ranges": {
+    "conditional_MAP_refit": {
+      "Y13": {
+        "Min": 14.062491751207698,
+        "Max": 14.073000868570155,
+        "Range": 0.010509117362456522
+      },
+      "Zero_Y13": {
+        "Min": 5.77789229766318,
+        "Max": 5.924357477275947,
+        "Range": 0.1464651796127674
+      },
+      "Zero_loss_pct": {
+        "Min": 57.892604410343566,
+        "Max": 58.94342399589274,
+        "Range": 1.0508195855491778
+      },
+      "Tr": {
+        "Min": 527.1547760603497,
+        "Max": 532.8878790725915,
+        "Range": 5.733103012241827
+      },
+      "Es": {
+        "Min": 65.59987067466507,
+        "Max": 66.9223150950605,
+        "Range": 1.3224444203954278
+      },
+      "B_RMSE": {
+        "Min": 0.5583230447101455,
+        "Max": 0.5723860161688508,
+        "Range": 0.014062971458705276
+      }
+    },
+    "fixed_phase2_mean": {
+      "Y13": {
+        "Min": 13.996442386302306,
+        "Max": 14.158700469296138,
+        "Range": 0.16225808299383182
+      },
+      "Zero_Y13": {
+        "Min": 5.817284916991307,
+        "Max": 5.94796661093668,
+        "Range": 0.1306816939453732
+      },
+      "Zero_loss_pct": {
+        "Min": 57.84018308666114,
+        "Max": 58.91370871496021,
+        "Range": 1.0735256282990662
+      },
+      "Tr": {
+        "Min": 527.1547760603497,
+        "Max": 532.8878790725915,
+        "Range": 5.733103012241827
+      },
+      "Es": {
+        "Min": 65.59987067466507,
+        "Max": 66.9223150950605,
+        "Range": 1.3224444203954278
+      },
+      "B_RMSE": {
+        "Min": 0.5259957541556396,
+        "Max": 0.5973852074858021,
+        "Range": 0.07138945333016256
+      }
+    }
+  },
+  "All_local_refits_success": true,
+  "Definitions": {
+    "R_Square": "1-SSE/SST, SST=sum((observed-mean(observed))^2); NOT Pearson squared",
+    "Pearson": "Correlation of date-matched observed and simulated values",
+    "CC": "Field LAI-derived observations, unweighted primary metrics; weights separately reported",
+    "yield_observed": "Published 13%-moisture yield; internal calibration target separately retained",
+    "Sensitivity": "Six central representative points, not posterior coverage or Sobol analysis"
+  },
+  "Limitations": [
+    "Phase 1 convergence not certified",
+    "Conditional inference; not joint posterior",
+    "Biomass and CC are calibration evidence, not independent validation",
+    "Zero irrigation is an unvalidated counterfactual",
+    "Es is an approximate digitized target",
+    "Sensitivity refits are deterministic local optimization, not resampling"
+  ]
+}

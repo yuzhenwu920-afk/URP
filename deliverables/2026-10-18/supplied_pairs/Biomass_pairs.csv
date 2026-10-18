@@ -1,0 +1,11 @@
+﻿Date,B_observed_t_ha,Sigma_assumed,B_simulated_t_ha,Source
+2022-06-01,0.7,0.5,0.9819779535227678,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-06-12,2.0,0.5,2.3423944499309113,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-06-23,3.8,0.57,4.216567526759401,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-07-01,5.9,0.885,5.646494889695822,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-07-11,10.1,1.515,8.998756295039826,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-07-23,13.4,2.01,13.307397680635248,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-08-05,19.3,2.895,18.299764484160615,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-08-14,21.7,3.255,21.680032860420262,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-08-24,24.8,3.72,25.124292464950443,"Digitized biomass with assumed sigma; calibration, not independent validation"
+2022-09-04,28.9,4.335,28.324465558454854,"Digitized biomass with assumed sigma; calibration, not independent validation"

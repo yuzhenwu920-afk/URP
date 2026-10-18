@@ -1,0 +1,342 @@
+﻿[
+  {
+    "relative_path": "01_frozen_model/ACCOUNT_LEDGER.md",
+    "bytes": 6212,
+    "sha256": "e3327fc0d1f09dcc95577bb47a2fde38401773f8b82f756563e1a36db6dd584c"
+  },
+  {
+    "relative_path": "01_frozen_model/DI_2022_MCMC_ONE_CLICK.py",
+    "bytes": 78333,
+    "sha256": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+  },
+  {
+    "relative_path": "01_frozen_model/manifest.json",
+    "bytes": 2048,
+    "sha256": "3a636652228b97f3164e9ee4f23ea6df36eb71469be3423076ea0d2f25203bd7"
+  },
+  {
+    "relative_path": "01_frozen_model/ONECLICK_VALIDATION.json",
+    "bytes": 401,
+    "sha256": "702c4bfc7a1a61c424b2e1d64c57da112caaa46293332ca1a71b3fde7951952f"
+  },
+  {
+    "relative_path": "01_frozen_model/README_先看这里.txt",
+    "bytes": 1585,
+    "sha256": "a96f043e34578f1161eab42107370cf0799160d6467ecf28066387bd124e5cc6"
+  },
+  {
+    "relative_path": "01_frozen_model/requirements.txt",
+    "bytes": 165,
+    "sha256": "07b66670a121fe95bfc2d34668171b930d6b99e754d03b497f9c39884b47fed0"
+  },
+  {
+    "relative_path": "01_frozen_model/VALIDATION.md",
+    "bytes": 2644,
+    "sha256": "48ed4a16fd049b25334970b741ca078baa276978f0f008c0be0b1237bc613af3"
+  },
+  {
+    "relative_path": "02_phase1_results/MCMC_Article_Results_2022.zip",
+    "bytes": 21449478,
+    "sha256": "c21213295c3147d5e055b94e57096fbf1456973beb67318812559843773b1161"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/DI_2022_PHASE2_ONE_CLICK.py",
+    "bytes": 9006,
+    "sha256": "fb2dbd8190b9a081450a9ffdb7c59b039fded431267082b78ec87361269a0586"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_conditional_results/checkpoints/biomass_yield/ensemble_1.npz",
+    "bytes": 1311794,
+    "sha256": "d5b7dc3eac255c0dc54b9dafbf6f6bc23e627b63d0b19e28e67ba8e089b0977f"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_conditional_results/conditional_mean_model.json",
+    "bytes": 2198,
+    "sha256": "6d4239beb10fc1d5f52c3eacb5a7b37d17a2ca7f9f8f16b89d0282477488a86e"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_conditional_results/conditional_parameter_summary.json",
+    "bytes": 606,
+    "sha256": "91cf466b890aa193f21c42767957c740fb7076fcbef7fea55962e27a2a636c98"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_conditional_results/conditional_phase2_diagnostics.png",
+    "bytes": 711158,
+    "sha256": "9468e713ccce539329de82cddbb3747b10a5dddb99bd8c4a68b5bda5e1deb7e5"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_conditional_results/phase1_mean_handoff.json",
+    "bytes": 11092,
+    "sha256": "e8628f8c0b1fc7a1d0df0ebccef6f2e382c90c6511efd8ce9c4cbc28db761e76"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_conditional_results/run_status.json",
+    "bytes": 933,
+    "sha256": "ad5b0af2718617b0c50b73af5a69013baa039971c444f5942116e3e53c046346"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_smoke/checkpoints/biomass_yield/ensemble_1.npz",
+    "bytes": 11411,
+    "sha256": "4564259c0a35a0554db3945490d203c0ee9af2798de6027ab0b40bf0ef21882f"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_smoke/phase1_mean_handoff.json",
+    "bytes": 11103,
+    "sha256": "1c9cc3d5da3f2b742b687c4a443d8645138e1c398b89293ff922f443472a3c28"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/phase2_smoke/run_status.json",
+    "bytes": 690,
+    "sha256": "e401973aa65653133fa05fa1fc2e91d4bc6397b8e8a6821034db2a8c7fc38211"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2/使用说明.md",
+    "bytes": 2677,
+    "sha256": "bfbeef73b2626c5cd1a65a0c723bbac5949d5dfbd55e71ce9fc4fd703aa92e97"
+  },
+  {
+    "relative_path": "03_phase2_complete/DI_2022_Phase2_original_backup.zip",
+    "bytes": 2042193,
+    "sha256": "68185f0020cad22bfad46a55ea276d7205cea553907eaf68f53906144a6dd264"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/audit.json",
+    "bytes": 2779,
+    "sha256": "6ae7408e8647f9cb1e69e55f51d523200884c79841164b7b8e27072f01fe652b"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/Biomass_pairs.csv",
+    "bytes": 1269,
+    "sha256": "43b262e241217e78a630a6181fcb352a559d323f09a6a9039624e68fb5b15111"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/CC_pairs.csv",
+    "bytes": 1732,
+    "sha256": "f49dced64b380beacfa58e430ef82c072fe75a6b579414caec57baff8ca01fc7"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/conditional_refits.json",
+    "bytes": 5678,
+    "sha256": "5e10c62e0bf7a1e41cd4923a1444c91978058a05f41f4db072f7f0e74d4c0286"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/Daily_growth.csv",
+    "bytes": 33721,
+    "sha256": "388e0229cb8dad532cef067f3a84ffb0e7ea9d1bd1ffd9f2131c34742b1cf7cf"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/DI_2022_review.xlsx",
+    "bytes": 13489,
+    "sha256": "86f00cc61052a60b0af08709e64ccf3788143e56e9622965deb8bd36eefd3ec5"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/DI_2022_review.xlsx.inspect.ndjson",
+    "bytes": 159806,
+    "sha256": "94c7a52060c0d5bbb68c975eb7ba7d50ecc47d78d3df4364c361b5fb87799e8a"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/Flux_comparison.csv",
+    "bytes": 313,
+    "sha256": "eb25aa51d8c9b37756b4448bfb25f5711438ab8276adb5f86975121c1f104514"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/model_fit.png",
+    "bytes": 95045,
+    "sha256": "1c7d57182e375a4635983d5cd4150782d73a9731b280a3b3a5df916146904ccd"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/Phase2_parameters.csv",
+    "bytes": 551,
+    "sha256": "41c11dcce35060234ac66017123005b90fd48889c5bc0f3243abce3b20afc033"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/sampling_diagnostics.json",
+    "bytes": 2571,
+    "sha256": "10dd0e647f8a7c15a64551b8ba8190818fa38bf69fe55907ec28d053659d0ba5"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/Sensitivity.csv",
+    "bytes": 4228,
+    "sha256": "450b0b2926dc29ea24dfd48d21ec2bac1ff8477f6fc938d84ecee42b677e90b2"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/sensitivity_progress.json",
+    "bytes": 14359,
+    "sha256": "11f3d26277e72b28a56493367dc59c14fcdbfac5912932a729a467e418c08f50"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/source_hashes_before.json",
+    "bytes": 1307,
+    "sha256": "878ef70e23a0dace12e7fbc08982077fcb2a17391293391ea2a1c5edfffa3bb2"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/summary.json",
+    "bytes": 6551,
+    "sha256": "5db79028ea3b317addef3c1e810e71409161dc8583d8132d8ab6c11a8074ac55"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Biomass_pairs_0.png",
+    "bytes": 70565,
+    "sha256": "0dd83777280717c939fce550b890c16a5e923c4148499ff8a65fb79f02775381"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/build.mjs",
+    "bytes": 2919,
+    "sha256": "ef11634a242554ce9bb0a0e73ba46936daad444fb8c17a717f4df70192619ee1"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/CC_pairs_0.png",
+    "bytes": 80085,
+    "sha256": "2ba2f063e1187b29b04c2b7d1070eba2057a749fce3b60969f02c5aa5cf33d0a"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Flux_comparison_0.png",
+    "bytes": 21833,
+    "sha256": "d98361a6a06d225dfa5b7fc306988627cc2bba917def6f075dbcedcd55da5375"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Phase2_parameters_0.png",
+    "bytes": 16639,
+    "sha256": "0642a941498e443e8843738342d89eebc0f55a0dff7c478ba86eb2f6d770b3d0"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Phase2_parameters_6.png",
+    "bytes": 13036,
+    "sha256": "2dfc88ffd45517c8217211243dd2d2ca8b294adf5fcb766dfc7cac5fa1d855b0"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Sensitivity_0.png",
+    "bytes": 66281,
+    "sha256": "1d52d4758241c69f0d66fbb1200e9762edf0ad223fb0359a21b3d6b1d612616c"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Sensitivity_12.png",
+    "bytes": 50947,
+    "sha256": "655d68ef329121d95cb077fb19451c0252b77fc1aeffd3d77b2d687ab1f119a3"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Sensitivity_6.png",
+    "bytes": 49826,
+    "sha256": "4c0be72fff40baa9c54c76f76135f11b88ec2cda61d39c4bc09e54beb7d6395c"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Summary_0.png",
+    "bytes": 46946,
+    "sha256": "6076453cef02ebdb468b3aa6d7e011f9676020f69cea7ebe06e911aaaab9d4a5"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Yield_comparison_0.png",
+    "bytes": 11301,
+    "sha256": "7fb75be443fa5a2f41c38600bf197e785ea92569086e0ffe9d6368699deb4374"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_support/Yield_comparison_6.png",
+    "bytes": 12903,
+    "sha256": "0caa2e956299fc1c9b4b714f2d9dd26f7011d6b9d36aa3d424bcc246c130147c"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/workbook_tables.json",
+    "bytes": 14362,
+    "sha256": "11ffcc71b5a927ea723b843f6b3613da09ff7d84db39b229693528a62ce175fb"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/xlsx_export_error.json",
+    "bytes": 212,
+    "sha256": "4fe00474b0461f6ac8b96fc34f65755d47b755154dee60c6cebaf4392c07b6ba"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/xlsx_verification.json",
+    "bytes": 291,
+    "sha256": "515d06dee2a5ed807dac7d81a2dd3a9e4221ac71ec24d2eb2a59582721c1bb16"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/Yield_comparison.csv",
+    "bytes": 388,
+    "sha256": "17cfe073b456bc2a3981517218045157a0dc5912959e075b8deeb8ec484a1ab5"
+  },
+  {
+    "relative_path": "04_phase2_review/final_results_20261010/结果说明.md",
+    "bytes": 3141,
+    "sha256": "f1496615074bd5886feb47f426b5f59f9ef8bd7a4b127ebd068cc6c253e6a2c0"
+  },
+  {
+    "relative_path": "05_downstream_inputs/A01_2022_phase2_audit.json",
+    "bytes": 2045,
+    "sha256": "73d162bec4087c734e0469a06fd9c6559f6ff7d2324d0a7ad15dfb9b51baca1e"
+  },
+  {
+    "relative_path": "05_downstream_inputs/A18_pre_sobol_gate.json",
+    "bytes": 1269,
+    "sha256": "589a3a2d043492f5822f5b6939031ea0c723eba82e32b31c51c791dab41ea27f"
+  },
+  {
+    "relative_path": "05_downstream_inputs/A22_canonical_year_config.csv",
+    "bytes": 867,
+    "sha256": "21990733280a53524836e63770c224780fa0c762b1168daa4b0db17a15d0f175"
+  },
+  {
+    "relative_path": "05_downstream_inputs/combined_central_parameter_vectors_4years.csv",
+    "bytes": 1260,
+    "sha256": "1646a87f2b399275ec78f28903b34b9c057455d10082b0b71187b81f0291dd86"
+  },
+  {
+    "relative_path": "05_downstream_inputs/four_year_calibration_summary.csv",
+    "bytes": 1111,
+    "sha256": "ab0ac6242bbd1d5b0a9d834e5e355c61c3054e44be26cc2fb4cc801cf901983d"
+  },
+  {
+    "relative_path": "05_downstream_inputs/MCMC_diagnostics_4years.csv",
+    "bytes": 6047,
+    "sha256": "2c3119bc424bbc6dedf1931ab8f6fbd6a357a2067334f428b264604d6550d2f7"
+  },
+  {
+    "relative_path": "05_downstream_inputs/MCMC_parameter_intervals_4years.csv",
+    "bytes": 8607,
+    "sha256": "588a4c30634d1f212f82c916e80244b337e7c4afc3018294812c64e03c2b0a2d"
+  },
+  {
+    "relative_path": "05_downstream_inputs/MCMC_phase2_correlations_4years.csv",
+    "bytes": 598,
+    "sha256": "87bfd728033761325dcfa27360cb77dcd529caf33d956e2c65c56daeb9d64f8d"
+  },
+  {
+    "relative_path": "06_real_model_sobol/input_spaces/A10_SALib_problem_global_physical_prior_2022.json",
+    "bytes": 499,
+    "sha256": "6a79e6e9fc2f90da9f59f5b6f9451ad32d8cd72923af55c33160a9cbf5bc4768"
+  },
+  {
+    "relative_path": "06_real_model_sobol/input_spaces/A10_SALib_problem_local_marginal_95_range_2022.json",
+    "bytes": 719,
+    "sha256": "ef8a8cbb8df61c91efb707ae82b8ee7e6eb318814a7136d852347105d5954b0b"
+  },
+  {
+    "relative_path": "06_real_model_sobol/real_modified_di_adapter.py",
+    "bytes": 3067,
+    "sha256": "ab3d07ce4e47b582242e408048c6a14e28dd87701524cc69d38107a61b94533c"
+  },
+  {
+    "relative_path": "06_real_model_sobol/REAL_MODIFIED_DI_SOBOL_ONE_CLICK.py",
+    "bytes": 10416,
+    "sha256": "c576b30f4775ed12efd046f4117fa17c5afa5ab38c8239f0c6e84fe8aeaea65d"
+  },
+  {
+    "relative_path": "06_real_model_sobol/RUN_REAL_SOBOL_ONE_CLICK.bat",
+    "bytes": 157,
+    "sha256": "2a019e30ca5fe27637cd64c7c7d1fdb475bec61c03074aef7562f2a155c04973"
+  },
+  {
+    "relative_path": "07_nsga3_method/2022_NSGAIII启动规格.md",
+    "bytes": 1160,
+    "sha256": "fcf75481cf1672cde97724262b0fb3489cdd0b31c06bc1b57c4f0225adbd996c"
+  },
+  {
+    "relative_path": "07_nsga3_method/后续Sobol与NSGAIII实施方法.docx",
+    "bytes": 41750,
+    "sha256": "a48b12a87f59dd5ee3c1af1c3534e498213f8284215ca2b2836b977bd7f21598"
+  },
+  {
+    "relative_path": "README_从这里开始.md",
+    "bytes": 1429,
+    "sha256": "657b9fa6cda8926b93a0a03a4d547233968d9d70e291988797c9f4ce4a870965"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "Issue": "A18",
+  "Checks": {
+    "real_2022_phase2_verified": true,
+    "four_original_models_recovered": true,
+    "independent_validation_claim_removed": true,
+    "phase_specific_samples_only": true,
+    "water_productivity_units_fixed": true,
+    "sobol_spaces_valid": true,
+    "real_model_water_ledger_passed": true,
+    "canonical_year_config_built": true,
+    "real_model_adapter_reproduces_four_baselines": true
+  },
+  "Adapter_smoke_test": [
+    {
+      "Year": 2019,
+      "Y13_difference": 0.0,
+      "Passed": true
+    },
+    {
+      "Year": 2020,
+      "Y13_difference": 0.0,
+      "Passed": true
+    },
+    {
+      "Year": 2021,
+      "Y13_difference": 0.0,
+      "Passed": true
+    },
+    {
+      "Year": 2022,
+      "Y13_difference": 0.0,
+      "Passed": true
+    }
+  ],
+  "READY_FOR_REAL_MODEL_SOBOL_SCREENING": true,
+  "NOT_READY_FOR": [
+    "final irrigation recommendation",
+    "joint-posterior uncertainty claims",
+    "external-validation claims"
+  ],
+  "Mandatory_Sobol_scope": "Use the real Modified DI adapter and A10 independent input spaces. Label outputs global physical-range sensitivity or local marginal-range sensitivity. Retain A04 convergence and A13 schedule-provenance limitations."
+}

@@ -1,0 +1,8 @@
+{
+  "status": "BLOCKED_MISSING_ORIGINAL_INPUTS",
+  "models_simulated": 0,
+  "MCMC_rerun": false,
+  "model_source_imported": true,
+  "error_type": "AuditError",
+  "error": "MISSING_INPUT: /workspace/urp_run_20261018/audit/restored_model_2022/data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv"
+}

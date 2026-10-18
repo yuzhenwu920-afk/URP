@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-18",
+  "package_manifest_entries_verified": 68,
+  "original_2022_model_source_present": true,
+  "source_matches_phase2_contract": true,
+  "missing_original_data_files": [
+    "data/expected_initial.json",
+    "data/origin.json",
+    "data/start.json",
+    "data/inputs/BIOMASS_FILE_biomass_observations.csv",
+    "data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv",
+    "data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv",
+    "data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv",
+    "data/inputs/READINESS_FILE_pre_mcmc_readiness.json"
+  ],
+  "exact_input_files_recovered": 4,
+  "phase1_rows_equal_frozen": 215424,
+  "phase2_rows_equal_frozen": 58784,
+  "CC_pairs": 12,
+  "Biomass_pairs": 10,
+  "supplied_daily_rows": 148,
+  "runtime": {
+    "status": "BLOCKED_MISSING_ORIGINAL_INPUTS",
+    "models_simulated": 0,
+    "MCMC_rerun": false,
+    "model_source_imported": true,
+    "error_type": "AuditError",
+    "error": "MISSING_INPUT: /workspace/urp_run_20261018/audit/restored_model_2022/data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv"
+  },
+  "new_real_model_Sobol_executed": false,
+  "new_real_model_NSGAIII_executed": false,
+  "other_annual_original_models_in_this_upload": false,
+  "package_ready_flag_is_not_runtime_validation": true
+}

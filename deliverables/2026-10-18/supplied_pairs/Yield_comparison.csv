@@ -1,0 +1,2 @@
+﻿Year,yield_observed,yield_simulated,yield_calibration_target,Units,Error_vs_published_pct,Error_vs_internal_target_pct,yield_dry_simulated,yield_dry_calibration_target,Yield_R_Square,Yield_Pearson,Reason
+2022,14.08,14.07778281807083,14.086,t/ha at 13% moisture,-0.01574703074694872,-0.05833580810145067,12.247671051721621,12.25482,NA,NA,One annual yield pair; correlations undefined

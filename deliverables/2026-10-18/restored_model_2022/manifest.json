@@ -1,0 +1,20 @@
+{
+  "ACCOUNT_LEDGER.md": "e3327fc0d1f09dcc95577bb47a2fde38401773f8b82f756563e1a36db6dd584c",
+  "DI_2022_MCMC_ONE_CLICK.py": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5",
+  "ONECLICK_VALIDATION.json": "702c4bfc7a1a61c424b2e1d64c57da112caaa46293332ca1a71b3fde7951952f",
+  "README_\u5148\u770b\u8fd9\u91cc.txt": "a96f043e34578f1161eab42107370cf0799160d6467ecf28066387bd124e5cc6",
+  "requirements.txt": "07b66670a121fe95bfc2d34668171b930d6b99e754d03b497f9c39884b47fed0",
+  "VALIDATION.md": "48ed4a16fd049b25334970b741ca078baa276978f0f008c0be0b1237bc613af3",
+  "data/expected_initial.json": "ad1b9d93667b85433618804a27b817689072b883dbb8188187c72180b07af095",
+  "data/origin.json": "378200da0c82c57075902ada30e1ec6b3f15081d4981507d204e781298e3f688",
+  "data/start.json": "84cf88b709e3de24b43ab237575b86a0d2294a0fefe0b7d11aa662704dd96af6",
+  "data/inputs/BIOMASS_FILE_biomass_observations.csv": "d1713ae639e255a062e13077d1686f9d04b6c20503821bbff080b5eae5287323",
+  "data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv": "b5d7fa4a74413c856953c489517130314df2d442f4dedaa77d6e4d7ff3b0b309",
+  "data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6",
+  "data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv": "5d5bc2ad790c1960fe8af1d96aa7c1d80fe5cb89323ae030f9d64cf301fdab0b",
+  "data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv": "c1a170756eaa3828b070f1e46ce0045bfcc87c33b6b372628f0f90b9b07fd7fd",
+  "data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d",
+  "data/inputs/READINESS_FILE_pre_mcmc_readiness.json": "0ef89dc40bfdf671ef94bac380c505b9eb5785330940dab38679d3249c28d822",
+  "data/inputs/RS_CC_FILE_Maize-2022-main.csv": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc",
+  "data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+}
