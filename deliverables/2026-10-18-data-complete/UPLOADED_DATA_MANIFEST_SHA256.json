@@ -1,0 +1,62 @@
+﻿[
+  {
+    "relative_path": "data/expected_initial.json",
+    "bytes": 828,
+    "sha256": "ad1b9d93667b85433618804a27b817689072b883dbb8188187c72180b07af095"
+  },
+  {
+    "relative_path": "data/inputs/BIOMASS_FILE_biomass_observations.csv",
+    "bytes": 272,
+    "sha256": "d1713ae639e255a062e13077d1686f9d04b6c20503821bbff080b5eae5287323"
+  },
+  {
+    "relative_path": "data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv",
+    "bytes": 236135,
+    "sha256": "b5d7fa4a74413c856953c489517130314df2d442f4dedaa77d6e4d7ff3b0b309"
+  },
+  {
+    "relative_path": "data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv",
+    "bytes": 8413,
+    "sha256": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6"
+  },
+  {
+    "relative_path": "data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv",
+    "bytes": 211,
+    "sha256": "5d5bc2ad790c1960fe8af1d96aa7c1d80fe5cb89323ae030f9d64cf301fdab0b"
+  },
+  {
+    "relative_path": "data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv",
+    "bytes": 361,
+    "sha256": "c1a170756eaa3828b070f1e46ce0045bfcc87c33b6b372628f0f90b9b07fd7fd"
+  },
+  {
+    "relative_path": "data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv",
+    "bytes": 10526,
+    "sha256": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d"
+  },
+  {
+    "relative_path": "data/inputs/READINESS_FILE_pre_mcmc_readiness.json",
+    "bytes": 4971,
+    "sha256": "0ef89dc40bfdf671ef94bac380c505b9eb5785330940dab38679d3249c28d822"
+  },
+  {
+    "relative_path": "data/inputs/RS_CC_FILE_Maize-2022-main.csv",
+    "bytes": 783,
+    "sha256": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc"
+  },
+  {
+    "relative_path": "data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv",
+    "bytes": 31162,
+    "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+  },
+  {
+    "relative_path": "data/origin.json",
+    "bytes": 245,
+    "sha256": "378200da0c82c57075902ada30e1ec6b3f15081d4981507d204e781298e3f688"
+  },
+  {
+    "relative_path": "data/start.json",
+    "bytes": 239,
+    "sha256": "84cf88b709e3de24b43ab237575b86a0d2294a0fefe0b7d11aa662704dd96af6"
+  }
+]

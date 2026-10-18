@@ -1,0 +1,10 @@
+﻿{
+  "validated_on": "2026-10-18",
+  "command": "DI_2022_MCMC_ONE_CLICK.py --preflight-only",
+  "status": "2022 TECHNICAL PREFLIGHT PASSED",
+  "frozen_center_reproduction_all_passed": true,
+  "B_group_ETo_loaded": true,
+  "Y13_t_ha": 14.087560667502782,
+  "ET_mm": 598.6093727719923,
+  "water_balance_residual_mm": -1.2581845287851223e-12
+}

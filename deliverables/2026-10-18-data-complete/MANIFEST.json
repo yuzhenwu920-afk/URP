@@ -1,0 +1,212 @@
+[
+  {
+    "file": "DATA_COMPLETENESS_AND_REPLAY.json",
+    "bytes": 1383,
+    "sha256": "f3692c85f983f4a957101de5cf566b3ea8edf22894281653eab4825313bd857b"
+  },
+  {
+    "file": "DI_2022_OneClick_DATA_COMPLETE_2026-10-18.zip",
+    "bytes": 108613,
+    "sha256": "929926a9e61e4957ed47339f9c844566e0278697010b8845d38ec3b8f9966cd3"
+  },
+  {
+    "file": "README.md",
+    "bytes": 1773,
+    "sha256": "41513a4711356763cd7130df7bff76af5a3d475daaae97340ab2a2016ed667cd"
+  },
+  {
+    "file": "UPLOADED_DATA_MANIFEST_SHA256.json",
+    "bytes": 2175,
+    "sha256": "e6adb8982bf5c75bce5ae0bb12bca090b49c0ec972d350fde9d2136e69306897"
+  },
+  {
+    "file": "UPLOADED_DATA_PREFLIGHT_VALIDATION.json",
+    "bytes": 342,
+    "sha256": "420d309aed49a6185fef13efd449677ea55989a1c8948d0471c0eb8ee008a4f9"
+  },
+  {
+    "file": "VERIFIED_ENVIRONMENT.json",
+    "bytes": 147,
+    "sha256": "7086308e2f3066e80797efd795d5d537cedc38bec14af2c2a42e6c1ab4f7eaa4"
+  },
+  {
+    "file": "model_2022/ACCOUNT_LEDGER.md",
+    "bytes": 6212,
+    "sha256": "e3327fc0d1f09dcc95577bb47a2fde38401773f8b82f756563e1a36db6dd584c"
+  },
+  {
+    "file": "model_2022/DI_2022_MCMC_ONE_CLICK.py",
+    "bytes": 78333,
+    "sha256": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+  },
+  {
+    "file": "model_2022/ONECLICK_VALIDATION.json",
+    "bytes": 401,
+    "sha256": "702c4bfc7a1a61c424b2e1d64c57da112caaa46293332ca1a71b3fde7951952f"
+  },
+  {
+    "file": "model_2022/README_先看这里.txt",
+    "bytes": 1585,
+    "sha256": "a96f043e34578f1161eab42107370cf0799160d6467ecf28066387bd124e5cc6"
+  },
+  {
+    "file": "model_2022/VALIDATION.md",
+    "bytes": 2644,
+    "sha256": "48ed4a16fd049b25334970b741ca078baa276978f0f008c0be0b1237bc613af3"
+  },
+  {
+    "file": "model_2022/data/expected_initial.json",
+    "bytes": 828,
+    "sha256": "ad1b9d93667b85433618804a27b817689072b883dbb8188187c72180b07af095"
+  },
+  {
+    "file": "model_2022/data/inputs/BIOMASS_FILE_biomass_observations.csv",
+    "bytes": 272,
+    "sha256": "d1713ae639e255a062e13077d1686f9d04b6c20503821bbff080b5eae5287323"
+  },
+  {
+    "file": "model_2022/data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv",
+    "bytes": 236135,
+    "sha256": "b5d7fa4a74413c856953c489517130314df2d442f4dedaa77d6e4d7ff3b0b309"
+  },
+  {
+    "file": "model_2022/data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv",
+    "bytes": 8413,
+    "sha256": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6"
+  },
+  {
+    "file": "model_2022/data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv",
+    "bytes": 211,
+    "sha256": "5d5bc2ad790c1960fe8af1d96aa7c1d80fe5cb89323ae030f9d64cf301fdab0b"
+  },
+  {
+    "file": "model_2022/data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv",
+    "bytes": 361,
+    "sha256": "c1a170756eaa3828b070f1e46ce0045bfcc87c33b6b372628f0f90b9b07fd7fd"
+  },
+  {
+    "file": "model_2022/data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv",
+    "bytes": 10526,
+    "sha256": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d"
+  },
+  {
+    "file": "model_2022/data/inputs/READINESS_FILE_pre_mcmc_readiness.json",
+    "bytes": 4971,
+    "sha256": "0ef89dc40bfdf671ef94bac380c505b9eb5785330940dab38679d3249c28d822"
+  },
+  {
+    "file": "model_2022/data/inputs/RS_CC_FILE_Maize-2022-main.csv",
+    "bytes": 783,
+    "sha256": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc"
+  },
+  {
+    "file": "model_2022/data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv",
+    "bytes": 31162,
+    "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+  },
+  {
+    "file": "model_2022/data/origin.json",
+    "bytes": 245,
+    "sha256": "378200da0c82c57075902ada30e1ec6b3f15081d4981507d204e781298e3f688"
+  },
+  {
+    "file": "model_2022/data/start.json",
+    "bytes": 239,
+    "sha256": "84cf88b709e3de24b43ab237575b86a0d2294a0fefe0b7d11aa662704dd96af6"
+  },
+  {
+    "file": "model_2022/manifest.json",
+    "bytes": 2048,
+    "sha256": "3a636652228b97f3164e9ee4f23ea6df36eb71469be3423076ea0d2f25203bd7"
+  },
+  {
+    "file": "model_2022/requirements.txt",
+    "bytes": 165,
+    "sha256": "07b66670a121fe95bfc2d34668171b930d6b99e754d03b497f9c39884b47fed0"
+  },
+  {
+    "file": "preflight.log",
+    "bytes": 2513,
+    "sha256": "03693a68f5bbef9bffbc9696ae96e0025d9b9abfcaffb2bc4fe9cf8976004a87"
+  },
+  {
+    "file": "verified_phase2_mean_replay/DI/Biomass_pairs.csv",
+    "bytes": 445,
+    "sha256": "b7ec9449e02cf89128d6d606b5930f0d32399d53ea33cb2790a0cd4fe1c78892"
+  },
+  {
+    "file": "verified_phase2_mean_replay/DI/CC_pairs.csv",
+    "bytes": 672,
+    "sha256": "0e38944ca123a9d8524f0be1ad366d2e82a005cb0b88dd61a124a0c574f2661e"
+  },
+  {
+    "file": "verified_phase2_mean_replay/DI/daily_growth.csv",
+    "bytes": 33517,
+    "sha256": "069684a8f0f97f82112245a8a0a0615bd7363dc1406621e077fd3d6bd1ba8a60"
+  },
+  {
+    "file": "verified_phase2_mean_replay/DI/summary.json",
+    "bytes": 805,
+    "sha256": "2e9e4ab4f92fc51fd44f4dadd4f6f76c47bf5927235b53b0feb43d1b5f480769"
+  },
+  {
+    "file": "verified_phase2_mean_replay/zero/Biomass_pairs.csv",
+    "bytes": 444,
+    "sha256": "4274e53e497116251570a7b8dc99158d92d8ec5cc7c1e52c3456e113c461d3aa"
+  },
+  {
+    "file": "verified_phase2_mean_replay/zero/CC_pairs.csv",
+    "bytes": 677,
+    "sha256": "1668222eef152e9253b4300e1f2640deea62411a5d79995684d1453972d6ef4c"
+  },
+  {
+    "file": "verified_phase2_mean_replay/zero/daily_growth.csv",
+    "bytes": 33476,
+    "sha256": "05adb7602fede452b5633afbb3de37b3a35dcc94689502fc4bb73d2ce3d0738a"
+  },
+  {
+    "file": "verified_phase2_mean_replay/zero/summary.json",
+    "bytes": 772,
+    "sha256": "4ec9978a94e2fd7888c7db7e982e8791a805d854955591eabfaced8dfe37acd1"
+  },
+  {
+    "file": "verified_preflight/input_audit/frozen_2022_reproduction.csv",
+    "bytes": 638,
+    "sha256": "ded9946370c9a474c5d696ee1becf577b0c8c499179c3e7ccacd98b5ef9b1e5a"
+  },
+  {
+    "file": "verified_preflight/input_audit/pre_run_summary.csv",
+    "bytes": 1382,
+    "sha256": "b885de4c23cf0339eed2bfea3fda55016be117cf2a900849d529bd181a2e0a3d"
+  },
+  {
+    "file": "verified_preflight/preflight/DI_HI_daily.csv",
+    "bytes": 20670,
+    "sha256": "7724c08ff0261dbce89f6ea0f637856ea89b276193437ea115e6f4b66eedf6f7"
+  },
+  {
+    "file": "verified_preflight/preflight/DI_pollination.csv",
+    "bytes": 1238,
+    "sha256": "57b83914df173856774f77d31208fe507136e1c170d16ccd72cf7147915eff56"
+  },
+  {
+    "file": "verified_preflight/preflight/zero_HI_daily.csv",
+    "bytes": 21090,
+    "sha256": "8b8d3a3ccb412ade33ff75b371ce5df7b5bacddceb7490988c30a31c9ee9d435"
+  },
+  {
+    "file": "verified_preflight/preflight/zero_pollination.csv",
+    "bytes": 1323,
+    "sha256": "c7f859c51e5d65774afe4630f0567cc06cd1893bd3bf448f3dbbd191410fb491"
+  },
+  {
+    "file": "verified_preflight/preflight.json",
+    "bytes": 4753,
+    "sha256": "44593de11f85c6cbec6c28366d537e86138b4ef79ca35d9caece6464b376e0ae"
+  },
+  {
+    "file": "verified_preflight/run_status.json",
+    "bytes": 112,
+    "sha256": "cc2e79ef651a7884ae771c768f2303a8e47b3fa3afb6cd220e1c52c86bb218f8"
+  }
+]

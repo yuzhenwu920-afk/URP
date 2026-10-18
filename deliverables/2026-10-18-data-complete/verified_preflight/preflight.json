@@ -1,0 +1,153 @@
+{
+  "TECHNICAL_READY": true,
+  "Process_status": "PASS",
+  "Process_flags": [],
+  "Scientific_status": "CONDITIONAL_MODEL_WITH_DECLARED_LIMITATIONS",
+  "Scientific_limitations": [
+    "Grouped conditional inference: phase 2 conditions on phase-1 sampled MAP; not an 8-parameter joint posterior.",
+    "2019-2021 effective WP Uniform(10,40) is a declared working prior, NOT a literature-validated physiological prior.",
+    "2019-2021 HI0 stays within [0.35,0.60]; boundary posterior mass must be reported, not silently eliminated.",
+    "Digitized biomass has assumed sigma, not measured SD, and is not independent validation.",
+    "Zero irrigation is an unvalidated counterfactual under locked initial water and fixed-calendar WP switch; no target loss percentage.",
+    "2019 Es bias and phase-1 parameter boundaries remain model limitations.",
+    "2020 primary: 152 simulated days through Sep18; 151-day alternative is separately provided.",
+    "SenescenceCD remains continuous in the prior and is rounded to integer days by the engine, as in the audited baseline."
+  ],
+  "Default_sampling": false,
+  "Negative_test_rejected": true,
+  "Initial_DI": {
+    "Y_dry": 12.25617778072742,
+    "Y_13pct": 14.087560667502782,
+    "Irrigation_mm": 404.84000000000003,
+    "Rain_mm": 151.38380608461688,
+    "Tr_mm": 525.4468722329179,
+    "Es_mm": 73.16250053907441,
+    "ET_mm": 598.6093727719923,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 0.021579290515043172,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 464.4928032935075,
+    "Profile_final_mm": 422.0856573156182,
+    "Profile_depletion_mm": 42.407145977889286,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.2575183949703472e-12,
+    "Max_daily_balance_residual_mm": 1.6042722705833512e-13,
+    "MaxCC": 0.9165879326403548,
+    "HI_last": 0.4015135730804004,
+    "B_last": 30.5249401326545,
+    "CC_RMSE": 0.0869466373051667,
+    "B_RMSE": 0.4600339608632695
+  },
+  "Initial_zero": {
+    "Y_dry": 5.048118221208403,
+    "Y_13pct": 5.802434737021153,
+    "Irrigation_mm": 0.0,
+    "Rain_mm": 151.38380608461688,
+    "Tr_mm": 256.0862242150656,
+    "Es_mm": 88.15829034814843,
+    "ET_mm": 344.24451456321407,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 0.0,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 464.4928032935075,
+    "Profile_final_mm": 271.6320948149117,
+    "Profile_depletion_mm": 192.86070847859582,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.3556378242185474e-12,
+    "Max_daily_balance_residual_mm": 1.6042722705833512e-13,
+    "MaxCC": 0.6213701711737373,
+    "HI_last": 0.39505688751487167,
+    "B_last": 12.778205824897483,
+    "CC_RMSE": 0.3771414086420756,
+    "B_RMSE": 8.436691852411354
+  },
+  "HI_audit": {
+    "Calls": 148,
+    "Pollination_calls": 13,
+    "Input_clipped": false,
+    "HI_out_of_range": false,
+    "HImult_cap_days": 0,
+    "Pollination_cap_days": 6,
+    "Effective_WP_daily_verified": true
+  },
+  "Zero_HI_audit": {
+    "Calls": 148,
+    "Pollination_calls": 13,
+    "Input_clipped": false,
+    "HI_out_of_range": false,
+    "HImult_cap_days": 0,
+    "Pollination_cap_days": 4,
+    "Effective_WP_daily_verified": true
+  },
+  "Switch": "2022-07-05",
+  "Dates": [
+    "2022-04-17",
+    "2022-09-11"
+  ],
+  "Days": 148,
+  "Priors": {
+    "CCx": {
+      "low": 0.6,
+      "high": 0.99,
+      "distribution": "truncated_normal",
+      "center": 0.9888689507828456,
+      "sd": 0.05
+    },
+    "CGC_CD": {
+      "low": 0.08,
+      "high": 0.16,
+      "distribution": "truncated_normal",
+      "center": 0.1042721204050489,
+      "sd": 0.015
+    },
+    "CDC_CD": {
+      "low": 0.03,
+      "high": 0.12,
+      "distribution": "truncated_normal",
+      "center": 0.0688531948376533,
+      "sd": 0.025
+    },
+    "SenescenceCD": {
+      "low": 115.0,
+      "high": 145.0,
+      "distribution": "truncated_normal",
+      "center": 133.0,
+      "sd": 10.0
+    },
+    "Kcb": {
+      "low": 1.05,
+      "high": 1.6,
+      "distribution": "truncated_normal",
+      "center": 1.4215883424119928,
+      "sd": 0.1
+    },
+    "WP_early": {
+      "low": 10.0,
+      "high": 22.0,
+      "distribution": "truncated_normal",
+      "center": 16.001450940746924,
+      "sd": 3.0
+    },
+    "WP_late": {
+      "low": 20.0,
+      "high": 38.0,
+      "distribution": "truncated_normal",
+      "center": 29.552129166184766,
+      "sd": 4.0
+    },
+    "HI0": {
+      "low": 0.35,
+      "high": 0.5,
+      "distribution": "truncated_normal",
+      "center": 0.4,
+      "sd": 0.03
+    }
+  },
+  "Source_precision_note": "Legacy internal yield targets retained, not claimed as newly observed precision"
+}

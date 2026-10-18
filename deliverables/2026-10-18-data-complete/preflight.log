@@ -1,0 +1,75 @@
+
+PRE-RUN STRUCTURAL CHECK — 2022
+
+DI:
+    Y_dry: 12.25617778
+    Y_13pct: 14.08756067
+    Irrigation_mm: 404.84
+    Rain_mm: 151.3838061
+    Tr_mm: 525.4468722
+    Es_mm: 73.16250054
+    ET_mm: 598.6093728
+    DeepPerc_mm: 0
+    Runoff_mm: 0.02157929052
+    CR_mm: 0
+    GwIn_mm: 0
+    TileDrain_mm: 0
+    Profile_initial_mm: 464.4928033
+    Profile_final_mm: 422.0856573
+    Profile_depletion_mm: 42.40714598
+    Surface_initial_mm: 0
+    Surface_final_mm: 0
+    Water_balance_residual_mm: -1.257518395e-12
+    Max_daily_balance_residual_mm: 1.604272271e-13
+    MaxCC: 0.9165879326
+    HI_last: 0.4015135731
+    B_last: 30.52494013
+    CC_RMSE: 0.08694663731
+    B_RMSE: 0.4600339609
+
+ZERO IRRIGATION:
+    Y_dry: 5.048118221
+    Y_13pct: 5.802434737
+    Irrigation_mm: 0
+    Rain_mm: 151.3838061
+    Tr_mm: 256.0862242
+    Es_mm: 88.15829035
+    ET_mm: 344.2445146
+    DeepPerc_mm: 0
+    Runoff_mm: 0
+    CR_mm: 0
+    GwIn_mm: 0
+    TileDrain_mm: 0
+    Profile_initial_mm: 464.4928033
+    Profile_final_mm: 271.6320948
+    Profile_depletion_mm: 192.8607085
+    Surface_initial_mm: 0
+    Surface_final_mm: 0
+    Water_balance_residual_mm: -1.355637824e-12
+    Max_daily_balance_residual_mm: 1.604272271e-13
+    MaxCC: 0.6213701712
+    HI_last: 0.3950568875
+    B_last: 12.77820582
+    CC_RMSE: 0.3771414086
+    B_RMSE: 8.436691852
+    Published yield: 14.08; internal yield target: 14.086
+    Published irrigation: 404.84; schedule: 404.84
+    Tr target: 503.0; Es target: 81.0; Observed ET: 584.11
+    Yield relative error vs published: +0.05370%
+    ET relative error: +2.48230%
+    Yield loss vs DI: 8.285126 t/ha; 58.8116%
+PRE_RUN_STATUS = PASS 
+
+2022 FROZEN CENTER + HISTORICAL GROUPED-MAP REPRODUCTION
+                  Check        Actual   Expected  Tolerance  Passed
+   frozen_center_Y_dry  1.225618e+01  12.256178     0.0020    True
+   frozen_center_Tr_mm  5.254469e+02 525.446872     0.0020    True
+   frozen_center_Es_mm  7.316250e+01  73.162501     0.0020    True
+  frozen_center_B_last  3.052494e+01  30.524940     0.0020    True
+ frozen_center_CC_RMSE  8.694664e-02   0.086947     0.0001    True
+               MAP_Y13  1.406208e+01  14.062076     0.0020    True
+          MAP_Field_R2  9.401704e-01   0.940000     0.0020    True
+          MAP_Zero_Y13  5.762976e+00   5.763000     0.0050    True
+     MAP_Zero_loss_pct  5.901760e+01  59.000000     0.1000    True
+MAP_Zero_water_balance -1.329603e-12   0.000000     0.0001    True
+2022 TECHNICAL PREFLIGHT PASSED; scientific limitations retained
