@@ -1,7 +1,7 @@
 from pathlib import Path
 import re,subprocess
 from xml.sax.saxutils import escape
-from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Image as RLImage,Table,TableStyle
+from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Image as RLImage,Table,TableStyle,KeepTogether
 from reportlab.lib.styles import getSampleStyleSheet,ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
@@ -16,7 +16,7 @@ def pdf_report(text,path):
     styles.add(ParagraphStyle(name='ZHTitle',fontName='STSong-Light',fontSize=19,leading=27,spaceAfter=15,textColor=colors.HexColor('#25384A'),wordWrap='CJK'))
     styles.add(ParagraphStyle(name='ZH1',fontName='STSong-Light',fontSize=15,leading=23,spaceBefore=15,spaceAfter=9,textColor=colors.HexColor('#176B87'),wordWrap='CJK',keepWithNext=True))
     styles.add(ParagraphStyle(name='ZH2',fontName='STSong-Light',fontSize=12,leading=19,spaceBefore=10,spaceAfter=7,textColor=colors.HexColor('#25384A'),wordWrap='CJK',keepWithNext=True))
-    styles.add(ParagraphStyle(name='ZHSmall',fontName='STSong-Light',fontSize=7.5,leading=11,wordWrap='CJK'))
+    styles.add(ParagraphStyle(name='ZHSmall',fontName='STSong-Light',fontSize=9,leading=12.5,wordWrap='CJK'))
     def clean(s):
         s=re.sub(r'\*\*|`','',s).replace('R²','R^2').replace('10⁻¹²','10^-12').replace('m³','m^3').replace('−','-')
         s=s.translate(str.maketrans({'²':'2','³':'3','¹':'1','⁻':'-'}))
@@ -30,7 +30,14 @@ def pdf_report(text,path):
         im=re.match(r'!\[(.*?)\]\((.*?)\)',line)
         if im:
             pp=OUT/im.group(2);w,h=Image.open(pp).size;h2=width*h/w
-            body.append(RLImage(str(pp),width=width,height=h2));body.append(Spacer(1,5));continue
+            group=[RLImage(str(pp),width=width,height=h2),Spacer(1,5)]
+            j=i
+            while j<len(lines) and not lines[j].strip():j+=1
+            if j<len(lines) and lines[j].strip().startswith('图注：'):
+                group.append(Paragraph(clean(lines[j].strip()),styles['ZHBody']));i=j+1
+                body.append(KeepTogether(group))
+            else:body.extend(group)
+            continue
         if line.startswith('|'):
             tablelines=[line]
             while i<len(lines) and lines[i].strip().startswith('|'):tablelines.append(lines[i].strip());i+=1
@@ -54,7 +61,7 @@ def pdf_report(text,path):
         body.append(Paragraph(clean(line),style))
     def footer(canvas,doc):
         canvas.setFont('STSong-Light',8);canvas.setFillColor(colors.HexColor('#627383'))
-        canvas.drawString(36,22,'URP  |  证据复核与论文框架  |  2026-10-17')
+        canvas.drawString(36,22,'URP  |  证据复核与论文框架  |  2026-10-18')
         canvas.drawRightString(A4[0]-36,22,str(doc.page))
     doc.build(body,onFirstPage=footer,onLaterPages=footer)
 
@@ -103,4 +110,10 @@ def word_report(mdname):
     for sh in d.inline_shapes:
         if sh.width>maxwidth:
             ratio=maxwidth/sh.width;sh.height=int(sh.height*ratio);sh.width=maxwidth
+    paragraphs=d.paragraphs
+    for i,p in enumerate(paragraphs):
+        image=bool(p._p.xpath('.//w:drawing'))
+        follows_image=i>0 and bool(paragraphs[i-1]._p.xpath('.//w:drawing'))
+        if image or follows_image:p.paragraph_format.keep_with_next=True
+        if image or p.text.startswith('图注：'):p.paragraph_format.keep_together=True
     d.save(target)

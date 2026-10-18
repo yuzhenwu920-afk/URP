@@ -1,133 +1,380 @@
 [
   {
-    "file": "F01_evidence_chain.png",
-    "title": "2026-10-17研究证据与执行状态",
-    "caption": "原MCMC未重跑。新包提供衔接脚本与条件链，不包含其导入的原DI_2022_MCMC_ONE_CLICK.py；因此未产生正式真实模型Sobol或优化结果。",
-    "historical_proxy": false
+    "file": "F01_workflow.png",
+    "title": "研究路线与当前数据状态",
+    "caption": "图中状态对应本轮核验；完整敏感性和优化数值不由历史代理图替代。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.0,
+    "height_inches": 4.2
   },
   {
-    "file": "F03_mcmc_diagnostics.png",
-    "title": "第一阶段：拟合好不代表采样已收敛",
-    "caption": "从 4×2000×32×5 原始检查点复算；每个 walker 组跨 4 个独立 ensemble 计算，未将 128 个耦合 walker 视为独立链。原阈值 R̂<1.01、ESS≥400，四年均未达标。",
-    "historical_proxy": false
+    "file": "F02_CC_trajectories.png",
+    "title": "四年冠层覆盖度：模拟过程与校准观测",
+    "caption": "2019—2021 来自已核验原输出；2022 为本次冻结均值点回放。样本内校准评价。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
   },
   {
-    "file": "F04_parameter_intervals.png",
-    "title": "四年八参数区间：2022第二阶段已由真实链补齐",
-    "caption": "点为中位数，线为2.5%—97.5%相关保留样本分位；灰短线为各年链支持。单组阶段二为条件分布，不是认证收敛或联合后验。",
-    "historical_proxy": false
+    "file": "F03_Biomass_trajectories.png",
+    "title": "四年生物量：模拟过程与校准观测",
+    "caption": "2019—2021 来自已核验原输出；2022 为本次冻结均值点回放。样本内校准评价。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
   },
   {
-    "file": "U01_central_parameters.png",
-    "title": "32个年度中心值：两阶段保留均值均已交叉核验",
-    "caption": "中心点数值未因本次补件改变。2022三个阶段二参数从“文档报告值”升级为“原检查点已核验”；连线只作年度比较。",
-    "historical_proxy": false
+    "file": "F04_CC_pairs.png",
+    "title": "四年冠层覆盖度：观测—模拟配对",
+    "caption": "虚线为 1:1；R² = 1 − SSE / SST。四年均由配对表计算，不是独立验证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 7.4
   },
   {
-    "file": "F05_phase2_compensation.png",
-    "title": "四年第二阶段：WP_late与HI0的参数补偿",
-    "caption": "各图取同一年度真实阶段二的整行保留样本。2022相关系数约−0.645；阶段内相关已保留，不将不同阶段样本拼成八维联合后验。",
-    "historical_proxy": false
+    "file": "F05_Biomass_pairs.png",
+    "title": "四年生物量：观测—模拟配对",
+    "caption": "虚线为 1:1；R² = 1 − SSE / SST。四年均由配对表计算，不是独立验证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 7.4
   },
   {
-    "file": "F15_2022_phase2_chain.png",
-    "title": "2022正式第二阶段链：预热段163步，保留1,837步/每walker",
-    "caption": "仅使用正式2000步检查点，2步smoke排除。5τ截断与τ长度参考不是独立多链收敛认证；未把32个walker当作32条独立链计算Rhat。",
-    "historical_proxy": false
+    "file": "F06_calibration_summary.png",
+    "title": "四年校准误差概览",
+    "caption": "灰带为项目 ±5% 产量容许幅度，不是置信区间。2022 配对指标与产量已核验。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.3,
+    "height_inches": 3.6
   },
   {
-    "file": "F06_water_ledger.png",
-    "title": "四年原模型季节水量账与历史代理缺口分开报告",
-    "caption": "2022由新增conditional_mean_model.json核算：储水消耗40.58mm，残差约10^-12mm；不代表已重新运行原模型。右侧历史代理数值未重跑。",
-    "historical_proxy": false
+    "file": "F07_parameter_intervals.png",
+    "title": "四年八参数的条件分布区间",
+    "caption": "点为中位数，线为 2.5%—97.5% 保留样本分位；分阶段结果不构成八维联合后验。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 10.6
   },
   {
-    "file": "F02_calibration_summary.png",
-    "title": "四年校准汇总：2022已补精确均值点模拟输出",
-    "caption": "2019—2021配对指标沿用原核验；2022 RMSE和产量来自新增模型汇总JSON，未收到其逐日配对表，不能扩写为独立验证。",
-    "historical_proxy": false
+    "file": "F08_phase2_compensation.png",
+    "title": "四年第二阶段参数补偿",
+    "caption": "各年均按同一行保留样本绘制；相关系数使用全部样本，散点仅作等距抽稀展示。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
   },
   {
-    "file": "U04_calibration_scope.png",
-    "title": "原链已补齐，配对序列证据仍需分别标注",
-    "caption": "2022空心R²仍为原Word中的汇总值，未从配对表重算；产量偏差与RMSE已更新为新JSON精确值。±5%为项目容许幅度。",
-    "historical_proxy": false
+    "file": "F09_water_ledger.png",
+    "title": "四年 DI 季节水量账",
+    "caption": "入流/出流柱均包含储水变化；原模型水量账闭合。2022 已由本次原模型回放复现。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.7
   },
   {
-    "file": "U02_sampling_record.png",
-    "title": "2022阶段二已核验：burn=163，保留58,784行相关样本",
-    "caption": "不把相关样本行数当独立ESS，不把一个ensemble的32个walker当独立链。MCMC仍作为冻结输入，不因本次补件重跑。",
-    "historical_proxy": false
+    "file": "F10_climate.png",
+    "title": "四年生长季气象驱动",
+    "caption": "2022 ETo 使用已补齐的冻结 B 组数据；其余年份沿用原气象文件，不进行缺日插值。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
   },
   {
-    "file": "U03_CC_evidence.png",
-    "title": "CC证据角色未改变：校准资料与RS辅助时序",
-    "caption": "RS不进入似然，但处理不同/未知，不是DI外部独立验证。2022补阶段二不会改变这项数据边界。",
-    "historical_proxy": false
+    "file": "F11_CC_evidence_roles.png",
+    "title": "四年冠层资料的证据角色",
+    "caption": "LAI 转换值用于校准；遥感未进入似然，2019—2021 处理为 BI、2022 标签不全，均不称 DI 独立验证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
   },
   {
-    "file": "E02_yield_gate_headroom.png",
-    "title": "四年保产门槛余量：2022基准现已可核算",
-    "caption": "2022真实均值点产量14.077783 t/ha；允许减产约4.985%。2021仍仅约0.856%。这些是产量空间余量，不是节水率或置信区间。",
-    "historical_proxy": false
+    "file": "F12_sampling_record.png",
+    "title": "四年两个阶段的冻结链记录",
+    "caption": "阶段一各 4 个 ensemble，阶段二各 1 个；50τ 仅为长度参考，不等于已认证收敛。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.0,
+    "height_inches": 3.8
   },
   {
-    "file": "E01_annual_supports.png",
-    "title": "链支持范围与正式全局Sobol范围是不同对象",
-    "caption": "彩线为各年链支持；灰底为按指导文件预声明的公共全局范围。本版本正式Sobol使用公共独立均匀范围，不以2022较窄链支持替换主分析空间。",
-    "historical_proxy": false
+    "file": "F13_yield_gate.png",
+    "title": "四年确定性优化的保产门槛",
+    "caption": "余量是相对模型基准可允许的产量损失，不是节水率；2021 约 0.86%，2022 约 4.99%。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.0,
+    "height_inches": 4.1
   },
   {
-    "file": "F07_sobol_audited.png",
-    "title": "历史代理诊断（2026-10-15）：Sobol 重算：应称为“收窄区间独立均匀输入”",
-    "caption": "历史数值未重跑，不是本次真实模型结果。新运行 N=2048、3 个固定 scramble 种子，每次 256 组 bootstrap；横线为平均单次 bootstrap 半宽，并非跨种子合并置信区间。2019 首位为 WP_late，2020—2021 为 Kcb。未保留真实后验相关结构。",
-    "historical_proxy": true
+    "file": "F14_phase2_trace_WP_early.png",
+    "title": "四年阶段二轨迹：WP early（g/m²）",
+    "caption": "仅绘保留段；线为每步 32 个 walker 的中位数，浅带为 10%—90% 分位，不是独立链收敛认证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
   },
   {
-    "file": "F08_sobol_variance_convergence.png",
-    "title": "历史代理诊断（2026-10-15）：归一化敏感性变化不等于“参数已识别”",
-    "caption": "历史数值未重跑，不是本次真实模型结果。同一代理、同一年度系数，分别改变输入分布。CAI=(ST_prior−ST_narrow)/ST_prior 比较相对贡献，不能直接解释为信息吸收率；应同时报告输出方差、样本量及随机化稳定性。",
-    "historical_proxy": true
+    "file": "F15_phase2_trace_WP_late.png",
+    "title": "四年阶段二轨迹：WP late（g/m²）",
+    "caption": "仅绘保留段；线为每步 32 个 walker 的中位数，浅带为 10%—90% 分位，不是独立链收敛认证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
   },
   {
-    "file": "F09_original_pareto_audited.png",
-    "title": "历史代理诊断（2026-10-15）：原 Pareto 数据重绘：显示原始点，不人为修成单调曲线",
-    "caption": "历史数值未重跑，不是本次真实模型结果。原目标值已逐点复现；基准风险按相同 8 组参数重算，未设为零。2020、2021 原选方案未达到 95% 文献观测产量。2022 为人造参数输入，只作缺陷展示，不能作为定稿结果。",
-    "historical_proxy": true
+    "file": "F16_phase2_trace_HI0.png",
+    "title": "四年阶段二轨迹：HI0（比例）",
+    "caption": "仅绘保留段；线为每步 32 个 walker 的中位数，浅带为 10%—90% 分位，不是独立链收敛认证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
   },
   {
-    "file": "F10_original_schedules.png",
-    "title": "历史代理诊断（2026-10-15）：灌溉安排的展示必须交代基准来源",
-    "caption": "历史数值未重跑，不是本次真实模型结果。按所给原表重绘，未新增田间灌溉观测。代码只优化 8 个固定日期的灌水量，允许近零水量；不是灌溉日期与水量联合优化。本图不构成田间执行建议。",
-    "historical_proxy": true
+    "file": "F17_parameter_centers.png",
+    "title": "四年冻结中心参数",
+    "caption": "各阶段保留样本的算术均值；连线仅用于年度比较，不表示已证明跨年趋势。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 10.2
   },
   {
-    "file": "F11_optimization_convergence.png",
-    "title": "历史代理诊断（2026-10-15）：条件代理试算：独立优化运行的收敛轨迹",
-    "caption": "历史数值未重跑，不是本次真实模型结果。每年固定 64 个同一第二阶段联合样本，第一阶段固定为真实链均值；45 个参考方向、100 代、3 个算法种子。增加 E[Y]≥0.95×文献观测的搜索约束。参考点固定为(0,1000,5)，HV 仅用于同年同设定比较。",
-    "historical_proxy": true
-  },
-  {
-    "file": "F12_optimization_risk.png",
-    "title": "历史代理诊断（2026-10-15）：把“平均减产小”与“保产可靠性高”分开报告",
-    "caption": "历史数值未重跑，不是本次真实模型结果。每点代表一个独立算法种子的选择方案；4096 个评估样本来自相同经验条件分布，与搜索样本分开，不是外部田间验证。2021 三次运行的评估均值均未过门槛；原代理结构与校准误差尚未修复。",
-    "historical_proxy": true
-  },
-  {
-    "file": "F13_transfer_audited.png",
-    "title": "历史代理诊断（2026-10-15）：跨年套用结果是样本内情景比较",
-    "caption": "历史数值未重跑，不是本次真实模型结果。仅重绘 2019—2021 具有真实第二阶段链的子矩阵；应用年同时替换了气候和该年校准参数。由同一批年份挑选通用方案再在这些年份评分，不构成外推验证；水量约束也应一并比较。",
-    "historical_proxy": true
-  },
-  {
-    "file": "F14_climate_inputs.png",
-    "title": "四年逐日驱动资料与模拟季节窗口",
-    "caption": "绘制提供文件中的原始 ETo 列；2019—2021 它对应审计表中的 Old_ETo，不是原模型使用的逐日纠偏序列。代理按季节总量比例缩放；2022 比例取三年平均，仍是近似。资料本身不据此认定为气象站实测。"
-  },
-  {
-    "file": "U05_revised_workflow.png",
-    "title": "更新后的确定性主线与资料状态",
-    "caption": "2022正式阶段二链已补齐；真实模型原实现仍缺，未运行正式Sobol/NSGA-III。",
-    "historical_proxy": false
+    "file": "S01_phase1_diagnostics.png",
+    "title": "四年阶段一补充采样诊断",
+    "caption": "沿用原检查点复核；四年未达原严格诊断阈值。该限制单列，不强制作为确定性下游分析的新门槛。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "supplemental_four_year_diagnostics",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.2,
+    "height_inches": 4.2
   }
 ]

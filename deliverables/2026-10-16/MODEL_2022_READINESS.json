@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-18",
+  "data_files_present": 12,
+  "data_missing": 0,
+  "source_and_data_manifest_entries_verified": 18,
+  "newly_missing_eight_files_recovered": true,
+  "both_uploaded_data_trees_identical": true,
+  "actual_model_preflight_passed": true,
+  "actual_phase2_mean_replay_passed": true,
+  "actual_simulations_executed_for_mean_replay": 2,
+  "phase2_replay": [
+    {
+      "mode": "DI",
+      "seconds": 0.45119405700825155,
+      "summary_max_abs_difference": 1.4210854715202004e-14,
+      "Y13": 14.077782818070832,
+      "ET_mm": 596.7846360646791,
+      "Irrigation_mm": 404.84000000000003,
+      "water_balance_residual_mm": -1.308397834520747e-12
+    },
+    {
+      "mode": "zero",
+      "seconds": 0.4818041730031837,
+      "summary_max_abs_difference": 1.0547118733938987e-14,
+      "Y13": 5.849580096233228,
+      "ET_mm": 348.76935531428535,
+      "Irrigation_mm": 0.0,
+      "water_balance_residual_mm": -1.3149481503660354e-12
+    }
+  ],
+  "MCMC_rerun": false,
+  "new_Sobol_completed": false,
+  "new_NSGAIII_completed": false,
+  "uploaded_data_zip_sha256": "929926a9e61e4957ed47339f9c844566e0278697010b8845d38ec3b8f9966cd3",
+  "uploaded_ready_zip_sha256": "a3c672623a067252fe3caa1b3e3169343c4fc2bbb3ddc8d4f3ded1bd938a09fd",
+  "previous_eight_missing_originals_now_present": true,
+  "mean_point_replay_is_not_new_sensitivity_or_optimization_result": true
+}

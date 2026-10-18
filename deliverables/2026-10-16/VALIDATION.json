@@ -1,53 +1,32 @@
 {
-  "date": "2026-10-17",
-  "phase2_2022_present": true,
-  "phase2_2022_formal_shape": [
-    2000,
-    32,
-    3
+  "date": "2026-10-18",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022
   ],
-  "phase2_2022_retained_rows": 58784,
+  "current_figure_pairs": 18,
+  "current_annual_comparisons_include_all_four_years": true,
   "central_values_verified": 32,
-  "verified_checkpoint_records": 20,
-  "existing_7_arrays_unchanged": true,
-  "combined_arrays": {
-    "p1_2019": [
-      205440,
-      5
-    ],
-    "p1_2020": [
-      208768,
-      5
-    ],
-    "p1_2021": [
-      211584,
-      5
-    ],
-    "p1_2022": [
-      215424,
-      5
-    ],
-    "p2_2019": [
-      58464,
-      3
-    ],
-    "p2_2020": [
-      55616,
-      3
-    ],
-    "p2_2021": [
-      56352,
-      3
-    ],
-    "p2_2022": [
-      58784,
-      3
-    ]
-  },
-  "new_model_runs": 0,
-  "new_real_Sobol_executed": false,
-  "new_real_NSGAIII_executed": false,
-  "modified_DI_source_present": false,
-  "new_wrapper_present": true,
-  "smoke_in_statistics": false
+  "raw_2022_phase2_present": true,
+  "phase2_2022_retained_rows": 58784,
+  "original_model_available_years": [
+    2022
+  ],
+  "original_model_pending_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "missing_2022_data_files": [],
+  "original_2022_preflight_passed": true,
+  "original_2022_mean_point_replay_passed": true,
+  "original_2022_fixed_date_management_response_checked": true,
+  "new_complete_real_model_Sobol_executed": false,
+  "new_complete_real_model_NSGAIII_executed": false,
+  "MCMC_rerun": false,
+  "figure_font_minimum_pt": 10.5,
+  "png_dpi": 300,
+  "pdf_vector_labels": true
 }

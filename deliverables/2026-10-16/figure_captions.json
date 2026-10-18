@@ -1,0 +1,380 @@
+[
+  {
+    "file": "F01_workflow.png",
+    "title": "研究路线与当前数据状态",
+    "caption": "图中状态对应本轮核验；完整敏感性和优化数值不由历史代理图替代。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.0,
+    "height_inches": 4.2
+  },
+  {
+    "file": "F02_CC_trajectories.png",
+    "title": "四年冠层覆盖度：模拟过程与校准观测",
+    "caption": "2019—2021 来自已核验原输出；2022 为本次冻结均值点回放。样本内校准评价。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
+  },
+  {
+    "file": "F03_Biomass_trajectories.png",
+    "title": "四年生物量：模拟过程与校准观测",
+    "caption": "2019—2021 来自已核验原输出；2022 为本次冻结均值点回放。样本内校准评价。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
+  },
+  {
+    "file": "F04_CC_pairs.png",
+    "title": "四年冠层覆盖度：观测—模拟配对",
+    "caption": "虚线为 1:1；R² = 1 − SSE / SST。四年均由配对表计算，不是独立验证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 7.4
+  },
+  {
+    "file": "F05_Biomass_pairs.png",
+    "title": "四年生物量：观测—模拟配对",
+    "caption": "虚线为 1:1；R² = 1 − SSE / SST。四年均由配对表计算，不是独立验证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 7.4
+  },
+  {
+    "file": "F06_calibration_summary.png",
+    "title": "四年校准误差概览",
+    "caption": "灰带为项目 ±5% 产量容许幅度，不是置信区间。2022 配对指标与产量已核验。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.3,
+    "height_inches": 3.6
+  },
+  {
+    "file": "F07_parameter_intervals.png",
+    "title": "四年八参数的条件分布区间",
+    "caption": "点为中位数，线为 2.5%—97.5% 保留样本分位；分阶段结果不构成八维联合后验。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 10.6
+  },
+  {
+    "file": "F08_phase2_compensation.png",
+    "title": "四年第二阶段参数补偿",
+    "caption": "各年均按同一行保留样本绘制；相关系数使用全部样本，散点仅作等距抽稀展示。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
+  },
+  {
+    "file": "F09_water_ledger.png",
+    "title": "四年 DI 季节水量账",
+    "caption": "入流/出流柱均包含储水变化；原模型水量账闭合。2022 已由本次原模型回放复现。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.7
+  },
+  {
+    "file": "F10_climate.png",
+    "title": "四年生长季气象驱动",
+    "caption": "2022 ETo 使用已补齐的冻结 B 组数据；其余年份沿用原气象文件，不进行缺日插值。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
+  },
+  {
+    "file": "F11_CC_evidence_roles.png",
+    "title": "四年冠层资料的证据角色",
+    "caption": "LAI 转换值用于校准；遥感未进入似然，2019—2021 处理为 BI、2022 标签不全，均不称 DI 独立验证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.8
+  },
+  {
+    "file": "F12_sampling_record.png",
+    "title": "四年两个阶段的冻结链记录",
+    "caption": "阶段一各 4 个 ensemble，阶段二各 1 个；50τ 仅为长度参考，不等于已认证收敛。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.0,
+    "height_inches": 3.8
+  },
+  {
+    "file": "F13_yield_gate.png",
+    "title": "四年确定性优化的保产门槛",
+    "caption": "余量是相对模型基准可允许的产量损失，不是节水率；2021 约 0.86%，2022 约 4.99%。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.0,
+    "height_inches": 4.1
+  },
+  {
+    "file": "F14_phase2_trace_WP_early.png",
+    "title": "四年阶段二轨迹：WP early（g/m²）",
+    "caption": "仅绘保留段；线为每步 32 个 walker 的中位数，浅带为 10%—90% 分位，不是独立链收敛认证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
+  },
+  {
+    "file": "F15_phase2_trace_WP_late.png",
+    "title": "四年阶段二轨迹：WP late（g/m²）",
+    "caption": "仅绘保留段；线为每步 32 个 walker 的中位数，浅带为 10%—90% 分位，不是独立链收敛认证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
+  },
+  {
+    "file": "F16_phase2_trace_HI0.png",
+    "title": "四年阶段二轨迹：HI0（比例）",
+    "caption": "仅绘保留段；线为每步 32 个 walker 的中位数，浅带为 10%—90% 分位，不是独立链收敛认证。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 6.6
+  },
+  {
+    "file": "F17_parameter_centers.png",
+    "title": "四年冻结中心参数",
+    "caption": "各阶段保留样本的算术均值；连线仅用于年度比较，不表示已证明跨年趋势。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "current_four_year_evidence",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 9.8,
+    "height_inches": 10.2
+  },
+  {
+    "file": "S01_phase1_diagnostics.png",
+    "title": "四年阶段一补充采样诊断",
+    "caption": "沿用原检查点复核；四年未达原严格诊断阈值。该限制单列，不强制作为确定性下游分析的新门槛。",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "role": "supplemental_four_year_diagnostics",
+    "min_font_pt": 10.5,
+    "year_colors": {
+      "2019": "#0072B2",
+      "2020": "#D55E00",
+      "2021": "#009E73",
+      "2022": "#A85AA0"
+    },
+    "width_inches": 10.2,
+    "height_inches": 4.2
+  }
+]

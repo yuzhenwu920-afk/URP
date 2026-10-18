@@ -54,5 +54,7 @@
   "new_real_model_Sobol_executed": false,
   "new_real_model_NSGAIII_executed": false,
   "individual_2022_CC_biomass_pairs_present": false,
-  "note": "Checkpoint and supplied model aggregates checked; no original model rerun or independent validation"
+  "note": "Checkpoint and supplied model aggregates checked; no original model rerun or independent validation",
+  "current_2026_10_18_original_model_and_data_complete": true,
+  "current_readiness_record": "MODEL_2022_READINESS.json"
 }

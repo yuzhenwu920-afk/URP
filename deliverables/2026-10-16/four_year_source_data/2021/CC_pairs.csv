@@ -1,0 +1,12 @@
+﻿Date,CC_observed,Weight,CC_simulated,Residual,Source
+2021-05-10,0.0317020772288024,1.0,0.012748284609941101,-0.0189537926188613,"Field LAI-derived CC; calibration, not independent validation"
+2021-05-20,0.0703868654930016,1.0,0.04009381154114217,-0.030293053951859432,"Field LAI-derived CC; calibration, not independent validation"
+2021-05-31,0.2108228197982889,1.0,0.1264304089448425,-0.0843924108534464,"Field LAI-derived CC; calibration, not independent validation"
+2021-06-12,0.4952758296926638,1.0,0.492581626558131,-0.0026942031345328354,"Field LAI-derived CC; calibration, not independent validation"
+2021-06-28,0.8127694945160926,1.0,0.8785954667563655,0.06582597224027287,"Field LAI-derived CC; calibration, not independent validation"
+2021-07-12,0.9576838993545124,1.0,0.9361159451895824,-0.02156795416492996,"Field LAI-derived CC; calibration, not independent validation"
+2021-07-24,0.9776180397888689,1.0,0.953166334002469,-0.02445170578639988,"Field LAI-derived CC; calibration, not independent validation"
+2021-08-08,0.97599404716208,1.0,0.953166334002469,-0.022827713159611074,"Field LAI-derived CC; calibration, not independent validation"
+2021-08-20,0.9615958729123212,1.0,0.953166334002469,-0.008429538909852208,"Field LAI-derived CC; calibration, not independent validation"
+2021-09-02,0.9454501852868064,0.5,0.953166334002469,0.0077161487156626185,"Field LAI-derived CC; calibration, not independent validation"
+2021-09-17,0.9382007075392316,0.5,0.912980179147093,-0.02522052839213862,"Field LAI-derived CC; calibration, not independent validation"

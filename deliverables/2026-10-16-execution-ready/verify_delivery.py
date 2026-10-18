@@ -1,4 +1,4 @@
-"""Verify this preparation package without running an unavailable crop model."""
+"""Verify four-year figures/designs and benchmark the connected original 2022 model."""
 from pathlib import Path
 import contextlib
 import io
@@ -58,7 +58,7 @@ def verify():
     word = Document(paper.with_suffix('.docx'))
     pdf = PdfReader(paper.with_suffix('.pdf'))
     assert len(word.inline_shapes) == len(refs) and len(pdf.pages) >= 5
-    for name in ['E01_annual_supports', 'E02_yield_gate_headroom']:
+    for name in ['F07_parameter_intervals', 'F13_yield_gate']:
         with Image.open(ROOT / f'figures/{name}.png') as im:
             assert min(im.size) >= 1400
         assert len(PdfReader(ROOT / f'figures/{name}.pdf').pages) == 1
@@ -70,16 +70,22 @@ def verify():
             assert np.array_equal(z['p2_2022'], raw['history'][163:].reshape(-1, 3))
     assert all(cases[str(y)]['baseline_expected'] for y in [2019, 2020, 2021])
     assert not list((ROOT / 'designs_N128').glob('*response*'))
-    status = {'status': 'PREPARATION_VERIFIED_REAL_MODEL_BLOCKED', 'date': '2026-10-17',
+    receipt = p.benchmark(config, ROOT/'real_model/adapter.py', 2022, ROOT/'baseline_receipt_2022.json')
+    style = p.read(ROOT/'FIGURE_COVERAGE_AND_STYLE.json')
+    assert style['current_figure_pairs']==18
+    assert all(row['years']==[2019,2020,2021,2022] for row in style['figures'])
+    status = {'status': '2022_REAL_ENGINE_VERIFIED_OTHER_YEARS_PENDING', 'date': '2026-10-18',
               'software_tests_passed': result.testsRun,
               'design_groups': 12, 'design_rows': rows, 'design_rows_are_not_model_outputs': True,
               'all_design_hashes_and_Saltelli_blocks_checked': True,
               'CSV_exactly_matches_NPY': True, 'N128_prefix_of_N512_checked': True,
               'paper_pages': len(pdf.pages), 'paper_embedded_figures': len(word.inline_shapes),
               'current_figure_pairs': len(list((ROOT / 'figures').glob('*.png'))),
-              'real_model_new_calls': 0, 'real_model_Sobol_executed': False,
+              'real_2022_baseline_benchmark_passed': True, 'real_model_Sobol_executed': False,
               'real_model_NSGAIII_executed': False,
-              'missing_model_source': True, 'missing_2022_phase2_checkpoint': False, 'phase2_2022_retained_rows': 58784,
+              'missing_2022_model_source': False, 'original_model_pending_years': [2019,2020,2021],
+              'all_current_figures_include_four_years': True,
+              'missing_2022_phase2_checkpoint': False, 'phase2_2022_retained_rows': 58784,
               'reference_PDF_absent': True}
     p.write(ROOT / 'DELIVERY_VALIDATION.json', status)
     print(json.dumps(status, ensure_ascii=False, indent=2))

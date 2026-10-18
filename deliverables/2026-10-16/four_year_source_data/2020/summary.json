@@ -1,0 +1,256 @@
+{
+  "Year": 2020,
+  "CCR_Square": 0.979361221552422,
+  "Pearson": 0.991416242800827,
+  "Pearson_squared": 0.9829061664893083,
+  "CC": {
+    "N": 13,
+    "R_Square": 0.979361221552422,
+    "Pearson": 0.991416242800827,
+    "Pearson_squared": 0.9829061664893083,
+    "RMSE": 0.0482028288358046,
+    "MAE": 0.04394555893325002,
+    "Bias": -0.01997623442523865
+  },
+  "CC_weighted": {
+    "N": 13,
+    "R_Square": 0.9802222990938763,
+    "Pearson": 0.9913321683403176,
+    "Pearson_squared": 0.9827394679863157,
+    "RMSE": 0.04865476338239559,
+    "MAE": 0.044394572766451465,
+    "Bias": -0.017298814626960347
+  },
+  "Biomass": {
+    "N": 10,
+    "R_Square": 0.9765638418834888,
+    "Pearson": 0.9964387760688201,
+    "Pearson_squared": 0.9928902344535283,
+    "RMSE": 1.1393185557692582,
+    "MAE": 0.851884080876686,
+    "Bias": 0.6146569956839377
+  },
+  "Yield": {
+    "Year": 2020,
+    "yield_observed": 17.29,
+    "yield_simulated": 16.804038510033287,
+    "yield_calibration_target": 17.291,
+    "Units": "t/ha at 13% moisture",
+    "Error_vs_published_pct": -2.810650607094922,
+    "Error_vs_internal_target_pct": -2.816271412681237,
+    "yield_dry_simulated": 14.619513503728959,
+    "yield_dry_calibration_target": 15.04317,
+    "Yield_R_Square": null,
+    "Yield_Pearson": null,
+    "Reason": "One annual yield pair; correlations undefined"
+  },
+  "Flux": [
+    {
+      "Variable": "Tr_mm",
+      "Observed_or_target": 558.03,
+      "Simulated": 526.7431096215566,
+      "Error_pct": -5.606668168099082,
+      "Units": "mm",
+      "Role": "calibration target"
+    },
+    {
+      "Variable": "Es_mm",
+      "Observed_or_target": 79.0,
+      "Simulated": 83.21881647708324,
+      "Error_pct": 5.340274021624358,
+      "Units": "mm",
+      "Role": "approximate target"
+    },
+    {
+      "Variable": "ET_mm",
+      "Observed_or_target": 637.03,
+      "Simulated": 609.9619260986399,
+      "Error_pct": -4.2491050502111545,
+      "Units": "mm",
+      "Role": "derived check; not separate likelihood term"
+    }
+  ],
+  "DI": {
+    "Y_dry": 14.619513503728959,
+    "Y_13pct": 16.804038510033287,
+    "Irrigation_mm": 559.76,
+    "Rain_mm": 113.46477854038639,
+    "Tr_mm": 526.7431096215566,
+    "Es_mm": 83.21881647708324,
+    "ET_mm": 609.9619260986399,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 1.3438515546219931,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 490.06271316229453,
+    "Profile_final_mm": 551.9817140494207,
+    "Profile_depletion_mm": -61.919000887126174,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.6223966614603569e-12,
+    "Max_daily_balance_residual_mm": 2.149391775674303e-13,
+    "MaxCC": 0.9248186979180432,
+    "HI_last": 0.5746249833454405,
+    "B_last": 25.44183411346791,
+    "CC_RMSE": 0.0482028288358046,
+    "B_RMSE": 1.1393185557692582
+  },
+  "Zero": {
+    "Y_dry": 5.380459401237711,
+    "Y_13pct": 6.184436093376679,
+    "Irrigation_mm": 0.0,
+    "Rain_mm": 113.46477854038639,
+    "Tr_mm": 250.21234475017542,
+    "Es_mm": 88.91099307551562,
+    "ET_mm": 339.123337825691,
+    "DeepPerc_mm": 0.0,
+    "Runoff_mm": 0.0,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 490.06271316229453,
+    "Profile_final_mm": 264.4041538769913,
+    "Profile_depletion_mm": 225.65855928530323,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.4029888362188103e-12,
+    "Max_daily_balance_residual_mm": 1.2467804566540508e-13,
+    "MaxCC": 0.6653522346681742,
+    "HI_last": 0.5555747634268088,
+    "B_last": 9.684492088968923,
+    "CC_RMSE": 0.32524681342527634,
+    "B_RMSE": 6.387817530950674
+  },
+  "Zero_loss_pct": 63.19672744332203,
+  "Phase2_parameters": [
+    {
+      "Parameter": "WP_early",
+      "Mean": 11.254970888620944,
+      "SD": 0.825286597782246,
+      "P025": 10.068879765536714,
+      "Median": 11.148996494777435,
+      "P975": 13.14626273955584,
+      "Prior_low": 10.0,
+      "Prior_high": 40.0,
+      "Boundary_mass_1pct": 0.11431962025316456,
+      "Half_shift_SD": -0.015700775501026065,
+      "Tau": 39.62875609597219
+    },
+    {
+      "Parameter": "WP_late",
+      "Mean": 25.849297476603304,
+      "SD": 1.5811808928787534,
+      "P025": 22.892805001131528,
+      "Median": 25.782452776397882,
+      "P975": 29.186579894674882,
+      "Prior_low": 10.0,
+      "Prior_high": 40.0,
+      "Boundary_mass_1pct": 0.0,
+      "Half_shift_SD": -0.010780864481345543,
+      "Tau": 50.75150734310705
+    },
+    {
+      "Parameter": "HI0",
+      "Mean": 0.5738095550809255,
+      "SD": 0.021156881678924867,
+      "P025": 0.5223837135229936,
+      "Median": 0.578711627160926,
+      "P975": 0.5990552117512197,
+      "Prior_low": 0.35,
+      "Prior_high": 0.6,
+      "Boundary_mass_1pct": 0.07231731875719218,
+      "Half_shift_SD": 0.07005678776941442,
+      "Tau": 52.342914371305945
+    }
+  ],
+  "Sensitivity_ranges": {
+    "conditional_MAP_refit": {
+      "Y13": {
+        "Min": 17.016013493334103,
+        "Max": 17.0259597410778,
+        "Range": 0.009946247743695125
+      },
+      "Zero_Y13": {
+        "Min": 5.790851089871556,
+        "Max": 6.2915927774942935,
+        "Range": 0.5007416876227371
+      },
+      "Zero_loss_pct": {
+        "Min": 63.03258643539918,
+        "Max": 65.98810770179246,
+        "Range": 2.9555212663932764
+      },
+      "Tr": {
+        "Min": 526.3240433815596,
+        "Max": 556.553085701692,
+        "Range": 30.229042320132407
+      },
+      "Es": {
+        "Min": 82.60724883085858,
+        "Max": 83.36553432115107,
+        "Range": 0.7582854902924936
+      },
+      "ET": {
+        "Min": 609.6435273439364,
+        "Max": 639.1603345325506,
+        "Range": 29.516807188614166
+      },
+      "B_RMSE": {
+        "Min": 0.830379992871777,
+        "Max": 0.8391380945290171,
+        "Range": 0.008758101657240114
+      }
+    },
+    "fixed_phase2_mean": {
+      "Y13": {
+        "Min": 16.79147123652689,
+        "Max": 17.837877032834108,
+        "Range": 1.0464057963072193
+      },
+      "Zero_Y13": {
+        "Min": 6.026121834085279,
+        "Max": 6.20471671186232,
+        "Range": 0.17859487777704075
+      },
+      "Zero_loss_pct": {
+        "Min": 63.05190748890005,
+        "Max": 66.21727000924483,
+        "Range": 3.165362520344779
+      },
+      "Tr": {
+        "Min": 526.3240433815596,
+        "Max": 556.553085701692,
+        "Range": 30.229042320132407
+      },
+      "Es": {
+        "Min": 82.60724883085858,
+        "Max": 83.36553432115107,
+        "Range": 0.7582854902924936
+      },
+      "ET": {
+        "Min": 609.6435273439364,
+        "Max": 639.1603345325506,
+        "Range": 29.516807188614166
+      },
+      "B_RMSE": {
+        "Min": 1.1316323546851093,
+        "Max": 1.815400248600341,
+        "Range": 0.6837678939152319
+      }
+    }
+  },
+  "All_local_refits_success": true,
+  "Definitions": {
+    "R_Square": "1-SSE/SST; not Pearson squared",
+    "Pearson": "date-matched observed/simulated correlation",
+    "yield_observed": "published 13%-moisture yield; internal target separately retained"
+  },
+  "Limitations": [
+    "Conditional phase 2; not an 8-parameter joint posterior",
+    "Phase-1 original diagnostic flag retained",
+    "CC and biomass are calibration evidence, not independent validation",
+    "Zero irrigation is an unvalidated counterfactual",
+    "Representative-point refits are local optimization, not resampling or Sobol analysis"
+  ]
+}

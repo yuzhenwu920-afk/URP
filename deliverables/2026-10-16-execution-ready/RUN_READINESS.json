@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-18",
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "current_figure_pairs": 18,
+  "current_annual_comparisons_include_all_four_years": true,
+  "central_values_verified": 32,
+  "raw_2022_phase2_present": true,
+  "phase2_2022_retained_rows": 58784,
+  "original_model_available_years": [
+    2022
+  ],
+  "original_model_pending_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "missing_2022_data_files": [],
+  "original_2022_preflight_passed": true,
+  "original_2022_mean_point_replay_passed": true,
+  "original_2022_fixed_date_management_response_checked": true,
+  "new_complete_real_model_Sobol_executed": false,
+  "new_complete_real_model_NSGAIII_executed": false,
+  "MCMC_rerun": false,
+  "figure_font_minimum_pt": 10.5,
+  "png_dpi": 300,
+  "pdf_vector_labels": true
+}

@@ -1,6 +1,6 @@
 {
   "status": "DESIGN_ONLY_NO_MODEL_RESPONSES",
-  "config_sha256": "98917265db27be0c2d5f5892188afa30ab3c092ef4ba7b1e5f7d068ab9a32173",
+  "config_sha256": "f96810cefb018d7d23bcb3c5d5e0c064448cb8df090b8bae22652a0725392d70",
   "versions": {
     "numpy": "2.3.5",
     "scipy": "1.17.0",

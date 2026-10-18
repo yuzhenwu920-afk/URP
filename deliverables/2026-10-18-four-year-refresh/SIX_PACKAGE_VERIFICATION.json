@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-18",
+  "all_six_archives_updated": true,
+  "current_figure_pairs": 18,
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "figures_identical_across_all_six": true,
+  "figure_min_font_pt": 10.5,
+  "PNG_dpi": 300,
+  "vector_format": "PDF",
+  "engineering_tests": 19,
+  "preparation_tests": 10,
+  "paper_pages": 11,
+  "paper_embedded_figures": 9,
+  "model_2022_source_and_data_complete": true,
+  "model_2022_baseline_and_management_verified": true,
+  "new_complete_Sobol_experiment": false,
+  "new_complete_NSGAIII_experiment": false,
+  "MCMC_frozen": true,
+  "archives": [
+    {
+      "path": "deliverables/URP_full_package.zip",
+      "bytes": 73372363,
+      "sha256": "a18fc032c3407eecab29c6a32f30beac4f319ef1042048ca651bddb0c518c9d9",
+      "files": 347,
+      "current_figure_pairs": 18,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "figure_directory": "URP_review/artifacts/figures",
+      "CRC": "PASS",
+      "all_file_digests": "PASS"
+    },
+    {
+      "path": "deliverables/URP_run_results.zip",
+      "bytes": 50109730,
+      "sha256": "3308ca732883aa261d185bdf41ad4287b1cf9e34eb9d0a535e6441bd18564335",
+      "files": 200,
+      "current_figure_pairs": 18,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "figure_directory": "URP_run_results/artifacts/figures",
+      "CRC": "PASS",
+      "all_file_digests": "PASS"
+    },
+    {
+      "path": "deliverables/URP_figures.zip",
+      "bytes": 9006192,
+      "sha256": "3f9e1cc6c42b5f7b918aa1bbe9313fbed5408a297f355e3a0b1bb1b10345f98f",
+      "files": 64,
+      "current_figure_pairs": 18,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "figure_directory": "URP_figures/figures",
+      "CRC": "PASS",
+      "all_file_digests": "PASS"
+    },
+    {
+      "path": "deliverables/2026-10-16/URP_update_20261016.zip",
+      "bytes": 17931004,
+      "sha256": "1f2c2fd9b8cd4fe3eb2b80e762116525962bc33565d499088bb0266808e28e1b",
+      "files": 93,
+      "current_figure_pairs": 18,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "figure_directory": "URP_update_20261016/figures",
+      "CRC": "PASS",
+      "all_file_digests": "PASS"
+    },
+    {
+      "path": "deliverables/2026-10-16-execution-ready/URP_execution_ready_20261016.zip",
+      "bytes": 35817176,
+      "sha256": "0aa12f4e01517fd0c9e4ad414c4179b2acb78c760a22f26ce0b33d7af71dee6e",
+      "files": 145,
+      "current_figure_pairs": 18,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "figure_directory": "URP_execution_ready_20261016/figures",
+      "CRC": "PASS",
+      "all_file_digests": "PASS"
+    },
+    {
+      "path": "deliverables/2026-10-16-sobol-optimization/URP_Sobol_Optimization_Updated.zip",
+      "bytes": 31944436,
+      "sha256": "eb58ca4b92fbb86c20d06034b01a8ea0adfb4dba1151ed371477238ba2fca393",
+      "files": 132,
+      "current_figure_pairs": 18,
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "figure_directory": "DI_PHASE3_NEXTGEN_UPDATED/four_year_figures",
+      "CRC": "PASS",
+      "all_file_digests": "PASS"
+    }
+  ]
+}

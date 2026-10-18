@@ -172,6 +172,19 @@ class RevisedWorkflowTests(unittest.TestCase):
         out={};problem._evaluate(np.array([[cap/4]*4]),out)
         self.assertEqual(out['G'][0,0],0.)
 
+    def test_original_2022_baseline_and_management_are_reproduced(self):
+        from model_adapter import RealModel, baseline
+        study=load_study();model=RealModel(study)
+        actual=baseline(model,study,2022,self.root/'real_2022')
+        self.assertAlmostEqual(actual['Y_13pct'],14.07778281807083,places=10)
+        spec=model.management_space(2022)
+        self.assertEqual(spec['dates'],['2022-06-09','2022-06-22','2022-07-03','2022-07-24','2022-08-09'])
+        x=np.array([84.36,77.12,80.73,76.78,85.85])*.8
+        modified=check_management_response(model.simulate(study['_centers'][2022],2022,management(spec,x)),spec,x)
+        self.assertAlmostEqual(modified['Irrigation_mm'],float(x.sum()),places=8)
+        self.assertLess(abs(modified['Water_balance_residual_mm']),1e-8)
+        with self.assertRaises(FileNotFoundError):model.simulate(study['_centers'][2019],2019)
+
     def test_epsilon_selects_lowest_feasible_and_two_neighbors(self):
         d=pd.DataFrame({'Y13':[14.,16.,16.5,17.,16.1],'Irrigation_mm':[100.,250.,300.,350.,310.]})
         selected=C.epsilon_choices(d,16.55,445.27)

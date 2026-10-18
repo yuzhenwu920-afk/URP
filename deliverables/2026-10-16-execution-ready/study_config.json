@@ -1,5 +1,5 @@
 {
-  "status": "TRUE_2022_PHASE2_INTEGRATED_REAL_MODEL_STILL_MISSING",
+  "status": "2022_ORIGINAL_ENGINE_CONNECTED_FOUR_YEAR_FIGURES_UPDATED",
   "cases": {
     "2019": {
       "support_bounds": {
@@ -323,5 +323,13 @@
       "baseline_source": "source_data/conditional_mean_model.json; supplied original-model aggregate, not rerun"
     }
   },
-  "date_updated": "2026-10-17"
+  "date_updated": "2026-10-17",
+  "original_model_available_years": [
+    2022
+  ],
+  "original_model_pending_years": [
+    2019,
+    2020,
+    2021
+  ]
 }

@@ -5,3 +5,5 @@ scipy==1.17.0
 matplotlib==3.10.8
 SALib==1.5.2
 pymoo==0.6.2
+aquacrop==3.1.0
+emcee==3.1.6

@@ -1,0 +1,173 @@
+{
+  "READY": true,
+  "selected_model": "Modified_DI_Model",
+  "checks": [
+    {
+      "id": 1,
+      "condition": "Preserved baseline reproduced within declared tolerances",
+      "passed": true
+    },
+    {
+      "id": 2,
+      "condition": "148-day window ends 2022-09-11",
+      "passed": true
+    },
+    {
+      "id": 3,
+      "condition": "All six water subprocesses called 148 times per scenario",
+      "passed": true
+    },
+    {
+      "id": 4,
+      "condition": "Maximum daily water-balance residual <1e-8 mm",
+      "passed": true
+    },
+    {
+      "id": 5,
+      "condition": "0-1m initial water and hydraulics unchanged",
+      "passed": true
+    },
+    {
+      "id": 6,
+      "condition": "Canopy stress path has direct daily branch evidence",
+      "passed": true
+    },
+    {
+      "id": 7,
+      "condition": "HI0 profile explains yield without changing biomass/water/canopy",
+      "passed": true
+    },
+    {
+      "id": 8,
+      "condition": "Standard and Modified structures explicitly separated",
+      "passed": true
+    },
+    {
+      "id": 9,
+      "condition": "Likelihood excludes ET when Tr and Es are used",
+      "passed": true
+    },
+    {
+      "id": 10,
+      "condition": "All estimated/fixed parameters have prior, range, unit and structural flag",
+      "passed": true
+    },
+    {
+      "id": 11,
+      "condition": "Digitized E and fitted biomass are not labeled independent validation",
+      "passed": true
+    },
+    {
+      "id": 12,
+      "condition": "MCMC script contains fail-fast initial-point reproduction",
+      "passed": true
+    }
+  ],
+  "failed_reasons": [],
+  "max_daily_water_balance_residual_mm": 2.2737367544323206e-13,
+  "selected_HI0": 0.4,
+  "baseline_reproduction": {
+    "B_weather_reference": {
+      "Y_dry": {
+        "actual": 13.47318459362672,
+        "expected": 13.47318,
+        "tolerance": 0.001,
+        "passed": true
+      },
+      "Tr_mm": {
+        "actual": 525.2978676023031,
+        "expected": 525.29787,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "Es_mm": {
+        "actual": 48.937989788808196,
+        "expected": 48.93799,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "EsPot_mm": {
+        "actual": 139.68207052418612,
+        "expected": 139.68207,
+        "tolerance": 0.02,
+        "passed": true
+      },
+      "B_RMSE": {
+        "actual": 0.4627551316058652,
+        "expected": 0.46276,
+        "tolerance": 0.001,
+        "passed": true
+      },
+      "CC_RMSE": {
+        "actual": 0.08786807619490468,
+        "expected": 0.08787,
+        "tolerance": 0.0001,
+        "passed": true
+      },
+      "B_last": {
+        "actual": 30.536131373232024,
+        "expected": 30.53613,
+        "tolerance": 0.002,
+        "passed": true
+      },
+      "Irrigation_mm": {
+        "actual": 404.84000000000003,
+        "expected": 404.84,
+        "tolerance": 0.001,
+        "passed": true
+      }
+    },
+    "Preserved_CCZero": {
+      "Y_dry": {
+        "actual": 13.470049111064045,
+        "expected": 13.470049,
+        "tolerance": 0.002,
+        "passed": true
+      },
+      "Tr_mm": {
+        "actual": 525.4468722329179,
+        "expected": 525.446872,
+        "tolerance": 0.002,
+        "passed": true
+      },
+      "Es_mm": {
+        "actual": 73.16250053907443,
+        "expected": 73.162501,
+        "tolerance": 0.002,
+        "passed": true
+      },
+      "B_RMSE": {
+        "actual": 0.4600339608632695,
+        "expected": 0.460034,
+        "tolerance": 0.002,
+        "passed": true
+      }
+    }
+  },
+  "validation_label_evidence": {
+    "Biomass": "used in wp construction; calibration evidence, not independent validation",
+    "Es": "digitized/derived approximate constraint with deliberately wide uncertainty",
+    "structure_limitations": [
+      "Two-stage effective WP and evaporation input/suppression changes are experimental structural modifications.",
+      "Biomass observations informed WP selection and are not independent validation.",
+      "Digitized evaporation is approximate and receives a wide error model.",
+      "Deep initial water is fixed; DeepDry/DeepWet are structural sensitivity bounds."
+    ]
+  },
+  "planned_mcmc": {
+    "parameter_count": 8,
+    "groups": [
+      5,
+      3
+    ],
+    "sampler": "emcee.EnsembleSampler",
+    "walkers": 32,
+    "steps_per_walker_per_group": 2000,
+    "burn_in": "5 * integrated autocorrelation time (tau)",
+    "tau_method": "emcee.get_autocorr_time(tol=0)",
+    "paper_reference": "Liu et al., Agricultural Water Management 319 (2025) 109774",
+    "note": "Sampling specification matched to paper; frozen 2022 grouped model/priors/likelihood retained"
+  },
+  "no_sampling_performed": false,
+  "source_sha256": "951ce67bd0627d322a1f22a91ac023fa856b857a7e63f7f6cba5130c8459bf11"
+}

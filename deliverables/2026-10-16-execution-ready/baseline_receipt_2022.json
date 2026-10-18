@@ -1,0 +1,151 @@
+{
+  "status": "BASELINE_REPRODUCTION_PASSED",
+  "not_external_validation": true,
+  "year": 2022,
+  "config_sha256": "f96810cefb018d7d23bcb3c5d5e0c064448cb8df090b8bae22652a0725392d70",
+  "adapter_identity": "4c799f6003a30e0d68ffa351a68c64fcc6c8365a1e4e08b38a5df4c26a8e3e3f",
+  "model_provenance": {
+    "engine": "Modified_DI_AquaCrop",
+    "deterministic": true,
+    "available_years": [
+      2022
+    ],
+    "files": [
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/ACCOUNT_LEDGER.md",
+        "sha256": "e3327fc0d1f09dcc95577bb47a2fde38401773f8b82f756563e1a36db6dd584c"
+      },
+      {
+        "role": "model_source",
+        "path": "model_2022/DI_2022_MCMC_ONE_CLICK.py",
+        "sha256": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/ONECLICK_VALIDATION.json",
+        "sha256": "702c4bfc7a1a61c424b2e1d64c57da112caaa46293332ca1a71b3fde7951952f"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/README_先看这里.txt",
+        "sha256": "a96f043e34578f1161eab42107370cf0799160d6467ecf28066387bd124e5cc6"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/requirements.txt",
+        "sha256": "07b66670a121fe95bfc2d34668171b930d6b99e754d03b497f9c39884b47fed0"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/VALIDATION.md",
+        "sha256": "48ed4a16fd049b25334970b741ca078baa276978f0f008c0be0b1237bc613af3"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/data/expected_initial.json",
+        "sha256": "ad1b9d93667b85433618804a27b817689072b883dbb8188187c72180b07af095"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/data/origin.json",
+        "sha256": "378200da0c82c57075902ada30e1ec6b3f15081d4981507d204e781298e3f688"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/data/start.json",
+        "sha256": "84cf88b709e3de24b43ab237575b86a0d2294a0fefe0b7d11aa662704dd96af6"
+      },
+      {
+        "role": "observations",
+        "path": "model_2022/data/inputs/BIOMASS_FILE_biomass_observations.csv",
+        "sha256": "d1713ae639e255a062e13077d1686f9d04b6c20503821bbff080b5eae5287323"
+      },
+      {
+        "role": "weather",
+        "path": "model_2022/data/inputs/ETO_FILE_DI_2022_ETo_Geometry_Daily.csv",
+        "sha256": "b5d7fa4a74413c856953c489517130314df2d442f4dedaa77d6e4d7ff3b0b309"
+      },
+      {
+        "role": "observations",
+        "path": "model_2022/data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv",
+        "sha256": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv",
+        "sha256": "5d5bc2ad790c1960fe8af1d96aa7c1d80fe5cb89323ae030f9d64cf301fdab0b"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv",
+        "sha256": "c1a170756eaa3828b070f1e46ce0045bfcc87c33b6b372628f0f90b9b07fd7fd"
+      },
+      {
+        "role": "soil",
+        "path": "model_2022/data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv",
+        "sha256": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d"
+      },
+      {
+        "role": "frozen_reference",
+        "path": "model_2022/data/inputs/READINESS_FILE_pre_mcmc_readiness.json",
+        "sha256": "0ef89dc40bfdf671ef94bac380c505b9eb5785330940dab38679d3249c28d822"
+      },
+      {
+        "role": "observations",
+        "path": "model_2022/data/inputs/RS_CC_FILE_Maize-2022-main.csv",
+        "sha256": "fe02557847696e7e3faa2782d92552e9f94fd3ce1e046641ac1c6394dcaa4ddc"
+      },
+      {
+        "role": "weather",
+        "path": "model_2022/data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv",
+        "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+      },
+      {
+        "role": "irrigation",
+        "path": "model_2022/DI_2022_MCMC_ONE_CLICK.py",
+        "sha256": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5"
+      },
+      {
+        "role": "input",
+        "path": "model_2022/data/inputs/WEATHER_FILE_DI_Climate_2022_FINAL.csv",
+        "sha256": "8e2a9a94f1c4f84284808e0ba01538944b541f7eb6a83710070b0d40a31b253c"
+      }
+    ],
+    "input_role": "original data; MCMC samples remain frozen",
+    "control": "five irrigation amounts on the original five fixed dates"
+  },
+  "response": {
+    "Y_13pct": 14.07778281807083,
+    "B_t_ha": 30.376018477861283,
+    "Tr_mm": 529.9393430560073,
+    "Es_mm": 66.84529300867189,
+    "ET_mm": 596.7846360646793,
+    "MaxCC": 0.9172119084353844,
+    "Y_dry": 12.247671051721621,
+    "Irrigation_mm": 404.84000000000003,
+    "Rain_mm": 151.38380608461688,
+    "CR_mm": 0.0,
+    "GwIn_mm": 0.0,
+    "Runoff_mm": 0.021579290515043172,
+    "DeepPerc_mm": 0.0,
+    "TileDrain_mm": 0.0,
+    "Profile_initial_mm": 464.4928032935075,
+    "Profile_final_mm": 423.9103940229315,
+    "Surface_initial_mm": 0.0,
+    "Surface_final_mm": 0.0,
+    "Water_balance_residual_mm": -1.3121725928044725e-12,
+    "Max_daily_balance_residual_mm": 1.6608936448392342e-13,
+    "IWP_kg_m3": 3.477369533166394,
+    "ETWP_kg_m3": 2.3589385462237478
+  },
+  "repeat_seconds": [
+    0.5145655459928093,
+    0.3982345139957033
+  ],
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "SALib": "1.5.2"
+  }
+}

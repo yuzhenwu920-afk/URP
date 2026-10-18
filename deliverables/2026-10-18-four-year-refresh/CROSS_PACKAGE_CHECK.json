@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "archives": [
+    {
+      "archive": "URP_full_package.zip",
+      "all_four_year_raw_output_files": "MATCH",
+      "18_current_figure_pairs": "MATCH"
+    },
+    {
+      "archive": "URP_run_results.zip",
+      "all_four_year_raw_output_files": "MATCH",
+      "18_current_figure_pairs": "MATCH"
+    },
+    {
+      "archive": "URP_figures.zip",
+      "all_four_year_raw_output_files": "MATCH",
+      "18_current_figure_pairs": "MATCH"
+    },
+    {
+      "archive": "URP_update_20261016.zip",
+      "all_four_year_raw_output_files": "MATCH",
+      "18_current_figure_pairs": "MATCH"
+    },
+    {
+      "archive": "URP_execution_ready_20261016.zip",
+      "all_four_year_raw_output_files": "MATCH",
+      "18_current_figure_pairs": "MATCH"
+    },
+    {
+      "archive": "URP_Sobol_Optimization_Updated.zip",
+      "all_four_year_raw_output_files": "MATCH",
+      "18_current_figure_pairs": "MATCH"
+    }
+  ],
+  "portable_figure_recreation": "18 PNGs byte-identical",
+  "paper_figures": 9,
+  "paper_pages": 11
+}

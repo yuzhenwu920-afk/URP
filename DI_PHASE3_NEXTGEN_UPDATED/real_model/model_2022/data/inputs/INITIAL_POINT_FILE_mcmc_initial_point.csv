@@ -1,0 +1,9 @@
+﻿Parameter,Value,Group
+CCx,0.9888689507828456,canopy_transpiration
+CGC_CD,0.1042721204050489,canopy_transpiration
+CDC_CD,0.0688531948376533,canopy_transpiration
+SenescenceCD,133.0,canopy_transpiration
+Kcb,1.4215883424119928,canopy_transpiration
+WP_early,16.001450940746924,biomass_yield
+WP_late,29.552129166184766,biomass_yield
+HI0,0.4,biomass_yield
