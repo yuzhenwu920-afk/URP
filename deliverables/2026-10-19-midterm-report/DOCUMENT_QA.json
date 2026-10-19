@@ -1,0 +1,44 @@
+{
+  "pages": 7,
+  "doc_compatibility_body_text_matches_docx_pdf_on_every_page": true,
+  "doc_compatibility_note": "Footer extraction order differs; page bodies match exactly.",
+  "original_cover_logo_retained": true,
+  "all_seven_template_sections_present": true,
+  "official_title_and_three_members_checked_against_application": true,
+  "project_number": "X2026100190937",
+  "member_contributions": "Allocated per user: leader, Li, Duan; no percentages invented.",
+  "actual_reimbursement_cells_intentionally_blank": true,
+  "intro_characters": 89,
+  "figures": 2,
+  "each_figure_years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "observed_pairs": {
+    "CC": 48,
+    "Biomass": 37
+  },
+  "main_body_font_pt": 11,
+  "visual_review": "All 7 pages reviewed; changed cover, contributions and finances re-reviewed. No clipped text, missing Chinese glyphs or split figures.",
+  "scope": "Existing MCMC frozen; no complete new true-model Sobol/NSGA-III result or claimed savings.",
+  "source_files": {
+    "source_basic_information.docx": {
+      "bytes": 13173,
+      "sha256": "732ead4d2d7072357e47684c8eec8b7a4cef8769e57abb4486ea97aeabb2c33f"
+    },
+    "source_application.pdf": {
+      "bytes": 792911,
+      "sha256": "3e59d825cef3263a155e93b04a7d18b11f9343246ddb52e9463a9622cefdad71"
+    },
+    "original_midterm_template.doc": {
+      "bytes": 122880,
+      "sha256": "7c757565a43a0d6452392082a07fcda8b9439470b3ed77608d10b23838a772d0"
+    },
+    "converted_midterm_template.docx": {
+      "bytes": 77915,
+      "sha256": "e97786c3ed3f3c015d3070f13ca11ec074052149fae4a0cb1b39221f08a722c0"
+    }
+  }
+}
