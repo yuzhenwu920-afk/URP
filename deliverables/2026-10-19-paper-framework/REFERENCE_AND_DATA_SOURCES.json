@@ -1,0 +1,136 @@
+{
+  "reference": {
+    "title": "An integrated data assimilation, crop modeling, and multi-objective optimization framework for improving cotton irrigation water use efficiency",
+    "authors": [
+      "Yuqi Liu",
+      "Yang Wang",
+      "Jirka Šimůnek",
+      "Renkuan Liao"
+    ],
+    "year": 2025,
+    "journal": "Agricultural Water Management",
+    "volume": 319,
+    "article": 109774,
+    "doi": "10.1016/j.agwat.2025.109774",
+    "pdf_pages": 11,
+    "uploaded_file_sha256": "4abc4dd14b1560f1c34ba123372d0a08974ff6a447d44a6b8972054ab743b61a",
+    "reading_map": {
+      "3-5": "Framework, model, MCMC, Sobol and irrigation methods",
+      "6-7": "Calibration and sensitivity results",
+      "8-9": "Optimization, management and uncertainty limitations"
+    }
+  },
+  "model_2022_source_sha256": "31dc424301d544ca55cbdaf3f68a9b7c265feef2b66f3380f67121232fe954d5",
+  "phase2_formal_checkpoint_sha256": "d5b7dc3eac255c0dc54b9dafbf6f6bc23e627b63d0b19e28e67ba8e089b0977f",
+  "phase2_contract_2022": {
+    "handoff": "retained phase-1 arithmetic mean",
+    "phase": "biomass_yield",
+    "names": [
+      "WP_early",
+      "WP_late",
+      "HI0"
+    ],
+    "fixed": {
+      "CCx": 0.9374032578353431,
+      "CDC_CD": 0.06419402248370067,
+      "CGC_CD": 0.1317852891534627,
+      "HI0": 0.4,
+      "Kcb": 1.3774871353352593,
+      "SenescenceCD": 134.95391002237233,
+      "WP_early": 16.001450940746924,
+      "WP_late": 29.552129166184766
+    },
+    "center": {
+      "CCx": 0.9888689507828456,
+      "CDC_CD": 0.0688531948376533,
+      "CGC_CD": 0.1042721204050489,
+      "HI0": 0.4,
+      "Kcb": 1.4215883424119928,
+      "SenescenceCD": 133.0,
+      "WP_early": 16.001450940746924,
+      "WP_late": 29.552129166184766
+    },
+    "priors": {
+      "CCx": [
+        0.6,
+        0.99
+      ],
+      "CDC_CD": [
+        0.03,
+        0.12
+      ],
+      "CGC_CD": [
+        0.08,
+        0.16
+      ],
+      "HI0": [
+        0.35,
+        0.5
+      ],
+      "Kcb": [
+        1.05,
+        1.6
+      ],
+      "SenescenceCD": [
+        115.0,
+        145.0
+      ],
+      "WP": [
+        28.0,
+        40.0
+      ],
+      "WP_early": [
+        10.0,
+        22.0
+      ],
+      "WP_late": [
+        20.0,
+        38.0
+      ]
+    },
+    "normal_priors": [
+      "CCx",
+      "CDC_CD",
+      "CGC_CD",
+      "HI0",
+      "Kcb",
+      "SenescenceCD",
+      "WP_early",
+      "WP_late"
+    ],
+    "prior_sd": {
+      "CCx": 0.05,
+      "CDC_CD": 0.025,
+      "CGC_CD": 0.015,
+      "HI0": 0.03,
+      "Kcb": 0.1,
+      "SenescenceCD": 10.0,
+      "WP": 4.0,
+      "WP_early": 3.0,
+      "WP_late": 4.0
+    },
+    "sigmas": [
+      0.05,
+      50.300000000000004,
+      15.0,
+      0.5829000000000001
+    ],
+    "targets": [
+      503.0,
+      81.0,
+      12.25482
+    ],
+    "switch": "2022-07-05 00:00:00",
+    "ensembles": 1,
+    "walkers": 32,
+    "versions": {
+      "aquacrop": "3.1.0",
+      "emcee": "3.1.6",
+      "numpy": "2.5.1",
+      "pandas": "3.0.5",
+      "scipy": "1.18.0"
+    }
+  },
+  "metadata_note": "Prior_low/Prior_high in the legacy parameter_intervals_verified source table are not used to infer year-specific MCMC priors. The formal 2022 checkpoint contract is authoritative; the manuscript distinguishes these priors from independent Sobol support.",
+  "scope": "Existing 4-year calibration outputs and fixed arrays; 2022 model replay. No new formal MCMC, full real-model Sobol or optimization performed for this writing task."
+}

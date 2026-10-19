@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-19",
+  "pdf_pages": 38,
+  "editable_word_tables": 12,
+  "method_and_data_tables": 11,
+  "figure_locator_tables": 1,
+  "inline_figure_pages": 20,
+  "original_figure_groups": 18,
+  "editable_math_objects": 25,
+  "every_annual_figure_years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "minimum_effective_figure_font_pt": 10.223238582177862,
+  "main_body_font_pt": 11,
+  "landscape_figure_pages": 5,
+  "portrait_figure_pages": 15,
+  "one_displayed_figure_with_caption_interpretation_and_note_on_each_atlas_page": true,
+  "all_pdf_text_inside_page_bounds": true,
+  "no_unfilled_table_tokens": true,
+  "visual_review": "All 38 pages reviewed in contact sheets; model equations, tables, four-year CC, water ledger, paired plots and diagnostics inspected at page resolution; changed pagination rechecked.",
+  "source_checks": [
+    "2022 formal handoff explicitly arithmetic mean; frozen centers match handoff",
+    "Original model source hash and original paper metadata recorded",
+    "Tables generated from verified CSVs",
+    "Original 18 PNG/PDF pairs retained byte-for-byte"
+  ],
+  "scientific_scope": "Full new true-model Sobol and NSGA-III remain uncompleted; manuscript includes marked result slots and does not substitute proxy or cotton outcomes.",
+  "narrative_irrigation_range_checked_mm": [
+    404.84,
+    633.47
+  ]
+}

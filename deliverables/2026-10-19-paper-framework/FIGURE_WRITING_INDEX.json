@@ -1,0 +1,362 @@
+[
+  {
+    "label": "图1",
+    "file": "figures_original/F01_workflow.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "wide",
+    "image_width_cm": 26,
+    "image_height_cm": 12.533289817232376,
+    "minimum_effective_image_font_pt": 10.523529532698753,
+    "caption": "四年冻结校准输入、过程复现与后续正式计算的衔接。原图中的完成状态对应2026-10-18核验。",
+    "interpretation": "该图用来连接“为什么先校准”与“怎样进入决策”。先说明四年资料和条件参数来源，再说明2022原模型已接入；敏感性与优化在现阶段仍是待执行环节。",
+    "writing_note": "适合放在材料方法开头；投稿稿若实验已完成，必须随实际结果更新状态，不能只保留流程图就宣称完成优化。",
+    "source_sha256": "662d7d87f00e601fd8dac0c422cee076f835849c6057a84803ae4d3866e676ca"
+  },
+  {
+    "label": "图2",
+    "file": "figures_word/F10_climate.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.273042616451933,
+    "minimum_effective_image_font_pt": 10.44731276776726,
+    "caption": "线为参考蒸散ETo，灰柱为日降水。2022为冻结B组ETo；其他年份沿用原气象输入。",
+    "interpretation": "不同年份的需水驱动及降水过程并不相同，是跨年比较的外部条件。此处先描述季节内变率，不用气象曲线本身解释全部产量差异。",
+    "writing_note": "说明模型实际使用哪一类ETo及其处理来源；原始ETo与B组修正量不能混名。",
+    "source_sha256": "37eb53a9d276ece1fb586dc78c7f1ab02350c1f53b379f3edf8d107174e96351"
+  },
+  {
+    "label": "图3",
+    "file": "figures_word/F11_CC_evidence_roles.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.273042616451933,
+    "minimum_effective_image_font_pt": 10.44731276776726,
+    "caption": "彩色为DI田间LAI转换CC，灰色为遥感辅助时序；遥感未进入当前似然。",
+    "interpretation": "两类时序的差别提示来源、处理及转换的不确定性。2019—2021遥感处理为BI，2022标签不全；因此不以曲线接近作为DI独立验证。",
+    "writing_note": "用于资料与局限说明；不能把此图改称“遥感同化效果”，也不能把来源差异都归因于模型误差。",
+    "source_sha256": "9943f42d88830f8d7c725e2198a807c41cb8ab8f6dee5265aa34d0bff36fd51d"
+  },
+  {
+    "label": "图4",
+    "file": "figures_original/F12_sampling_record.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "wide",
+    "image_width_cm": 26,
+    "image_height_cm": 11.455613577023499,
+    "minimum_effective_image_font_pt": 10.523529532698753,
+    "caption": "左图为每walker保留步数，右图为总步数与组内最大τ之比；50τ为参考线。",
+    "interpretation": "保留步数是截断与链长的记录，不能直接等同有效独立样本量。阶段一每年4个ensemble、阶段二1个，这种组织决定了可作出的诊断范围。",
+    "writing_note": "与表4和补充图S7配合；超过一条长度参考线仍不能证明全面收敛。",
+    "source_sha256": "7076d6d905f650a21f581d6c6113fe8f87c771b9eb343b9d977f5bebb709e389"
+  },
+  {
+    "label": "图5",
+    "file": "figures_word/F02_CC_trajectories.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.023255813953488,
+    "minimum_effective_image_font_pt": 10.376609900506624,
+    "caption": "实线为模型逐日输出，空心点为校准观测。R²与RMSE按全部年度配对复算，四年坐标范围一致。",
+    "interpretation": "模型总体跟随冠层扩展与平台阶段；2022部分早期观测高于模拟，且R²低于其余年份，应解释这种过程偏差，而不是只报告总体拟合较好。",
+    "writing_note": "2019—2021为已核验原输出，2022为本轮冻结均值点回放；均属样本内校准评价。",
+    "source_sha256": "e96ef65de7b92793069ebc12bdc2d95c884d63ca5912e43d8901cdc6d432edbc"
+  },
+  {
+    "label": "图6",
+    "file": "figures_word/F03_Biomass_trajectories.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.023255813953488,
+    "minimum_effective_image_font_pt": 10.376609900506624,
+    "caption": "生物量为地上干物质，单位t/ha。实线与空心点含义同图5。",
+    "interpretation": "2021生物量RMSE约1.252 t/ha，2022约0.556 t/ha，说明不同年度误差并不一致。应联系WP结构和数字化资料误差讨论，不能只以高R²判断每个阶段均准确。",
+    "writing_note": "生物量属于阶段二校准证据，不写成独立验证；同时与终点产量和参数补偿图对照。",
+    "source_sha256": "7b37a60a7a4ad4934c919885b806b9c1f4828f7d2903957527cd962a9f6b840a"
+  },
+  {
+    "label": "图7",
+    "file": "figures_original/F06_calibration_summary.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "wide",
+    "image_width_cm": 26,
+    "image_height_cm": 10.601141407736208,
+    "minimum_effective_image_font_pt": 10.223238582177862,
+    "caption": "分别展示CC RMSE、生物量RMSE和年产量相对观测偏差。±5%灰带为项目容许范围。",
+    "interpretation": "冠层、生物量和产量共同描绘拟合表现；2022产量偏差接近零但冠层误差相对较大，体现终点与过程指标不能相互替代。",
+    "writing_note": "不同面板单位不同，不直接比较RMSE数值大小；灰带不是置信区间，单年产量不计算R²。",
+    "source_sha256": "d06bfc0ae9adad6202213258e553effd0322119e66a7026eda21fe75c6800ad6"
+  },
+  {
+    "label": "图8a",
+    "file": "figures_word/F07_parameter_intervals_a.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 14.345066931085771,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "点为中位数，竖线为2.5%—97.5%保留样本分位；由原图F07同一源表拆分重排。",
+    "interpretation": "CCx、CGC、CDC和衰老起始的区间长度不同，反映当前资料、先验和模型结构下的识别差异。贴近边界时应同时讨论边界及先验影响。",
+    "writing_note": "严格采样诊断限制仍在，称保留样本分位区间；区间窄不自动等于公共范围敏感性低。",
+    "source_sha256": "9b5d0bc3ec2e97f84716756a6de2f058153c8db09fb56b9069a1703d90e8f50d"
+  },
+  {
+    "label": "图8b",
+    "file": "figures_word/F07_parameter_intervals_b.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 14.345066931085771,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "显示Kcb及阶段二WP_early、WP_late、HI0；与图8a合为原F07一组。",
+    "interpretation": "阶段二不同年度的WP与HI0组合存在变化，需结合生物量和产量解释。它们是在相应阶段条件下得到的分布，不是相互独立的八参数区间。",
+    "writing_note": "不要把拼接区间称为八维联合后验；区间也不提供已验证的生理变化因果关系。",
+    "source_sha256": "6f339b14cf1ee8f69218c9e6ed540daf31253e723dabfb895d1763c7df8812ef"
+  },
+  {
+    "label": "图9",
+    "file": "figures_word/F08_phase2_compensation.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.356470004957858,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "散点仅作等距抽稀展示，相关系数由全部同阶段整行保留样本计算。",
+    "interpretation": "2022 WP_late与HI0相关约−0.645，显示生物量形成效率与收获分配之间可以补偿。类似终点产量可能由不同参数组合产生。",
+    "writing_note": "用于讨论可辨识性，并支持整行条件扰动；相关不是因果关系，也不能据此宣布某参数更敏感。",
+    "source_sha256": "3f5559d8758d4fc68c44f27538ac5aacdcafe4af91f15e87c0721902500a6d24"
+  },
+  {
+    "label": "图10",
+    "file": "figures_word/F09_water_ledger.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.280614774417451,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "入流及储水耗用与出流及储水增加同时展示，ΔS为期末减期初；模型水量账闭合。",
+    "interpretation": "2019、2022存在储水消耗，2020、2021存在储水增加。季节灌水与ET并非一一对应，因而节水评价应同时说明土壤储水变化。",
+    "writing_note": "守恒是内部数值检查，不等于通量得到田间验证；不能单凭2021储水增加就宣称其灌水一定可减少某个百分数。",
+    "source_sha256": "5798c6cd6a7fcdbcb1d9482dbb39e84defc03981ae07b06d540971cbdbfed9be"
+  },
+  {
+    "label": "图11",
+    "file": "figures_original/F13_yield_gate.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "wide",
+    "image_width_cm": 26,
+    "image_height_cm": 12.736945169712794,
+    "minimum_effective_image_font_pt": 10.523529532698753,
+    "caption": "圆点为模拟基准，空心菱形为发表观测，短竖线为95%观测门槛；右图为相对模型基准的减产余量。",
+    "interpretation": "2021只剩约0.86%的进一步减产余量，2022约4.99%。相同95%观测门槛在不同年份具有不同松紧程度。",
+    "writing_note": "右图不是节水率；选择候选要用绝对产量门槛，不能从有偏模拟基准再减5%。",
+    "source_sha256": "8424746e2450bb0039b037df120fb1769132c8dded4ce34ea51aaa8d7d038e34"
+  },
+  {
+    "label": "补充图S1",
+    "file": "figures_word/F04_CC_pairs.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 16.414414414414413,
+    "minimum_effective_image_font_pt": 11.172589912747393,
+    "caption": "虚线为1:1；R²按1−SSE/SST计算，n为该年CC配对数。",
+    "interpretation": "散点补充过程图：若某阶段点持续落在1:1线同一侧，提示系统偏差。2022部分观测高于模拟与图5的前期偏差相呼应。",
+    "writing_note": "不连接散点制造时间关系；样本量和观测量值范围均影响R²解释。",
+    "source_sha256": "0a8263c937a6e92a8c105c41e30149de4b512876cd9603602c4613fa6e54da96"
+  },
+  {
+    "label": "补充图S2",
+    "file": "figures_word/F05_Biomass_pairs.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 16.458023379383633,
+    "minimum_effective_image_font_pt": 11.202272670220154,
+    "caption": "横纵轴均为t/ha，四年使用相同量值范围及1:1参考。",
+    "interpretation": "配对散点展示较高生物量阶段的偏差是否具有方向性，可与RMSE和Bias一起报告。2022拟合较接近1:1仍属于同一校准资料的比较。",
+    "writing_note": "不要把生物量的拟合R²当作产量R²；数字化资料误差仍需说明。",
+    "source_sha256": "89d4f4f85709d0e44c0513670abe22b83e6417dbf3c4d445b86ea7ec999a9ae0"
+  },
+  {
+    "label": "补充图S3",
+    "file": "figures_word/F14_phase2_trace_WP_early.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.356470004957858,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "线为每步32个walker的中位数，浅带为10%—90%分位；仅显示截断后的保留段。",
+    "interpretation": "该图用于检查步间漂移和样本覆盖的外观，说明保留段如何分布；它不是32条独立链的轨迹图。",
+    "writing_note": "浅带不是作物产量的后验预测区间，也不单独证明收敛。",
+    "source_sha256": "02c89477206a8a8f603eab15787528af183299734af616636ee2679cb6174b06"
+  },
+  {
+    "label": "补充图S4",
+    "file": "figures_word/F15_phase2_trace_WP_late.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.356470004957858,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "轨迹定义与S3相同，各年保留起点不同，横轴保留原采样步数。",
+    "interpretation": "WP_late的轨迹与图9的相关结构结合，可帮助解释该参数在条件空间中的探索；波动幅度不直接等于管理风险。",
+    "writing_note": "样本有效性须结合自相关及适用诊断，不能因曲线平稳就删去诊断限制。",
+    "source_sha256": "1a9c27f72fdaac3eec1eaad739a8aad714b142947c7284d6360e944d957a662b"
+  },
+  {
+    "label": "补充图S5",
+    "file": "figures_word/F16_phase2_trace_HI0.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 15.356470004957858,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "HI0为参考收获指数输入；线、浅带与截断定义同S3。",
+    "interpretation": "HI0不同年度的分布位置与WP参数补偿相关；需要与最终调整收获指数HIadj区分。",
+    "writing_note": "不将输入HI0恒等于所有情景的最终HI，也不将分位带当作独立链不确定性。",
+    "source_sha256": "4c4b8f7acf6fb731639c51ed0c650fdf53341a42918819f7e3b1ec50a3d24f52"
+  },
+  {
+    "label": "补充图S6a",
+    "file": "figures_word/F17_parameter_centers_a.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 14.345066931085771,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "点为各阶段保留样本算术均值，虚线仅辅助跨年阅读；原F17拆分的第一部分。",
+    "interpretation": "该图说明确定性模型用了哪些年度输入，突出“来源于校准中心”的定义。",
+    "writing_note": "只有四个年度条件点，不依据连接线声称长期趋势或统计显著变化。",
+    "source_sha256": "01db067d97d71b38339c512d08295839190e498c29bf67e70635bc8b6d2bf4a4"
+  },
+  {
+    "label": "补充图S6b",
+    "file": "figures_word/F17_parameter_centers_b.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "portrait",
+    "image_width_cm": 17,
+    "image_height_cm": 14.345066931085771,
+    "minimum_effective_image_font_pt": 10.452492397300114,
+    "caption": "Kcb、WP_early、WP_late、HI0中心，与S6a合为原F17一组。",
+    "interpretation": "参数中心可用于确定性管理试验，但拼接中心输出不等于对全部样本预测求平均。",
+    "writing_note": "完整区间和相关信息见图8、图9；不能用中心点图代替不确定性描述。",
+    "source_sha256": "f3b2ef9eeac53e92161dfa60334a46cea375b738bef561f665c929ed8d9819b8"
+  },
+  {
+    "label": "补充图S7",
+    "file": "figures_original/S01_phase1_diagnostics.png",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "layout": "wide",
+    "image_width_cm": 26,
+    "image_height_cm": 12.292573623559539,
+    "minimum_effective_image_font_pt": 10.321413088408763,
+    "caption": "沿用原检查点复核，显示阶段一秩标准化Rhat和bulk ESS；四年仍未达到原严格诊断阈值。",
+    "interpretation": "该图保留对推断精度的实质限制。参数中心、过程拟合及下游确定性分析应连同此限制解释，不能改写为已全面认证收敛。",
+    "writing_note": "不因拟合好而隐去此图，也不据此自动新增联合后验或强制重跑门槛。原始计算组织及诊断定义须保留。",
+    "source_sha256": "d3aa4faab0c51260682888ff7e6de620be699cc9e71e1216c43ca7ca143a69cb"
+  }
+]
