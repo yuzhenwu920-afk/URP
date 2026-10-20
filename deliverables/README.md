@@ -1,26 +1,22 @@
-# URP 交付文件（最新核验：2026-10-18）
+# URP当前交付文件
 
-[六包四年图表同步更新](2026-10-18-four-year-refresh/)：六包均含相同的18组当前四年图，PNG300dpi、矢量PDF，最小字号10.5pt，蓝/橙/绿/紫固定对应2019/2020/2021/2022。
+2026-10-20交付：2019、2020、2021、2022四年真实Sobol与NSGA-III实验全部完成，原MCMC冻结。此前“尚未完成”的说明属于历史记录。
 
-当前论文为插入9幅四年图的更新稿，源表、原始配对/逐日输出、2022真实模型和完整data已同步。19项工程与10项准备包检查通过；完整新Sobol和NSGA-III实验尚未完成。
+Sobol最终N=512、3个独立随机种子，61,440行模型响应；NSGA-III与同预算NSGA-II各100个体×100代×5种子×4年，共400,000次评估和4,000代完整种群。全量数据一致性、水量平衡及六包逐文件哈希检查通过。
 
-[2022原模型数据已齐、实际预审和均值点回放通过](2026-10-18-data-complete/)：此前8份缺件已补齐，12个data原件和6项模型文件的哈希全部匹配；完整Sobol/优化实验尚未完成。
+六包均含相同的32组四年PNG/PDF图件：18组校准背景（流程与气象已更新）及14组新增真实敏感性/优化结果。新增图字号至少11pt、PNG320dpi，固定蓝/橙/绿/紫年份色。完整、复核、执行及工程包配有44页Word/PDF论文正文与图解、15张结果表、10个可编辑公式和Excel工作簿。
 
-[10月18日较早的2022图表、论文增补与缺件核验](2026-10-18/)保留当时记录，所列缺件现已由新包补齐。
+## 六包直下载
 
-## 当前六包下载
+- [完整资料包（论文、代码、数据和图件）](https://github.com/yuzhenwu920-afk/URP/raw/refs/heads/delivery/urp-review-20261015/deliverables/URP_full_package.zip) — 93.7 MiB
+- [完整运行结果包（全部响应和每代种群）](https://github.com/yuzhenwu920-afk/URP/raw/refs/heads/delivery/urp-review-20261015/deliverables/URP_run_results.zip) — 88.7 MiB
+- [四年高清图件包（PNG、PDF及源表）](https://github.com/yuzhenwu920-afk/URP/raw/refs/heads/delivery/urp-review-20261015/deliverables/URP_figures.zip) — 11.8 MiB
+- [复核与论文更新包](https://github.com/yuzhenwu920-afk/URP/raw/refs/heads/delivery/urp-review-20261015/deliverables/2026-10-16/URP_update_20261016.zip) — 30.8 MiB
+- [模型复跑与执行包](https://github.com/yuzhenwu920-afk/URP/raw/refs/heads/delivery/urp-review-20261015/deliverables/2026-10-16-execution-ready/URP_execution_ready_20261016.zip) — 53.6 MiB
+- [Sobol与NSGA-III完整工程包](https://github.com/yuzhenwu920-afk/URP/raw/refs/heads/delivery/urp-review-20261015/deliverables/2026-10-16-sobol-optimization/URP_Sobol_Optimization_Updated.zip) — 93.7 MiB
 
-2022正式第二阶段链2000×32×3已核验，burn=163后保留58784行，8个冻结数组不变；32个年度中心值均可追溯。六个ZIP内部版本已同步为2026-10-18，旧文件名保留以兼容原下载链接。
+[单独下载Word、PDF、Excel及核验清单](2026-10-19-actual-results/)
 
-- [完整修订工程](2026-10-16-sobol-optimization/URP_Sobol_Optimization_Updated.zip)
-- [完整运行结果](URP_run_results.zip)
-- [完整报告、论文与图件](URP_full_package.zip)
-- [新增材料复核与论文修订](2026-10-16/URP_update_20261016.zip)
-- [单独图件](URP_figures.zip)
-- [计算准备与论文增补](2026-10-16-execution-ready/URP_execution_ready_20261016.zip)
+Sobol使用声明的公共独立均匀范围；2022产量的第三、四名近似并列，保留数值排序不确定性。优化调整原灌水日期上的四个窗口水量；主候选未设季末储水约束，不能将灌水减少全部解释为耗水减少。论文与SCIENCE_REVIEW详细解释这一问题，并给出追加储水门槛后的事后筛查结果。原MCMC诊断限制和缺少独立田间验证的限制均保留。
 
-[本轮完整性核验及六包SHA256](2026-10-18-four-year-refresh/) · [直接查看工程代码](../DI_PHASE3_NEXTGEN_UPDATED/)。
-
-论文已同步四年数据及9幅插图；18组当前图的四年覆盖、字体、颜色和文件一致性均有核验记录。2022原模型与完整data已接入；另外三年的原模型尚待接入。完整新Sobol/NSGA-III实验仍未完成，历史代理图只留作历史审计，旧2021约38%节水结论不恢复。
-
-若ZIP页面不能预览，请点下载箭头或View raw。此独立分支用于交付，主分支未修改，历史版本可由Git提交记录访问。
+文件名保留原日期以兼容旧链接；ZIP内部为本轮四年真实计算结果。历史文件请按原日期目录及提交记录识别。

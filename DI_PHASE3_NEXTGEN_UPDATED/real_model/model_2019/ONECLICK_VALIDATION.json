@@ -1,0 +1,10 @@
+{
+  "Year": 2019,
+  "No_argument_launch_selects_formal_2000": true,
+  "Launcher_handoff_tested_with_stub_not_long_chain": true,
+  "Embedded_model_sampler_audit_and_runner_unchanged": true,
+  "Actual_preflight_passed": true,
+  "Process_status": "REVIEW",
+  "Formal_long_chain_started_during_testing": false,
+  "Script_sha256": "d1e24a3eab3cca3bb1739f3578330c750ed03d1a7e95d5c292653a4bde924e35"
+}

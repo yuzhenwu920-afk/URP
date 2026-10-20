@@ -43,7 +43,7 @@ def csv(path,rows):
 
 
 def versions():
-    return {p:importlib.metadata.version(p) for p in ['numpy','pandas','scipy','SALib','pymoo']}
+    return {p:importlib.metadata.version(p) for p in ['numpy','pandas','scipy','SALib','pymoo','aquacrop','emcee','numba','llvmlite']}
 
 
 def roundoff_tolerance(bound):
@@ -85,6 +85,9 @@ def validate_output(raw,tolerance=1e-5):
     r['IWP_kg_m3']=100*r['Y_13pct']/r['Irrigation_mm'] if r['Irrigation_mm']>0 else None
     r['ETWP_kg_m3']=100*r['Y_13pct']/r['ET_mm'] if r['ET_mm']>0 else None
     r['irrigation_events']=raw.get('irrigation_events')
+    for key in ['Harvest_date','Growing_days','Calendar_days','Early_termination','Crop_dead',
+                'Planned_irrigation_mm','Cancelled_irrigation_mm','Tr_until_harvest_mm','Es_until_harvest_mm']:
+        if key in raw:r[key]=raw[key]
     return r
 
 
@@ -112,9 +115,6 @@ class RealModel:
     def simulate(self,params,year,management=None):
         raw=self.module.simulate(params=dict(params),year=int(year),management=management)
         r=validate_output(raw,self.study['water_balance_atol_mm'])
-        if management is None:
-            if not math.isclose(r['Irrigation_mm'],self.study['baseline_irrigation_mm'][str(year)],abs_tol=1e-6,rel_tol=0):
-                raise ValueError('Original annual baseline irrigation not reproduced')
         return r
 
     def management_space(self,year):
@@ -124,6 +124,8 @@ class RealModel:
 def baseline(model,study,year,out):
     central=study['_centers'][year]
     a=model.simulate(central,year);b=model.simulate(central,year)
+    if not math.isclose(a['Irrigation_mm'],study['baseline_irrigation_mm'][str(year)],abs_tol=1e-6,rel_tol=0):
+        raise ValueError('Original central annual baseline irrigation not reproduced')
     for k in OUTPUTS+LEDGER+['Y_dry']:
         if not math.isclose(a[k],b[k],rel_tol=1e-10,abs_tol=1e-9):
             raise ValueError(f'Stateful simulation: repeated baseline changed {k}')
@@ -143,8 +145,8 @@ def validate_space(spec):
             raise ValueError('SMT must use four stage thresholds in [0,100]')
         if not spec.get('definition'):raise ValueError('SMT percent meaning and trigger direction are required')
     elif kind=='stage_amounts':
-        if n not in [4,5] or len(spec['dates'])!=n:
-            raise ValueError('Fallback requires four or five stage amounts with explicit fixed dates')
+        if n<1 or len(spec['dates'])!=n or len(set(spec['dates']))!=n:
+            raise ValueError('Each original irrigation event needs one unique fixed date and amount')
     else:raise ValueError('Use SMT or stage_amounts; do not mix variable systems')
     lo,hi=np.array(spec['lower'],float),np.array(spec['upper'],float)
     if lo.shape!=(n,) or hi.shape!=(n,) or not np.isfinite([lo,hi]).all() or np.any(lo<0) or np.any(hi<=lo):
@@ -164,7 +166,10 @@ def management(spec,x):
     if x.shape!=(len(spec['names']),) or not np.isfinite(x).all():raise ValueError('Invalid decision vector')
     if np.any(x<spec['lower']) or np.any(x>spec['upper']):raise ValueError('Decision outside control bounds')
     r={'kind':spec['kind'],'values':{k:float(v) for k,v in zip(spec['names'],x)}}
-    if spec['kind']=='stage_amounts':r['events']=[{'date':d,'mm':float(v),'stage':j} for j,(d,v) in enumerate(zip(spec['dates'],x))]
+    if spec['kind']=='stage_amounts':
+        if 'event_dates' in spec:
+            r['events']=[{'date':d,'mm':float(x[j]*w),'stage':j} for d,j,w in zip(spec['event_dates'],spec['event_stages'],spec['event_weights'])]
+        else:r['events']=[{'date':d,'mm':float(v),'stage':j} for j,(d,v) in enumerate(zip(spec['dates'],x))]
     return r
 
 
@@ -181,9 +186,18 @@ def check_management_response(response,spec,x):
     if not math.isclose(total,response['Irrigation_mm'],rel_tol=0,abs_tol=1e-6):
         raise ValueError('Actual event ledger differs from total irrigation')
     if spec['kind']=='stage_amounts':
-        if not math.isclose(total,float(np.sum(x)),rel_tol=0,abs_tol=1e-6):raise ValueError('Stage amounts were not applied')
+        cancellation=spec.get('actual_irrigation_policy','').startswith('cancel events after actual harvest')
+        if not cancellation and not math.isclose(total,float(np.sum(x)),rel_tol=0,abs_tol=1e-6):raise ValueError('Stage amounts were not applied')
         for j,(d,v) in enumerate(zip(spec['dates'],x)):
             actual=[e for e in events if e['stage']==j]
-            if any(e['date']!=d for e in actual) or not math.isclose(sum(e['mm'] for e in actual),v,rel_tol=0,abs_tol=1e-6):
+            if 'event_dates' in spec:
+                expected_events=[(ed,v*w if not cancellation or ed<response['Harvest_date'] else 0.)
+                    for ed,stage,w in zip(spec['event_dates'],spec['event_stages'],spec['event_weights']) if stage==j]
+                if len(actual)!=len(expected_events) or any(e['date']!=ed or not math.isclose(e['mm'],amount,abs_tol=1e-6,rel_tol=0)
+                    for e,(ed,amount) in zip(actual,expected_events)):
+                    raise ValueError('Applied within-window event amounts differ from original proportions')
+                continue
+            expected=0. if cancellation and d>=response['Harvest_date'] else v
+            if any(e['date']!=d for e in actual) or not math.isclose(sum(e['mm'] for e in actual),expected,rel_tol=0,abs_tol=1e-6):
                 raise ValueError('Applied stage amount/date differs from requested management')
     return response

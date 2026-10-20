@@ -2,3 +2,6 @@ __pycache__/
 .cache/
 output_revised/
 real_model/data/
+output_real/
+output_real_20261019/
+actual_publication_20261019/

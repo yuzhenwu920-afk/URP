@@ -34,7 +34,7 @@ def probability_summary(y,gate):
     half=z*math.sqrt(p*(1-p)/n+z*z/(4*n*n))/(1+z*z/n)
     return {'Mean_Y13':float(y.mean()),'SD_Y13':float(y.std(ddof=1)),
             'Q05_Y13':float(np.quantile(y,.05)),'Probability_above_absolute_gate':p,
-            'MC_standard_error_conditional':se,'Wilson_low':center-half,'Wilson_high':center+half}
+            'MC_standard_error_conditional':se,'Wilson_low':max(0.,center-half),'Wilson_high':min(1.,center+half)}
 
 
 def validate_year(model,study,year,spec,candidates,out):
@@ -70,7 +70,7 @@ def validate_year(model,study,year,spec,candidates,out):
     write(out/'conditional_validation_status.json',{'status':'COMPLETE' if not missing else 'PARTIAL_MISSING_RAW_GROUP',
           'groups_run':list(groups),'groups_missing':missing,'draws_per_available_group':k,
           'within_group_row_correlation_preserved':True,'eight_dimensional_joint_posterior_claim':False,
-          'MC_note':'empirical conditional draws; intervals exclude field/model uncertainty',
+          'MC_note':'independent with-replacement index draws conditional on the frozen empirical sample pool; binomial intervals describe only this resampling Monte Carlo error, excluding MCMC convergence error, field error and model uncertainty; 128 draws are not 128 effective posterior samples',
           'not_an_extra_optimization_objective':True,'engine':model.identity})
     from plot_results import plot_conditional
     if len(summary):plot_conditional(summary,out)

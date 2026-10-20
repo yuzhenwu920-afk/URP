@@ -27,7 +27,8 @@ class SyntheticFixture:
     def management_space(self,year):
         return {'kind':'stage_amounts','names':['Stage1_mm','Stage2_mm','Stage3_mm','Stage4_mm'],
                 'lower':[0]*4,'upper':[150]*4,'dates':[f'{year}-{m:02d}-01' for m in range(6,10)],
-                'allowed_windows':[[f'{year}-{m:02d}-01',f'{year}-{m:02d}-28'] for m in range(6,10)]}
+                'allowed_windows':[[f'{year}-{m:02d}-01',f'{year}-{m:02d}-28'] for m in range(6,10)],
+                'baseline_amounts':[self.study['baseline_irrigation_mm'][str(year)]/4]*4}
     def simulate(self,params,year,management=None):
         self.calls+=1;spec=self.management_space(year)
         if management is None:i=self.study['baseline_irrigation_mm'][str(year)];amounts=[i/4]*4
@@ -40,6 +41,8 @@ class SyntheticFixture:
                  Profile_initial_mm=500.,Profile_final_mm=500+i+150-et,Surface_initial_mm=0.,Surface_final_mm=0.,
                  Water_balance_residual_mm=0.,Max_daily_balance_residual_mm=0.,
                  irrigation_events=[{'date':d,'mm':float(mm),'stage':j} for j,(d,mm) in enumerate(zip(spec['dates'],amounts))])
+        raw.update(Growing_days=150,Harvest_date=f'{year}-09-30',Early_termination=False,
+                   Planned_irrigation_mm=i,Cancelled_irrigation_mm=0.)
         return validate_output(raw)
 
 
@@ -178,18 +181,33 @@ class RevisedWorkflowTests(unittest.TestCase):
         actual=baseline(model,study,2022,self.root/'real_2022')
         self.assertAlmostEqual(actual['Y_13pct'],14.07778281807083,places=10)
         spec=model.management_space(2022)
-        self.assertEqual(spec['dates'],['2022-06-09','2022-06-22','2022-07-03','2022-07-24','2022-08-09'])
-        x=np.array([84.36,77.12,80.73,76.78,85.85])*.8
+        self.assertEqual(spec['event_dates'],['2022-06-09','2022-06-22','2022-07-03','2022-07-24','2022-08-09'])
+        self.assertEqual(len(spec['names']),4)
+        x=np.array(spec['baseline_amounts'])*.8
         modified=check_management_response(model.simulate(study['_centers'][2022],2022,management(spec,x)),spec,x)
         self.assertAlmostEqual(modified['Irrigation_mm'],float(x.sum()),places=8)
         self.assertLess(abs(modified['Water_balance_residual_mm']),1e-8)
-        with self.assertRaises(FileNotFoundError):model.simulate(study['_centers'][2019],2019)
+        for year in [2019,2020,2021]:baseline(model,study,year,self.root/'four_year_baselines')
 
     def test_epsilon_selects_lowest_feasible_and_two_neighbors(self):
         d=pd.DataFrame({'Y13':[14.,16.,16.5,17.,16.1],'Irrigation_mm':[100.,250.,300.,350.,310.]})
         selected=C.epsilon_choices(d,16.55,445.27)
         self.assertEqual(selected.Irrigation_mm.tolist(),[250.,300.,350.])
         self.assertEqual(selected.Selection.iloc[0],'epsilon_min_irrigation')
+
+    def test_early_crop_death_is_retained_with_complete_calendar_balance(self):
+        from model_adapter import RealModel
+        study=load_study();model=RealModel(study)
+        values=[.6130526586156338,.09746210783720016,.11447732158005237,
+                117.12120055221021,1.523079896392301,32.60551296174526,
+                13.779619773849845,.53186786910519]
+        r=model.simulate(dict(zip(NAMES,values)),2022)
+        self.assertTrue(r['Early_termination']);self.assertTrue(r['Crop_dead'])
+        self.assertEqual(r['Growing_days'],141);self.assertEqual(r['Calendar_days'],148)
+        self.assertEqual(r['Harvest_date'],'2022-09-05')
+        self.assertGreater(r['Y_13pct'],0)
+        self.assertGreater(r['Es_mm'],r['Es_until_harvest_mm'])
+        self.assertLess(abs(r['Water_balance_residual_mm']),1e-8)
 
     def test_multiseed_optimization_replay_and_conditional_validation(self):
         selected=C.run_year(self.model,self.study,2019,self.root/'optimization',generations=10,
@@ -237,7 +255,8 @@ class RevisedWorkflowTests(unittest.TestCase):
 
     def test_entrypoint_stops_without_real_model_and_never_runs_mcmc(self):
         out=self.root/'blocked'
-        result=subprocess.run([sys.executable,str(HERE/'DI_PHASE3_ONE_CLICK.py'),'--out',str(out)],capture_output=True,text=True)
+        result=subprocess.run([sys.executable,str(HERE/'DI_PHASE3_ONE_CLICK.py'),'--out',str(out),
+            '--adapter',str(self.root/'missing_real_adapter.py')],capture_output=True,text=True)
         self.assertEqual(result.returncode,2)
         self.assertEqual(read(out/'EXECUTION_STATUS.json')['status'],'BLOCKED_OR_FAILED')
         self.assertFalse(list(out.rglob('sobol_indices.csv')))

@@ -1,0 +1,7 @@
+# Versions actually tested in the user's research environment, Python 3.14.
+aquacrop==3.1.0
+numpy==2.5.1
+pandas==3.0.5
+scipy==1.18.0
+matplotlib==3.11.1
+emcee==3.1.6

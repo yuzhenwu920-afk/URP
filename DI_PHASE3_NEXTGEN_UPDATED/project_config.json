@@ -5,7 +5,7 @@
     2021,
     2022
   ],
-  "adapter": "real_model/adapter.py",
+  "adapter": "real_model/four_year_adapter.py",
   "centers": "frozen_inputs/combined_central_parameter_vectors.csv",
   "phase_samples": "frozen_inputs/verified_phase_specific_draws.npz",
   "global_physical_bounds": {
@@ -117,5 +117,13 @@
       "evidence": "2022 true phase2 conditional_mean_model.json; aggregate accounting checked; model not rerun"
     }
   },
-  "phase2_2022_checkpoint": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/checkpoints/biomass_yield/ensemble_1.npz"
+  "phase2_2022_checkpoint": "frozen_inputs/DI_2022_Phase2/phase2_conditional_results/checkpoints/biomass_yield/ensemble_1.npz",
+  "engine_extension": {
+    "name": "fixed_calendar_early_harvest_accounting",
+    "crop_dynamics": "Original supplied annual Modified DI AquaCrop sources unchanged",
+    "calendar": "Water fluxes through original DATES; crop yield and biomass at actual harvest",
+    "post_harvest": "AquaCrop off-season balance; retain declared mulch; irrigation ceases after actual crop termination",
+    "failed_rows": "Retained, never discarded or filled with zero",
+    "baseline_requirement": "All four original centers reproduce existing Y13, Tr, Es, ET within original tolerance"
+  }
 }

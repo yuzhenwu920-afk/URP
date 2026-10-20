@@ -11,9 +11,11 @@ from matplotlib import font_manager as fm
 font=Path('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
 if font.exists():fm.fontManager.addfont(str(font));families=[fm.FontProperties(fname=str(font)).get_name(),'DejaVu Sans']
 else:families=['Microsoft YaHei','SimHei','DejaVu Sans']
-plt.rcParams.update({'font.family':families,'font.size':10,'axes.spines.top':False,
-                     'axes.spines.right':False,'axes.unicode_minus':False,'pdf.fonttype':42})
+plt.rcParams.update({'font.family':families,'font.size':11,'axes.spines.top':False,
+                     'axes.spines.right':False,'axes.unicode_minus':False,'pdf.fonttype':42,
+                     'xtick.labelsize':11,'ytick.labelsize':11,'legend.fontsize':11})
 COLORS=['#176B87','#A8762A','#805CA2','#3D8B75']
+YEAR_COLORS={2019:'#0072B2',2020:'#D55E00',2021:'#009E73',2022:'#A85AA0'}
 
 
 def save(fig,out,name):
@@ -34,7 +36,7 @@ def plot_sobol(df,out):
                 a.scatter(x+offset,s.S1,s=15,marker='x',c=col,alpha=.6)
             a.set(xticks=x,xticklabels=names,title=f'{year} · {output} · independent {sub.Track.iloc[0]} ranges',ylabel='S1 (×), ST (●)')
             a.tick_params(axis='x',labelrotation=20);a.grid(axis='y',alpha=.2);a.axhline(0,color='#AAB5BD',lw=.7)
-            if year==years[0]:a.legend(ncol=3,fontsize=8)
+            if year==years[0]:a.legend(ncol=3,fontsize=11)
         save(fig,out,f'sobol_{output}_annual_with_CI')
     # A heatmap of ordinal ranks preserves annual distinctions, not a mean ranking.
     sub=df[(df.Output=='Y_13pct')&(df.Status=='estimated')]
@@ -51,32 +53,37 @@ def plot_sobol(df,out):
 
 
 def plot_optimization(fronts,history,candidates,base,observed,out):
-    fig,axes=plt.subplots(1,2,figsize=(12,4.6))
+    fig,axes=plt.subplots(1,2,figsize=(10.2,4.8))
+    year=int(fronts.Year.iloc[0]);year_color=YEAR_COLORS[year]
     for j,(algorithm,g) in enumerate(fronts.groupby('Algorithm')):
-        axes[0].scatter(g.Irrigation_mm,g.Y13,s=20,c=COLORS[j],alpha=.65,label=algorithm)
+        axes[0].scatter(g.Irrigation_mm,g.Y13,s=16,c=year_color if algorithm=='NSGA3' else '#7B8B94',alpha=.5,label=algorithm)
     axes[0].scatter([base['Irrigation_mm']],[base['Y_13pct']],marker='*',s=150,c='#B14C47',label='model baseline')
     if len(candidates):axes[0].scatter(candidates.Irrigation_mm,candidates.Y13,facecolor='none',edgecolor='black',s=90,label='epsilon candidates')
     axes[0].axhline(.95*observed,c='#B14C47',ls='--',lw=1,label='95% observed yield')
-    axes[0].set(xlabel='Irrigation / mm',ylabel='Y13 / (t/ha)',title='Actual feasible points; no constructed monotone envelope')
-    axes[0].legend(fontsize=8)
-    for (algorithm,seed),g in history.groupby(['Algorithm','Seed']):
-        axes[1].plot(g.Generation,g.Hypervolume,lw=1,alpha=.7,label=f'{algorithm} {seed}')
-    axes[1].set(xlabel='Generation',ylabel='Normalized hypervolume',title='Fixed within-year reference [0, 1.01]')
-    axes[1].legend(fontsize=7,ncol=2)
+    axes[0].set(xlabel='灌水量（mm）',ylabel='Y13（t/ha）',title=f'{year} · 真实可行方案')
+    axes[0].legend(fontsize=11)
+    for algorithm,g in history.groupby('Algorithm'):
+        values=g.pivot(index='Generation',columns='Seed',values='Hypervolume')
+        color=year_color if algorithm=='NSGA3' else '#7B8B94'
+        axes[1].plot(values.index,values.median(axis=1),lw=1.6,c=color,ls='-' if algorithm=='NSGA3' else '--',label=algorithm)
+        axes[1].fill_between(values.index,values.min(axis=1),values.max(axis=1),color=color,alpha=.14,lw=0)
+    axes[1].set(xlabel='代数',ylabel='归一化超体积 HV',title='五种子中位数及最小—最大范围')
+    axes[1].legend(fontsize=11)
     for a in axes:a.grid(alpha=.2)
     save(fig,out,'optimization_front_and_convergence')
 
 
 def plot_conditional(df,out):
-    fig,axes=plt.subplots(1,2,figsize=(12,4.6));labels=[]
+    fig,axes=plt.subplots(1,2,figsize=(10.2,4.8));labels=[]
+    year=int(df.Year.iloc[0]);color=YEAR_COLORS[year]
     for j,r in enumerate(df.itertuples()):
-        label=f'{r.Candidate_ID}\n{r.Group}';labels.append(label)
-        axes[0].errorbar(j,r.Probability_above_absolute_gate,
-                         yerr=[[r.Probability_above_absolute_gate-r.Wilson_low],[r.Wilson_high-r.Probability_above_absolute_gate]],
-                         fmt='o',c=COLORS[j%4],capsize=3)
-        axes[1].scatter(j,r.Mean_Y13,c=COLORS[j%4],marker='o')
-        axes[1].scatter(j,r.Q05_Y13,c=COLORS[j%4],marker='v')
-    for a in axes:a.set_xticks(range(len(labels)),labels,rotation=35,ha='right');a.grid(axis='y',alpha=.2)
-    axes[0].set(ylabel='Conditional probability',ylim=(-.05,1.05),title='Absolute observed-yield gate; Wilson intervals')
-    axes[1].set(ylabel='Y13 / (t/ha)',title='Conditional mean (●) and 5th percentile (▼)')
+        group='阶段一' if r.Group.startswith('phase1') else '阶段二'
+        label=f'{r.Candidate_ID.split("_")[-1]} · {group}';labels.append(label)
+        p=r.Probability_above_absolute_gate
+        axes[0].errorbar(p,j,xerr=[[max(0.,p-r.Wilson_low)],[max(0.,r.Wilson_high-p)]],fmt='o',c=color,capsize=3)
+        axes[1].scatter(r.Mean_Y13,j,c=color,marker='o')
+        axes[1].scatter(r.Q05_Y13,j,c=color,marker='v')
+    for a in axes:a.set_yticks(range(len(labels)),labels);a.set_ylim(len(labels)-.5,-.5);a.grid(axis='x',alpha=.2)
+    axes[0].set(xlabel='条件门槛达标比例',xlim=(-.04,1.04),title='观测产量95%门槛；重采样MC区间')
+    axes[1].set(xlabel='Y13（t/ha）',title='条件均值（●）与5%分位数（▼）')
     save(fig,out,'conditional_candidate_checks')

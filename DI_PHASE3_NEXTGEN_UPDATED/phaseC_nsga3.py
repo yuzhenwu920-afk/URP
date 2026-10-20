@@ -10,6 +10,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from pymoo.core.problem import Problem
+from pymoo.core.repair import Repair
+from pymoo.core.sampling import Sampling
 from pymoo.algorithms.moo.nsga3 import NSGA3
 from pymoo.algorithms.moo.nsga2 import NSGA2
 from pymoo.optimize import minimize
@@ -17,12 +19,29 @@ from pymoo.util.ref_dirs import get_reference_directions
 from pymoo.util.nds.non_dominated_sorting import NonDominatedSorting
 from pymoo.indicators.hv import HV
 
-from model_adapter import (HERE,RealModel,load_study,baseline,write,csv,
+from model_adapter import (HERE,RealModel,load_study,baseline,write,csv,OUTPUTS,LEDGER,
                            management,check_management_response,validate_space,roundoff_tolerance)
 
 
 def hard_feasible(y,i,gate,cap):
     return (y>=gate-roundoff_tolerance(gate)) & (i<=cap+roundoff_tolerance(cap))
+
+
+class WaterBudgetRepair(Repair):
+    def _do(self,problem,X,**kwargs):
+        X=np.maximum(X,0.)
+        total=X.sum(axis=1)
+        X*=np.minimum(1.,problem.base_i/np.maximum(total,np.finfo(float).tiny))[:,None]
+        return X
+
+
+class WaterBudgetSampling(Sampling):
+    def _do(self,problem,n_samples,random_state=None,**kwargs):
+        rng=random_state if random_state is not None else np.random.default_rng(0)
+        X=rng.dirichlet(np.ones(problem.n_var),size=n_samples)*rng.uniform(.15,1.,n_samples)[:,None]*problem.base_i
+        X=np.clip(X,problem.xl,problem.xu)
+        X[0]=np.asarray(problem.spec['baseline_amounts'])
+        return X
 
 
 class DeterministicIrrigationProblem(Problem):
@@ -41,7 +60,7 @@ class DeterministicIrrigationProblem(Problem):
         return check_management_response(r,self.spec,x)
 
     def _evaluate(self,X,out,*args,**kwargs):
-        f=[];g=[]
+        f=[];g=[];records=[]
         for x in X:
             r=self.response(x);y,i=r['Y_13pct'],r['Irrigation_mm']
             f.append([-y,i])
@@ -50,7 +69,15 @@ class DeterministicIrrigationProblem(Problem):
             if abs(gi)<=roundoff_tolerance(self.base_i):gi=0.
             if abs(gy)<=roundoff_tolerance(self.gate):gy=0.
             g.append([gi/self.base_i,gy/self.observed])
+            if hasattr(self,'evaluation_file'):
+                records.append(dict(**dict(zip(self.spec['names'],map(float,x))),
+                    **{k:r[k] for k in OUTPUTS+LEDGER+['Y_dry','Growing_days','Harvest_date','Early_termination',
+                        'Planned_irrigation_mm','Cancelled_irrigation_mm']},
+                    G_irrigation=g[-1][0],G_yield=g[-1][1]))
         out['F']=np.asarray(f);out['G']=np.asarray(g)
+        if records:
+            pd.DataFrame(records).to_csv(self.evaluation_file,index=False,mode='a',
+                header=not self.evaluation_file.exists(),compression='gzip')
 
 
 def nondominated(df):
@@ -76,8 +103,8 @@ def run_seed(problem,algorithm,seed,generations,population,folder):
         raise FileExistsError('Use a new optimization run directory; do not overwrite a seeded search')
     if algorithm=='NSGA3':
         refs=get_reference_directions('das-dennis',2,n_partitions=population-1)
-        algo=NSGA3(pop_size=population,ref_dirs=refs,eliminate_duplicates=True)
-    elif algorithm=='NSGA2':algo=NSGA2(pop_size=population,eliminate_duplicates=True)
+        algo=NSGA3(pop_size=population,ref_dirs=refs,eliminate_duplicates=True,sampling=WaterBudgetSampling(),repair=WaterBudgetRepair())
+    elif algorithm=='NSGA2':algo=NSGA2(pop_size=population,eliminate_duplicates=True,sampling=WaterBudgetSampling(),repair=WaterBudgetRepair())
     else:raise ValueError('Unknown comparator')
     identity={'engine':problem.model.identity,'year':problem.year,'algorithm':algorithm,
               'seed':seed,'population':population,'generations':generations,'objectives':['-Y13','Irrigation_mm'],
@@ -85,6 +112,7 @@ def run_seed(problem,algorithm,seed,generations,population,folder):
               'yield_gate_t_ha':problem.gate,'space':problem.spec,
               'fixed_params':problem.params,'HV_normalization':['Y13/observed','I/baseline_I'],'HV_reference':[0,1.01]}
     write(folder/'run.json',{'status':'RUNNING','identity':identity})
+    problem.evaluation_file=folder/'evaluations.csv.gz'
     history=[];indicator=HV(ref_point=np.array([0.,1.01]))
     def callback(a):
         x,f,g=a.pop.get('X'),a.pop.get('F'),a.pop.get('G')
@@ -95,6 +123,7 @@ def run_seed(problem,algorithm,seed,generations,population,folder):
         history.append(dict(Year=problem.year,Algorithm=algorithm,Seed=seed,Generation=a.n_gen,
                             Evaluations=a.evaluator.n_eval,Feasible=len(feasible),Hypervolume=hv))
         csv(folder/'history.csv',history)
+        if a.n_gen%10==0:print(f'{problem.year} {algorithm} seed={seed} generation={a.n_gen}/{generations} feasible={len(feasible)}',flush=True)
     try:
         result=minimize(problem,algo,('n_gen',generations),seed=seed,callback=callback,verbose=False)
     except Exception as error:
@@ -115,7 +144,7 @@ def run_seed(problem,algorithm,seed,generations,population,folder):
     return df,history
 
 
-def run_year(model,study,year,out,generations=None,population=None,seeds=None,compare=None):
+def run_year(model,study,year,out,generations=None,population=None,seeds=None,compare=None,collect_existing=False):
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
     base=baseline(model,study,year,out);spec=model.management_space(year)
     write(out/'decision_space.json',spec)
@@ -126,7 +155,15 @@ def run_year(model,study,year,out,generations=None,population=None,seeds=None,co
     algorithms=['NSGA3','NSGA2'] if compare else ['NSGA3']
     for algorithm in algorithms:
         for seed in seeds:
-            f,h=run_seed(problem,algorithm,seed,generations,population,out/f'{algorithm}_seed{seed}')
+            folder=out/f'{algorithm}_seed{seed}'
+            if collect_existing:
+                from model_adapter import read
+                status=read(folder/'run.json')
+                if status['status'] not in ['COMPLETE','NO_FEASIBLE_SOLUTION'] or status['identity']['engine']!=model.identity:
+                    raise ValueError('Cannot collect unfinished or different-engine optimization')
+                f=pd.read_csv(folder/'pareto_front.csv') if status['status']=='COMPLETE' else pd.DataFrame()
+                h=pd.read_csv(folder/'history.csv').to_dict('records')
+            else:f,h=run_seed(problem,algorithm,seed,generations,population,folder)
             if not f.empty:fronts.append(f)
             histories+=h
             print(f'Optimization {year} {algorithm} seed={seed}: {len(f)} feasible front points',flush=True)

@@ -1,0 +1,23 @@
+{
+  "ACCOUNT_LEDGER.md": "e3327fc0d1f09dcc95577bb47a2fde38401773f8b82f756563e1a36db6dd584c",
+  "DI_2021_MCMC_ONE_CLICK.py": "6fbf649d91f1c01b106f4cd35d1c14246d613d596325dfc81149585a3ea00042",
+  "ONECLICK_VALIDATION.json": "a9e0165a208522f87e8b09b2e41ed9dd3c86000222f89e40f85f9d2e9fcd12a7",
+  "README_\u5148\u770b\u8fd9\u91cc.txt": "287cfff8c4bc21d915a569e06611c0952116baf93374d4f0de9eb70f3967e9fd",
+  "requirements.txt": "07b66670a121fe95bfc2d34668171b930d6b99e754d03b497f9c39884b47fed0",
+  "VALIDATION.md": "48ed4a16fd049b25334970b741ca078baa276978f0f008c0be0b1237bc613af3",
+  "data/expected_initial.json": "bd5aea67146bb19a3bcb52376b6e4b3318121448b83ca46227512f0a13780e8a",
+  "data/origin.json": "e2b2da8b01305efd952e5ad6e53d3aced565e45d98826a5349b96eafbf43cc27",
+  "data/start.json": "e6d618db40b3980618d917fa1efaba346a76254f4f1268fe01cea792854757b0",
+  "data/inputs/BIOMASS_FILE_DI_2021_biomass_digitized.csv": "edd22de84e75195a2b80da29d5de2f561ce9be431c72e1b1461ed8015f66ce8c",
+  "data/inputs/ETO_CONTROL_FILE_DI_2022_ETo_B_Audited_Daily.csv": "589bb202855eb0b1b7b57e894ebc63833c2addb9052eb5aea8b950126e84e7a5",
+  "data/inputs/ETO_FILE_DI_2021_ETo_B_Audited_Daily.csv": "656d9630b012e66b90b9143e7733c8d9b1f6604deb55624202ef9c2b00464c6f",
+  "data/inputs/FIELD_CC_FILE_DI_2019_2022_FIELD_LAI_CC_LOCKED.csv": "dcbac56f6021fe6ba7d88ae1c109df37a531409e57eec546fa639a6a82580dd6",
+  "data/inputs/FROZEN_2022_ETO_FILE_DI_2022_ETo_Geometry_Daily.csv": "b5d7fa4a74413c856953c489517130314df2d442f4dedaa77d6e4d7ff3b0b309",
+  "data/inputs/HISTORICAL_MAP_FILE_historical_2022_grouped_MAP_point.csv": "5d5bc2ad790c1960fe8af1d96aa7c1d80fe5cb89323ae030f9d64cf301fdab0b",
+  "data/inputs/INITIAL_POINT_FILE_mcmc_initial_point.csv": "c1a170756eaa3828b070f1e46ce0045bfcc87c33b6b372628f0f90b9b07fd7fd",
+  "data/inputs/INITIAL_WATER_FILE_DI_2019_2022_AquaCrop_InitialWater_FIELD_LOCKED.csv": "3f9f2db6ddeeb892d38c6018e1f71073b69842f8adba9b2af1cb4e8ba370910d",
+  "data/inputs/PHASE1_START_POINT_FILE_phase1_deterministic_start_2021.csv": "c1277bcdbcee7f621b176dc6f995f182a1ae497a812dea839f07265de254b4a2",
+  "data/inputs/READINESS_FILE_pre_mcmc_readiness.json": "0ef89dc40bfdf671ef94bac380c505b9eb5785330940dab38679d3249c28d822",
+  "data/inputs/RS_CC_FILE_Maize-2021-main.csv": "bc0b59c9ad847fdf8dd52fa933095b59dc986eb478a782509fcb420de3406c6f",
+  "data/inputs/WEATHER_FILE_DI_Climate_2021_FINAL.csv": "7abee14835afc632b56bfb60d448dda8d4fc14974c3bdfad84cd19031ef88acc"
+}

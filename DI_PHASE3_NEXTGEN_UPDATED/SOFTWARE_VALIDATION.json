@@ -1,13 +1,28 @@
 {
-  "date": "2026-10-18",
-  "tests_run": 19,
+  "tests_run": 20,
   "passed": true,
-  "failures": 0,
-  "errors": 0,
-  "skipped": 0,
-  "scope": "18 engineering/analytic checks plus one actual 2022 engine baseline-and-management check",
-  "details": "test_2022_cap_roundoff_is_not_a_physical_constraint_violation (test_revised_workflow.RevisedWorkflowTests.test_2022_cap_roundoff_is_not_a_physical_constraint_violation) ... ok\ntest_2022_groups_and_local95_use_new_real_samples (test_revised_workflow.RevisedWorkflowTests.test_2022_groups_and_local95_use_new_real_samples) ... ok\ntest_actual_event_sum_and_dates_are_checked (test_revised_workflow.RevisedWorkflowTests.test_actual_event_sum_and_dates_are_checked) ... ok\ntest_constant_and_incomplete_sobol_responses (test_revised_workflow.RevisedWorkflowTests.test_constant_and_incomplete_sobol_responses) ... ok\ntest_design_response_resume_and_parameter_mismatch (test_revised_workflow.RevisedWorkflowTests.test_design_response_resume_and_parameter_mismatch) ... Sobol 2019 global N=16 seed=101: 100/160\nok\ntest_entrypoint_stops_without_real_model_and_never_runs_mcmc (test_revised_workflow.RevisedWorkflowTests.test_entrypoint_stops_without_real_model_and_never_runs_mcmc) ... ok\ntest_epsilon_selects_lowest_feasible_and_two_neighbors (test_revised_workflow.RevisedWorkflowTests.test_epsilon_selects_lowest_feasible_and_two_neighbors) ... ok\ntest_failed_model_point_is_recorded_not_imputed (test_revised_workflow.RevisedWorkflowTests.test_failed_model_point_is_recorded_not_imputed) ... ok\ntest_formal_defaults_follow_guidance (test_revised_workflow.RevisedWorkflowTests.test_formal_defaults_follow_guidance) ... ok\ntest_ishigami_known_sobol_indices (test_revised_workflow.RevisedWorkflowTests.test_ishigami_known_sobol_indices) ... ok\ntest_missing_group_is_reported_without_synthetic_fallback (test_revised_workflow.RevisedWorkflowTests.test_missing_group_is_reported_without_synthetic_fallback) ... ok\ntest_multiseed_optimization_replay_and_conditional_validation (test_revised_workflow.RevisedWorkflowTests.test_multiseed_optimization_replay_and_conditional_validation) ... Optimization 2019 NSGA3 seed=31: 20 feasible front points\nOptimization 2019 NSGA3 seed=73: 20 feasible front points\nOptimization 2019 NSGA3 seed=109: 20 feasible front points\nOptimization 2019 NSGA3 seed=151: 20 feasible front points\nOptimization 2019 NSGA3 seed=199: 20 feasible front points\nOptimization 2019 NSGA2 seed=31: 20 feasible front points\nOptimization 2019 NSGA2 seed=73: 20 feasible front points\nOptimization 2019 NSGA2 seed=109: 20 feasible front points\nOptimization 2019 NSGA2 seed=151: 20 feasible front points\nOptimization 2019 NSGA2 seed=199: 20 feasible front points\nok\ntest_new_2022_frozen_rows_equal_formal_chain_after_burn (test_revised_workflow.RevisedWorkflowTests.test_new_2022_frozen_rows_equal_formal_chain_after_burn) ... ok\ntest_no_feasible_solution_has_no_high_yield_fallback (test_revised_workflow.RevisedWorkflowTests.test_no_feasible_solution_has_no_high_yield_fallback) ... ok\ntest_original_2022_baseline_and_management_are_reproduced (test_revised_workflow.RevisedWorkflowTests.test_original_2022_baseline_and_management_are_reproduced) ... ok\ntest_physical_and_unit_failures_are_not_ignored (test_revised_workflow.RevisedWorkflowTests.test_physical_and_unit_failures_are_not_ignored) ... ok\ntest_rank_gate_requires_all_scrambles_and_narrow_intervals (test_revised_workflow.RevisedWorkflowTests.test_rank_gate_requires_all_scrambles_and_narrow_intervals) ... ok\ntest_smt_definition_and_stage_dates_required (test_revised_workflow.RevisedWorkflowTests.test_smt_definition_and_stage_dates_required) ... ok\ntest_two_objectives_and_absolute_observed_gate (test_revised_workflow.RevisedWorkflowTests.test_two_objectives_and_absolute_observed_gate) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 6.144s\n\nOK\n",
-  "original_2022_engine_baseline_verified": true,
-  "full_Sobol_experiment_completed": false,
-  "full_NSGAIII_experiment_completed": false
+  "synthetic_tests_not_crop_results": true,
+  "four_original_baselines_reproduced": true,
+  "early_harvest_calendar_test_passed": true,
+  "actual_experiment_complete": true,
+  "numerical_comparison": {
+    "cases": 28,
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "case_types": "centers, independent physical-range parameter draws, modified irrigation allocations",
+    "all_fields_agree": true,
+    "max_absolute_numeric_difference": 1.1368683772161603e-13,
+    "rtol": 1e-10,
+    "atol": 1e-09,
+    "original_seconds": 11.136676771886414,
+    "compiled_seconds": 2.667471054039197,
+    "original_model_equations_unchanged": true,
+    "fastmath": false,
+    "prefix_state_reuse": "exact identical state before first original irrigation date"
+  },
+  "evidence": "verification/WORKFLOW_TESTS.log"
 }

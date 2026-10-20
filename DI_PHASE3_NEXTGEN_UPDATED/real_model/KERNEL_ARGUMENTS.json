@@ -1,0 +1,342 @@
+{
+  "evap_layer_water_content": {
+    "args": [
+      "InitCond_th",
+      "InitCond_EvapZ",
+      "prof"
+    ],
+    "attrs": {
+      "prof": [
+        "Ksat",
+        "Layer",
+        "Penetrability",
+        "dz",
+        "dzsum",
+        "tau",
+        "th_dry",
+        "th_fc",
+        "th_s",
+        "th_wp"
+      ]
+    }
+  },
+  "soil_evaporation": {
+    "args": [
+      "ClockStruct_EvapTimeSteps",
+      "ClockStruct_SimOffSeason",
+      "ClockStruct_TimeStepCounter",
+      "prof",
+      "Soil_EvapZmin",
+      "Soil_EvapZmax",
+      "Soil_REW",
+      "Soil_Kex",
+      "Soil_fwcc",
+      "Soil_fWrelExp",
+      "Soil_fevap",
+      "Crop_CalendarType",
+      "Crop_Senescence",
+      "IrrMngt_IrrMethod",
+      "IrrMngt_WetSurf",
+      "FieldMngt_Mulches",
+      "FieldMngt_fMulch",
+      "FieldMngt_MulchPct",
+      "NewCond_DAP",
+      "NewCond_Wsurf",
+      "NewCond_EvapZ",
+      "NewCond_Stage2",
+      "NewCond_th",
+      "NewCond_DelayedCDs",
+      "NewCond_GDDcum",
+      "NewCond_DelayedGDDs",
+      "NewCond_CCxW",
+      "NewCond_CCadj",
+      "NewCond_CCxAct",
+      "NewCond_CC",
+      "NewCond_PrematSenes",
+      "NewCond_SurfaceStorage",
+      "NewCond_Wstage2",
+      "NewCond_Epot",
+      "et0",
+      "Infl",
+      "Rain",
+      "Irr",
+      "growing_season"
+    ],
+    "attrs": {
+      "prof": [
+        "Ksat",
+        "Layer",
+        "Penetrability",
+        "dz",
+        "dzsum",
+        "tau",
+        "th_dry",
+        "th_fc",
+        "th_s",
+        "th_wp"
+      ]
+    }
+  },
+  "water_stress": {
+    "args": [
+      "Crop_p_up",
+      "Crop_p_lo",
+      "Crop_ETadj",
+      "Crop_beta",
+      "Crop_fshape_w",
+      "InitCond_tEarlySen",
+      "Dr",
+      "taw",
+      "et0",
+      "beta"
+    ],
+    "attrs": {}
+  },
+  "root_development": {
+    "args": [
+      "Crop",
+      "prof",
+      "NewCond_DAP",
+      "NewCond_Zroot",
+      "NewCond_DelayedCDs",
+      "NewCond_GDDcum",
+      "NewCond_DelayedGDDs",
+      "NewCond_TrRatio",
+      "NewCond_th",
+      "NewCond_CC",
+      "NewCond_CC_NS",
+      "NewCond_Germination",
+      "NewCond_rCor",
+      "NewCond_Tpot",
+      "NewCond_zGW",
+      "gdd",
+      "growing_season",
+      "water_table_presence"
+    ],
+    "attrs": {
+      "Crop": [
+        "CalendarType",
+        "Emergence",
+        "MaxRooting",
+        "PctZmin",
+        "SxBot",
+        "SxTop",
+        "Zmax",
+        "Zmin",
+        "fshape_ex",
+        "fshape_r",
+        "fshape_w",
+        "p_up"
+      ],
+      "prof": [
+        "Ksat",
+        "Layer",
+        "Penetrability",
+        "dz",
+        "dzsum",
+        "tau",
+        "th_dry",
+        "th_fc",
+        "th_s",
+        "th_wp"
+      ]
+    }
+  },
+  "drainage": {
+    "args": [
+      "prof",
+      "th_init",
+      "th_fc_Adj_init"
+    ],
+    "attrs": {
+      "prof": [
+        "Ksat",
+        "Layer",
+        "Penetrability",
+        "dz",
+        "dzsum",
+        "tau",
+        "th_dry",
+        "th_fc",
+        "th_s",
+        "th_wp"
+      ]
+    }
+  },
+  "rainfall_partition": {
+    "args": [
+      "precipitation",
+      "InitCond_th",
+      "NewCond_DaySubmerged",
+      "FieldMngt_SRinhb",
+      "FieldMngt_Bunds",
+      "FieldMngt_zBund",
+      "FieldMngt_CNadjPct",
+      "Soil_CN",
+      "Soil_AdjCN",
+      "Soil_zCN",
+      "Soil_nComp",
+      "prof"
+    ],
+    "attrs": {
+      "prof": [
+        "Ksat",
+        "Layer",
+        "Penetrability",
+        "dz",
+        "dzsum",
+        "tau",
+        "th_dry",
+        "th_fc",
+        "th_s",
+        "th_wp"
+      ]
+    }
+  },
+  "growing_degree_day": {
+    "args": [
+      "GDDmethod",
+      "Tupp",
+      "Tbase",
+      "temp_max",
+      "temp_min"
+    ],
+    "attrs": {}
+  },
+  "aeration_stress": {
+    "args": [
+      "NewCond_AerDays",
+      "Crop_LagAer",
+      "thRZ"
+    ],
+    "attrs": {
+      "thRZ": [
+        "Act",
+        "Aer",
+        "S"
+      ]
+    }
+  },
+  "temperature_stress": {
+    "args": [
+      "Crop",
+      "temp_max",
+      "temp_min"
+    ],
+    "attrs": {
+      "Crop": [
+        "PolColdStress",
+        "PolHeatStress",
+        "Tmax_lo",
+        "Tmax_up",
+        "Tmin_lo",
+        "Tmin_up",
+        "fshape_b"
+      ]
+    }
+  },
+  "cc_development": {
+    "args": [
+      "CCo",
+      "CCx",
+      "CGC",
+      "CDC",
+      "dt",
+      "Mode",
+      "CCx0"
+    ],
+    "attrs": {}
+  },
+  "cc_required_time": {
+    "args": [
+      "cc_prev",
+      "CCo",
+      "CCx",
+      "CGC",
+      "CDC",
+      "Mode"
+    ],
+    "attrs": {}
+  },
+  "adjust_CCx": {
+    "args": [
+      "cc_prev",
+      "CCo",
+      "CCx",
+      "CGC",
+      "CDC",
+      "dt",
+      "tSum",
+      "Crop_CanopyDevEnd",
+      "Crop_CCx"
+    ],
+    "attrs": {}
+  },
+  "update_CCx_CDC": {
+    "args": [
+      "cc_prev",
+      "CDC",
+      "CCx",
+      "dt"
+    ],
+    "attrs": {}
+  },
+  "HIadj_pre_anthesis": {
+    "args": [
+      "NewCond_B",
+      "NewCond_B_NS",
+      "NewCond_CC",
+      "Crop_dHI_pre"
+    ],
+    "attrs": {}
+  },
+  "HIadj_post_anthesis": {
+    "args": [
+      "NewCond_DelayedCDs",
+      "NewCond_sCor1",
+      "NewCond_sCor2",
+      "NewCond_DAP",
+      "NewCond_Fpre",
+      "NewCond_CC",
+      "NewCond_fpost_upp",
+      "NewCond_fpost_dwn",
+      "Crop",
+      "Ksw"
+    ],
+    "attrs": {
+      "Crop": [
+        "CanopyDevEndCD",
+        "HIendCD",
+        "HIstartCD",
+        "YldFormCD",
+        "a_HI",
+        "b_HI"
+      ],
+      "Ksw": [
+        "exp",
+        "sto"
+      ]
+    }
+  },
+  "HIadj_pollination": {
+    "args": [
+      "NewCond_CC",
+      "NewCond_Fpol",
+      "Crop_FloweringCD",
+      "Crop_CCmin",
+      "Crop_exc",
+      "Ksw",
+      "Kst",
+      "HIt"
+    ],
+    "attrs": {
+      "Ksw": [
+        "pol"
+      ],
+      "Kst": [
+        "PolC",
+        "PolH"
+      ]
+    }
+  }
+}

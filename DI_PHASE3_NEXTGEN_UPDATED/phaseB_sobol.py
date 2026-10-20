@@ -88,7 +88,9 @@ def run_track(model,study,year,n,seed,track,out):
                 raise
             f.write(json.dumps({'row_id':i,'params':row.tolist(),'output':r,'seconds':time.perf_counter()-t},allow_nan=False)+'\n');f.flush()
             values[i]=r
-            if (i+1)%100==0:print(f'Sobol {year} {track} N={n} seed={seed}: {i+1}/{len(x)}',flush=True)
+            if (i+1)%100==0:
+                write(out/'run.json',{'status':'RUNNING','identity':identity,'completed':len(values),'design_sha256':sha(design)})
+                print(f'Sobol {year} {track} N={n} seed={seed}: {i+1}/{len(x)}',flush=True)
     if len(values)!=10*n:raise ValueError('Do not drop failed Saltelli rows')
     y=np.array([[values[i][name] for name in OUTPUTS] for i in range(len(x))])
     np.save(out/'response_matrix.npy',y,allow_pickle=False)
@@ -112,10 +114,14 @@ def rank_checks(df,study):
         all_estimated=len(valid)==len(g)
         same_top=bool(sets and len(set(sets))==1 and set(g.Seed)==set(cfg['seeds']))
         narrow=bool(all_estimated and valid.ST_conf.max()<=cfg['ci_halfwidth_max'])
+        already_expanded='N' in g and int(g.N.max())>=512
+        next_action='retain screening' if all_estimated and same_top and narrow else (
+            'constant output: no normalized ranking' if not len(valid) else (
+                'report residual ranking uncertainty; optional N1024 only if a strict order is required' if already_expanded else 'increase N to 512 and compare'))
         rows.append(dict(Year=int(year),Output=output,Same_top_set_across_scrambles=same_top,
                          Max_ST_95ci_halfwidth=float(valid.ST_conf.max()) if len(valid) else None,
                          CI_halfwidth_limit=cfg['ci_halfwidth_max'],Stable_for_screening=all_estimated and same_top and narrow,
-                         Next_action='retain screening' if all_estimated and same_top and narrow else ('constant output: no normalized ranking' if not len(valid) else 'increase N to 512 and compare')))
+                         Next_action=next_action))
     return pd.DataFrame(rows)
 
 

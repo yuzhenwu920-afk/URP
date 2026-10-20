@@ -1,0 +1,723 @@
+{
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "groups": 32,
+  "PNG_dpi_new": 320,
+  "minimum_font_pt_new": 11,
+  "palette": {
+    "2019": "#0072B2",
+    "2020": "#D55E00",
+    "2021": "#009E73",
+    "2022": "#A85AA0"
+  },
+  "files": [
+    {
+      "file": "F01_workflow.png",
+      "sha256": "c1e4142646217c1c11c39008209b9d431bf0e53c8053f042d8078b97b112235c",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "F01_workflow.pdf",
+      "sha256": "ad78a7b3a1c4787936c5017971eacf6e0a47b964e6450c2197198aa0aaf92400",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "F02_CC_trajectories.png",
+      "sha256": "bda6f205e6a19bb42151aa320a9da88dae03b4ea8839ae99d255c6d1d88c9dd7",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F02_CC_trajectories.pdf",
+      "sha256": "4d8583f4362253ecfb92b2d3c7247c75482f9b47a88fdfeb6ec4d34ba42dde7f",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F03_Biomass_trajectories.png",
+      "sha256": "bf8936930ba334b6d39d336249658b5536100af619a736860ef390a63eaec268",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F03_Biomass_trajectories.pdf",
+      "sha256": "c0b245c038d2b662311c72a0e402846b770cc9fa57108c859b5d2d13f9b23548",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F04_CC_pairs.png",
+      "sha256": "60db28364591a8a727cc4f3b96c41ca08592ff50eeddcfde3b5bb3cc73e84abe",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F04_CC_pairs.pdf",
+      "sha256": "73f980ba6b4e594248b99bb063e304eb37a13879a30c602d15855ec26ea1ee08",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F05_Biomass_pairs.png",
+      "sha256": "e223ce7d823b8d60d50f9149a18b065e624b98e8ef0ad97e679f091335dead32",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F05_Biomass_pairs.pdf",
+      "sha256": "f371f1d54b9ccd1995cc51925efc913c27ab056726dc92ec2319171131489051",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F06_calibration_summary.png",
+      "sha256": "d06bfc0ae9adad6202213258e553effd0322119e66a7026eda21fe75c6800ad6",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F06_calibration_summary.pdf",
+      "sha256": "04fa49775143a4b5ca0a67f78875e61d82584f53a5512f5269554a414eba1597",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F07_parameter_intervals.png",
+      "sha256": "637487ad81de4b2c01b4d0da3306af3485225338ae71b01aef67ad42393ce934",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F07_parameter_intervals.pdf",
+      "sha256": "8e1b6706fa18d2dba4dbdf09edcaf8bb4c0f760aa223835d9e8f772b73816aca",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F08_phase2_compensation.png",
+      "sha256": "00a2d1a72cda253e16da134bf765a993c708b0a45ebb3208c428223fcb289686",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F08_phase2_compensation.pdf",
+      "sha256": "0b26a28b7a5a1c96bdd75f55ce59bb90ce0ea5d26b93e42bc658cd77743a1192",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F09_water_ledger.png",
+      "sha256": "a690ac3a3032d995248fee835bce076728602c0da64e2d27199bd58755951066",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F09_water_ledger.pdf",
+      "sha256": "891a5381c18dd2148258220bc53c0944cc8e82e03e1841ef6c400179f0e3a32a",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F10_climate.png",
+      "sha256": "f2c5b000e4db250b0f58c8bb355b5217afbfb2cc63bf1f87e21c5db3264e653c",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "F10_climate.pdf",
+      "sha256": "66fc97d068b831a2dfb8509f890e4bf93d40a02dcf548c7403efb8fff84d080f",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "F11_CC_evidence_roles.png",
+      "sha256": "79b010f8f36835876a5e2a3acc13b0749bd044a8f5c8fa9c28634318197df481",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F11_CC_evidence_roles.pdf",
+      "sha256": "04f97296141cbbce8df665a2c115c29b40480ba7d7655a9bc9d7e3ca628d34f7",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F12_sampling_record.png",
+      "sha256": "7076d6d905f650a21f581d6c6113fe8f87c771b9eb343b9d977f5bebb709e389",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F12_sampling_record.pdf",
+      "sha256": "6cecce9f22152384a45d150dd795048d371ae3152c1ab5e93ec22c3a14c8f438",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F13_yield_gate.png",
+      "sha256": "8424746e2450bb0039b037df120fb1769132c8dded4ce34ea51aaa8d7d038e34",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F13_yield_gate.pdf",
+      "sha256": "fde835e52a8985f0dc0cb7f48bc6dc5ddc9cecf62e0073a51f2e4af2b98f0154",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F14_phase2_trace_WP_early.png",
+      "sha256": "1e8c5a5b2f2b92cfc943beb26b3c319074f32cbef16bdc13398ecb8171727f78",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F14_phase2_trace_WP_early.pdf",
+      "sha256": "f0ae979b9a7033d4e627bdae1b5de5b5d6c4106b5529150d59e0b307730828f8",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F15_phase2_trace_WP_late.png",
+      "sha256": "ee4237895235d9ba3d956a88873c175892534e519171f8bf90c50d0be2b7f69f",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F15_phase2_trace_WP_late.pdf",
+      "sha256": "8b7c1d12f684aacaf0cd88d1760544c9c6bb026d39fae1c23b2746b3262f959d",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F16_phase2_trace_HI0.png",
+      "sha256": "8fb637230796d1fe77b98ae521412be3e37795192dbdb21e3f4d8847aed1fab8",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F16_phase2_trace_HI0.pdf",
+      "sha256": "f7f7aac6d965348c0c5484288bab79eb83428aba23119fe3399261e1d3383b9b",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F17_parameter_centers.png",
+      "sha256": "313eb1da84b5e35030a084ef1f18a8704eb88cd1180355d2f2cdba68ec699a77",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "F17_parameter_centers.pdf",
+      "sha256": "d7e50d31946d6cf2960c7445e429e9deb601006362f83ff8aae4a8790c12c85d",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "S01_phase1_diagnostics.png",
+      "sha256": "d3aa4faab0c51260682888ff7e6de620be699cc9e71e1216c43ca7ca143a69cb",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "S01_phase1_diagnostics.pdf",
+      "sha256": "2b5a3143194734349b814d38e3e7d4e7411904bc496da80b712f0439d6ab56e1",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 10.5
+    },
+    {
+      "file": "R01_Sobol_ST_Y_13pct.png",
+      "sha256": "681d20f888dafc9c7920a6e10b6504676ea88e1fb767c566c254dadb1de2c1b0",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_Y_13pct.pdf",
+      "sha256": "1a41973e83821826000622e4969dcdd3495ed395f3291d76f574ee034c95e98e",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_B_t_ha.png",
+      "sha256": "52742d7edfa8fa2e5b86f30fa6e251dd15eb6881b46a24d4e2c62a84a93dfa3b",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_B_t_ha.pdf",
+      "sha256": "a4cc86b2f0095a30758123f898647660a29ab0cb7fc58a16ac09ef23b0e10701",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_Tr_mm.png",
+      "sha256": "5d6e497be462dd749a636746b907a80ad610c64afdeabd4a59bfb4ee11300b0f",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_Tr_mm.pdf",
+      "sha256": "0d7569ba63c0871e2f03f67e142f605fb789147131465c73c580ae7630ebd62e",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_Es_mm.png",
+      "sha256": "a060548b229ea7cc4115d3e1100656e3d0f298a2b9b2db282d039cebb69c7257",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_Es_mm.pdf",
+      "sha256": "811b7b44f42e97159b4f61b610e096c948a441f02909899c8f2f1e0b02932a73",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_ET_mm.png",
+      "sha256": "7540707676c2861c9af77997c29c4a1784e0d129f0342913ae3f3a1c6efdd0b6",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_ET_mm.pdf",
+      "sha256": "7f7f020877dc33c27f2efabe9cf3404a693703e8906de8533182e46d7a80c8ea",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_MaxCC.png",
+      "sha256": "0ffbf246919fee43f61559d05de3b306d706de1e7374a42646005c543a43f19d",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R01_Sobol_ST_MaxCC.pdf",
+      "sha256": "39758ca23538a2d494884245f2979a41d149ab9163485aaf4221a4b08d9cf9e5",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R02_Sobol_Yield_CI.png",
+      "sha256": "f2de846986faf13546abc453ecdce054e97c59acf557304a5a9a98b126df7a5f",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R02_Sobol_Yield_CI.pdf",
+      "sha256": "5ae8490691b1b7f25803f708c1f5174f22f928afe823a0c95013507db2927f95",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R03_Actual_Pareto_fronts.png",
+      "sha256": "4aa85a7ce1bc9f95e85e8aa163a5a0a9b59dafa0ff5fe544956c2da26936db20",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R03_Actual_Pareto_fronts.pdf",
+      "sha256": "e9af2cfe4df24fdb4d9ff1b7028d247bf183f94ff4bf48e42eb08655304d5aa7",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R04_Water_and_yield.png",
+      "sha256": "4dfe9a69470686dfe7fbf36588b97235e5198bf8c386b5fc83cd8a66141b23c1",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R04_Water_and_yield.pdf",
+      "sha256": "df5b7514591f78c0d44c11da2bcc1f8ed88630a3f3104bc7995c8ac6090d4e93",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R05_Actual_irrigation_schedules.png",
+      "sha256": "39a725d706a42eb096311ff20e277bd72e699e554ae564452b7e9a9604ffec0f",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R05_Actual_irrigation_schedules.pdf",
+      "sha256": "f009050c62d39bc58c881c45acd7fd9f097f97def38d03d409e63e7b0fa942bf",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R06_Seeded_convergence.png",
+      "sha256": "0bfe7dcc6553f98bcdd8f9799b9fac909650dc3791b528c12fa9236b1cf786fd",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R06_Seeded_convergence.pdf",
+      "sha256": "6f1f291e6a633c303b808a46272f5c58cb161cfd1c1e25ef4cd6ee0fc0ed8fea",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R07_Conditional_candidate_checks.png",
+      "sha256": "e6462253eed616190f4d31fec1da3d0ae3584f9f4584344dedbad5b1d636e568",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R07_Conditional_candidate_checks.pdf",
+      "sha256": "2e00812ff511b5de8130e1d8b83ad1a872916260230f65b01d863d769584cb8c",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R08_Water_saving_decomposition.png",
+      "sha256": "44ab5ce9bf6d725d2d5226c51e8f3b8bd7b1b7530b688908674af0e6dca8be07",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R08_Water_saving_decomposition.pdf",
+      "sha256": "c153b14ceb1442742f094903c6728997dafe2f46483d2258da4eb5acb1723436",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R09_Terminal_storage_screening.png",
+      "sha256": "38e69c03acc06c6d9d67e41090127e8953d6371c7c5d87d1e2e7035213f1f9b2",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    },
+    {
+      "file": "R09_Terminal_storage_screening.pdf",
+      "sha256": "62caae5fbdc9bdeb499dca3627a810a0d0a0cec4824bebf4be1c3b218f406eee",
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "minimum_source_font_pt": 11
+    }
+  ]
+}

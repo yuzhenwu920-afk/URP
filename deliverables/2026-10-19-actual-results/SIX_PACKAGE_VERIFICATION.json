@@ -1,0 +1,1019 @@
+{
+  "status": "PASS",
+  "experiment": {
+    "status": "COMPLETE",
+    "engine": "4393550d3534f14296440cacf7a8133c954a7834ff923e3116d38c4c8a274daa",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "MCMC_frozen": true,
+    "optimization": {
+      "population": 100,
+      "generations": 100,
+      "seeds": [
+        31,
+        73,
+        109,
+        151,
+        199
+      ],
+      "compare_nsga2": true,
+      "conditional_draws": 128,
+      "validation_seed": 9071
+    },
+    "sobol": {
+      "N": 128,
+      "seeds": [
+        101,
+        202,
+        303
+      ],
+      "calc_second_order": false,
+      "bootstrap_resamples": 512,
+      "ci_halfwidth_max": 0.1,
+      "key_parameter_count": 3
+    },
+    "workers": 4,
+    "jobs": [
+      {
+        "job": [
+          "sobol",
+          2019,
+          128,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2019,
+          128,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2019,
+          128,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2020,
+          128,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2021,
+          128,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2021,
+          128,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2020,
+          128,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2020,
+          128,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2021,
+          128,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2022,
+          128,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2022,
+          128,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2022,
+          128,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2022,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2021,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2019,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2020,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2019,
+          512,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2019,
+          512,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2019,
+          512,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2020,
+          512,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2020,
+          512,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2020,
+          512,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2021,
+          512,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2021,
+          512,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2021,
+          512,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2022,
+          512,
+          101
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2022,
+          512,
+          202
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "sobol",
+          2022,
+          512,
+          303
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2019,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2021,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2022,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2020,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2022,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2019,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2021,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2020,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2019,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2022,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2021,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2020,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2019,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2022,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2021,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA3",
+          2020,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2022,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2019,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2021,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2020,
+          100,
+          31
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2022,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2021,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2019,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2020,
+          100,
+          73
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2021,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2022,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2019,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2020,
+          100,
+          109
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2022,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2019,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2021,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2020,
+          100,
+          151
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2022,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2019,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2021,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      },
+      {
+        "job": [
+          "NSGA2",
+          2020,
+          100,
+          199
+        ],
+        "status": "COMPLETE"
+      }
+    ],
+    "started_UTC": "2026-10-19T14:26:41.502998+00:00",
+    "last_update_UTC": "2026-10-19T15:45:17.671954+00:00",
+    "finished_UTC": "2026-10-19T15:49:23.836767+00:00",
+    "frozen_input_hashes": {
+      "frozen_inputs/combined_central_parameter_vectors.csv": "1646a87f2b399275ec78f28903b34b9c057455d10082b0b71187b81f0291dd86",
+      "frozen_inputs/verified_phase_specific_draws.npz": "7688628c8936b88935665471306f456375ddee2d13d4b343c43f979e0f5334e2"
+    }
+  },
+  "all_results_audit": {
+    "status": "PASS",
+    "engine": "4393550d3534f14296440cacf7a8133c954a7834ff923e3116d38c4c8a274daa",
+    "actual_crop_simulations_rerun_by_this_audit": false,
+    "sobol_final_design_rows": 61440,
+    "optimization_new_evaluations": 400000,
+    "generations": 4000,
+    "all_stored_population_individuals_checked_against_actual_evaluations": 400000,
+    "conditional_response_rows": 3072,
+    "max_abs_season_water_residual_mm": 2.4842905510524815e-12,
+    "numeric_lossless_repack": "float64 bits and all original generation arrays verified during packing",
+    "MCMC_strict_convergence_limitations_retained": true,
+    "checks": [
+      {
+        "unit": "Sobol 2019 seed101",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2019 seed202",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2019 seed303",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2019 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2019 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2019 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2019 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2019 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2019 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2019 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2019 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2019 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2019 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "Conditional validation 2019",
+        "rows": 768,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2020 seed101",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2020 seed202",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2020 seed303",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2020 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2020 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2020 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2020 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2020 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2020 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2020 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2020 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2020 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2020 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "Conditional validation 2020",
+        "rows": 768,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2021 seed101",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2021 seed202",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2021 seed303",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2021 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2021 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2021 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2021 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2021 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2021 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2021 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2021 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2021 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2021 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "Conditional validation 2021",
+        "rows": 768,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2022 seed101",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2022 seed202",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "Sobol 2022 seed303",
+        "rows": 5120,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2022 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2022 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2022 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2022 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA3 2022 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2022 seed31",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2022 seed73",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2022 seed109",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2022 seed151",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "NSGA2 2022 seed199",
+        "rows": 10000,
+        "generations": 100,
+        "status": "PASS"
+      },
+      {
+        "unit": "Conditional validation 2022",
+        "rows": 768,
+        "status": "PASS"
+      }
+    ]
+  },
+  "all_six_updated": true,
+  "same_figures_in_all_six": true,
+  "archives": [
+    {
+      "path": "deliverables/URP_full_package.zip",
+      "bytes": 98224104,
+      "sha256": "51e9de5b976f1031aa38f6d4fabf972b552b81be11667aa4f13b8cc3c9c55047",
+      "manifest_files": 854,
+      "CRC": "PASS",
+      "all_file_hashes": "PASS",
+      "four_year_figure_groups": 32
+    },
+    {
+      "path": "deliverables/URP_run_results.zip",
+      "bytes": 92956773,
+      "sha256": "4f0636358fb94509bcc55398e8f8ee13d236865c12deae9e6ee351c7f22d6476",
+      "manifest_files": 684,
+      "CRC": "PASS",
+      "all_file_hashes": "PASS",
+      "four_year_figure_groups": 32
+    },
+    {
+      "path": "deliverables/URP_figures.zip",
+      "bytes": 12355203,
+      "sha256": "25bd50ad5ae71cb5146452eec26bd796e33a67c7dee3e98b32fb9bcacc5134be",
+      "manifest_files": 125,
+      "CRC": "PASS",
+      "all_file_hashes": "PASS",
+      "four_year_figure_groups": 32
+    },
+    {
+      "path": "deliverables/2026-10-16/URP_update_20261016.zip",
+      "bytes": 32329383,
+      "sha256": "61ac44e11942902bdf4290ef52c2769fc36dd4eb9ac8c86027ae03babb328d13",
+      "manifest_files": 151,
+      "CRC": "PASS",
+      "all_file_hashes": "PASS",
+      "four_year_figure_groups": 32
+    },
+    {
+      "path": "deliverables/2026-10-16-execution-ready/URP_execution_ready_20261016.zip",
+      "bytes": 56191039,
+      "sha256": "2d1a04e7dae427b74f1de26777a7f88d08585b28e2a9cd333c0b22a6704f4965",
+      "manifest_files": 323,
+      "CRC": "PASS",
+      "all_file_hashes": "PASS",
+      "four_year_figure_groups": 32
+    },
+    {
+      "path": "deliverables/2026-10-16-sobol-optimization/URP_Sobol_Optimization_Updated.zip",
+      "bytes": 98248076,
+      "sha256": "b1865bfabfd8e2a673dc1da81a676181a14af42e7c3d1613d284020429af643e",
+      "manifest_files": 854,
+      "CRC": "PASS",
+      "all_file_hashes": "PASS",
+      "four_year_figure_groups": 32
+    }
+  ]
+}
