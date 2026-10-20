@@ -1,0 +1,282 @@
+{
+  "status": "PASS_FOR_DELIVERED_FIGURES_AND_SKELETON",
+  "figure_groups": 43,
+  "original_figure_groups_covered": 32,
+  "original_F01_F17_complete": true,
+  "all_four_years": true,
+  "all_figure_labels_English": true,
+  "figure_interpretations": 43,
+  "Word_pages": 57,
+  "Word_embedded_panels": 45,
+  "no_blank_or_orphan_figure_pages": true,
+  "source_table_references": "PASS",
+  "Excel_checks": "WORKBOOK_CHECK.json",
+  "portable_43_group_rebuild": "PASS",
+  "new_MCMC_runs": 0,
+  "unresolved_custom_labels": [
+    "Y_catmul",
+    "Y_tot",
+    "cat",
+    "coc"
+  ],
+  "checks": [
+    {
+      "figure": "F02_CC_trajectories_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F05_Biomass_pairs_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F07_parameter_intervals_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "S02_parameter_boundary_mass_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "S01_MCMC_stage1_diagnostics_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F09_annual_water_budget_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "S03_annual_water_storage_change_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_four_outputs_2x2_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "S05_Sobol_Tr_Es_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R02_Sobol_Yield_all_years_mean_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "S04_Sobol_yield_numerical_intervals_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R03_full_range_diagnostic_2x2_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "N01_Optimized_yield_irrigation_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R04_right_yield_comparison_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R04_irrigation_yield_comparison_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R03_Gated_Pareto_fronts_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "S07_Irrigation_reduction_decomposition_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "Figure1_three_column_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "Figure1_tree_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "Figure10_environment_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F03_Biomass_trajectories_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F04_CC_pairs_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F06_calibration_summary_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F08_phase2_compensation_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F14_phase2_trace_WP_early_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F15_phase2_trace_WP_late_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F16_phase2_trace_HI0_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F17_parameter_centers_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F11_CC_evidence_roles_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F12_sampling_record_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F09_water_ledger_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "F13_yield_gate_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_ST_Y_13pct_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_ST_B_t_ha_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_ST_Tr_mm_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_ST_Es_mm_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_ST_ET_mm_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R01_Sobol_ST_MaxCC_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R05_Actual_irrigation_schedules_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R06_Seeded_convergence_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R07_Conditional_candidate_checks_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "R09_Terminal_storage_screening_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    },
+    {
+      "figure": "N02_Biomass_regression_EN",
+      "English_text": "PASS",
+      "PDF_text_bounds": "PASS",
+      "PNG_dpi": 600
+    }
+  ]
+}
