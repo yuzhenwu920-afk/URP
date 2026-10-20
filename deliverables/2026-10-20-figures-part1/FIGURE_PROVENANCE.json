@@ -1,0 +1,79 @@
+{
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "data_source": "exact weather/date selection used by current publish_actual_results.context_figures",
+  "all_original_daily_values_preserved": true,
+  "smoothing_or_annual_scaling_applied": false,
+  "same_axis_limits_all_panels": {
+    "ET0_mm_d": [
+      0,
+      11
+    ],
+    "precipitation_mm": [
+      0,
+      60
+    ]
+  },
+  "original_model_sources_changed": false,
+  "MCMC_or_optimization_rerun": false,
+  "data_sha256": "eb6f8bcbbc67015c0c746b2a1dd6af05c914e345c1b557f07bbb1949c678ff30",
+  "summary": [
+    {
+      "Year": 2019,
+      "Window_start": "2019-04-18",
+      "Window_end": "2019-09-15",
+      "Days": 151,
+      "Reference_ET0_sum_mm": 595.6228946715228,
+      "Reference_ET0_mean_mm_d": 3.9445224812683626,
+      "Precipitation_sum_mm": 177.86875512631184
+    },
+    {
+      "Year": 2020,
+      "Window_start": "2020-04-20",
+      "Window_end": "2020-09-18",
+      "Days": 152,
+      "Reference_ET0_sum_mm": 632.2582696700078,
+      "Reference_ET0_mean_mm_d": 4.159593879407947,
+      "Precipitation_sum_mm": 113.46477854038639
+    },
+    {
+      "Year": 2021,
+      "Window_start": "2021-04-27",
+      "Window_end": "2021-09-21",
+      "Days": 148,
+      "Reference_ET0_sum_mm": 612.9308885824498,
+      "Reference_ET0_mean_mm_d": 4.141424922854391,
+      "Precipitation_sum_mm": 143.32284983325394
+    },
+    {
+      "Year": 2022,
+      "Window_start": "2022-04-17",
+      "Window_end": "2022-09-11",
+      "Days": 148,
+      "Reference_ET0_sum_mm": 609.2611846508916,
+      "Reference_ET0_mean_mm_d": 4.116629626019537,
+      "Precipitation_sum_mm": 151.38380608461688
+    }
+  ],
+  "source_figure": "DI_PHASE3_NEXTGEN_UPDATED/four_year_figures/F10_climate.png",
+  "english_labels": {
+    "参考蒸散 ETo（mm/d）": "Reference evapotranspiration, ET0 (mm d−1)",
+    "降水（mm）": "Precipitation (mm)",
+    "日期": "Date (MM–DD)"
+  },
+  "recommended_print_width_mm": 183,
+  "figure10_source_fonts_pt": {
+    "ticks": 9,
+    "axis": 10,
+    "titles": 11
+  },
+  "export": {
+    "PNG_dpi": 600,
+    "PDF": "vector text and marks",
+    "SVG": "editable text"
+  }
+}

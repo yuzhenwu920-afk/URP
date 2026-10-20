@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "all_four_years": true,
+  "daily_rows": 599,
+  "source_value_checks": [
+    {
+      "year": 2019,
+      "rows": 151,
+      "exact_dates_and_values": "PASS"
+    },
+    {
+      "year": 2020,
+      "rows": 152,
+      "exact_dates_and_values": "PASS"
+    },
+    {
+      "year": 2021,
+      "rows": 148,
+      "exact_dates_and_values": "PASS"
+    },
+    {
+      "year": 2022,
+      "rows": 148,
+      "exact_dates_and_values": "PASS"
+    }
+  ],
+  "PDF_text_bounds": "PASS",
+  "PNG_dpi": 600,
+  "figure10_data_transformation": "English labels only; original daily dates and values preserved",
+  "visual_review": "Three-column/tree layouts and English four-panel climate figure inspected",
+  "MCMC_unchanged": true,
+  "new_optimization_runs": false
+}
