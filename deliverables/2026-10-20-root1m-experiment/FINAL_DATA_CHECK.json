@@ -1,0 +1,18 @@
+{
+  "Status": "PASS",
+  "Actual_optimization_evaluations": 200000,
+  "Generation_files": 2000,
+  "Population_members_matched": 200000,
+  "Years": [
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "Root_max_m": 1.0,
+  "Root_uptake_below_1m_mm": 0.0,
+  "English_figure_groups": 6,
+  "PNG_dpi": 600,
+  "MCMC_reruns": 0,
+  "Published_target_rule": "missing targets retained as NOT_FOUND_IN_SEARCH; no invented intersection"
+}

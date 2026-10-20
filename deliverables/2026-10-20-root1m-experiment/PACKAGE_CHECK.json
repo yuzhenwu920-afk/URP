@@ -1,0 +1,12 @@
+{
+  "Status": "PASS",
+  "Archive": "URP_Root1m_FourYear_Experiment_20261020.zip",
+  "Archive_bytes": 73413721,
+  "Archive_SHA256": "413f05b61e2d90422cff2a56ac7ddbad6f1648bf7a45fc84a0672494113a85e2",
+  "Files_in_archive": 2232,
+  "Report_pages": 13,
+  "ZIP_CRC": "PASS",
+  "Manifest_hashes": "PASS",
+  "Prior_outputs_overwritten": false,
+  "MCMC_reruns": 0
+}
