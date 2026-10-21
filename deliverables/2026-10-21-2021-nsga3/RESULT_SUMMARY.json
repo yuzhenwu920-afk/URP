@@ -1,0 +1,30 @@
+{
+  "Year": 2021,
+  "Algorithm": "NSGA-III",
+  "Seeds": [
+    31,
+    73,
+    109
+  ],
+  "Population": 100,
+  "Generations": 100,
+  "Actual_optimization_evaluations": 30000,
+  "Front_points": 1437,
+  "Storage_qualified_subset_points": 17,
+  "Storage_qualified_evaluations": 150,
+  "Observed_Y13": 15.86,
+  "Baseline_DI_Y13": 15.152156344518215,
+  "Baseline_DI_irrigation_mm": 633.47,
+  "Baseline_DI_final_root_storage_mm": 276.49344536098965,
+  "Zero_irrigation_Y13": 0.9192705468276562,
+  "Maximum_found_Y13": 15.209652348989025,
+  "Original_parameters_SHA256": "6290dfe490d514b530ae82990cd079730429262bf0588580e7a93e906d98ae0e",
+  "MCMC_converged": false,
+  "MCMC_reruns": 0,
+  "Objectives": 2,
+  "Storage_floor_enforced_in_search": false,
+  "Yield_gate_enforced": false,
+  "Storage_subset_definition": "End-of-season 0-1m storage >= original DI model storage minus0.01mm comparison tolerance; front from qualifying evaluated points only; not a dedicated constrained search",
+  "Selection_definition": "Geometric compromise maximizes normalized yield minus normalized irrigation; display choice, not a field optimum",
+  "Constraint_tolerance": "target yield1e-9t/ha; storage comparison0.01mm; not a measured uncertainty bound"
+}

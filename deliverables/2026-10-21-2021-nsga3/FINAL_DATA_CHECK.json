@@ -1,0 +1,59 @@
+{
+  "Status": "PASS",
+  "Optimization_evaluations": 30000,
+  "Front_points": 1437,
+  "Front_nondominance_against_all_evaluated_points": "PASS",
+  "Generation_files": 300,
+  "Population_records_matched_to_actual_evaluations": 30000,
+  "Unaccelerated_selected_replays": [
+    {
+      "Selection": "Maximum_found_yield",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Selection": "Geometric_compromise",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    },
+    {
+      "Selection": "Match_DI_model_yield",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Selection": "At_least_95pct_observed_yield",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Selection": "Storage_qualified_match_DI_model",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    }
+  ],
+  "Storage_subset_floor_comparison": "DI final store minus0.01mm reporting tolerance",
+  "Storage_subset_front_points": 17,
+  "Figures": [
+    {
+      "File": "N21_01_Pareto_front.png",
+      "Width": 5791,
+      "Height": 3961
+    },
+    {
+      "File": "N21_02_Storage_qualification.png",
+      "Width": 6607,
+      "Height": 3379
+    },
+    {
+      "File": "N21_03_Seed_stability.png",
+      "Width": 6429,
+      "Height": 3009
+    }
+  ],
+  "Report_pages": 6,
+  "Report_tables": 4,
+  "MCMC_reruns": 0,
+  "Parent_MCMC_converged": false,
+  "Field_validation": false
+}
