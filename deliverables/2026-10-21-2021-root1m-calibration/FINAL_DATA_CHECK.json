@@ -1,0 +1,126 @@
+{
+  "Status": "PASS",
+  "Original_equation_final_replay_max_abs_difference": 9.769962616701352e-15,
+  "Unaccelerated_daily_CC_and_biomass": "PASS",
+  "Checkpoints": [
+    {
+      "Phase": "canopy_transpiration",
+      "Ensemble": 1,
+      "Shape": [
+        500,
+        10,
+        5
+      ],
+      "SHA256": "0d5da9901b3536e22bcea9a3ae917e747fa5fc3bcdb725c75d02a5efcc985a92"
+    },
+    {
+      "Phase": "canopy_transpiration",
+      "Ensemble": 2,
+      "Shape": [
+        500,
+        10,
+        5
+      ],
+      "SHA256": "8d584e873a9d9fb468dddbaac47cc4a0dee0489ac9c5b3f88c716b7c4ec6cd7f"
+    },
+    {
+      "Phase": "canopy_transpiration",
+      "Ensemble": 3,
+      "Shape": [
+        500,
+        10,
+        5
+      ],
+      "SHA256": "f75b071810e2c4f34bcc310dab19e4b95833789244b0f5a9240a240c25eddbf4"
+    },
+    {
+      "Phase": "canopy_transpiration",
+      "Ensemble": 4,
+      "Shape": [
+        500,
+        10,
+        5
+      ],
+      "SHA256": "1403cc23eca0d128d087b7339b9d90382325efd521ef81ab9bf7b51c846a0fa1"
+    },
+    {
+      "Phase": "biomass_yield",
+      "Ensemble": 1,
+      "Shape": [
+        500,
+        10,
+        3
+      ],
+      "SHA256": "30801dcf0a7c295d8579ed56e1be7f453b524dd2fb005e338679ae23ec0680b1"
+    },
+    {
+      "Phase": "biomass_yield",
+      "Ensemble": 2,
+      "Shape": [
+        500,
+        10,
+        3
+      ],
+      "SHA256": "a2dbb74c59464a0bb45e680eedb9531726f76556d17b446861b5443ee3f81c4e"
+    },
+    {
+      "Phase": "biomass_yield",
+      "Ensemble": 3,
+      "Shape": [
+        500,
+        10,
+        3
+      ],
+      "SHA256": "35f676b69c6ea776439400aacc2c5bc3ef9212100b60b6250b5c13881d68d9db"
+    },
+    {
+      "Phase": "biomass_yield",
+      "Ensemble": 4,
+      "Shape": [
+        500,
+        10,
+        3
+      ],
+      "SHA256": "c364dd498ea3198d8008be729ec9e68ea6bffd65bcf4fb5c74f4d35a27155a20"
+    }
+  ],
+  "Total_recorded_states": 40000,
+  "Independent_ensembles": 4,
+  "Steps": 500,
+  "Walkers": 10,
+  "Figures": [
+    {
+      "File": "P01_CC_fit_2021_root1m.png",
+      "Width": 6283,
+      "Height": 2679
+    },
+    {
+      "File": "P02_Yield_and_biomass.png",
+      "Width": 6369,
+      "Height": 2769
+    },
+    {
+      "File": "P03_Parameter_boundary_screen.png",
+      "Width": 7629,
+      "Height": 3849
+    },
+    {
+      "File": "P04_MCMC_trace_and_mixing.png",
+      "Width": 6549,
+      "Height": 6057
+    },
+    {
+      "File": "P05_Yield_irrigation_0_to_actual.png",
+      "Width": 5589,
+      "Height": 3429
+    }
+  ],
+  "Report_pages": 9,
+  "Report_figures": 5,
+  "Report_tables": 8,
+  "Curve_points": 201,
+  "Curve_first_actual_irrigation_mm": 0.0,
+  "Curve_last_actual_irrigation_mm": 633.47,
+  "Formal_convergence": false,
+  "Calibration_scope": "2021 only; two-stage pilot, stage 2 conditional on selected stage-1 point"
+}

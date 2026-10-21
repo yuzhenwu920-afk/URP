@@ -1,0 +1,9 @@
+{
+  "Status": "PASS",
+  "Archive_bytes": 36998025,
+  "Archive_SHA256": "5722d4339b79520125722a8677a563c8a6beb0282e5ee02c506b5b851ca881cf",
+  "Files": 166,
+  "ZIP_CRC": "PASS",
+  "Manifest_hashes": "PASS",
+  "Formal_convergence": false
+}
