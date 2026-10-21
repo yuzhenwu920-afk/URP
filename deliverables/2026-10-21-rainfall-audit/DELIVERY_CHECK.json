@@ -1,0 +1,15 @@
+{
+  "Status": "PASS",
+  "Completed_fixed_parameter_replays": 224,
+  "Independent_unaccelerated_replays": 28,
+  "Rainfall_only_changed": true,
+  "No_new_MCMC_or_optimization": true,
+  "Four_year_figures_present": true,
+  "English_figure_groups": 4,
+  "Figure_dpi": 600,
+  "Word_embedded_figures": 4,
+  "PDF_pages": 8,
+  "Workbook_sheets": 16,
+  "Storage_difference_budgets": 21,
+  "Word_PDF_numeric_consistency": "PASS"
+}
