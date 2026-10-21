@@ -1,0 +1,70 @@
+{
+  "Year": 2021,
+  "Structures": {
+    "fm050": 0.5,
+    "fm075": 0.75,
+    "fm085": 0.85
+  },
+  "Recorded_MCMC_states": 120000,
+  "MCMC_formally_converged": false,
+  "Actual_optimization_evaluations": 90000,
+  "Observed_Y13": 15.86,
+  "Observed_irrigation_mm": 633.47,
+  "Common_targets": [
+    "observed15.86",
+    "95pct_observed15.067",
+    "historicalf0DI15.1521563445",
+    "newf085DI"
+  ],
+  "Fixed_parameters_per_optimization": true,
+  "Posterior_uncertainty_propagated": false,
+  "Soil_storage_floor_enforced_in_search": false,
+  "Target_irrigation_fitted": false,
+  "Results": [
+    {
+      "Scenario": "fm050",
+      "fMulch": 0.5,
+      "DI_Y13": 15.170171907924725,
+      "Zero_Y13": 1.1024843059372351,
+      "DI_Es_mm": 57.34766637064773,
+      "DI_ET_mm": 618.8958568072868,
+      "DI_Tr_mm": 561.5481904366391,
+      "DI_root_final_mm": 277.65429508862803,
+      "Evaluations": 30000,
+      "Front_points": 1350,
+      "Maximum_found_Y13": 15.226210249678482,
+      "Storage_qualified_evaluations": 385,
+      "Storage_qualified_front_points": 30
+    },
+    {
+      "Scenario": "fm075",
+      "fMulch": 0.75,
+      "DI_Y13": 15.444450803994258,
+      "Zero_Y13": 1.4783055769898963,
+      "DI_Es_mm": 49.90197366449988,
+      "DI_ET_mm": 590.3700320556655,
+      "DI_Tr_mm": 540.4680583911656,
+      "DI_root_final_mm": 280.3401093744166,
+      "Evaluations": 30000,
+      "Front_points": 1266,
+      "Maximum_found_Y13": 15.493026657231805,
+      "Storage_qualified_evaluations": 363,
+      "Storage_qualified_front_points": 33
+    },
+    {
+      "Scenario": "fm085",
+      "fMulch": 0.85,
+      "DI_Y13": 15.487009629096802,
+      "Zero_Y13": 1.3213355395995725,
+      "DI_Es_mm": 45.70663825268777,
+      "DI_ET_mm": 600.1038735195879,
+      "DI_Tr_mm": 554.3972352669001,
+      "DI_root_final_mm": 278.61705191068097,
+      "Evaluations": 30000,
+      "Front_points": 1192,
+      "Maximum_found_Y13": 15.53364781942016,
+      "Storage_qualified_evaluations": 287,
+      "Storage_qualified_front_points": 25
+    }
+  ]
+}

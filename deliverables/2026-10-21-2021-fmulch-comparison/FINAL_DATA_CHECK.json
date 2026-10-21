@@ -1,0 +1,229 @@
+{
+  "Status": "PASS",
+  "MCMC_recorded_states": 120000,
+  "MCMC_checkpoints": 24,
+  "Optimization_model_evaluations": 90000,
+  "Generation_files": 900,
+  "Population_records_checked": 90000,
+  "Per_scenario_front_nondominance": "PASS",
+  "Daily_trace_scenarios_checked": 24,
+  "Water_balance_and_runtime_fMulch": "PASS",
+  "Below_root_direct_uptake": "ZERO",
+  "Unaccelerated_model_replays": [
+    {
+      "Scenario": "fm050",
+      "Selection": "DI_full_recalibrated",
+      "Maximum_absolute_difference": 1.7763568394002505e-15,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm050",
+      "Selection": "Maximum_found_yield",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm050",
+      "Selection": "Match_own_DI_model",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm050",
+      "Selection": "At_least_95pct_observed",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm050",
+      "Selection": "Match_historical_f0_DI",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm050",
+      "Selection": "Storage_qualified_match_own_DI",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "DI_full_recalibrated",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "Maximum_found_yield",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "Match_own_DI_model",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "At_least_95pct_observed",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "Match_historical_f0_DI",
+      "Maximum_absolute_difference": 2.842170943040401e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "Match_recalibrated_f085_DI",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm075",
+      "Selection": "Storage_qualified_match_own_DI",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "DI_full_recalibrated",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "Maximum_found_yield",
+      "Maximum_absolute_difference": 2.842170943040401e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "Match_own_DI_model",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "At_least_95pct_observed",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "Match_historical_f0_DI",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "Match_recalibrated_f085_DI",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "fm085",
+      "Selection": "Storage_qualified_match_own_DI",
+      "Maximum_absolute_difference": 0.0,
+      "Status": "PASS"
+    }
+  ],
+  "Figures": [
+    {
+      "ID": "F01_DI_canopy_biomass_fits",
+      "Width": 6577,
+      "Height": 2899
+    },
+    {
+      "ID": "F02_DI_yield_Es_Tr_ET",
+      "Width": 5712,
+      "Height": 4253
+    },
+    {
+      "ID": "T01_Yield_irrigation_comparison",
+      "Width": 5486,
+      "Height": 3452
+    },
+    {
+      "ID": "F03_MCMC_walls_and_mixing",
+      "Width": 6004,
+      "Height": 4965
+    },
+    {
+      "ID": "T02_fm050_Water_stress_canopy",
+      "Width": 6755,
+      "Height": 4794
+    },
+    {
+      "ID": "S01_fm050_Soil_water_storage",
+      "Width": 5849,
+      "Height": 4441
+    },
+    {
+      "ID": "T02_fm075_Water_stress_canopy",
+      "Width": 6755,
+      "Height": 4794
+    },
+    {
+      "ID": "S01_fm075_Soil_water_storage",
+      "Width": 5849,
+      "Height": 4441
+    },
+    {
+      "ID": "T02_fm085_Water_stress_canopy",
+      "Width": 6755,
+      "Height": 4794
+    },
+    {
+      "ID": "S01_fm085_Soil_water_storage",
+      "Width": 5849,
+      "Height": 4441
+    },
+    {
+      "ID": "T03_all_NSGA3_front",
+      "Width": 5691,
+      "Height": 3627
+    },
+    {
+      "ID": "T03_fm050_NSGA3_front",
+      "Width": 5691,
+      "Height": 3627
+    },
+    {
+      "ID": "T03_fm075_NSGA3_front",
+      "Width": 5691,
+      "Height": 3627
+    },
+    {
+      "ID": "T03_fm085_NSGA3_front",
+      "Width": 5691,
+      "Height": 3627
+    },
+    {
+      "ID": "D01_400mm_cross_structure",
+      "Width": 6345,
+      "Height": 4501
+    },
+    {
+      "ID": "D02_Storage_qualified_subset",
+      "Width": 7328,
+      "Height": 2900
+    },
+    {
+      "ID": "D03_Applied_water_reduction_partition",
+      "Width": 5479,
+      "Height": 3511
+    },
+    {
+      "ID": "D04_Optimized_vs_same_amount_schedule",
+      "Width": 7427,
+      "Height": 5605
+    }
+  ],
+  "Report_pages": 24,
+  "Formal_MCMC_convergence": false,
+  "Field_validation": false
+}
