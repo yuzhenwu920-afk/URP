@@ -1,0 +1,51 @@
+{
+  "Status": "PASS",
+  "Unaccelerated_replays": [
+    {
+      "Scenario": "I000",
+      "Maximum_absolute_difference": 1.1102230246251565e-16,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "I050",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "I400",
+      "Maximum_absolute_difference": 2.2737367544323206e-13,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "I075",
+      "Maximum_absolute_difference": 5.684341886080802e-14,
+      "Status": "PASS"
+    },
+    {
+      "Scenario": "I100",
+      "Maximum_absolute_difference": 1.1368683772161603e-13,
+      "Status": "PASS"
+    }
+  ],
+  "Figure_count": 2,
+  "Figures": [
+    {
+      "File": "W01_Water_stress_and_canopy.png",
+      "Width": 6803,
+      "Height": 4809
+    },
+    {
+      "File": "W02_Root_domain_and_deep_storage.png",
+      "Width": 5966,
+      "Height": 4926
+    }
+  ],
+  "Figure1_source_rows": 740,
+  "Figure2_source_rows": 745,
+  "Report_pages": 7,
+  "Report_tables": 6,
+  "MCMC_reruns": 0,
+  "Parameters": "2021 1m-root short-chain pilot; formal convergence not achieved",
+  "Low_irrigation_field_validation": false,
+  "Initial_soil_water_field_validation": false
+}
