@@ -1,0 +1,207 @@
+{
+  "status": "PASS",
+  "zip_count": 29,
+  "archives": [
+    {
+      "file": "00_Index_and_reproducibility.zip",
+      "bytes": 3805832,
+      "sha256": "3299cb6fb5d0cc35e9a5ca826a0283e0aae080e4ef3b93f13d8aebdb0922930b",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "01_Raw_data_and_references_part01.zip",
+      "bytes": 77699416,
+      "sha256": "d0471e4f252b0b609510ab76c81af39897b76af9fcbc3fe320a71936a4fbd447",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "01_Raw_data_and_references_part02.zip",
+      "bytes": 66626446,
+      "sha256": "241aa311f5864d9c537246d02951875b97d3b07c007bd60a0ff021c9aab474d2",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "01_Raw_data_and_references_part03.zip",
+      "bytes": 67747785,
+      "sha256": "817a65cd56e85d30105966b4f4ec2ccc5a00de96b8b1a668aa831cf44187834d",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "01_Raw_data_and_references_part04.zip",
+      "bytes": 64752509,
+      "sha256": "8d172f3db66eb2323ca2b583e0db8ab9991e37952264d4df170345227fab6cc8",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "02_MCMC_2019.zip",
+      "bytes": 20537029,
+      "sha256": "25c49bf1f8257d45c58b0f7514c8175c5adb1c83f1dee5cef497d8c0d0feab6a",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "02_MCMC_2020.zip",
+      "bytes": 20794829,
+      "sha256": "ca8e6dddb264b81879ab2e728d3719ce82bebb056788931aecb0fcbb020eb883",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "02_MCMC_2021.zip",
+      "bytes": 22258132,
+      "sha256": "3566ffba4292977ba5bb0abb4b519df94e343c62fb00699c5fa5e195bc9168f5",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "02_MCMC_2022.zip",
+      "bytes": 24306680,
+      "sha256": "88adea175eb1502c4abf4397440168fc9718cde43a2fb4f33a1da01731730cef",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "03_Model_engine_and_frozen_handoffs.zip",
+      "bytes": 22874974,
+      "sha256": "d9df08858cd6289c736ce2582e7f8095da2eadb0908191de0cebac26b0595c36",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "04_Sobol_real_model.zip",
+      "bytes": 8213091,
+      "sha256": "27e86eb09ac67dd0a96d4adb4830dc10ec5db8c09092788b28dfb77d70979bb7",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "05_Genetic_optimization_4years.zip",
+      "bytes": 61695951,
+      "sha256": "9c645df5a104bfc82293dd41564bea8f9ff51edc480cadc29cd04438e0c8af13",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "06_Structural_and_root_depth_diagnostics_part01.zip",
+      "bytes": 87426740,
+      "sha256": "fa27fa2ad43905c9eac64d06b62898ff39eceb855a57a6f73bbc0f6ebdfc4376",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "06_Structural_and_root_depth_diagnostics_part02.zip",
+      "bytes": 11915381,
+      "sha256": "7c9147b0686e824eefe0c6f1223619de053909469a7fecf08140cf148098aa98",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "07_2021_root1m_pilots.zip",
+      "bytes": 83041704,
+      "sha256": "9fe92d591e9c1c61577e8e027e76a3eb4d0ee81e2c8e2f9cbb20614513e133a2",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "08_2021_mulch_conditional_calibration_and_optimization_part01.zip",
+      "bytes": 87969480,
+      "sha256": "876a9e3a77d22f2f48ffacb5a42f553d0a2fb5e7e855138ba0564fb1379c7deb",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "08_2021_mulch_conditional_calibration_and_optimization_part02.zip",
+      "bytes": 7491383,
+      "sha256": "12d62f18e38ecfd707979df057dbba87bd0b1e4e9a50d1893b0241ab57cf606c",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "09_Rainfall_and_data_provenance_audit.zip",
+      "bytes": 23992289,
+      "sha256": "f848dd8aa47feacc87a613098aaef8ac09bfd64cbd2d014dfbe93bc52096740e",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "10_Single_objective_multi_algorithm_validation.zip",
+      "bytes": 42664419,
+      "sha256": "90b28cd609c243a164ef64bc24be174894368d7071bbf29deb12c0c36aac6f1b",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "11_English_figures_tables_and_interpretations_part01.zip",
+      "bytes": 86894607,
+      "sha256": "ff65b6825ccc6249712f26a082b01163b8685edf9e5b4c274cad569d06d96fb6",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "11_English_figures_tables_and_interpretations_part02.zip",
+      "bytes": 10096288,
+      "sha256": "4200303e956eb240ae0b7caf34d25c042a407daec46c8c6243d025f8d96ae63c",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "12_Chinese_and_English_manuscripts.zip",
+      "bytes": 25036337,
+      "sha256": "2852eaf6c6b04480ccb7682aeb47b7421cb811d6cec7496ea8a88e3924cb189d",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "13_Project_midterm_report.zip",
+      "bytes": 5399941,
+      "sha256": "0e6b86c1b76294adbdf1ddaac349293c42b1fc49fc3d7c52c3e1ff3308bc20b8",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "14_Research_history_NOT_primary_results_part01.zip",
+      "bytes": 88036710,
+      "sha256": "ac3e39d61e85c1ba67d0cf59b44f8256a8cab0bc81715e1e4b43b02e31b7eea7",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "14_Research_history_NOT_primary_results_part02.zip",
+      "bytes": 85408975,
+      "sha256": "99b8f61244db464411047df6a5e965714632e856ba12056fcd0a2b6bbb47c4d7",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "14_Research_history_NOT_primary_results_part03.zip",
+      "bytes": 87867077,
+      "sha256": "79e52e40e369b6fd28eb46c749ebdc606f82fcf607196330759c17c66a695d16",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "14_Research_history_NOT_primary_results_part04.zip",
+      "bytes": 88038794,
+      "sha256": "8c7685b978a8263d4ee4e0a9f3a150c8e17bbfe341aa03c9b713c7fe7c9a1591",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "14_Research_history_NOT_primary_results_part05.zip",
+      "bytes": 1041281,
+      "sha256": "e306f3c6804474d46f12093071577799a51ca96dc3dfca2cd90454840f68f1af",
+      "ZIP_CRC": "PASS"
+    },
+    {
+      "file": "URP_Final_Documents_and_Figure_Atlas.zip",
+      "bytes": 29391718,
+      "sha256": "a34948d054048484e1f39705f3f9dadf02db9f5eb9db17fae22dac021155fce8",
+      "ZIP_CRC": "PASS"
+    }
+  ],
+  "research_summary": {
+    "scientific_stages": 17,
+    "stage_files": 13863,
+    "English_figure_groups": 103,
+    "vector_atlas_pages": 104,
+    "Word_manuscripts": [
+      {
+        "language": "Chinese",
+        "figures": 14,
+        "three_line_tables": 7,
+        "pages": 24
+      },
+      {
+        "language": "English",
+        "figures": 14,
+        "three_line_tables": 7,
+        "pages": 22
+      }
+    ],
+    "midterm_pages": 10,
+    "final_workbook_sheets": 28,
+    "formal_MCMC_checkpoints": 20,
+    "scientific_document_checks_passed": 136,
+    "historical_MCMC_reexecuted_in_finalization": false,
+    "heavy_crop_optimization_reexecuted_in_finalization": false,
+    "new_bootstrap_postprocessing": true
+  }
+}
