@@ -1,0 +1,77 @@
+{
+  "Date": "2026-10-21",
+  "Status": "COMPLETE",
+  "Models": 7,
+  "Algorithms": [
+    "Real-coded GA",
+    "NSGA-II with one objective",
+    "Generalized simulated annealing",
+    "Differential evolution"
+  ],
+  "Scope": "min actual irrigation subject to prescribed model Y13; original forcing and physics fixed",
+  "Objective_queries": 253440,
+  "Actual_optimization_model_calls": 217084,
+  "Full_selected_control_replays": 508,
+  "Original_unaccelerated_replays": 14,
+  "Original_NSGA3_reference_budget_matched": false,
+  "Global_optimum_proved": false,
+  "Field_irrigation_requirement_validated": false,
+  "Selected_95pct_results": [
+    {
+      "Case": "old_2019",
+      "Algorithm": "NSGA2_1obj",
+      "Irrigation_mm": 217.9540550250612,
+      "Y_13pct": 15.723123875482225,
+      "Historical_best_I_mm": 218.19259576417812,
+      "Gap_to_historical_I_mm": -0.2385407391169565
+    },
+    {
+      "Case": "old_2020",
+      "Algorithm": "NSGA2_1obj",
+      "Irrigation_mm": 313.0122955428327,
+      "Y_13pct": 16.42998344495322,
+      "Historical_best_I_mm": 312.3447082143116,
+      "Gap_to_historical_I_mm": 0.6675873285211082
+    },
+    {
+      "Case": "old_2021",
+      "Algorithm": "GA",
+      "Irrigation_mm": 268.61039181677563,
+      "Y_13pct": 15.067360858672863,
+      "Historical_best_I_mm": 267.28178847470497,
+      "Gap_to_historical_I_mm": 1.3286033420706644
+    },
+    {
+      "Case": "old_2022",
+      "Algorithm": "NSGA2_1obj",
+      "Irrigation_mm": 261.4638579739848,
+      "Y_13pct": 13.377222411726144,
+      "Historical_best_I_mm": 260.7822592875524,
+      "Gap_to_historical_I_mm": 0.6815986864323804
+    },
+    {
+      "Case": "new_fm050",
+      "Algorithm": "GA",
+      "Irrigation_mm": 316.47694160991955,
+      "Y_13pct": 15.069774556211671,
+      "Historical_best_I_mm": 319.11182603775944,
+      "Gap_to_historical_I_mm": -2.634884427839893
+    },
+    {
+      "Case": "new_fm075",
+      "Algorithm": "GSA",
+      "Irrigation_mm": 280.14598216757133,
+      "Y_13pct": 15.067062464038331,
+      "Historical_best_I_mm": 282.720592557964,
+      "Gap_to_historical_I_mm": -2.5746103903926496
+    },
+    {
+      "Case": "new_fm085",
+      "Algorithm": "NSGA2_1obj",
+      "Irrigation_mm": 286.86209708369483,
+      "Y_13pct": 15.071759057256749,
+      "Historical_best_I_mm": 287.5341842651938,
+      "Gap_to_historical_I_mm": -0.6720871814989664
+    }
+  ]
+}
