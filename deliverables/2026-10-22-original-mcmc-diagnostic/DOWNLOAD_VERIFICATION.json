@@ -1,0 +1,35 @@
+{
+  "Verified_at_UTC": "2026-10-22T02:35:38.205135+00:00",
+  "Delivery_commit": "8086e9c",
+  "Files": [
+    {
+      "File": "URP_Original_MCMC_Diagnostic_20261022.zip",
+      "HTTP_status": 200,
+      "Bytes": 46903476,
+      "SHA256": "1143fb6d37276223532a52acf54b6472309dd819b1817a6739e32dff25cef810",
+      "Remote_matches_local": true
+    },
+    {
+      "File": "URP_Original_MCMC_Diagnostic_CN.docx",
+      "HTTP_status": 200,
+      "Bytes": 2127199,
+      "SHA256": "ded61478a1436f226ae151a975955c48547e46dffea8fe9b730b82876aa96733",
+      "Remote_matches_local": true
+    },
+    {
+      "File": "URP_Original_MCMC_Diagnostic_CN.pdf",
+      "HTTP_status": 200,
+      "Bytes": 2113313,
+      "SHA256": "1041cf873434d7cb0bf20409f6e75876cd8637db9219c4ab0903007f37086fee",
+      "Remote_matches_local": true
+    },
+    {
+      "File": "Original_MCMC_diagnostics.xlsx",
+      "HTTP_status": 200,
+      "Bytes": 628118,
+      "SHA256": "2520ed255b52cd1bbf9d56d9052b9c937a61fb63e3072bb35a868954d17ec859",
+      "Remote_matches_local": true
+    }
+  ],
+  "All_passed": true
+}

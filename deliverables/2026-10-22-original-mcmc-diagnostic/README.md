@@ -8,6 +8,7 @@
 - [全部诊断与原因证据表 Excel](Original_MCMC_diagnostics.xlsx)
 - [快速结论](Diagnostic_summary_CN.md) / [逐图解析](Figure_interpretations.md)
 - [文件与重算核验](FINAL_QA.json) / [ZIP校验](PACKAGE_VERIFICATION.json) / [SHA256](SHA256SUMS.txt)
+- [GitHub实际回下载验证](DOWNLOAD_VERIFICATION.json)：ZIP、Word、PDF和Excel均返回HTTP 200，逐文件SHA256与本地一致，远端ZIP再次通过CRC检查。
 
 | 年份 | 第一阶段最差 rank R̂ | 最小 matched-group bulk ESS | 2000步/最大τ |
 |---|---:|---:|---:|
