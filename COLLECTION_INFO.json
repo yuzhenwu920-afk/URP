@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "purpose": "One ZIP download for all existing stage archives and standalone documents",
+  "source_git_commit": "116e819cddcb23609271066d255a5ddca009b416",
+  "source_tree": "a6b689c403bb2550af83a5bffbac192d4c2051a9",
+  "source_path": "deliverables/2026-10-21-final-research-archive",
+  "source_files": 49,
+  "stage_zip_count": 29,
+  "scientific_stage_count": 17,
+  "scientific_results_modified": false,
+  "download_url": "https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022"
+}
