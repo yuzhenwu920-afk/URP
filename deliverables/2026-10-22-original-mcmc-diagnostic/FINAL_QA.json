@@ -1,0 +1,20 @@
+{
+  "Original_checkpoints": 20,
+  "Original_correlated_rows": 1280000,
+  "All_original_checkpoint_hashes_match": true,
+  "Reproduction_max_absolute_differences": {
+    "Rhat_max": 4.440892098500626e-16,
+    "ESS_bulk_min": 4.263256414560601e-14,
+    "ESS_tail_min": 2.3888446776254568e-11
+  },
+  "Phase2_Rhat_not_manufactured": true,
+  "Phase1_mean_handoff_max_error": 0.0,
+  "Walkers_with_no_postburn_acceptance": 0,
+  "English_figure_groups": 12,
+  "Vector_atlas_pages": 12,
+  "Word_figures": 7,
+  "Word_three_line_tables": 2,
+  "Report_PDF_pages": 11,
+  "Purpose": "File integrity and exact diagnostic reproduction; scientific convergence is NOT asserted",
+  "Passed": true
+}

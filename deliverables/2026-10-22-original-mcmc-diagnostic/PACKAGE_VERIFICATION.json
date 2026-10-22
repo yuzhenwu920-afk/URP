@@ -1,0 +1,11 @@
+{
+  "File": "URP_Original_MCMC_Diagnostic_20261022.zip",
+  "Bytes": 46903476,
+  "SHA256": "1143fb6d37276223532a52acf54b6472309dd819b1817a6739e32dff25cef810",
+  "Included_files": 142,
+  "Zip_CRC_and_all_manifest_hashes_pass": true,
+  "Source_raw_checkpoints": 20,
+  "Original_state_rows": 1280000,
+  "New_model_calls": 0,
+  "New_MCMC_steps": 0
+}
