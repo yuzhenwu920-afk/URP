@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "download_url": "https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022",
+  "HTTP_status": 200,
+  "downloaded_bytes": 1339743990,
+  "sha256": "1ba7901b84ead5dba832b06a12f2830f27a4ea00a23ce09f01d92dc4c26abe98",
+  "download_seconds": 188.476,
+  "source_files_checked": 49,
+  "source_files_SHA256_matched": true,
+  "stage_archives": 29,
+  "ZIP_CRC": "PASS",
+  "collection_git_commit": "3236f93e5db1da8f09c402e123628e88017ff217",
+  "source_git_commit": "116e819cddcb23609271066d255a5ddca009b416",
+  "Content_Disposition": "attachment; filename=URP-delivery-urp-all-stages-20261022.zip",
+  "scientific_results_modified": false
+}
