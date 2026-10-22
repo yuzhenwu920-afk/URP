@@ -1,0 +1,38 @@
+[
+  {
+    "File": "URP_FiveStage_MultiEvent_Results_20261022.zip",
+    "Bytes": 28805671,
+    "SHA256": "778e916bb21d33495b8e1119679e8af6550158ee61d7e5ad5730f7f296c9a55f",
+    "ZIP_CRC": "PASS"
+  },
+  {
+    "File": "URP_FiveStage_MultiEvent_Figures_20261022.zip",
+    "Bytes": 4718116,
+    "SHA256": "9d4f7c0c7363005d90c0c7a90f9a0c18940c24b092287d2740dc1d18cb80b5d5",
+    "ZIP_CRC": "PASS"
+  },
+  {
+    "File": "URP_FiveStage_MultiEvent_RawRuns_2019_20261022.zip",
+    "Bytes": 59841733,
+    "SHA256": "cfbef558d5a8b4b79d6984cebdefed58072350b924b776f70a12fa60a9bae1b7",
+    "ZIP_CRC": "PASS"
+  },
+  {
+    "File": "URP_FiveStage_MultiEvent_RawRuns_2020_20261022.zip",
+    "Bytes": 59087514,
+    "SHA256": "d97777328278df2eaade136a2be107bee89052a25689fad2b8d38c4460fefd8a",
+    "ZIP_CRC": "PASS"
+  },
+  {
+    "File": "URP_FiveStage_MultiEvent_RawRuns_2021_20261022.zip",
+    "Bytes": 55665024,
+    "SHA256": "eda009efcc0d14dc5316df2592550bf8aacc526f861bff9d074384d77084b944",
+    "ZIP_CRC": "PASS"
+  },
+  {
+    "File": "URP_FiveStage_MultiEvent_RawRuns_2022_20261022.zip",
+    "Bytes": 52834165,
+    "SHA256": "b878ac12398c609cc37e0025a030f0a3ef01e59f2ae734f39925a8a9be23eb6f",
+    "ZIP_CRC": "PASS"
+  }
+]

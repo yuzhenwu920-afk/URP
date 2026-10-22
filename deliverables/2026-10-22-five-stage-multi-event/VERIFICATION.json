@@ -1,0 +1,470 @@
+{
+  "Status": "PASS",
+  "Raw_searches": 52,
+  "Raw_query_rows": 457596,
+  "Actual_search_model_calls": 455505,
+  "No_synthetic_rows": true,
+  "Date_bounds_checked_for_all_queries": true,
+  "Per_stage_event_limit_checked_for_all_queries": true,
+  "Full_daily_equation_replays": {
+    "Status": "PASS",
+    "Fresh_processes": 4,
+    "Forward_queries": 12,
+    "Accelerated_wrappers_installed": false,
+    "Checks": [
+      {
+        "Year": 2019,
+        "Control_ID": "Original_DI",
+        "Maximum_unaccelerated_difference": 2.842170943040401e-14,
+        "Water_balance_residual_mm": -1.4410694859634532e-12
+      },
+      {
+        "Year": 2019,
+        "Control_ID": "Selected_95pct",
+        "Maximum_unaccelerated_difference": 5.684341886080802e-14,
+        "Water_balance_residual_mm": -1.4195311592857252e-12
+      },
+      {
+        "Year": 2019,
+        "Control_ID": "Maximum_yield",
+        "Maximum_unaccelerated_difference": 0.0,
+        "Water_balance_residual_mm": -1.5166479183648107e-12
+      },
+      {
+        "Year": 2020,
+        "Control_ID": "Original_DI",
+        "Maximum_unaccelerated_difference": 2.842170943040401e-14,
+        "Water_balance_residual_mm": -1.5195067426532205e-12
+      },
+      {
+        "Year": 2020,
+        "Control_ID": "Selected_95pct",
+        "Maximum_unaccelerated_difference": 5.684341886080802e-14,
+        "Water_balance_residual_mm": -1.168454222266746e-12
+      },
+      {
+        "Year": 2020,
+        "Control_ID": "Maximum_yield",
+        "Maximum_unaccelerated_difference": 1.1368683772161603e-13,
+        "Water_balance_residual_mm": -1.5891454818728334e-12
+      },
+      {
+        "Year": 2021,
+        "Control_ID": "Original_DI",
+        "Maximum_unaccelerated_difference": 1.1368683772161603e-13,
+        "Water_balance_residual_mm": -1.850075648235361e-12
+      },
+      {
+        "Year": 2021,
+        "Control_ID": "Selected_95pct",
+        "Maximum_unaccelerated_difference": 0.0,
+        "Water_balance_residual_mm": -1.2895101653143115e-12
+      },
+      {
+        "Year": 2021,
+        "Control_ID": "Maximum_yield",
+        "Maximum_unaccelerated_difference": 5.684341886080802e-14,
+        "Water_balance_residual_mm": -1.5606682612911982e-12
+      },
+      {
+        "Year": 2022,
+        "Control_ID": "Original_DI",
+        "Maximum_unaccelerated_difference": 1.4210854715202004e-14,
+        "Water_balance_residual_mm": -1.308397834520747e-12
+      },
+      {
+        "Year": 2022,
+        "Control_ID": "Selected_95pct",
+        "Maximum_unaccelerated_difference": 0.0,
+        "Water_balance_residual_mm": -1.2127798765249054e-12
+      },
+      {
+        "Year": 2022,
+        "Control_ID": "Maximum_yield",
+        "Maximum_unaccelerated_difference": 5.684341886080802e-14,
+        "Water_balance_residual_mm": -1.4874212972415535e-12
+      }
+    ]
+  },
+  "Stage_totals_reconcile_with_every_event": true,
+  "Frozen_sources_unchanged": true,
+  "English_figure_groups": 12,
+  "CJK_in_figures": [],
+  "PDF_edge_spans": [],
+  "Documents": [
+    {
+      "File": "URP_Optimized_Every_Event_Schedule_20261022.pdf",
+      "Pages": 4
+    },
+    {
+      "File": "URP_Five_Stage_Multi_Event_Optimization_20261022.pdf",
+      "Pages": 10
+    }
+  ],
+  "Searches": [
+    {
+      "Path": "runs/2019/formal/NSGA2_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA2_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA2_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA2_seed31",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA2_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA3_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA3_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA3_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA3_seed31",
+      "Queries": 9999,
+      "Actual_calls": 9997,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/formal/NSGA3_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9998,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/full_range/NSGA3_seed109",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/full_range/NSGA3_seed31",
+      "Queries": 4800,
+      "Actual_calls": 4778,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2019/full_range/NSGA3_seed73",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA2_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA2_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA2_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9899,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA2_seed31",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA2_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA3_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA3_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA3_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA3_seed31",
+      "Queries": 9999,
+      "Actual_calls": 9997,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/formal/NSGA3_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9998,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/full_range/NSGA3_seed109",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/full_range/NSGA3_seed31",
+      "Queries": 4800,
+      "Actual_calls": 4780,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2020/full_range/NSGA3_seed73",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA2_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA2_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA2_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA2_seed31",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA2_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA3_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA3_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA3_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA3_seed31",
+      "Queries": 9999,
+      "Actual_calls": 9997,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/formal/NSGA3_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9998,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/full_range/NSGA3_seed109",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/full_range/NSGA3_seed31",
+      "Queries": 4800,
+      "Actual_calls": 4785,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2021/full_range/NSGA3_seed73",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA2_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA2_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA2_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA2_seed31",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA2_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9900,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA3_seed109",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA3_seed151",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA3_seed199",
+      "Queries": 10000,
+      "Actual_calls": 9994,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA3_seed31",
+      "Queries": 9999,
+      "Actual_calls": 9997,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/formal/NSGA3_seed73",
+      "Queries": 10000,
+      "Actual_calls": 9998,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/full_range/NSGA3_seed109",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/full_range/NSGA3_seed31",
+      "Queries": 4800,
+      "Actual_calls": 4783,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    },
+    {
+      "Path": "runs/2022/full_range/NSGA3_seed73",
+      "Queries": 4800,
+      "Actual_calls": 4762,
+      "Calendar_valid": true,
+      "Max_three_distinct_events_per_stage": true
+    }
+  ]
+}
