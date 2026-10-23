@@ -1,5 +1,6 @@
 {
   "Status": "PASS",
-  "Test": "Extract manuscript stage ZIP to a different directory and regenerate both manuscripts, supplement, figure guide, workbook and midterm",
-  "External_model_runs": false
+  "Test": "Extract citation-revised manuscript stage ZIP to another directory and regenerate CN/EN manuscripts, supplement, figure guide, workbook and midterm",
+  "External_model_runs": false,
+  "Citation_revision": true
 }

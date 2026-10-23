@@ -1,14 +1,14 @@
 # URP · 当前统一交付（2026-10-23）
 
-最新五生育期、每期最多3个可选事件的四年优化结果，已同步到中英文论文、中期报告、英文图表、逐次灌水日程和数据工作簿。计算版本为2026-10-22，文稿归档版本为2026-10-23。
+最新五生育期、每期最多3个可选事件的四年优化结果，已同步到中英文论文、中期报告、英文图表、逐次灌水日程和数据工作簿。已按最新意见统一资料来源表述，正文使用编号引文，完整作者与学位论文信息保留在参考文献。计算版本为2026-10-22，文稿归档及引用修订版本为2026-10-23。
 
-**[一键下载全部阶段总包（1.88 GB）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
+**[一键下载全部阶段总包（约1.9 GB）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
 
 [全部文件与41个阶段包索引](deliverables/2026-10-23-unified-update/) · [论文、中期、图册与数据速取ZIP](deliverables/2026-10-23-unified-update/URP_Current_Papers_Midterm_and_Figures_20261023.zip)
 
 |当前文件|下载|
 |---|---|
-|中文论文：20页、15组英文图、10张三线表|[Word](deliverables/2026-10-23-unified-update/URP_Manuscript_CN_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Manuscript_CN_Updated_20261023.pdf)|
+|中文论文：21页、15组英文图、10张三线表|[Word](deliverables/2026-10-23-unified-update/URP_Manuscript_CN_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Manuscript_CN_Updated_20261023.pdf)|
 |英文论文：20页，对应同一组数据图表|[Word](deliverables/2026-10-23-unified-update/URP_Manuscript_EN_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Manuscript_EN_Updated_20261023.pdf)|
 |中期报告：11页，沿用学校模板|[Word](deliverables/2026-10-23-unified-update/URP_Midterm_Report_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Midterm_Report_Updated_20261023.pdf)|
 |四年逐次日程、图表源数据|[Excel](deliverables/2026-10-23-unified-update/URP_All_Current_Data_20261023.xlsx)|
@@ -21,5 +21,3 @@
 旧版日期目录保存对应研究过程，当前入口见上方。[此前原链诊断](deliverables/2026-10-22-original-mcmc-diagnostic/) · [此前论文修订](deliverables/2026-10-22-manuscript-rewrite/) · [五期原始计算交付](deliverables/2026-10-22-five-stage-multi-event/)。
 
 交付分支：delivery/urp-review-20261015；总包分支：delivery/urp-all-stages-20261022。main保持原提交。
-
-[实际回下载验收通过：72项哈希、41个阶段ZIP及独立文稿链接](deliverables/2026-10-23-unified-verification/)。

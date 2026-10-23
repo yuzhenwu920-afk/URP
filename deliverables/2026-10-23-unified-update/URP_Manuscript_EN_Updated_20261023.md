@@ -22,15 +22,15 @@ Figure 1. Research framework for staged calibration, sensitivity analysis and ir
 
 ## 2.2 Study site and data sources
 
-The study was conducted at the Shiyanghe Experimental Station of China Agricultural University, within the national field observation and research station for efficient agricultural water use in the Wuwei oasis (37°52′ N, 102°52′ E; 1581 m above sea level). The temperate continental arid climate has mean annual precipitation of approximately 164 mm, with groundwater at a depth of approximately 40–50 m [1]. The DI observation field measured 400 m × 200 m and was planted at 79,365 plants ha⁻¹. Film strips were 1.2 m wide, separated by 0.4 m, giving 75% coverage (Fig. 2).
+This study uses existing field observations of film-mulched drip-irrigated maize for 2019–2022 [1]. The observation site is at the Shiyanghe Experimental Station of China Agricultural University in Wuwei, Gansu (37°52′ N, 102°52′ E; 1581 m above sea level). The temperate continental arid climate has mean annual precipitation of approximately 164 mm, with groundwater at a depth of approximately 40–50 m. The DI observation field measured 400 m × 200 m and was planted at 79,365 plants ha⁻¹. Film strips were 1.2 m wide, separated by 0.4 m, giving 75% coverage (Fig. 2).
 
 ![Figure 2](../figures/Fig02_Study_site_EN.png)
 
-Figure 2. Location of the study station and dimensions of the drip-irrigated maize field. Station coordinates and field dimensions follow Wang [1]. The field panel is a size schematic with illustrative orientation.
+Figure 2. Location of the study station and dimensions of the drip-irrigated maize field. Station coordinates and field dimensions are based on the reported field observations [1]. The field panel is a size schematic with illustrative orientation.
 
-Soil properties follow the DI treatment in Table 2-1 of Wang [1]. Six measured layers cover 0–100 cm, with sand, silt and clay contents of 10.38–30.81%, 58.67–76.53% and 10.52–16.20%, respectively. All layers are classified as silt loam, with bulk density ranging from 1.29 to 1.69 g cm⁻³ (Table 1). These layers are combined with annual initial water profiles; the archived model extends the soil structure below 1 m to a simulated depth of 2.4 m.
+Soil inputs comprise measured physical properties of the 0–100 cm profile in the DI observation field [1]. Six measured layers cover 0–100 cm, with sand, silt and clay contents of 10.38–30.81%, 58.67–76.53% and 10.52–16.20%, respectively. All layers are classified as silt loam, with bulk density ranging from 1.29 to 1.69 g cm⁻³ (Table 1). These layers are combined with annual initial water profiles; the archived model extends the soil structure below 1 m to a simulated depth of 2.4 m.
 
-Table 1. Soil properties of the DI field reported by Wang [1], Table 2-1.
+Table 1. Measured soil properties of the drip-irrigated maize field [1].
 
 | Depth (cm) | Sand (%) | Silt (%) | Clay (%) | Bulk density (g cm⁻³) | Texture |
 | --- | --- | --- | --- | --- | --- |
@@ -43,7 +43,7 @@ Table 1. Soil properties of the DI field reported by Wang [1], Table 2-1.
 
 Particle fractions refer to >0.05 mm, 0.002–0.05 mm and <0.002 mm, respectively.
 
-Recorded DI schedules, phenological periods, leaf area index, biomass, grain yield and water-use observations were obtained from the field study [1] (Table 2). Canopy cover (CC) was calculated from digitized leaf area index (LAI) using Eq. (1), yielding 48 calibration pairs. Aboveground dry biomass was digitized from published figures, yielding 37 pairs. Grain yield is expressed at 13% moisture. Remote-sensing CCquad series provide auxiliary comparisons; treatment labels and date coverage are documented in Table S1.
+The four-year DI observations include irrigation schedules, phenological periods, leaf area index, biomass, grain yield and water use [1] (Table 2). Canopy cover (CC) was calculated from digitized leaf area index (LAI) using Eq. (1), yielding 48 calibration pairs. Aboveground dry biomass was digitized from published figures, yielding 37 pairs. Grain yield is expressed at 13% moisture. Remote-sensing CCquad series provide auxiliary comparisons; treatment labels and date coverage are documented in Table S1.
 
 CC = 1.005[1 − exp(−0.6LAI)]¹·² (1)
 
@@ -117,7 +117,7 @@ Base sample sizes increase from 128 and 256 to 512, with three independently ran
 
 ## 2.6 Five-stage individual-event optimization and algorithm comparison
 
-Five phenological stages follow Table 2-3 of Wang [1]: Seedling, Jointing, Heading, Grain filling and Maturity. Each stage has three optional irrigation slots. Fifteen continuous depths and fifteen integer dates define a 30-dimensional decision vector. Dates are restricted to the intersection of the annual stage and executed model calendar. Zero-depth slots are inactive, and coincident slots are merged into one daily application. All five stages are eligible in every year, with zero to three executed events per stage (Table S4).
+Five phenological stages are defined using the reported field observations [1]: Seedling, Jointing, Heading, Grain filling and Maturity. Each stage has three optional irrigation slots. Fifteen continuous depths and fifteen integer dates define a 30-dimensional decision vector. Dates are restricted to the intersection of the annual stage and executed model calendar. Zero-depth slots are inactive, and coincident slots are merged into one daily application. All five stages are eligible in every year, with zero to three executed events per stage (Table S4).
 
 NSGA-III and NSGA-II maximize yield and minimize actually delivered seasonal irrigation [8–10] (Eq. 9). Formal searches enforce Y₁₃≥0.95Yobs, with both planned and delivered irrigation bounded by the recorded DI seasonal total. The 95% factor is a deterministic yield level. Both algorithms use 100 individuals, 100 generations and seeds 31, 73, 109, 151 and 199. Recorded schedules and earlier feasible four-window schedules are disclosed common initialization anchors, supplemented by timing perturbations and random controls. Canonical duplicate elimination leaves 99 initial individuals in each first NSGA-III seed, which nevertheless completes 100 generations. Actual formal queries total 399,996; subsequent seeds initialize 100 distinct controls.
 
