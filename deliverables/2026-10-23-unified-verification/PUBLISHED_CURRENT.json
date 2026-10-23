@@ -1,0 +1,11 @@
+{
+  "Status": "PUBLISHED",
+  "Delivery_commit": "6f9a6b1294fc6bb5336c8bb5e358b36bb5b49c3d",
+  "Delivery_path": "deliverables/2026-10-23-unified-update",
+  "Collection_commit": "4d240d88ed1c5b9888c5780d0088fcbc778a72d5",
+  "Collection_parent": "3236f93e5db1da8f09c402e123628e88017ff217",
+  "Collection_tree": "2994c426e37cbd8a15c0ee917e5cb5a1109241e8",
+  "Main_unchanged": "f040054a4a7fb789c1a10bf1835cd7a36d8cfcbb",
+  "All_stage_URL": "https://codeload.github.com/yuzhenwu920-afk/URP/zip/4d240d88ed1c5b9888c5780d0088fcbc778a72d5",
+  "Source_model_commit": "20f1616556f5aeb79329b7ead22faa28f9fcda6a"
+}

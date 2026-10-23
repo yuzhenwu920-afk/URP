@@ -2,7 +2,7 @@
 
 最新五生育期、每期最多3个可选事件的四年优化结果，已同步到中英文论文、中期报告、英文图表、逐次灌水日程和数据工作簿。计算版本为2026-10-22，文稿归档版本为2026-10-23。
 
-**[一键下载全部阶段总包（约1.9 GB）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
+**[一键下载全部阶段总包（1.88 GB）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
 
 [全部文件与41个阶段包索引](deliverables/2026-10-23-unified-update/) · [论文、中期、图册与数据速取ZIP](deliverables/2026-10-23-unified-update/URP_Current_Papers_Midterm_and_Figures_20261023.zip)
 
@@ -21,3 +21,5 @@
 旧版日期目录保存对应研究过程，当前入口见上方。[此前原链诊断](deliverables/2026-10-22-original-mcmc-diagnostic/) · [此前论文修订](deliverables/2026-10-22-manuscript-rewrite/) · [五期原始计算交付](deliverables/2026-10-22-five-stage-multi-event/)。
 
 交付分支：delivery/urp-review-20261015；总包分支：delivery/urp-all-stages-20261022。main保持原提交。
+
+[实际回下载验收通过：72项哈希、41个阶段ZIP及独立文稿链接](deliverables/2026-10-23-unified-verification/)。
