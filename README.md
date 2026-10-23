@@ -1,27 +1,23 @@
-# URP
+# URP · 当前统一交付（2026-10-23）
 
-[最新：单目标最小灌水与四种算法交叉验证（2026-10-21）](deliverables/2026-10-21-single-objective-comparison/)：历史四年＋最新2021三种fMulch模型；253,440次目标查询、217,084次实际优化模型调用，508个不同控制完整复算。提供6组英文图、10页Word/PDF、Excel和全部查询数据。新单目标最低灌水与历史NSGA-III门槛解差−2.63至+1.33 mm；数值接近不代表田间定额已验证。
+最新五生育期、每期最多3个可选事件的四年优化结果，已同步到中英文论文、中期报告、英文图表、逐次灌水日程和数据工作簿。计算版本为2026-10-22，文稿归档版本为2026-10-23。
 
-[此前：四年降水审计与224组固定参数补充试验（2026-10-21）](deliverables/2026-10-21-rainfall-audit/)：8页Word/PDF、4组英文图、Excel与逐日数据。GEE与论文降水有差异，但不足以消除2021年350 mm平台；fMulch=0.85情景减灌283.47 mm主要对应季末整个剖面储水少279.23 mm，ET仅少4.12 mm。本次未重新校准或优化；原结果按条件性潜力解释。
+**[一键下载全部阶段总包（约1.9 GB）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
 
-[2021年fMulch=0.50/0.75/0.85条件校准与NSGA-III比较](deliverables/2026-10-21-2021-fmulch-comparison/)：保留先前正式计算记录，500步pilot尚未证明后验收敛。
+[全部文件与41个阶段包索引](deliverables/2026-10-23-unified-update/) · [论文、中期、图册与数据速取ZIP](deliverables/2026-10-23-unified-update/URP_Current_Papers_Midterm_and_Figures_20261023.zip)
 
-[此前：最大根深1m四年DI玉米优化试验（2026-10-20）](deliverables/2026-10-20-root1m-experiment/)。依据王尚今（2023）DI表格逐项核对，完成200,000次实际NSGA-III评价；提供四年产量—灌水图、2×2帕累托图、6组英文图及13页Word/PDF。原MCMC参数冻结，尚未在1m下重校准；8,460个最终前沿点均通过最浅1.1m水文域复核。
+|当前文件|下载|
+|---|---|
+|中文论文：20页、15组英文图、10张三线表|[Word](deliverables/2026-10-23-unified-update/URP_Manuscript_CN_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Manuscript_CN_Updated_20261023.pdf)|
+|英文论文：20页，对应同一组数据图表|[Word](deliverables/2026-10-23-unified-update/URP_Manuscript_EN_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Manuscript_EN_Updated_20261023.pdf)|
+|中期报告：11页，沿用学校模板|[Word](deliverables/2026-10-23-unified-update/URP_Midterm_Report_Updated_20261023.docx) · [PDF](deliverables/2026-10-23-unified-update/URP_Midterm_Report_Updated_20261023.pdf)|
+|四年逐次日程、图表源数据|[Excel](deliverables/2026-10-23-unified-update/URP_All_Current_Data_20261023.xlsx)|
+|当前15组英文图及中英文逐图解析|[矢量图册](deliverables/2026-10-23-unified-update/URP_All_Current_English_Figures_20261023.pdf) · [解析Word](deliverables/2026-10-23-unified-update/URP_All_Figure_Interpretations_Updated_20261023.docx)|
 
-[2026-10-20优化机制诊断：15页Word/PDF、9组英文图、逐日逐层水量与38,400次约束搜索记录](deliverables/2026-10-20-optimization-diagnosis/)。针对2020/2021年过大减灌比例：季末储水差分别占原减灌量93.3%/97.4%；固定原执行设置、季末不耗初始储水并匹配原季节ET的诊断点减灌约11.1%/26.8%。这些是条件诊断，尚非田间验证结论。已采用用户澄清：fMulch=0不是田间完好率0%，原灌水上限是日程执行数值设置，不能当成设备能力。
+四年候选季节灌水量为209.83、306.50、264.50、257.47 mm。正文同步报告储水差、ET差、原链诊断与单次水量，保留各试验的物理设定和控制空间。原始数据、参考论文、四年MCMC两阶段代码与检查点、Sobol、原优化、全部补充试验及当前五期完整逐查询结果均在全阶段总包。
 
-[此前完整英文Figures与论文骨架（43组图）](deliverables/2026-10-20-English-paper/)，旧图和旧六包保留；涉及节水解释时请结合最新机制诊断。
+本次进行文稿和归档整合，无新增模型搜索。原有29个阶段包按原字节保留，旧稿和旧四窗口主结果单列history；当前正文采用新五期结果。实际报销、导师与专家审核签字留空。
 
-[2026-10-20图表修订补充：Figure 1三列/树状布局与Figure 10英文版](deliverables/2026-10-20-figures-part1/)，提供PNG/PDF/SVG、英文图注、图源表及Word修改说明。
+旧版日期目录保存对应研究过程，当前入口见上方。[此前原链诊断](deliverables/2026-10-22-original-mcmc-diagnostic/) · [此前论文修订](deliverables/2026-10-22-manuscript-rewrite/) · [五期原始计算交付](deliverables/2026-10-22-five-stage-multi-event/)。
 
-2026-10-20交付：2019、2020、2021、2022四年真实Sobol与NSGA-III实验全部完成，原MCMC冻结。此前“尚未完成”的说明属于历史记录。
-
-Sobol最终N=512、3个独立随机种子，61,440行模型响应；NSGA-III与同预算NSGA-II各100个体×100代×5种子×4年，共400,000次评估和4,000代完整种群。全量数据一致性、水量平衡及六包逐文件哈希检查通过。
-
-六包均含相同的32组四年PNG/PDF图件：18组校准背景（流程与气象已更新）及14组新增真实敏感性/优化结果。新增图字号至少11pt、PNG320dpi，固定蓝/橙/绿/紫年份色。完整、复核、执行及工程包配有44页Word/PDF论文正文与图解、15张结果表、10个可编辑公式和Excel工作簿。
-
-[六包下载、论文Word和Excel结果表](deliverables/2026-10-19-actual-results/) · [直接查看代码](DI_PHASE3_NEXTGEN_UPDATED/)
-
-Sobol使用声明的公共独立均匀范围；2022产量的第三、四名近似并列，保留数值排序不确定性。优化调整原灌水日期上的四个窗口水量；主候选未设季末储水约束，不能将灌水减少全部解释为耗水减少。论文与SCIENCE_REVIEW详细解释这一问题，并给出追加储水门槛后的事后筛查结果。原MCMC诊断限制和缺少独立田间验证的限制均保留。
-
-本次上传位于独立交付分支delivery/urp-review-20261015；main保持原提交。旧日期目录保留对应历史状态。
+交付分支：delivery/urp-review-20261015；总包分支：delivery/urp-all-stages-20261022。main保持原提交。

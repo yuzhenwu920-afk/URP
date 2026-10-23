@@ -1,0 +1,55 @@
+{
+  "Status": "PASS",
+  "Manuscripts": [
+    {
+      "File": "URP_Manuscript_CN_Updated_20261023",
+      "Figures": 15,
+      "Three_line_tables": 10
+    },
+    {
+      "File": "URP_Manuscript_EN_Updated_20261023",
+      "Figures": 15,
+      "Three_line_tables": 10
+    }
+  ],
+  "Aligned_CN_EN_blocks": 111,
+  "Documents": [
+    {
+      "File": "URP_All_Current_English_Figures_20261023.pdf",
+      "Pages": 15
+    },
+    {
+      "File": "URP_All_Figure_Interpretations_Updated_20261023.pdf",
+      "Pages": 13
+    },
+    {
+      "File": "URP_Manuscript_CN_Updated_20261023.pdf",
+      "Pages": 20
+    },
+    {
+      "File": "URP_Manuscript_EN_Updated_20261023.pdf",
+      "Pages": 20
+    },
+    {
+      "File": "URP_Midterm_Report_Updated_20261023.pdf",
+      "Pages": 11
+    },
+    {
+      "File": "URP_Supplementary_Methods_and_Schedules_20261023.pdf",
+      "Pages": 6
+    },
+    {
+      "File": "URP_Update_Notes_20261023.pdf",
+      "Pages": 1
+    }
+  ],
+  "English_figure_groups": 15,
+  "Current_event_rows": 42,
+  "Per_stage_maximum": 3,
+  "Season_totals_reconciled": true,
+  "Actual_reimbursement_blank": true,
+  "Signatures_reserved": true,
+  "PDF_edge_spans": [],
+  "Source_optimization_commit": "20f1616556f5aeb79329b7ead22faa28f9fcda6a",
+  "New_model_runs_in_document_update": false
+}
