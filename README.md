@@ -55,3 +55,5 @@
 |11_Current_English_figures_tables|Current_figures_and_data|[11_Current_English_figures_tables.zip](packages/11_Current_English_figures_tables.zip)|29.3|
 |12_Current_CN_EN_manuscripts|Current_manuscript_project|[12_Current_CN_EN_manuscripts_and_reproduction.zip](packages/12_Current_CN_EN_manuscripts_and_reproduction.zip)|80.2|
 |13_Current_project_midterm_report|Current_administrative_report|[13_Current_project_midterm_report.zip](packages/13_Current_project_midterm_report.zip)|9.0|
+
+本次已按最新意见统一资料来源表述：正文、图注和表题直接介绍资料及方法，以编号引文说明来源；原资料作者与完整学位论文信息保留在参考文献。图像文件、全部数值和模型结果沿用已核验版本，详见CITATION_REVISION_QA.json。

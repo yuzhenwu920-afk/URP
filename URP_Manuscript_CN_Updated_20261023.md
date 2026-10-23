@@ -22,15 +22,15 @@ Figure 1. Research framework for staged calibration, sensitivity analysis and ir
 
 ## 2.2 试验区与资料来源
 
-试验区位于甘肃武威绿洲农业高效用水国家野外科学观测研究站，即中国农业大学石羊河实验站（37°52′N，102°52′E），海拔1581 m，属温带大陆性干旱气候，年平均降水量约164 mm，地下水埋深约40～50 m[1]。膜下滴灌玉米观测区面积为400 m×200 m，种植密度为79 365株·ha⁻¹。地膜宽度1.2 m，相邻地膜间距0.4 m，对应覆盖率75%。图2给出试验站位置和DI观测区尺度。
+本研究采用2019—2022年膜下滴灌玉米既有田间观测资料[1]。观测区位于甘肃武威的中国农业大学石羊河实验站（37°52′N，102°52′E），海拔1581 m，属温带大陆性干旱气候，年平均降水量约164 mm，地下水埋深约40～50 m。膜下滴灌玉米观测区面积为400 m×200 m，种植密度为79 365株·ha⁻¹。地膜宽度1.2 m，相邻地膜间距0.4 m，对应覆盖率75%。图2给出试验站位置和DI观测区尺度。
 
 ![Figure 2](../figures/Fig02_Study_site_EN.png)
 
-Figure 2. Location of the study station and dimensions of the drip-irrigated maize field. Station coordinates and field dimensions follow Wang [1]. The field panel is a size schematic with illustrative orientation.
+Figure 2. Location of the study station and dimensions of the drip-irrigated maize field. Station coordinates and field dimensions are based on the reported field observations [1]. The field panel is a size schematic with illustrative orientation.
 
-田间土壤资料采用王尚今[1]表2-1中的DI处理数据。0～100 cm土层由六层组成，砂粒含量为10.38%～30.81%，粉粒含量为58.67%～76.53%，黏粒含量为10.52%～16.20%，各层质地均为粉砂壤土，容重为1.29～1.69 g·cm⁻³（表1）。模型将这些分层资料与各年初始含水量配套输入，深于1 m的模拟剖面按归档土壤结构延伸至2.4 m。
+田间土壤资料采用DI观测区0～100 cm分层土壤物理性质[1]。该深度范围内由六个土层组成，砂粒含量为10.38%～30.81%，粉粒含量为58.67%～76.53%，黏粒含量为10.52%～16.20%，各层质地均为粉砂壤土，容重为1.29～1.69 g·cm⁻³（表1）。模型将这些分层资料与各年初始含水量配套输入，深于1 m的模拟剖面按归档土壤结构延伸至2.4 m。
 
-Table 1. Soil properties of the DI field reported by Wang [1], Table 2-1.
+Table 1. Measured soil properties of the drip-irrigated maize field [1].
 
 | Depth (cm) | Sand (%) | Silt (%) | Clay (%) | Bulk density (g cm⁻³) | Texture |
 | --- | --- | --- | --- | --- | --- |
@@ -43,7 +43,7 @@ Table 1. Soil properties of the DI field reported by Wang [1], Table 2-1.
 
 Particle fractions refer to >0.05 mm, 0.002–0.05 mm and <0.002 mm, respectively.
 
-四年DI灌水日程、生育期、叶面积指数、生物量、产量及水分消耗资料来自该试验研究[1]，年度汇总见表2。冠层覆盖度（CC）由田间叶面积指数（LAI）的数字化序列按式（1）换算，四年共48个配对点；地上干生物量由论文图件数字化获得，共37个配对点。籽粒产量统一按13%含水率表示。遥感CCquad序列用于辅助比较冠层变化，其处理标签和日期范围单列于附表S1。
+四年DI观测资料包括灌水日程、生育期、叶面积指数、生物量、产量及水分消耗[1]，年度汇总见表2。冠层覆盖度（CC）由田间叶面积指数（LAI）的数字化序列按式（1）换算，四年共48个配对点；地上干生物量由已发表图件数字化获得，共37个配对点。籽粒产量统一按13%含水率表示。遥感CCquad序列用于辅助比较冠层变化，其处理标签和日期范围单列于附表S1。
 
 CC = 1.005[1 − exp(−0.6LAI)]¹·² (1)
 
@@ -117,7 +117,7 @@ S₁,ᵢ = Var[E(Y | Xᵢ)]/Var(Y)；Sₜ,ᵢ = E[Var(Y | X₋ᵢ)]/Var(Y) (8)
 
 ## 2.6 五生育期逐次灌水优化与算法对照
 
-按照王尚今[1]表2-3，将每年玉米生育期划分为苗期、拔节期、抽穗期、灌浆期和成熟期。各期均设置3个可选灌水槽位，以15个连续灌水量和15个整数日期构成30维决策变量。日期取值范围为当年相应生育期与原模型执行日历的交集；零水量槽位不执行，同日槽位合并计量。各年全部五期均参与搜索，最终每期实际灌水次数为0～3次。具体年度日期界限见附表S4。
+依据田间观测记录的生育进程[1]，将每年玉米生育期划分为苗期、拔节期、抽穗期、灌浆期和成熟期。各期均设置3个可选灌水槽位，以15个连续灌水量和15个整数日期构成30维决策变量。日期取值范围为当年相应生育期与原模型执行日历的交集；零水量槽位不执行，同日槽位合并计量。各年全部五期均参与搜索，最终每期实际灌水次数为0～3次。具体年度日期界限见附表S4。
 
 采用NSGA-III和NSGA-II求解产量最大、实际季节灌水量最小的双目标问题[8–10]，形式见式（9）。正式搜索要求Y₁₃≥0.95Yobs，计划总量及实际执行量均不超过原DI季节总量；95%表示确定的产量水平门槛。两算法均采用100个体、100代和5个种子（31、73、109、151、199），共同以原实测日程及前期四窗口可行日程作为公开初值，另加入日期扰动和随机控制量。每年NSGA-III首个种子的重复初值规范化后为99个，仍完整执行100代；四年两算法正式查询合计399 996次，其余种子按100个不同初值执行。
 

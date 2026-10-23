@@ -1,0 +1,22 @@
+{
+  "Status": "PASS",
+  "Change": "Citation and data-source wording only",
+  "Manuscripts": [
+    {
+      "Language": "CN",
+      "Named_source_author_in_body": false,
+      "Full_reference_1_preserved": true,
+      "Existing_observation_provenance_retained": true
+    },
+    {
+      "Language": "EN",
+      "Named_source_author_in_body": false,
+      "Full_reference_1_preserved": true,
+      "Existing_observation_provenance_retained": true
+    }
+  ],
+  "Figure_files_byte_identical": 45,
+  "CSV_tables_numeric_values_identical": 80,
+  "Reference_metadata_identical": true,
+  "New_model_runs": false
+}
