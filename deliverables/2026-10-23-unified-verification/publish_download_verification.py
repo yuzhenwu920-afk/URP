@@ -9,7 +9,7 @@ def git(*args):return subprocess.check_output(['git','-C',str(REPO),*args]).deco
 def main():
  q=json.loads((ROOT/'analysis/REMOTE_DOWNLOAD_VERIFICATION_20261023.json').read_text());assert q['Status']=='PASS'
  p=REPO/'deliverables/2026-10-23-unified-verification';p.mkdir(exist_ok=True)
- for name in ['REMOTE_DOWNLOAD_VERIFICATION_20261023.json','PUBLISHED_CURRENT.json','DOCUMENT_AND_DATA_QA.json','RELOCATABLE_REBUILD_QA.json']:shutil.copy2(ROOT/'analysis'/name,p/name)
+ for name in ['REMOTE_DOWNLOAD_VERIFICATION_20261023.json','PUBLISHED_CURRENT.json','DOCUMENT_AND_DATA_QA.json','RELOCATABLE_REBUILD_QA.json','CITATION_REVISION_QA.json']:shutil.copy2(ROOT/'analysis'/name,p/name)
  for name in ['publish_current_delivery.py','verify_remote_delivery.py','publish_download_verification.py']:shutil.copy2(ROOT/'code'/name,p/name)
  size=q['Collection_bytes']/1e9
  text=f'''# URP 最新交付回下载验收（2026-10-23）
@@ -34,7 +34,7 @@ def main():
  for path,link in [(REPO/'README.md','deliverables/2026-10-23-unified-verification/'),(REPO/'deliverables/README.md','2026-10-23-unified-verification/')]:
   body=path.read_text();body=body.replace('约1.9 GB',f'{size:.2f} GB');body+=f'\n[实际回下载验收通过：{q["Payload_SHA256_matches"]}项哈希、41个阶段ZIP及独立文稿链接]({link})。\n';path.write_text(body)
  subprocess.run(['git','-C',str(REPO),'add','-f','--','README.md','deliverables/README.md','deliverables/2026-10-23-unified-verification'],check=True)
- subprocess.run(['git','-C',str(REPO),'-c','gc.auto=0','commit','-m','Record successful complete collection and manuscript download verification'],check=True)
+ subprocess.run(['git','-C',str(REPO),'-c','gc.auto=0','commit','-m','Verify citation-revised manuscripts and complete collection downloads'],check=True)
  subprocess.run(['git','-C',str(REPO),'-c','pack.window=0','-c','gc.auto=0','push','origin','HEAD:refs/heads/delivery/urp-review-20261015'],check=True)
  assert git('ls-remote','origin','refs/heads/main').split()[0]==q['Main_unchanged']
  print(json.dumps({'Status':'PASS','Verification_commit':git('rev-parse','HEAD'),'Verified_collection_commit':q['Collection_commit'],'Collection_GB':size,'Stage_ZIPs':41},indent=2),flush=True)

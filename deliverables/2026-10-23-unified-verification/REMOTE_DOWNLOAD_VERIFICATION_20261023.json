@@ -1,55 +1,55 @@
 {
   "Status": "PASS",
-  "Verified_at": "2026-10-23T07:28:21.344738+00:00",
-  "Delivery_commit": "6f9a6b1294fc6bb5336c8bb5e358b36bb5b49c3d",
-  "Collection_commit": "4d240d88ed1c5b9888c5780d0088fcbc778a72d5",
-  "Collection_URL": "https://codeload.github.com/yuzhenwu920-afk/URP/zip/4d240d88ed1c5b9888c5780d0088fcbc778a72d5",
-  "Collection_bytes": 1881957083,
-  "Collection_SHA256": "a654e7408293566da92be94a7ae8c10ea14bdabb998d44ff487bdf2d915362e4",
+  "Verified_at": "2026-10-23T07:58:03.540685+00:00",
+  "Delivery_commit": "c6649028a4cbb37c5f587921fb4887880c34ddd6",
+  "Collection_commit": "cd8ec7aa4222d8de3f07fa6266fb3dd65dbfdf72",
+  "Collection_URL": "https://codeload.github.com/yuzhenwu920-afk/URP/zip/cd8ec7aa4222d8de3f07fa6266fb3dd65dbfdf72",
+  "Collection_bytes": 1881993549,
+  "Collection_SHA256": "bc89734dfc4df5bae588e358fb333bcdaa8602030d9c5e40c8b6cc2555998eb9",
   "Collection_CRC": "PASS",
-  "Payload_SHA256_matches": 72,
+  "Payload_SHA256_matches": 73,
   "Stage_ZIPs": 41,
   "Standalone_direct_downloads": [
     {
       "File": "URP_Current_Papers_Midterm_and_Figures_20261023.zip",
-      "Bytes": 43175180,
-      "SHA256": "a2649548de0afaa24cacbd3486dc71124688bb832820053f0b24e34250effaec",
+      "Bytes": 43184961,
+      "SHA256": "195b388678eae9effd1325c5b56ed6250b858cc453c0d9290cb113a7cdb70e7d",
       "HTTP_status": 200
     },
     {
       "File": "URP_All_Current_English_Figures_20261023.pdf",
       "Bytes": 471603,
-      "SHA256": "1589913a1602e24e2a35fb2b34d77166b30291e67729f4569e2d38aff0773926",
+      "SHA256": "535392a4e1bbc02d27be9bba2ba1cf01efe73297167fac48e25401d5f4b10ddf",
       "HTTP_status": 200
     },
     {
       "File": "URP_All_Figure_Interpretations_Updated_20261023.pdf",
-      "Bytes": 3359332,
-      "SHA256": "4c9b723f8b1d5f59df07d94a28ee9daf184f3e6499b27a6d82dc216efaa71885",
+      "Bytes": 3357397,
+      "SHA256": "d0706e4bfbab20134f160c947e52fe05b1b73566c0465b3599ec94aea7f17a81",
       "HTTP_status": 200
     },
     {
       "File": "URP_All_Figure_Interpretations_Updated_20261023.docx",
-      "Bytes": 4325375,
-      "SHA256": "0bb38b725d527ad422263c1a4809de6c707a7ddfe6190aa8c54a9eaaf5a49add",
+      "Bytes": 4325382,
+      "SHA256": "e7ef69c887f8367e68850c85f579354851a8f396b7a243cb3cb81150a51c5799",
       "HTTP_status": 200
     },
     {
       "File": "URP_Manuscript_CN_Updated_20261023.docx",
-      "Bytes": 7578753,
-      "SHA256": "d656dfa74c77941d2455a796a8869feb332e771096f76833111e0e2082353e59",
+      "Bytes": 7578728,
+      "SHA256": "776aed1b3668e49a242ff7332a91eb3d96d6722c9bdcc7fa1be0a0c9fc8277a3",
       "HTTP_status": 200
     },
     {
       "File": "URP_Update_Notes_20261023.pdf",
-      "Bytes": 121168,
-      "SHA256": "92b4eab204954e5ef28a8bc8fe73fc0239161960e8bddc26f5ee422c5b94275f",
+      "Bytes": 135347,
+      "SHA256": "5d781b55bebcccf1cdec94ea846a8c521d60dcb7e070461b95f45996002e0b96",
       "HTTP_status": 200
     },
     {
       "File": "URP_All_Current_Data_20261023.xlsx",
-      "Bytes": 10540952,
-      "SHA256": "8fa6662f4ac79761e955796518b2e0127c36806188a516b618a574025c7c0d37",
+      "Bytes": 10540958,
+      "SHA256": "b9eda939bc45c2c6192bf7809cb2eb8299e5dd085155573a60a273af65c1deec",
       "HTTP_status": 200
     },
     {
@@ -60,20 +60,20 @@
     },
     {
       "File": "URP_Supplementary_Methods_and_Schedules_20261023.pdf",
-      "Bytes": 508918,
-      "SHA256": "704a9cb6d1ca2ca5de0a784c557636c8ce50f5ca792cc0863fd6333b9852de44",
+      "Bytes": 508960,
+      "SHA256": "8b8dcb81355d0988099566db10a725eea3b328d444bef3a82e11d45070e6cb88",
       "HTTP_status": 200
     },
     {
       "File": "URP_Manuscript_EN_Updated_20261023.pdf",
-      "Bytes": 3786475,
-      "SHA256": "2efcfe28cd61f8f1c478fd709fc265a3327acf65bbcc4c0091c198b76d7ffefb",
+      "Bytes": 3786997,
+      "SHA256": "5d21462a961c2101fe7481be2f372b1ab84b7e789168f1ed90747b18eec92025",
       "HTTP_status": 200
     },
     {
       "File": "URP_Update_Notes_20261023.docx",
-      "Bytes": 39296,
-      "SHA256": "38d0920e99fd538da3aed8c3527b1ed854d4c6f74576bbe1cdd0cf29f2b67fe0",
+      "Bytes": 39552,
+      "SHA256": "88e5b17a9343d6f8f16d4abcd1afb86083e7a2b1ac30d2d85262e7c8697efad7",
       "HTTP_status": 200
     },
     {
@@ -84,35 +84,35 @@
     },
     {
       "File": "URP_Midterm_Report_Updated_20261023.pdf",
-      "Bytes": 2073049,
-      "SHA256": "0a95ed372e46b65c29afb80859a3b084bd82d1003f1d274afeebfec38cd94636",
+      "Bytes": 2073071,
+      "SHA256": "b008bed5103b47d18f5bbafbf3645936b80dddc3302b052172c094ca76bfcf1c",
       "HTTP_status": 200
     },
     {
       "File": "URP_Manuscript_CN_Updated_20261023.pdf",
-      "Bytes": 4212651,
-      "SHA256": "e5c6e19f33c04f7ff7c35c6091f9e019b33ab09ab148098cb506e455f46ca09b",
+      "Bytes": 4211147,
+      "SHA256": "bafc3d25198a3e893f1ebe1c4d18a030a6793982e7bb86945ec1e9299aefeaf7",
       "HTTP_status": 200
     },
     {
       "File": "URP_Midterm_Report_Updated_20261023.docx",
       "Bytes": 2085430,
-      "SHA256": "8cd84bc72412bd65d082bf77321cac4c8c15e9752d9eb7e8f8800e19054af453",
+      "SHA256": "66a4b50e00c672d153b5a8d76d4813834ddb2bcaa75413f3d8eca0b158e43e6f",
       "HTTP_status": 200
     },
     {
       "File": "URP_Supplementary_Methods_and_Schedules_20261023.docx",
-      "Bytes": 47063,
-      "SHA256": "e5daa2e9400378a21ba30f6bbd0473e0806b64a9bab696a5795ccd8aec2c2907",
+      "Bytes": 47079,
+      "SHA256": "156da2f131fa045e42fafa2c505fe77f002e66db16b045e9b9e4b1a96732cdf4",
       "HTTP_status": 200
     },
     {
       "File": "URP_Manuscript_EN_Updated_20261023.docx",
-      "Bytes": 7575833,
-      "SHA256": "b1d69827b6cc04ad923a2d2875910679ba27348b97d7ab4c09101e46596eef79",
+      "Bytes": 7575806,
+      "SHA256": "fd8f2b6012dc6bf2df114a88d45cffc3478768aeba62bef27d68d978b1518f8a",
       "HTTP_status": 200
     }
   ],
-  "Elapsed_seconds": 268.11,
+  "Elapsed_seconds": 269.7,
   "Main_unchanged": "f040054a4a7fb789c1a10bf1835cd7a36d8cfcbb"
 }

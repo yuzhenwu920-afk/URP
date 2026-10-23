@@ -32,7 +32,7 @@ def stage():
  for name,src in aliases.items():shutil.copy2(dst/'packages'/src,REPO/'deliverables'/name)
  text='''# URP · 当前统一交付（2026-10-23）
 
-最新五生育期、每期最多3个可选事件的四年优化结果，已同步到中英文论文、中期报告、英文图表、逐次灌水日程和数据工作簿。计算版本为2026-10-22，文稿归档版本为2026-10-23。
+最新五生育期、每期最多3个可选事件的四年优化结果，已同步到中英文论文、中期报告、英文图表、逐次灌水日程和数据工作簿。已按最新意见统一资料来源表述，正文使用编号引文，完整作者与学位论文信息保留在参考文献。计算版本为2026-10-22，文稿归档及引用修订版本为2026-10-23。
 
 **[一键下载全部阶段总包（约1.9 GB）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
 
@@ -54,6 +54,9 @@ def stage():
 
 交付分支：delivery/urp-review-20261015；总包分支：delivery/urp-all-stages-20261022。main保持原提交。
 '''
+ qa=json.loads((ROOT/'analysis/DOCUMENT_AND_DATA_QA.json').read_text())
+ pages={x['File']:x['Pages'] for x in qa['Documents']}
+ text=text.replace('中文论文：20页','中文论文：'+str(pages['URP_Manuscript_CN_Updated_20261023.pdf'])+'页').replace('英文论文：20页','英文论文：'+str(pages['URP_Manuscript_EN_Updated_20261023.pdf'])+'页')
  (REPO/'README.md').write_text(text)
  (REPO/'deliverables/README.md').write_text(text.replace('deliverables/2026-','2026-'))
  (REPO/'deliverables/README.md').write_text((REPO/'deliverables/README.md').read_text()+'''
@@ -76,13 +79,13 @@ def stage():
 本目录原有COLLECTION_MANIFEST、SHA256及SINGLE_DOWNLOAD_VERIFICATION记录对应2026-10-22历史快照；最新清单以2026-10-23目录为准。主分支未修改。
 ''')
  run('add','-f','--',PATH,'README.md','deliverables/README.md','deliverables/2026-10-22-all-stages/README.md','deliverables/URP_full_package.zip','deliverables/URP_figures.zip','deliverables/URP_run_results.zip')
- run('-c','gc.auto=0','commit','-m','Update CN and EN manuscripts, midterm and all-stage archive with verified five-stage results')
+ run('-c','gc.auto=0','commit','-m','Revise data-source wording in current manuscripts and synchronize citation-only archive update')
  run('-c','pack.window=0','-c','gc.auto=0','push','origin','HEAD:refs/heads/'+BRANCH)
  head=git('rev-parse','HEAD')
  tree=git('rev-parse','HEAD:'+PATH)
  old=git('ls-remote','origin','refs/heads/'+COLLECTION).split()[0]
  git('cat-file','-e',old)
- commit=git('commit-tree',tree,'-p',old,'-m','Refresh all-stage collection with current five-stage papers, midterm and 41 research archives')
+ commit=git('commit-tree',tree,'-p',old,'-m','Refresh current all-stage collection after cited data-source wording revision')
  git('update-ref','refs/heads/'+COLLECTION,commit)
  run('-c','pack.window=0','-c','gc.auto=0','push','origin',commit+':refs/heads/'+COLLECTION)
  assert git('ls-remote','origin','refs/heads/main').split()[0]==MAIN
