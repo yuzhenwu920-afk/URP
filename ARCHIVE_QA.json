@@ -1,0 +1,14 @@
+{
+  "Status": "PASS",
+  "Stage_archives": 41,
+  "Current_or_retained_source_archives": 34,
+  "Historical_archives": 7,
+  "Previous_29_archives_preserved_with_identical_SHA256": true,
+  "New_model_runs": false,
+  "Package_bytes": 1774426582,
+  "All_new_ZIPs_CRC": "PASS",
+  "Main_figures": 15,
+  "Main_three_line_tables": 10,
+  "Query_rows": 457596,
+  "Search_model_calls": 455505
+}

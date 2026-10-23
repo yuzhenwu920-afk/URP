@@ -1,0 +1,5 @@
+{
+  "Status": "PASS",
+  "Test": "Extract manuscript stage ZIP to a different directory and regenerate both manuscripts, supplement, figure guide, workbook and midterm",
+  "External_model_runs": false
+}

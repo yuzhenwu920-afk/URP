@@ -1,13 +1,57 @@
-# URP 全部阶段压缩包总包
+# URP 最新统一交付 · 2026-10-23
 
-**[点击下载全部阶段总包：一个ZIP，约1.35 GB](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
+**[下载全部阶段总包（含所有原始资料、代码、链、结果及本次更新）](https://codeload.github.com/yuzhenwu920-afk/URP/zip/refs/heads/delivery/urp-all-stages-20261022)**
 
-本分支只收录最终交付资料，用于生成单个GitHub标准ZIP。没有修改主分支或科学结果，也不重新运行模型。
+[论文、中期、图册与数据速取包](URP_Current_Papers_Midterm_and_Figures_20261023.zip)
 
-下载并解压后，`packages/`内包含全部29个压缩包（17个科研阶段，含文稿速取副本），以及可直接打开的中英文论文、中期报告、英文图册、数据工作簿和校验记录。
+[中文Word](URP_Manuscript_CN_Updated_20261023.docx) · [英文Word](URP_Manuscript_EN_Updated_20261023.docx) · [中期Word](URP_Midterm_Report_Updated_20261023.docx) · [数据Excel](URP_All_Current_Data_20261023.xlsx)
 
-如需完整研究目录，把00索引及01—14所有阶段ZIP解压到同一位置，合并`URP_Research_Archive`文件夹。
+当前/保留来源阶段包 34 个；旧版过程包 7 个，合计 41 个阶段ZIP。原有29个压缩包均按原字节保留；本次增加当前五期结果、原链诊断、短时续链及更新稿件。
 
-论文和图表均为2026-10-21已核验版本；四年主图包含2019—2022，历史主分析与2021条件试验分别标注。已有收敛、原始观测缺项及田间验证限制保持不变。
+中英文主稿各15组英文图、10张三线表；逐次日程42条正水量记录，含全部微量源值。中期主要计算已完成，实际报销和审核签字留空。当前结果固定于20f1616556f5aeb79329b7ead22faa28f9fcda6a的五期模型计算，本次整合无新增模型搜索。
 
-原始交付快照：`116e819cddcb23609271066d255a5ddca009b416`；49个来源文件逐项SHA256见COLLECTION_MANIFEST.csv。
+05_Current_five_stage 内六包共同解压为URP_Five_Stage_Multi_Event。当前文稿工程、图表与中期解压到URP_Current_20261023。原来源阶段包沿用URP_Research_Archive；history请另放历史目录，保持其原有实验版本。索引ZIP内部清单不含自身哈希，自身校验见外层SHA256SUMS。
+
+|阶段|用途|压缩包|MB|
+|---|---|---|---:|
+|00_Current_index|Current_index|[00_Current_index_and_reproducibility.zip](packages/00_Current_index_and_reproducibility.zip)|0.0|
+|00_Index_and_reproducibility|Historical_before_five_stage|[00_Index_and_reproducibility.zip](packages/history/00_Index_and_reproducibility.zip)|3.8|
+|01_Raw_data_and_references|Retained_source_or_supplement|[01_Raw_data_and_references_part01.zip](packages/01_Raw_data_and_references_part01.zip)|77.7|
+|01_Raw_data_and_references|Retained_source_or_supplement|[01_Raw_data_and_references_part02.zip](packages/01_Raw_data_and_references_part02.zip)|66.6|
+|01_Raw_data_and_references|Retained_source_or_supplement|[01_Raw_data_and_references_part03.zip](packages/01_Raw_data_and_references_part03.zip)|67.7|
+|01_Raw_data_and_references|Retained_source_or_supplement|[01_Raw_data_and_references_part04.zip](packages/01_Raw_data_and_references_part04.zip)|64.8|
+|02_MCMC_2019|Retained_source_or_supplement|[02_MCMC_2019.zip](packages/02_MCMC_2019.zip)|20.5|
+|02_MCMC_2020|Retained_source_or_supplement|[02_MCMC_2020.zip](packages/02_MCMC_2020.zip)|20.8|
+|02_MCMC_2021|Retained_source_or_supplement|[02_MCMC_2021.zip](packages/02_MCMC_2021.zip)|22.3|
+|02_MCMC_2022|Retained_source_or_supplement|[02_MCMC_2022.zip](packages/02_MCMC_2022.zip)|24.3|
+|03_Model_engine_and_frozen_handoffs|Retained_source_or_supplement|[03_Model_engine_and_frozen_handoffs.zip](packages/03_Model_engine_and_frozen_handoffs.zip)|22.9|
+|04_Sobol_real_model|Retained_source_or_supplement|[04_Sobol_real_model.zip](packages/04_Sobol_real_model.zip)|8.2|
+|05_Genetic_optimization_4years|Historical_before_five_stage|[05_Genetic_optimization_4years.zip](packages/history/05_Genetic_optimization_4years.zip)|61.7|
+|06_Structural_and_root_depth_diagnostics|Retained_source_or_supplement|[06_Structural_and_root_depth_diagnostics_part01.zip](packages/06_Structural_and_root_depth_diagnostics_part01.zip)|87.4|
+|06_Structural_and_root_depth_diagnostics|Retained_source_or_supplement|[06_Structural_and_root_depth_diagnostics_part02.zip](packages/06_Structural_and_root_depth_diagnostics_part02.zip)|11.9|
+|07_2021_root1m_pilots|Retained_source_or_supplement|[07_2021_root1m_pilots.zip](packages/07_2021_root1m_pilots.zip)|83.0|
+|08_2021_mulch_conditional_calibration_and_optimization|Retained_source_or_supplement|[08_2021_mulch_conditional_calibration_and_optimization_part01.zip](packages/08_2021_mulch_conditional_calibration_and_optimization_part01.zip)|88.0|
+|08_2021_mulch_conditional_calibration_and_optimization|Retained_source_or_supplement|[08_2021_mulch_conditional_calibration_and_optimization_part02.zip](packages/08_2021_mulch_conditional_calibration_and_optimization_part02.zip)|7.5|
+|09_Rainfall_and_data_provenance_audit|Retained_source_or_supplement|[09_Rainfall_and_data_provenance_audit.zip](packages/09_Rainfall_and_data_provenance_audit.zip)|24.0|
+|10_Single_objective_multi_algorithm_validation|Retained_source_or_supplement|[10_Single_objective_multi_algorithm_validation.zip](packages/10_Single_objective_multi_algorithm_validation.zip)|42.7|
+|11_English_figures_tables_and_interpretations|Historical_before_five_stage|[11_English_figures_tables_and_interpretations_part01.zip](packages/history/11_English_figures_tables_and_interpretations_part01.zip)|86.9|
+|11_English_figures_tables_and_interpretations|Historical_before_five_stage|[11_English_figures_tables_and_interpretations_part02.zip](packages/history/11_English_figures_tables_and_interpretations_part02.zip)|10.1|
+|12_Chinese_and_English_manuscripts|Historical_before_five_stage|[12_Chinese_and_English_manuscripts.zip](packages/history/12_Chinese_and_English_manuscripts.zip)|25.0|
+|13_Project_midterm_report|Historical_before_five_stage|[13_Project_midterm_report.zip](packages/history/13_Project_midterm_report.zip)|5.4|
+|14_Research_history_NOT_primary_results|Retained_source_or_supplement|[14_Research_history_NOT_primary_results_part01.zip](packages/14_Research_history_NOT_primary_results_part01.zip)|88.0|
+|14_Research_history_NOT_primary_results|Retained_source_or_supplement|[14_Research_history_NOT_primary_results_part02.zip](packages/14_Research_history_NOT_primary_results_part02.zip)|85.4|
+|14_Research_history_NOT_primary_results|Retained_source_or_supplement|[14_Research_history_NOT_primary_results_part03.zip](packages/14_Research_history_NOT_primary_results_part03.zip)|87.9|
+|14_Research_history_NOT_primary_results|Retained_source_or_supplement|[14_Research_history_NOT_primary_results_part04.zip](packages/14_Research_history_NOT_primary_results_part04.zip)|88.0|
+|14_Research_history_NOT_primary_results|Retained_source_or_supplement|[14_Research_history_NOT_primary_results_part05.zip](packages/14_Research_history_NOT_primary_results_part05.zip)|1.0|
+|Convenience copy: documents and atlas|Historical_before_five_stage|[URP_Final_Documents_and_Figure_Atlas.zip](packages/history/URP_Final_Documents_and_Figure_Atlas.zip)|29.4|
+|05_Five_stage_optimization|Current_main_optimization|[URP_FiveStage_MultiEvent_Figures_20261022.zip](packages/05_Current_five_stage/URP_FiveStage_MultiEvent_Figures_20261022.zip)|4.7|
+|05_Five_stage_optimization|Current_main_optimization|[URP_FiveStage_MultiEvent_RawRuns_2019_20261022.zip](packages/05_Current_five_stage/URP_FiveStage_MultiEvent_RawRuns_2019_20261022.zip)|59.8|
+|05_Five_stage_optimization|Current_main_optimization|[URP_FiveStage_MultiEvent_RawRuns_2020_20261022.zip](packages/05_Current_five_stage/URP_FiveStage_MultiEvent_RawRuns_2020_20261022.zip)|59.1|
+|05_Five_stage_optimization|Current_main_optimization|[URP_FiveStage_MultiEvent_RawRuns_2021_20261022.zip](packages/05_Current_five_stage/URP_FiveStage_MultiEvent_RawRuns_2021_20261022.zip)|55.7|
+|05_Five_stage_optimization|Current_main_optimization|[URP_FiveStage_MultiEvent_RawRuns_2022_20261022.zip](packages/05_Current_five_stage/URP_FiveStage_MultiEvent_RawRuns_2022_20261022.zip)|52.8|
+|05_Five_stage_optimization|Current_main_optimization|[URP_FiveStage_MultiEvent_Results_20261022.zip](packages/05_Current_five_stage/URP_FiveStage_MultiEvent_Results_20261022.zip)|28.8|
+|15_Original_MCMC_diagnostics|Current_sampling_diagnostic|[15_Original_MCMC_diagnostics.zip](packages/15_Original_MCMC_diagnostics.zip)|46.9|
+|16_2021_short_continuation|Current_sampling_diagnostic|[16_2021_short_continuation.zip](packages/16_2021_short_continuation.zip)|34.9|
+|11_Current_English_figures_tables|Current_figures_and_data|[11_Current_English_figures_tables.zip](packages/11_Current_English_figures_tables.zip)|29.3|
+|12_Current_CN_EN_manuscripts|Current_manuscript_project|[12_Current_CN_EN_manuscripts_and_reproduction.zip](packages/12_Current_CN_EN_manuscripts_and_reproduction.zip)|80.2|
+|13_Current_project_midterm_report|Current_administrative_report|[13_Current_project_midterm_report.zip](packages/13_Current_project_midterm_report.zip)|9.0|
