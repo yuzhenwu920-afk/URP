@@ -1,0 +1,77 @@
+{
+  "Status": "PASS",
+  "Delivery_commit": "13b786040fcea00f5f10e83deae50e3161e1c0ae",
+  "Delivery_path": "deliverables/2026-10-25-defense-5min",
+  "Main_unchanged": "f040054a4a7fb789c1a10bf1835cd7a36d8cfcbb",
+  "Main_slides": 8,
+  "Hidden_backup_slides": 4,
+  "Planned_seconds": 300,
+  "Remote_downloads": [
+    {
+      "File": "PRESENTATION_QA.json",
+      "Bytes": 531,
+      "SHA256": "20de78a8a7dc4201a81c73eddae11db58de5d65bf2fbb8a846a0c87ebd6bc19a",
+      "HTTP": 200
+    },
+    {
+      "File": "Preview_Main_Slides.jpg",
+      "Bytes": 338593,
+      "SHA256": "d48797515dd55446dee828506e21ab34fb334397cee9ec0e52bb8aeb62b7dcba",
+      "HTTP": 200
+    },
+    {
+      "File": "README.md",
+      "Bytes": 1325,
+      "SHA256": "632c0a5049ab221e23f1a6f89c45beb0c450bae64eb0ad8c998e827ac4b4bbe5",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_5min_Speaker_Script_20261025.docx",
+      "Bytes": 40239,
+      "SHA256": "d6a4f5676dddef27b22a0ead5bd79ae0a3ebdb5d8cae08a55c1132599b986860",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_5min_Speaker_Script_20261025.md",
+      "Bytes": 3705,
+      "SHA256": "2249ad57edd7d058035726f515214ccdd17a549dab471ff8fae6608593ebabd1",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_5min_Speaker_Script_20261025.pdf",
+      "Bytes": 265183,
+      "SHA256": "3b42d6adac088ec95f054631d3e6be661dfdc80082c044b4dff2e701365444c8",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_Defense_5min_20261025.pdf",
+      "Bytes": 1741753,
+      "SHA256": "eb8745bb0f63ce024bfcc33030b215149879da2b384e936fb94239cf39cc2231",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_Defense_5min_20261025.pptx",
+      "Bytes": 1110701,
+      "SHA256": "8e881444c9a1724c38afe5b62093c05c0a9f5e6d0f6d03e4ea7c36855bfd62e0",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_Defense_5min_Complete_20261025.zip",
+      "Bytes": 7813647,
+      "SHA256": "d3a6966c16c0f58b5c8d8e0e3ea2893b86e1744be11c753c738610c4dcf38d72",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_Defense_5min_With_Backup_20261025.pdf",
+      "Bytes": 2122555,
+      "SHA256": "f408cc7f9323c727b11ae536250265e69645029750436411649124af63543f39",
+      "HTTP": 200
+    },
+    {
+      "File": "URP_Defense_Source_Data_20261025.xlsx",
+      "Bytes": 1407118,
+      "SHA256": "cd6fa873470cc334daf4f6d38d4bf96f8402552bcbb6e87a55645abda76343c3",
+      "HTTP": 200
+    }
+  ]
+}
