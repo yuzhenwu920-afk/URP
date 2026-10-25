@@ -1,0 +1,22 @@
+{
+  "Status": "PASS",
+  "Main_slides": 8,
+  "Backup_slides": 4,
+  "Default_slideshow_skips_backup": true,
+  "Planned_main_seconds": 300,
+  "Slide_notes_with_script": 8,
+  "Main_PDF_pages": 8,
+  "Full_PDF_pages": 12,
+  "PPT_viewport_overflows": [],
+  "PDF_page_overflows": [],
+  "Missing_rendered_native_text": [],
+  "Selected_depths_mm": [
+    209.8315811759488,
+    306.498953726766,
+    264.4999754388763,
+    257.46525325949153
+  ],
+  "Source_data_and_water_ledger_checked": true,
+  "Event_rows": 42,
+  "New_model_runs": false
+}
