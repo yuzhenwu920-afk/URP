@@ -1,0 +1,83 @@
+{
+  "Status": "PASS",
+  "Content_commit": "bee12eb509fed4101b086bb3c9bf69508a545a24",
+  "Source_input_SHA256": "a35aca9aa94e3fb70704f1f558df2393e346641000ac171a8bae0fab8a63ebbd",
+  "Main_unchanged": "f040054a4a7fb789c1a10bf1835cd7a36d8cfcbb",
+  "Main_slides": 9,
+  "Hidden_backups": 4,
+  "Planned_seconds": 300,
+  "Remote_downloads": [
+    {
+      "File": "Added_MCMC_Convergence_Page_20261026.pdf",
+      "HTTP": 200,
+      "Bytes": 1978370,
+      "SHA256": "69dc49c0ef9ff9b4c624bcefcae77e5628ace52d8b51323569b3ee459e5acc97"
+    },
+    {
+      "File": "Added_MCMC_Slide.png",
+      "HTTP": 200,
+      "Bytes": 383112,
+      "SHA256": "37e26b3f71dc6f61cbdb85a701358e4e4d41d516a1a35784d688c0d47aeec275"
+    },
+    {
+      "File": "PRESENTATION_QA.json",
+      "HTTP": 200,
+      "Bytes": 701,
+      "SHA256": "6d709f46194a88d1a65021234e1cb5d58888089d034d99d5c0442093c89dc85f"
+    },
+    {
+      "File": "Preview_Main_Slides.jpg",
+      "HTTP": 200,
+      "Bytes": 285490,
+      "SHA256": "a06d6c1068c8acabd5e2d530334a1a9c2a838571f8250ed10f3b7af97e90f8c6"
+    },
+    {
+      "File": "README.md",
+      "HTTP": 200,
+      "Bytes": 1311,
+      "SHA256": "a2d9619f81b61874b6fb61cb1fe99cfba9900331d8388e9624905e3471b8ba6f"
+    },
+    {
+      "File": "URP_Defense_5min_MCMC_20261026.pdf",
+      "HTTP": 200,
+      "Bytes": 2050029,
+      "SHA256": "905afa417143103c9fcba4a404b404e864ff32b4b540463e30859fd1b15be5ea"
+    },
+    {
+      "File": "URP_Defense_5min_MCMC_20261026.pptx",
+      "HTTP": 200,
+      "Bytes": 1967113,
+      "SHA256": "ea0b3a19e9c7e97f59f246b9ac3c4f1e47739e4d1f744181f3a2ce981c9ffc53"
+    },
+    {
+      "File": "URP_Defense_5min_MCMC_With_Backup_20261026.pdf",
+      "HTTP": 200,
+      "Bytes": 2412797,
+      "SHA256": "77af91ec132827d62483b386976fbe41ec51659c629216a82a77a018847cbc39"
+    },
+    {
+      "File": "URP_Defense_MCMC_Addition_20261026.zip",
+      "HTTP": 200,
+      "Bytes": 10006322,
+      "SHA256": "a39483a88b4948484009e9d4330ac50f0fbf2f2b206788e2d1b7ad7d5c419287"
+    },
+    {
+      "File": "URP_Defense_Speaker_Script_MCMC_20261026.docx",
+      "HTTP": 200,
+      "Bytes": 39622,
+      "SHA256": "5a73c921d5bf90dda3e392c833b6a45443a6cb536ca762fc843d5d98afebb5b9"
+    },
+    {
+      "File": "URP_Defense_Speaker_Script_MCMC_20261026.md",
+      "HTTP": 200,
+      "Bytes": 4015,
+      "SHA256": "9c3234f025a54e30b49dbe6d13563edd2c27242219660c35bc46266b4216cceb"
+    },
+    {
+      "File": "URP_Defense_Speaker_Script_MCMC_20261026.pdf",
+      "HTTP": 200,
+      "Bytes": 234152,
+      "SHA256": "298b6f2b41b136f827bbc5f58a4d7d933afe6c1aba3fc98595bc115993f5561d"
+    }
+  ]
+}
