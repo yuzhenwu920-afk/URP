@@ -1,0 +1,22 @@
+{
+  "Status": "PASS",
+  "User_edited_source_SHA256": "a35aca9aa94e3fb70704f1f558df2393e346641000ac171a8bae0fab8a63ebbd",
+  "Original_slide_XMLs_preserved": 12,
+  "Original_slide_media_preserved": 5,
+  "Only_original_slide_body_changes": "Four footer page numbers, old 5-8 to 6-9",
+  "New_slide_position": 5,
+  "Main_slides": 9,
+  "Hidden_backup_slides": 4,
+  "Planned_seconds": 300,
+  "Main_PDF_pages": 9,
+  "Full_PDF_pages": 13,
+  "New_slide_rendered_text_missing": [],
+  "New_slide_page_overflows": [],
+  "Chinese_render_fonts": [
+    "NotoSansCJKsc-Bold",
+    "NotoSansCJKsc-Regular"
+  ],
+  "Original_raw_trace_states": 16000,
+  "New_MCMC_runs": false,
+  "Strict_convergence_reference_met": false
+}
