@@ -1,0 +1,33 @@
+{
+  "Status": "PASS",
+  "Included_figure_numbers": [
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "Figure6_original_files_unchanged": true,
+  "Numeric_checks": 283,
+  "Source_reading_flags_retained": 2,
+  "All_12_relocated_PNG_pixels_identical": true,
+  "Relocated_derived_CSV_bytes_identical": true,
+  "Direct_Figure10_vs_run_all_pixels_identical": true,
+  "Unchanged_figure_pixels_vs_prior_package": {
+    "8": true,
+    "13": true,
+    "14": true,
+    "15": true
+  },
+  "Analysis_Word_PDF_pages": 15,
+  "Models_refitted": false,
+  "Optimization_rerun": false,
+  "Source_review": "Es resolved from thesis p39; 2022 biomass DI provenance recovered; historical LAI digitization project and hourly GEE extraction script remain unavailable"
+}
