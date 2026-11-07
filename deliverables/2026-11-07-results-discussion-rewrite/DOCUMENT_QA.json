@@ -1,0 +1,87 @@
+{
+  "source_sha256": "3c58c7b27127af7c58e30e740acd00818919a9c7c5bcd7750fef3a48ab5c6e84",
+  "model_rerun": false,
+  "figure_redraw": false,
+  "replaced_original_paragraphs": 31,
+  "new_analysis_paragraphs": 46,
+  "rewritten_chinese_characters": 5465,
+  "files": [
+    {
+      "file": "URP_Manuscript_Results_Integrated_CN.docx",
+      "size_bytes": 8820305,
+      "sha256": "827b5d336792bfecbd520cb0844d88c5cdf05cb4730206e203d02c8bfc4c4ab5",
+      "figure_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "table_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "all_media_unchanged": 15,
+      "all_other_package_parts_unchanged": true,
+      "prefix_preserved": true,
+      "checks": "passed"
+    },
+    {
+      "file": "URP_Results_Discussion_Conclusions_CN.docx",
+      "size_bytes": 8790409,
+      "sha256": "03d03c397d6634ba13e0771f44ffdc5ee08eabc0f681d0140767986c61320bab",
+      "figure_numbers": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "table_numbers": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "all_media_unchanged": 15,
+      "all_other_package_parts_unchanged": true,
+      "prefix_preserved": false,
+      "checks": "passed"
+    }
+  ],
+  "rendering_checked": {
+    "analysis_pages": 17,
+    "integrated_pages": 29,
+    "nearly_blank_pages": [],
+    "cjk_glyphs_visually_checked": true
+  },
+  "reference_pdf_sha256": "4abc4dd14b1560f1c34ba123372d0a08974ff6a447d44a6b8972054ab743b61a"
+}
