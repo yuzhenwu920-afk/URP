@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": [
+    "JavaScript syntax",
+    "no administrative coordinate extraction",
+    "Point helper has two arguments",
+    "raster pixel-index relocation",
+    "national locator marker placement",
+    "UTM crop center placement",
+    "500 m scale-bar conversion",
+    "no assumed parcel polygon"
+  ],
+  "GEE_authenticated_execution": false,
+  "satellite_export_performed": false,
+  "source_SHA256": "9538747af10fa6d5d9b00a52956ce4ac995a2287e0bb5f4326fcd7b1281bb65c"
+}
