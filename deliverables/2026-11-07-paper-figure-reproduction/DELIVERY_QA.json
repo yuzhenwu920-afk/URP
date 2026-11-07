@@ -1,0 +1,21 @@
+{
+  "Status": "PASS",
+  "Figures": 15,
+  "Tables": 10,
+  "Independent_figure_scripts": 15,
+  "Independent_table_scripts": 10,
+  "Numerical_checks": 832,
+  "Uploaded_manuscript_table_cells_matched": 328,
+  "Original_MCMC_checkpoints": 20,
+  "Sobol_raw_model_responses": 61440,
+  "Forward_model_replays": 8,
+  "Maximum_forward_replay_difference": 0.0,
+  "Fresh_Python_virtual_environment": true,
+  "Relocated_directory_contains_Chinese_and_spaces": true,
+  "All_25_PNGs_pixel_identical": true,
+  "Changed_input_is_rejected": true,
+  "Upstream_files_byte_identical": 326,
+  "Independent_GEE_or_AI_image_used_for_main_figures": false,
+  "Intentional_table_header_correction": "Table 2 Es,obs -> Es target; numerical data preserved",
+  "CI_scope": "Original Fig10 bootstrap widths are frozen and hash-checked. A new-seed bootstrap reconstruction is provided separately; original random state is not claimed recovered."
+}
