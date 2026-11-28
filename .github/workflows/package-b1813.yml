@@ -1,0 +1,21 @@
+name: Package B1813 introduction
+on:
+  push:
+    branches: [b1813-intro-package-20261128]
+    paths: ['.github/workflows/package-b1813.yml']
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and publish the submitted archive
+        run: |
+          set -eu
+          mkdir -p downloads
+          cat parts/part-* > downloads/B1813-intro.zip
+          echo '18e7c72501a5aa75aea1dd2ce3ea120f9dc94b07b1d2cbbc6724ebc1681248e5  downloads/B1813-intro.zip' | sha256sum -c -
+          git add downloads/B1813-intro.zip
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish verified B1813 Word and photo archive'
+          git push origin HEAD:b1813-intro-package-20261128
